@@ -33,6 +33,7 @@
   <button data-v="tong">Tổng thể</button>
   <button data-v="tren">Từ trên (Bắc ↑)</button>
   <button data-v="trong">Bên trong</button>
+  <button data-v="song">Phối cảnh sông</button>
   <button id="mai">Ẩn mái</button>
   <button id="nhan">Ẩn chữ</button>
   <button id="tl">Cao độ tương lai</button>
@@ -285,11 +286,54 @@ function label(t,a,b,z,parent){const cv=document.createElement('canvas'),x=cv.ge
 
 // ---- RANH: phan da cap theo GCN thua 320 to 51 + phan chua cap noi dai toi bo song (~1.200m2, do theo anh ve tinh) ----
 const G2=[0,0],G1=[53.45,0],G4=[53.84,44.91],G3=[10.0,40.43],E4=[54.0,66.0],E3=[16.1,65.2],EXT=[G3,G4,[54.1,69.0],[48.4,72.9],[38.2,74.1],[28.6,73.9],[20.7,72.3],[17.3,70.0]];
-box(-40,0,-0.2,140,125,0.1,C.dat);
-box(-40,-7,-0.2,140,7,0.7,C.lo);
-(function(){const LL=Math.hypot(E4[0]-E3[0],E4[1]-E3[1]),u=[(E4[0]-E3[0])/LL,(E4[1]-E3[1])/LL],n=[-u[1],u[0]];
- const A=[E3[0]-60*u[0]+2*n[0],E3[1]-60*u[1]+2*n[1]],B=[E4[0]+60*u[0]+2*n[0],E4[1]+60*u[1]+2*n[1]];
- polyFlat([A,B,[B[0]+45*n[0],B[1]+45*n[1]],[A[0]+45*n[0],A[1]+45*n[1]]],-0.6,C.song,0.85);})();
+// ---- CANH QUAN: song lon, bo doi dien rung duoc, ao tom, nha lan can (phoi canh) ----
+(function(){
+ // bau troi + suong mu cho chieu sau
+ const sk=document.createElement('canvas');sk.width=2;sk.height=256;const sx=sk.getContext('2d');const gr=sx.createLinearGradient(0,0,0,256);
+ gr.addColorStop(0,'#8fb8d8');gr.addColorStop(0.55,'#cfe0ea');gr.addColorStop(1,'#e8eee9');sx.fillStyle=gr;sx.fillRect(0,0,2,256);
+ scene.background=new THREE.CanvasTexture(sk);scene.fog=new THREE.Fog(0xdbe6ea,350,1700);
+})();
+const BANK=[[-420,82],[-200,83],[-90,81],[-30,79],[0,77],[10,73.5],[17.3,70.0],[20.7,72.3],[28.6,73.9],[38.2,74.1],[48.4,72.9],[54.1,69.0],[60,69.5],[90,72],[160,75],[260,77],[460,79]];
+const RW=480; // be rong song gia dinh ~480m (anh ve tinh chi thay mot phan, chua thay bo doi dien)
+function polyM(pts,y,m){const s=new THREE.Shape();pts.forEach((p,i)=>i?s.lineTo(p[0],p[1]):s.moveTo(p[0],p[1]));
+ const g=new THREE.ShapeGeometry(s);g.rotateX(-Math.PI/2);const o=new THREE.Mesh(g,m);o.position.y=y;site.add(o);return o;}
+// dat lien phia nay (tu le duong toi bo song) va phia ben kia duong
+polyM([[-420,0]].concat(BANK).concat([[460,0]]),-0.12,mat(C.dat));
+polyM([[-420,-7],[460,-7],[460,-420],[-420,-420]],-0.12,mat(0x7b9a5c));
+box(-420,-7,-0.2,880,7,0.7,C.lo);
+// mat nuoc song: mau xanh luc-xam phu sa, gon song chuyen dong
+const wcv=document.createElement('canvas');wcv.width=wcv.height=256;(function(){const x=wcv.getContext('2d');x.fillStyle='#808080';x.fillRect(0,0,256,256);
+ for(let i=0;i<900;i++){const px=Math.random()*256,py=Math.random()*256,l=8+Math.random()*26,c=110+Math.random()*120|0;x.strokeStyle='rgb('+c+','+c+','+c+')';x.lineWidth=1+Math.random()*1.5;
+  x.beginPath();x.moveTo(px,py);x.quadraticCurveTo(px+l/2,py-2,px+l,py);x.stroke();}})();
+const wtex=new THREE.CanvasTexture(wcv);wtex.wrapS=wtex.wrapT=THREE.RepeatWrapping;wtex.repeat.set(90,60);
+const wcol=document.createElement('canvas');wcol.width=wcol.height=128;(function(){const x=wcol.getContext('2d');
+ for(let i=0;i<128;i++)for(let j=0;j<128;j+=4){const n=Math.sin(i*0.09)+Math.sin(j*0.05+i*0.02);const r=78+n*5,g=118+n*6,b=104+n*4;x.fillStyle='rgb('+(r|0)+','+(g|0)+','+(b|0)+')';x.fillRect(j,i,4,1);}})();
+const ctex=new THREE.CanvasTexture(wcol);ctex.wrapS=ctex.wrapT=THREE.RepeatWrapping;ctex.repeat.set(4,3);
+const water=new THREE.MeshPhongMaterial({color:0xffffff,map:ctex,bumpMap:wtex,bumpScale:0.35,specular:0x9fb7b0,shininess:70,side:THREE.DoubleSide});
+polyM(BANK.concat(BANK.slice().reverse().map(p=>[p[0],p[1]+RW+12*Math.sin(p[0]/90)])),-0.25,water);
+// bo ke dat + co ven song
+(function(){for(let i=0;i<BANK.length-1;i++){const p=BANK[i],q=BANK[i+1];polyM([[p[0],p[1]-1.2],[q[0],q[1]-1.2],[q[0],q[1]+0.8],[p[0],p[1]+0.8]],-0.08,mat(0x8a7a55));}})();
+// bo doi dien: dai rung duoc/ban (rung ngap man) + dat lien
+const FB=BANK.map(p=>[p[0],p[1]+RW+12*Math.sin(p[0]/90)]);
+polyM(FB.concat([[460,FB[FB.length-1][1]+600],[-420,FB[0][1]+600]]),-0.15,mat(0x6f8f58));
+(function(){const n=520,geo=new THREE.SphereGeometry(1,8,6),inst=new THREE.InstancedMesh(geo,mat(0x2f5a34),n),M=new THREE.Matrix4(),Q=new THREE.Quaternion(),V=new THREE.Vector3();
+ for(let i=0;i<n;i++){const a=-420+Math.random()*880,base=FB[0][1]+(a+420)/880*(FB[FB.length-1][1]-FB[0][1])+12*Math.sin(a/90),b=base+2+Math.random()*45,r=3+Math.random()*4;
+  M.compose(V.set(a,r*0.7+Math.random()*2,-b),Q,new THREE.Vector3(r,r*(0.6+Math.random()*0.4),r));inst.setMatrixAt(i,M);}
+ site.add(inst);treeObjs.push(inst);})();
+// cay dua nuoc + ban doc mep song phia nay (ngoai dat nha)
+(function(){const n=160,geo=new THREE.SphereGeometry(1,7,5),inst=new THREE.InstancedMesh(geo,mat(0x3f6f3a),n),M=new THREE.Matrix4(),Q=new THREE.Quaternion(),V=new THREE.Vector3();let k=0;
+ for(let i=0;i<n;i++){const t=Math.random(),j=Math.floor(t*(BANK.length-1)),p=BANK[j],q=BANK[j+1],f=Math.random();const a=p[0]+(q[0]-p[0])*f,b=p[1]+(q[1]-p[1])*f+1+Math.random()*3;
+  if(a>8&&a<56)continue;const r=1.5+Math.random()*2;M.compose(V.set(a,r*0.6,-b),Q,new THREE.Vector3(r,r*0.8,r));inst.setMatrixAt(k++,M);}
+ inst.count=k;site.add(inst);treeObjs.push(inst);})();
+// ao tom phia ben kia duong + hai ben dat (theo anh ve tinh: ao chu nhat co bo bao)
+(function(){const pm=mat(0x50705f),dk=mat(0x8f8466);
+ for(let a=-400;a<440;a+=52)for(let b=-15;b>-400;b-=64){const w=44+Math.random()*4,d=54+Math.random()*4;polyM([[a,b],[a+w,b],[a+w,b-d],[a,b-d]],-0.07,pm);}
+ [[-400,-8],[60,62]].forEach(([a0,a1])=>{for(let a=a0;a<a1-30;a+=50){const a2=Math.min(a+44,a1-4);if(a2-a<15)continue;const top=72;polyM([[a,10],[a2,10],[a2,top-4],[a,top-4]],-0.07,pm);}});
+ for(let a=62;a<440;a+=50)polyM([[a,10],[a+44,10],[a+44,66],[a,66]],-0.07,pm);})();
+// nha lan can doc duong + cot dien
+[[-40,6],[-95,8],[-170,5],[-260,7],[72,6],[120,7],[205,5],[300,8]].forEach(([a,b],i)=>{const w=7+(i%3),d=10+(i%2)*2;box(a,b,-0.1,w,d,3.4,i%2?C.trang:0xd9cbb2);box(a-0.4,b-0.6,3.3,w+0.8,d+1.2,0.15,i%3?C.ngoi:C.toncu);});
+for(let a=-400;a<450;a+=40)cyl(a,-7.6,-0.1,0.12,8.5,0x9e9e9e);
+label('Sông (rộng ước ~480m – cần đối chiếu thực tế)',30,200,4);label('Rừng ngập mặn bờ đối diện',30,FB[6][1]+20,10);label('Ao tôm lân cận',-60,-60,2.5);
 line([G2,G1,G4,[54.1,69.0],[48.4,72.9],[38.2,74.1],[28.6,73.9],[20.7,72.3],[17.3,70.0],G3,G2],0.05,C.vang,0.3);
 line([G3,G4],0.06,C.do,0.25);
 polyFlat([[23,0.8],[52.6,0.8],[53.4,65.5],[48,68.5],[38,70],[28.5,69.8],[20.5,68.3],[15.8,64.5],[12.5,46],[8.0,32],[6.7,26],[23,26]],-0.03,C.ao,0.9);
@@ -305,7 +349,7 @@ function hedge(p,q,h,w,c){const L=Math.hypot(q[0]-p[0],q[1]-p[1]);const m=new TH
   const n=Math.max(1,Math.floor(L/3));for(let i=0;i<=n;i++){const t=i/n,x=p[0]+(q[0]-p[0])*t,y=p[1]+(q[1]-p[1])*t;box(x-0.05,y-0.05,-0.1,0.1,0.1,1.7,C.den);}
   const k=new THREE.Mesh(new THREE.BoxGeometry(L,0.02,0.02),mat(C.den));k.position.set((p[0]+q[0])/2,1.55,-(p[1]+q[1])/2);k.rotation.y=m.rotation.y;site.add(k);}
 hedge([0.3,0.3],[2.9,0.3],1.3,0.7,0x8e3a6e);hedge([12.3,0.3],[53.2,0.3],1.3,0.7,0x8e3a6e);
-hedge([53.45,0.3],[54.2,99.8],1.8,0.9,0x3d6b34);hedge([54.1,99.9],[23.4,93.8],1.8,0.9,0x3d6b34);hedge([23.2,93.7],[0.15,0.4],1.8,0.9,0x3d6b34);
+hedge([53.45,0.3],[54.05,68.5],1.8,0.9,0x3d6b34);hedge([17.0,69.5],[0.15,0.4],1.8,0.9,0x3d6b34);
 box(2.9,-0.3,0.4,0.3,0.3,2,C.trang);box(7.7,-0.3,0.4,0.3,0.3,2,C.trang);box(3.2,-0.2,0.45,4.5,0.06,1.8,C.den);
 
 // ---- nha kien co 4m ----
@@ -512,7 +556,7 @@ label('Rào cây gai + kẽm gai',54.6,50,2.6);
 label('Cây che nắng chiều',25,6,6.8);
 label('Phi lao chắn gió',36,73,8.5);
 label('Hiên tiếp khách',16.5,3.6,2.0);
-label('Ao',36,55,1.5);label('Sông',40,82,1.5);
+label('Ao',36,55,1.5);
 
 // ---- mui ten Bac (khong xoay) ----
 const N=new THREE.Group();scene.add(N);
@@ -522,7 +566,7 @@ label('BẮC',-32,15.5,3.5,N);
 
 // ---- goc nhin ----
 function S(a,b,z){const v=new THREE.Vector3(a,z,-b);v.applyAxisAngle(new THREE.Vector3(0,1,0),PHI);return v;}
-const views={lo:[S(12,-16,3.2),S(13,8,1.5)],tong:[S(-35,-45,75),S(25,45,0)],tren:[S(27,48,175).add(new THREE.Vector3(0,0,1)),S(27,48,0)],trong:[S(12.5,-1,19),S(13,12.5,0)]};
+const views={lo:[S(12,-16,3.2),S(13,8,1.5)],tong:[S(-35,-45,75),S(25,45,0)],tren:[S(27,48,175).add(new THREE.Vector3(0,0,1)),S(27,48,0)],trong:[S(12.5,-1,19),S(13,12.5,0)],song:[S(-12,-38,30),S(38,130,0)]};
 function go(k){const v=views[k];camera.position.copy(v[0]);controls.target.copy(v[1]);controls.update();
   document.querySelectorAll('[data-v]').forEach(b=>b.classList.toggle('on',b.dataset.v===k));
   setCut(k==='trong');setRoof(k!=='trong');}
@@ -536,7 +580,7 @@ document.getElementById('tl').onclick=e=>{fut.visible=!fut.visible;e.target.clas
 document.getElementById('tm').onclick=()=>{document.getElementById('tmp').hidden=false;};document.getElementById('tmx').onclick=()=>{document.getElementById('tmp').hidden=true;};
 go('lo');
 addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
-(function loop(){requestAnimationFrame(loop);controls.update();renderer.render(scene,camera);})();
+(function loop(){requestAnimationFrame(loop);wtex.offset.x+=0.00025;wtex.offset.y+=0.0001;controls.update();renderer.render(scene,camera);})();
 </script>
 </body>
 </html>
