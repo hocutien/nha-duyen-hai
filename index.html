@@ -51,7 +51,7 @@
 <tr><td>Mốc 2–3 (trái)</td><td>41,65m</td><td>GCN</td></tr>
 <tr><td>Mốc 3–4 (sau)</td><td>44,07m</td><td>GCN</td></tr>
 <tr><td>Mốc 4–1 (phải)</td><td>44,91m</td><td>GCN</td></tr>
-<tr><td>Phần chưa cấp tới bờ sông</td><td>~1.000m² (sâu ~20–25m sau mốc 3–4)</td><td>Dò theo ảnh vệ tinh, cần đo</td></tr></table>
+<tr><td>Phần chưa cấp tới bờ sông</td><td>~1.200m² (sâu ~25–30m sau mốc 3–4)</td><td>Dò theo ảnh vệ tinh, cần đo</td></tr></table>
 <h3>2. Phụ tải điện (ước tính)</h3>
 <table><tr><th>Thiết bị</th><th>kW</th></tr>
 <tr><td>Đèn LED, quạt, TV</td><td>0,5</td></tr><tr><td>Tủ mạng, server, UPS</td><td>0,3</td></tr>
@@ -98,7 +98,7 @@
 <li>TCVN 4513:1988 / 4474:1987 – Cấp nước, thoát nước bên trong</li></ul>
 </div></div>
 
-<div class="note"><b>Kéo 1 ngón</b>: xoay · <b>2 ngón</b>: phóng to. Ranh vàng: đất sử dụng (phần đã cấp theo GCN + phần chưa cấp ~1.000m² dò theo ảnh vệ tinh), vạch đỏ: ranh GCN phía sau. <b>Điện nước</b>: đỏ chiếu sáng/ổ cắm · cam bếp · tím giặt-WC · vàng bơm · xanh nước cấp · xám thoát · nâu ra hầm.</div>
+<div class="note"><b>Kéo 1 ngón</b>: xoay · <b>2 ngón</b>: phóng to. Ranh vàng: đất sử dụng (phần đã cấp theo GCN + phần chưa cấp ~1.200m² dò theo ảnh vệ tinh), vạch đỏ: ranh GCN phía sau. <b>Điện nước</b>: đỏ chiếu sáng/ổ cắm · cam bếp · tím giặt-WC · vàng bơm · xanh nước cấp · xám thoát · nâu ra hầm.</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script>
@@ -153,16 +153,16 @@ function label(t,a,b,z,parent){const cv=document.createElement('canvas'),x=cv.ge
   const s=new THREE.Sprite(new THREE.SpriteMaterial({map:tx,depthTest:false}));s.scale.set(w/cv.height*0.9,0.9,1);
   s.position.set(a,z,-b);s.renderOrder=10;(parent||site).add(s);labels.push(s);}
 
-// ---- RANH: phan da cap theo GCN thua 320 to 51 + phan chua cap noi dai toi bo song (~1.000m2, do theo anh ve tinh) ----
-const G2=[0,0],G1=[53.45,0],G4=[53.84,44.91],G3=[10.0,40.43],E4=[54.0,66.0],E3=[16.1,65.2],EXT=[G3,G4,[54.0,66.0],[50.4,65.8],[37,70.6],[25.1,69.6],[16.1,65.2]];
+// ---- RANH: phan da cap theo GCN thua 320 to 51 + phan chua cap noi dai toi bo song (~1.200m2, do theo anh ve tinh) ----
+const G2=[0,0],G1=[53.45,0],G4=[53.84,44.91],G3=[10.0,40.43],E4=[54.0,66.0],E3=[16.1,65.2],EXT=[G3,G4,[54.1,69.0],[48.4,72.9],[38.2,74.1],[28.6,73.9],[20.7,72.3],[17.3,70.0]];
 box(-40,0,-0.2,140,125,0.1,C.dat);
 box(-40,-7,-0.2,140,7,0.7,C.lo);
 (function(){const LL=Math.hypot(E4[0]-E3[0],E4[1]-E3[1]),u=[(E4[0]-E3[0])/LL,(E4[1]-E3[1])/LL],n=[-u[1],u[0]];
  const A=[E3[0]-60*u[0]+2*n[0],E3[1]-60*u[1]+2*n[1]],B=[E4[0]+60*u[0]+2*n[0],E4[1]+60*u[1]+2*n[1]];
  polyFlat([A,B,[B[0]+45*n[0],B[1]+45*n[1]],[A[0]+45*n[0],A[1]+45*n[1]]],-0.6,C.song,0.85);})();
-line([G2,G1,G4,[54.0,66.0],[50.4,65.8],[37,70.6],[25.1,69.6],[16.1,65.2],G3,G2],0.05,C.vang,0.3);
+line([G2,G1,G4,[54.1,69.0],[48.4,72.9],[38.2,74.1],[28.6,73.9],[20.7,72.3],[17.3,70.0],G3,G2],0.05,C.vang,0.3);
 line([G3,G4],0.06,C.do,0.25);
-polyFlat([[23,0.8],[52.6,0.8],[53.4,65.0],[37,69.6],[25.1,68.6],[16.0,64.0],[12.5,46],[8.0,32],[6.7,26],[23,26]],-0.03,C.ao,0.9);
+polyFlat([[23,0.8],[52.6,0.8],[53.4,65.5],[48,68.5],[38,70],[28.5,69.8],[20.5,68.3],[15.8,64.5],[12.5,46],[8.0,32],[6.7,26],[23,26]],-0.03,C.ao,0.9);
 polyFlat(EXT,0.02,0xd9a441,0.3);
 function fill(pts,c){const s=new THREE.Shape();pts.forEach((p,i)=>i?s.lineTo(p[0],p[1]):s.moveTo(p[0],p[1]));
  const g=new THREE.ExtrudeGeometry(s,{depth:0.45,bevelEnabled:false});g.rotateX(-Math.PI/2);
@@ -335,7 +335,7 @@ for(let t=0.08;t<0.95;t+=0.12){tree(E3[0]+(E4[0]-E3[0])*t,E3[1]+(E4[1]-E3[1])*t+
 label('Đường nhựa',30,-3.5,1.5);
 label('53,45m (giáp đường)',30,0.4,2.6);label('41,65m',3.2,20,2.4);label('44,07m – ranh GCN phía sau',32,42.7,2.0);label('44,91m',54.6,22,2.6);label('Mốc 1',53.45,0,2.0);label('Mốc 2',0,0,2.6);label('Mốc 3',10,40.4,2.6);label('Mốc 4',53.84,44.9,2.6);
 label('Phần đã cấp GCN: thửa 320 tờ 51 – 2.064,2m²',32,30,2.2);
-label('Phần chưa cấp ~1.000m² (theo ảnh vệ tinh, tới bờ sông – cần đo)',35,57,2.2);
+label('Phần chưa cấp ~1.200m² (theo ảnh vệ tinh, tới bờ sông – cần đo)',35,57,2.2);
 label('Cổng chính – cổng sắt cũ',10.2,-0.2,3.0);label('Cổng phụ ra lối sau',5.3,-0.2,2.6);
 label('Lối đi ra sau: rộng 7,5m → 4,3m (đá mi)',4.6,12,1.4);
 label('Sân ô tô 6 × 7m',10.9,4,2.4);
