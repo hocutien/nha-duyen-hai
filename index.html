@@ -138,20 +138,37 @@
 <li>Neo xà gồ vào cột bằng dây thép Ø4 hoặc bulông, theo hướng dẫn nhà an toàn chống bão của Bộ Xây dựng.</li>
 <li>Bồn nước trên chân cao 2,5m phải neo chân bồn xuống móng.</li>
 <li>Hàng phi lao và cây cao phía sông dùng để chắn gió.</li></ul>
-<h3>7. An toàn cháy</h3>
+<h3>7. An toàn cháy – làm ngay ở đợt 1</h3>
+<p>Thiết bị rẻ nhưng bố trí sau thì phải đục và đi dây lại, nên làm luôn ở đợt 1.</p>
+<table><tr><th>Vị trí</th><th>Bố trí</th></tr>
+<tr><td>Bếp</td><td>Đầu báo <b>nhiệt</b> (không dùng báo khói vì nấu ăn hay báo nhầm), chăn chữa cháy treo cạnh cửa, bình 4kg ở cửa bếp, báo rò gas đặt sát sàn, tấm chắn nhiệt inox, bếp nấu cách cột gỗ ≥0,3m</td></tr>
+<tr><td>Phòng ngủ, hành lang, phòng khách</td><td>3 đầu báo khói độc lập. Bình 4kg thứ hai ở phòng khách cạnh cửa chính</td></tr>
+<tr><td>Khu tắm–giặt</td><td>Máy sấy: <b>làm sạch lưới lọc xơ vải sau mỗi mẻ</b>. Xơ vải tích tụ là nguyên nhân cháy máy sấy hay gặp</td></tr>
+<tr><td>Sạc xe điện</td><td>Sạc ngoài trời dưới mái hiên nhà tạm, ổ trên mạch có chống giật RCBO, cách cửa ≥1m. Không sạc xe trong phòng hay ở lối thoát</td></tr>
+<tr><td>Lối thoát</td><td>4 cửa ra ngoài: cửa chính nhà, cửa sau hành lang, cửa trước và cửa sau nhà tạm. Song cửa sổ phòng ngủ chừa 1 ô mở được bằng khoá, chìa treo cạnh cửa sổ</td></tr>
+<tr><td>Điện</td><td>Dây đúng tiết diện, mỗi thiết bị tải lớn một mạch riêng, không dùng ổ cắm kéo dài cho máy sấy hay bếp. Tủ điện có chống sét lan truyền</td></tr>
+<tr><td>Đợt 2</td><td>Đầu báo khói và cảm biến rò nước loại Zigbee: báo về điện thoại qua Home Assistant khi đi vắng</td></tr></table>
+<p>Nhà 1 tầng ở riêng lẻ không bắt buộc thẩm duyệt phòng cháy chữa cháy theo QCVN 06:2022/BXD (sửa đổi 1:2023). Các mục trên là mức tối thiểu nên có.</p>
+<h3>8. Mạng – đi dây cùng lúc với điện (đợt 1)</h3>
+<p>Kéo đủ dây CAT6 ngay từ đầu, đi nổi trong ống chung tuyến với dây điện nhưng là ống riêng. Camera và switch PoE mua sau, chỉ việc gắn vào.</p>
+<table><tr><th>Tuyến</th><th>Cáp</th><th>Dài ~</th></tr>
+<tr><td>Cột điện → trụ cổng → tủ mạng (phòng kho)</td><td>Cáp quang nhà mạng kéo vào, đặt ONT trong tủ</td><td>nhà mạng kéo</td></tr>
+<tr><td>Tủ → AP1 Xiaomi BE6500 trên trần hành lang (phủ phòng khách + phòng ngủ)</td><td>CAT6</td><td>4m</td></tr>
+<tr><td>Tủ → AP2 Xiaomi BE6500 trên trần bếp nhà tạm (nối dây về tủ)</td><td>CAT6</td><td>12m</td></tr>
+<tr><td>Tủ → ổ mạng TV phòng khách</td><td>CAT6</td><td>9m</td></tr>
+<tr><td>Tủ → ổ mạng phòng ngủ (bàn làm việc)</td><td>CAT6</td><td>3m</td></tr>
+<tr><td>Tủ → camera cổng / cửa sau / lối đi + sân xe</td><td>CAT6 ngoài trời, kéo sẵn</td><td>20 + 5 + 16m</td></tr>
+<tr><td>Tủ → ống chờ lên mái (camera, AP ngoài trời khi làm sân thượng)</td><td>Ống trống có dây mồi</td><td>4m</td></tr>
+<tr><th>Tổng CAT6</th><th></th><th>~75m</th></tr></table>
 <ul>
-<li>Nhà 1 tầng ở riêng lẻ không thuộc diện phải thẩm duyệt phòng cháy chữa cháy theo QCVN 06:2022/BXD (sửa đổi 1:2023). Vẫn nên trang bị tối thiểu:
-<ul><li>2 bình chữa cháy 4kg: 1 ở cửa bếp, 1 ở phòng khách.</li>
-<li>Chăn chữa cháy ở bếp.</li>
-<li>Đầu báo nhiệt ở bếp; báo khói độc lập ở phòng ngủ, hành lang, phòng khách.</li>
-<li>Báo rò gas.</li></ul></li>
-<li>Nhà tạm có cột gỗ và vách tôn nên giữ vùng bếp nấu cách cột gỗ ≥0,3m, có tấm chắn nhiệt inox sau bếp.</li></ul>
-<h3>8. Mạng và camera</h3>
-<ul>
-<li>Tủ mạng và UPS đặt ở phòng kho.</li>
-<li>Bộ Xiaomi BE6500 thứ nhất đặt ở nhà chính.</li>
-<li>Bộ thứ hai đặt ở trần khu bếp, kéo <b>dây CAT6 về tủ mạng</b> (kết nối có dây, sóng ổn định hơn kết nối không dây).</li>
-<li>Đợt 2: 3 camera PoE ở cổng, cửa sau và lối đi/sân xe, cấp điện qua dây mạng nên không cần ổ cắm ngoài trời.</li></ul>
+<li><b>Tủ mạng</b> đặt ở phòng kho, chỗ khô, cao hơn sàn ≥0,6m.
+<ul><li>Bên trong: ONT, MikroTik hEX, Lenovo M720q (Proxmox + Home Assistant + AdGuard), NAS, UPS Prolink 1200. Đợt 2 thêm switch PoE.</li>
+<li>Cấp điện: mạch C10 riêng.</li></ul></li>
+<li><b>Mất điện:</b> UPS giữ cho tủ mạng và wifi chạy được một lúc, đủ để báo tin và gọi điện.</li>
+<li><b>Chuẩn bị cho nhà thông minh:</b>
+<ul><li>Mọi hộp công tắc đều dùng loại sâu và <b>kéo sẵn dây trung tính (N)</b>, để sau lắp công tắc Zigbee không phải đi dây lại.</li>
+<li>Đặt Zigbee dongle trên M720q, ở giữa nhà cho sóng phủ đều.</li></ul></li>
+<li>Bấm đầu mạng xong thì đo thông mạch từng tuyến, dán nhãn hai đầu dây.</li></ul>
 <h3>9. Máy lạnh</h3>
 <p>Dùng <b>1 máy 1,5HP có sẵn, lắp ở phòng ngủ</b> vì ban đêm là lúc dùng nhiều nhất. Máy 1,5HP cho phòng ~9,5m² hơi dư nhưng lạnh nhanh; nếu là máy loại thường (không inverter) thì để 26–27°C cho đỡ tắt bật liên tục. Dàn nóng đặt ở hông phải trên chân đế 40cm, có mái che. Kéo sẵn dây mạch C8 để sau này lắp thêm máy ở phòng khách nếu cần.</p>
 <h3>10. Đồ cũ hay mới</h3>
@@ -180,6 +197,7 @@
 <tr><td></td><td>Đo cách điện, thay ổ/công tắc, giữ dây cũ chiếu sáng + ổ cắm</td><td>Dây cũ</td><td>1,5–3</td></tr>
 <tr><td></td><td>Đèn LED, quạt</td><td>Cũ được</td><td>1,5–2,5</td></tr>
 <tr><td></td><td>Nhân công điện</td><td></td><td>3–5</td></tr>
+<tr><td></td><td>Mạng: CAT6 ~75m + ống + ổ mạng, kéo sẵn cả đường camera và ống chờ lên mái</td><td>Mới</td><td>1,5–2,5</td></tr>
 <tr><td>Nước</td><td>Bơm giếng 1HP</td><td>Cũ được</td><td>1–2,5</td></tr>
 <tr><td></td><td>Bồn inox 1.000L + chân sắt 2,5m</td><td>Cũ được</td><td>3–5,5</td></tr>
 <tr><td></td><td>Ống PPR/uPVC + phụ kiện cấp, thoát</td><td>Mới</td><td>3–5</td></tr>
@@ -187,26 +205,27 @@
 <tr><td></td><td>Xét nghiệm nước giếng (lọc tính sau theo kết quả)</td><td>Mới</td><td>0,5–1</td></tr>
 <tr><td></td><td>Nhân công nước</td><td></td><td>2–4</td></tr>
 <tr><td>Máy lạnh</td><td>Tháo lắp, di dời máy lạnh 1,5HP có sẵn + ống đồng + châm gas</td><td>Có sẵn</td><td>1–1,5</td></tr>
-<tr><td>An toàn</td><td>2 bình chữa cháy 4kg, chăn chữa cháy, 3 báo khói/nhiệt, báo rò gas</td><td>Mới</td><td>1,5–2,5</td></tr>
+<tr><td>An toàn cháy</td><td>2 bình chữa cháy 4kg, chăn chữa cháy, 4 đầu báo khói/nhiệt, báo rò gas, ổ sạc xe điện ngoài trời</td><td>Mới</td><td>2–3</td></tr>
 <tr><td>Sân, rào</td><td>Rào mặt tiền + cây giống (kẽm gai quanh đất làm đợt 2)</td><td>Mới</td><td>2–4</td></tr>
 <tr><td></td><td>Lắp lại cổng sắt cũ + trụ</td><td>Cũ</td><td>1–2</td></tr>
-<tr><th colspan=3>Cộng</th><th>79,1–128,5</th></tr>
-<tr><th colspan=3>Dự phòng 10%</th><th>7,9–12,9</th></tr>
-<tr><th colspan=3>Tổng đợt 1 (vào ở)</th><th>87–141,4</th></tr></table>
-<p>Chi tiêu hợp lý ở mức khoảng 100–110tr. Phần không nên bớt là WC + bể tự hoại, điện, nước.</p>
+<tr><th colspan=3>Cộng</th><th>81,1–131,5</th></tr>
+<tr><th colspan=3>Dự phòng 10%</th><th>8,1–13,2</th></tr>
+<tr><th colspan=3>Tổng đợt 1 (vào ở)</th><th>89,2–144,7</th></tr></table>
+<p>Chi tiêu hợp lý ở mức khoảng 100–110tr. Phần không nên bớt: WC + bể tự hoại, điện + mạng, nước, an toàn cháy.</p>
 <p><b>Đợt 2 – làm dần sau khi đã ở</b></p>
 <table><tr><th>Hạng mục</th><th>Cũ/mới</th><th>Triệu</th></tr>
 <tr><td>Sơn lại phòng ở + mặt tiền (tự sơn)</td><td>Mới</td><td>2–4</td></tr>
 <tr><td>Đục cửa sau hành lang + ô văng</td><td>Cửa sắt cũ</td><td>3–5</td></tr>
 <tr><td>Kệ V lỗ phòng kho + đá mi sân xe</td><td>Cũ/mới</td><td>2–4</td></tr>
 <tr><td>Cột lọc nước (nếu xét nghiệm có phèn)</td><td>Mới</td><td>1,5–3</td></tr>
-<tr><td>3 camera PoE + switch PoE (Xiaomi BE6500 đã có)</td><td>Mới</td><td>2,5–4</td></tr>
+<tr><td>3 camera PoE + switch PoE (dây đã kéo sẵn ở đợt 1)</td><td>Mới</td><td>2,5–4</td></tr>
+<tr><td>Cảm biến Zigbee: khói, rò nước, cửa (báo về điện thoại qua Home Assistant)</td><td>Mới</td><td>1–2</td></tr>
 <tr><td>Bồn nước mưa 2.000L + máng</td><td>Mới</td><td>2,5–3,5</td></tr>
 <tr><td>Máy rửa xe áp lực</td><td>Mới</td><td>1,5–2,5</td></tr>
 <tr><td>Bơm tăng áp tự động</td><td>Mới</td><td>1–1,5</td></tr>
 <tr><td>Kẽm gai quanh đất + đá mi lối đi</td><td>Mới</td><td>5–9</td></tr>
 <tr><td>San lấp ao, đắp sân bằng mặt lộ, nâng nền +0,45m</td><td></td><td>50–80</td></tr>
-<tr><th>Cộng phần thiết bị (chưa tính san lấp)</th><th></th><th>21–36,5</th></tr></table>
+<tr><th>Cộng phần thiết bị (chưa tính san lấp)</th><th></th><th>22–38,5</th></tr></table>
 <p><b>Phương án ban công trên cao (bấm nút PA A / PA B để xem)</b></p>
 <table><tr><th>Phương án</th><th>Nội dung</th><th>Triệu</th></tr>
 <tr><td>A – Sân thượng mái nhà chính</td><td>Chống thấm mái ~60m², lan can sắt + tre ~40m, chòi 4×4 mái tôn giả ngói + sàn ván, cầu thang sắt ngoài trời 4,6m. <b>Phải kiểm tra sàn mái chịu tải trước</b></td><td>32–53</td></tr>
@@ -528,7 +547,19 @@ pipe([[17.2,14.45,2.05],[17.2,14.45,3.25],[14.85,14.0,3.25],[14.05,13.0,2.6],[11
 pipe([[14.05,13.0,2.6],[14.05,8.0,2.6],[12.05,-0.1,2.4]],NET,0.012);mbox(11.95,-0.25,2.35,0.2,0.12,0.12,0xeeeeee);
 pipe([[14.85,14.0,3.25],[14.85,18.2,3.0]],NET,0.012);mbox(14.75,18.25,2.75,0.2,0.12,0.12,0xeeeeee);
 pipe([[8.3,8.1,2.15],[8.0,7.8,2.45]],NET,0.012);mbox(7.85,7.6,2.4,0.2,0.12,0.12,0xeeeeee);
-label('AP2: Xiaomi BE6500 (dây CAT6)',10.9,11.9,2.9,mep);label('Camera PoE cổng',12.0,-0.3,2.9,mep);label('Camera cửa sau',14.8,18.3,3.3,mep);label('Camera lối đi + sân xe',7.9,7.6,2.9,mep);
+label('AP2: Xiaomi BE6500 (dây CAT6)',10.9,11.9,2.9,mep);
+const FIB=0xff7043;pipe([[13.0,-6.1,6.3],[12.3,-0.15,2.5],[14.25,2.6,3.05],[14.85,10.0,3.25],[17.2,14.45,3.25]],FIB,0.012);label('Cáp quang nhà mạng → ONT trong tủ mạng',13.4,1.5,3.3,mep);
+pipe([[14.85,12.5,3.25],[14.85,12.5,3.28]],NET,0.012);(function(){const m=new THREE.Mesh(new THREE.CylinderGeometry(0.16,0.16,0.05,16),mat(0xfafafa));m.position.set(14.85,3.24,-12.5);mep.add(m);})();label('AP1: Xiaomi BE6500 trần hành lang (phủ khách + ngủ)',14.85,12.5,3.6,mep);
+pipe([[17.2,14.45,3.25],[17.7,9.0,3.25],[17.7,7.2,3.25],[17.7,7.2,0.45]],NET,0.012);mbox(17.66,7.1,0.4,0.06,0.12,0.12,0xffffff);label('Ổ mạng TV phòng khách',17.6,7.2,0.9,mep);
+pipe([[17.2,14.45,3.25],[17.7,13.6,3.25],[17.7,13.6,0.45]],NET,0.012);mbox(17.66,13.5,0.4,0.06,0.12,0.12,0xffffff);label('Ổ mạng phòng ngủ (bàn làm việc)',17.6,13.6,0.9,mep);
+pipe([[17.2,14.45,3.25],[17.5,14.45,4.65]],0x9e9e9e,0.03);label('Ống chờ lên mái (camera/AP ngoài trời sau này)',17.5,14.45,5.0,mep);
+label('Tủ mạng: ONT + MikroTik hEX + M720q + NAS + UPS Prolink 1200 (+ switch PoE đợt 2)',17.2,14.45,1.4,mep);
+label('Hộp công tắc sâu, có dây N (để sau lắp công tắc Zigbee)',14.3,6.2,1.5,mep);
+// PCCC bo sung
+cyl(14.55,6.0,0,0.08,0.5,0xc62828);label('Bình chữa cháy 4kg phòng khách',14.6,6.0,0.8,mep);
+mbox(13.3,7.35,1.1,0.12,0.06,0.18,0x263238);label('Chỗ sạc xe điện: ngoài trời có mái, RCBO, cách cửa ≥1m',13.3,7.2,1.6,mep);
+label('Song cửa sổ phòng ngủ có 1 ô mở bằng khoá (thoát hiểm)',17.8,11.6,1.9,mep);
+mbox(11.6,17.7,0.0,0.1,0.06,0.03,0x29b6f6);label('Cảm biến rò nước dưới máy giặt (đợt 2)',11.7,17.6,0.25,mep);label('Camera PoE cổng',12.0,-0.3,2.9,mep);label('Camera cửa sau',14.8,18.3,3.3,mep);label('Camera lối đi + sân xe',7.9,7.6,2.9,mep);
 // bao chay / bao ro gas
 [[10.6,12.5,2.95],[16.6,12.0,3.27],[14.8,15.0,3.27],[16.0,7.0,3.27]].forEach(p=>{const m=new THREE.Mesh(new THREE.CylinderGeometry(0.07,0.07,0.04,12),mat(0xffffff));m.position.set(p[0],p[2],-p[1]);mep.add(m);});
 mbox(8.1,13.55,0.25,0.06,0.1,0.1,0xffeb3b);
@@ -649,8 +680,9 @@ function go(k){const v=views[k];camera.position.copy(v[0]);controls.target.copy(
 let roofOn=true;function setRoof(on){roofOn=on;roofs.forEach(r=>r.visible=on);document.getElementById('mai').textContent=on?'Ẩn mái':'Hiện mái';}
 document.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>go(b.dataset.v));
 document.getElementById('mai').onclick=()=>setRoof(!roofOn);
-let lblOn=true;document.getElementById('nhan').onclick=e=>{lblOn=!lblOn;labels.forEach(l=>l.visible=lblOn);e.target.textContent=lblOn?'Ẩn chữ':'Hiện chữ';};
-document.getElementById('dn').onclick=e=>{mep.visible=!mep.visible;e.target.classList.toggle('on',mep.visible);};
+let lblOn=true;function syncLbl(){labels.forEach(l=>{const own=l.parent===site;l.visible=lblOn&&!(own&&mep.visible);});}
+document.getElementById('nhan').onclick=e=>{lblOn=!lblOn;syncLbl();e.target.textContent=lblOn?'Ẩn chữ':'Hiện chữ';};
+document.getElementById('dn').onclick=e=>{mep.visible=!mep.visible;e.target.classList.toggle('on',mep.visible);syncLbl();};
 document.getElementById('pa').onclick=e=>{optA.visible=!optA.visible;e.target.classList.toggle('on',optA.visible);if(optA.visible){camera.position.copy(S(30,-6,16));controls.target.copy(S(15,11,4));controls.update();}};
 document.getElementById('pb').onclick=e=>{optB.visible=!optB.visible;e.target.classList.toggle('on',optB.visible);if(optB.visible){camera.position.copy(S(2,-10,9));controls.target.copy(S(11,8,4));controls.update();}};
 let treeOn=true;document.getElementById('cay').onclick=e=>{treeOn=!treeOn;treeObjs.forEach(o=>o.visible=treeOn);e.target.textContent=treeOn?'Ẩn cây':'Hiện cây';};
