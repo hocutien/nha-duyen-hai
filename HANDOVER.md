@@ -4,7 +4,7 @@ Tài liệu này giúp người khác hoặc một tài khoản Claude khác ti�
 
 ## 1. Mục tiêu
 - Chủ nhà là Tiến. Hai vợ chồng dọn vào ở sớm; **vợ đang mang thai**.
-- Ngân sách đợt 1 khoảng **100–115tr**. Dự toán hiện tại 122–199tr (đã cộng 10% dự phòng), **vượt mốc 100tr**: chủ nhà cần chọn hạng mục để dời sang đợt 2. Đợt 2: 21–36tr thiết bị + san lấp ao 50–80tr + tường mặt tiền 70–110tr.
+- Ngân sách đợt 1 khoảng **100–115tr**. Dự toán chi tiết (bóc tách 152 dòng, đơn giá Thông báo 561/TB-SXD Vĩnh Long PL II KV10 + PL IV, kỳ 01–15/9/2026) = **~200tr** gồm VAT + 10% dự phòng, **gấp đôi mốc 100tr**: chủ nhà cần chọn hạng mục để dời sang đợt 2. Nguồn số liệu: `tools/dutoan.py` → `tools/out/dutoan.json`; bảng tính Sheets https://claude.ai/artifact/B8LPuDUHWvyX6ktExjic4L. Đã bỏ ổ sạc xe điện và mua bình nóng lạnh (chủ nhà không có xe điện, đã có bình). Bơm tăng áp đưa lên đợt 1. Đợt 2: 20–34tr thiết bị + san lấp ao 50–80tr + tường mặt tiền 70–110tr.
 - Mọi việc làm ở đợt 1 phải dùng tiếp được khi nâng cấp về sau, không phải đập bỏ.
 - Thửa 320, tờ 51 (số cũ 595), 2.064,2m² theo GCN, cạnh 53,45 / 44,91 / 44,07 / 41,65m. Phía sau giáp sông lớn; phần đất sát sông (~1.200m²) chưa được cấp GCN.
 

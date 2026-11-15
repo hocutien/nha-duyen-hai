@@ -31,7 +31,7 @@ Mở bằng trình duyệt điện thoại hoặc máy tính, không cần cài 
 - Hướng nắng: chiều chiếu mạnh vào tường sau (Tây Nam) tháng 9–3, tường hông phải (Tây Bắc) tháng 5–8 → cây che phía sau và bên phải.
 
 ## Dự toán vào ở (ước tính)
-Đợt 1 (gói dọn vào ở: WC, điện, nước, mạng, an toàn cháy, nhà xe khung gỗ, cây, nâng nền mí lộ + rào tạm, chống nóng nhà phụ + 2 quạt trần, cửa sau nhà chính) ~122–199tr – vượt mốc 100tr, xem cách giảm trong Thuyết minh mục 11. Đợt 2 ~21–36tr thiết bị, chưa tính san lấp ao (50–80tr) và tường mặt tiền kín (70–110tr).
+Đợt 1 (gói dọn vào ở: WC, điện, nước, mạng, an toàn cháy, nhà xe khung gỗ, cây, nâng nền mí lộ + rào tạm, chống nóng nhà phụ + 2 quạt trần, cửa sau nhà chính) ~200tr (dự toán chi tiết, gồm VAT + dự phòng; bảng tính: https://claude.ai/artifact/B8LPuDUHWvyX6ktExjic4L) – gấp đôi mốc 100tr. Đợt 2 ~20–34tr thiết bị, chưa tính san lấp ao (50–80tr) và tường mặt tiền kín (70–110tr).
 
 Đợt sau: san lấp ao, đắp sân bằng mặt lộ và nâng nền nhà +0,45m (~50–80tr).
 
