@@ -25,11 +25,13 @@ Mở bằng trình duyệt điện thoại hoặc máy tính, không cần cài 
 - Nhà xe ở góc trái 5,7×7,1m, vào bằng cổng phụ: khung gỗ bắt bulông trên đế bê tông rời, tôn cũ, nền đá mi (tháo dời được). Sedan lùi vào, 4 xe máy so le sát rào. Sân trước bếp để trống làm lối đi và chỗ xe khách; bể tự hoại nằm dưới sân này.
 - Cây kiểu vườn rừng nhiệt đới 3 tầng: mù u ×3 + còng ×2 (trồng trên ụ đất, cách nhà ≥6,5–12m), cau ×4, chuối ×4 bụi, môn ráy dưới tán; phi lao chắn gió bờ sông; bông giấy rào mặt tiền. Không trồng trúc đào (độc).
 - Hình 3D vẽ chân thật: nắng và bóng đổ theo hướng thật (~15h), vân tôn, gỗ, gạch, đá mi, cỏ, nhựa đường; cổng song sắt; la bàn góc phải. Chữ chú thích ẩn sẵn, bấm **Hiện chữ** để xem.
+- Mặt tiền kín đáo: đợt 1 nâng nền mí lộ + rào kẽm gai tạm, không trồng cây; đợt sau xây tường kín 2,6m có 5 ô bông gió, cổng gỗ kín (nút **Tương lai: tường, nền**).
+- Nhà phụ: vách kín lên mái + dải bông gió + cách nhiệt dưới tôn + 2 quạt trần. Cửa sau nhà chính làm ngay đợt 1, có mái hắt 1,2m.
 - Lối đi ra sau bên trái, cổng chính + cổng phụ (cửa sắt cũ), rào kẽm gai + cây gai/bông giấy.
 - Hướng nắng: chiều chiếu mạnh vào tường sau (Tây Nam) tháng 9–3, tường hông phải (Tây Bắc) tháng 5–8 → cây che phía sau và bên phải.
 
 ## Dự toán vào ở (ước tính)
-Đợt 1 (gói dọn vào ở, tận dụng tủ lạnh, máy giặt, máy sấy, máy lạnh 1,5HP có sẵn; gồm cả an toàn cháy, mạng và các hạng mục cho thai phụ) ~100–162tr (đã gồm nhà xe khung gỗ và cây xanh; giá vật tư và nhân công lấy theo thị trường 10–11/2026), nếu cần giữ ~115tr thì dời mái nhà xe sang đợt 2. Đợt 2 ~24–41tr. Nút **PA A: sân thượng** (mái nhà chính, ~32–53tr) và **PA B: lầu gỗ** (trên nhà tạm, ~50–80tr) để so sánh hai cách làm ban công trên cao. Chi tiết trong nút **📋 Thuyết minh**.
+Đợt 1 (gói dọn vào ở: WC, điện, nước, mạng, an toàn cháy, nhà xe khung gỗ, cây, nâng nền mí lộ + rào tạm, chống nóng nhà phụ + 2 quạt trần, cửa sau nhà chính) ~122–199tr – vượt mốc 100tr, xem cách giảm trong Thuyết minh mục 11. Đợt 2 ~21–36tr thiết bị, chưa tính san lấp ao (50–80tr) và tường mặt tiền kín (70–110tr).
 
 Đợt sau: san lấp ao, đắp sân bằng mặt lộ và nâng nền nhà +0,45m (~50–80tr).
 

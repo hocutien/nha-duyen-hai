@@ -27,16 +27,19 @@ P1=[
 ("F","","Bình nóng lạnh 30L","Mới",2,3),
 ("F","","Xét nghiệm nước giếng (lọc tính sau theo kết quả)","Mới",0.5,1),
 ("F","","Nhân công nước","",2,4),
+("B","Nhà phụ chống nóng","Bịt vách lên sát mái (tôn cũ) + dải gạch bông gió 0,5m (vách trước, vách trái) + tấm cách nhiệt túi khí dưới mái ~70m²","Tôn cũ + mới",4,7),
+("B","","2 quạt trần (KDK 3 cánh ~1,8tr/cái, META) + dây, hộp số, công tắc","Mới",3.8,4.8),
+("A","Cửa sau","Đục cửa sau hành lang nhà chính + mái hắt 1,2m; mái hắt 1,2m cửa sau nhà phụ (tôn cũ)","Cửa sắt cũ",3.5,6),
 ("I","Máy lạnh","Tháo lắp, di dời máy lạnh 1,5HP có sẵn + ống đồng + châm gas","Có sẵn",1,1.5),
 ("G","Thai phụ","Lưới chống muỗi cửa sổ + cửa đi, đèn cảm biến đêm, gạch chống trơn + tay vịn WC","Mới",2,3.5),
 ("G","An toàn cháy","2 bình chữa cháy 4kg, chăn chữa cháy, 4 đầu báo khói/nhiệt, báo rò gas, ổ sạc xe điện ngoài trời","Mới",2,3),
-("H","Sân, rào","Rào mặt tiền ~40m: trụ + kẽm gai (kẽm gai quanh đất làm đợt 2)","Mới",1.5,3),
+("H","Mặt tiền","Nâng nền dải mí lộ đoạn trước nhà ~11×2,8m + san nền sân, ~25–40m³ cát san lấp (230–330 nghìn/m³) + lu lèn","Mới",7,14),
+("H","","Rào kẽm gai tạm trụ BT ~45m × 1,7m (~60 nghìn/m², bảng đơn giá bồi thường) – tới khi xây tường kín","Mới",4,5.5),
 ("H","Nhà xe","Nhà xe góc trái 5,7×7,1m: 4 cột gỗ trên đế BT rời, đà/xà gồ gỗ bắt bulông, ke chống bão, tôn cũ, máng xối, đá mi nền; thợ mộc 2 người × 2–3 ngày","Gỗ + tôn cũ",4,7),
-("H","Cây xanh","Vườn rừng nhiệt đới: 3 mù u + 2 còng (cây nhỡ 2–3m, trồng trên ụ đất) + 4 cau + 4 bụi chuối + môn ráy + 10 phi lao bờ sông + ~70 gốc bông giấy rào + đất, phân","Mới",3,6),
+("H","Cây xanh","Vườn rừng nhiệt đới: 3 mù u + 2 còng (cây nhỡ 2–3m, trồng trên ụ đất) + 3 cau + 4 bụi chuối + môn ráy + 10 phi lao bờ sông + đất, phân","Mới",2.5,5),
 ("H","","Lắp lại cổng sắt cũ + trụ","Cũ",1,2),
 ]
 P2=[("Sơn lại phòng ở + mặt tiền (tự sơn)","Mới",2,4),
-("Đục cửa sau hành lang + ô văng","Cửa sắt cũ",3,5),
 ("Kệ V lỗ phòng kho + đá mi sân xe","Cũ/mới",2,4),
 ("Cột lọc nước (nếu xét nghiệm có phèn)","Mới",1.5,3),
 ("3 camera PoE + switch PoE (dây đã kéo sẵn ở đợt 1)","Mới",2.5,4),
@@ -45,13 +48,14 @@ P2=[("Sơn lại phòng ở + mặt tiền (tự sơn)","Mới",2,4),
 ("Máy rửa xe áp lực","Mới",1.5,2.5),
 ("Bơm tăng áp tự động","Mới",1,1.5),
 ("Kẽm gai quanh đất + đá mi lối đi","Mới",5,9),
-("San lấp ao, đắp sân bằng mặt lộ, nâng nền +0,45m","",50,80)]
+("San lấp ao, đắp sân bằng mặt lộ, nâng nền +0,45m (gồm dải mí lộ đoạn qua ao)","",50,80),
+("Móng + đà kiềng + tường mặt tiền kín cao 2,6m ~45m, trát 2 mặt, 5 ô bông gió, cổng gỗ kín (~500 nghìn/m² tường ≤2m +170 nghìn/m² phần trên 2m, bảng đơn giá bồi thường cũ – cần báo giá)","",70,110)]
 lo=sum(r[4] for r in P1);hi=sum(r[5] for r in P1)
 f=lambda x:(f"{x:.1f}".rstrip('0').rstrip('.')).replace('.',',')
 rows=""
 for r in P1: rows+=f"<tr><td>{r[1]}</td><td>{r[2]}</td><td>{r[3]}</td><td>{f(r[4])}–{f(r[5])}</td></tr>\n"
 rows+=f"<tr><th colspan=3>Cộng</th><th>{f(lo)}–{f(hi)}</th></tr>\n<tr><th colspan=3>Dự phòng 10%</th><th>{f(lo*0.1)}–{f(hi*0.1)}</th></tr>\n<tr><th colspan=3>Tổng đợt 1 (vào ở)</th><th>{f(lo*1.1)}–{f(hi*1.1)}</th></tr>"
 r2="".join(f"<tr><td>{a}</td><td>{b}</td><td>{f(c)}–{f(d)}</td></tr>\n" for a,b,c,d in P2)
-lo2=sum(x[2] for x in P2[:-1]);hi2=sum(x[3] for x in P2[:-1])
+lo2=sum(x[2] for x in P2[:-2]);hi2=sum(x[3] for x in P2[:-2])
 print(lo,hi,lo*1.1,hi*1.1,lo2,hi2)
-open(OUT+'/b1.html','w').write(rows);open(OUT+'/b2.html','w').write(r2+f"<tr><th>Cộng phần thiết bị (chưa tính san lấp)</th><th></th><th>{f(lo2)}–{f(hi2)}</th></tr>")
+open(OUT+'/b1.html','w').write(rows);open(OUT+'/b2.html','w').write(r2+f"<tr><th>Cộng phần thiết bị (chưa tính san lấp và tường mặt tiền)</th><th></th><th>{f(lo2)}–{f(hi2)}</th></tr>")

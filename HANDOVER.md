@@ -4,7 +4,7 @@ Tài liệu này giúp người khác hoặc một tài khoản Claude khác ti�
 
 ## 1. Mục tiêu
 - Chủ nhà là Tiến. Hai vợ chồng dọn vào ở sớm; **vợ đang mang thai**.
-- Ngân sách đợt 1 khoảng **100–115tr**. Dự toán hiện tại 100–162tr, đã cộng 10% dự phòng và đã gồm nhà xe và cây xanh. Đợt 2 khoảng 24–41tr. Giá lấy theo thị trường (xem Thuyết minh mục 11).
+- Ngân sách đợt 1 khoảng **100–115tr**. Dự toán hiện tại 122–199tr (đã cộng 10% dự phòng), **vượt mốc 100tr**: chủ nhà cần chọn hạng mục để dời sang đợt 2. Đợt 2: 21–36tr thiết bị + san lấp ao 50–80tr + tường mặt tiền 70–110tr.
 - Mọi việc làm ở đợt 1 phải dùng tiếp được khi nâng cấp về sau, không phải đập bỏ.
 - Thửa 320, tờ 51 (số cũ 595), 2.064,2m² theo GCN, cạnh 53,45 / 44,91 / 44,07 / 41,65m. Phía sau giáp sông lớn; phần đất sát sông (~1.200m²) chưa được cấp GCN.
 
@@ -56,6 +56,9 @@ Tài liệu này giúp người khác hoặc một tài khoản Claude khác ti�
   - Tầng giữa: cau ×4 hông phải, chuối ×4 bụi phía sau cạnh hố ga nước xám.
   - Tầng dưới: môn, ráy.
   - Thêm phi lao bờ sông, bông giấy rào mặt tiền. Không trồng trúc đào.
+- **Mặt tiền (chốt 15/11):** không trồng cây giáp lộ (chủ nhà không thích rào bông giấy). Đợt 1: nâng nền mí lộ + rào kẽm gai tạm. Đợt sau: tường xây kín 2,6m, 5 ô bông gió, cổng gỗ kín (nhóm `fut`).
+- **Nhà phụ:** vách kín lên mái, dải bông gió 0,5m (vách trước + trái; vách sau Tây Nam kín), cách nhiệt dưới tôn, 2 quạt trần (bàn ăn; khu bếp gần cửa, cách bếp gas >3m).
+- **Gió:** mặt tiền hướng Đông Bắc, phía sông Tây Nam. Gió mùa mưa Tây Nam thổi qua vườn sau vào nhà; cửa sau nhà chính làm đợt 1, mái hắt 1,2m cho cả 2 cửa sau. Không làm giàn leo.
 - **Thẩm mỹ:** tường trắng ngà, gỗ nâu (nhà xe, lam gỗ mặt bếp), mái xám đậm, cổng song sắt nâu.
 - **Ban công trên cao:** hai phương án, chưa chọn.
   - PA A: sân thượng trên mái nhà chính, 32–53tr.
