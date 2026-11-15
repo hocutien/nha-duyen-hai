@@ -2,6 +2,8 @@
 
 Trang xem 3D: https://hocutien.github.io/nha-duyen-hai/
 
+Google Earth 3D: trong bản đồ thực địa bấm **🌍 Google Earth 3D** hoặc **🚶 Street View**; tải `phuong-an-3d.kml` rồi nhập vào Google Earth (Dự án → Mở → Nhập tệp KML) để thấy khối nhà và PA A/B dựng 3D trên ảnh thật.
+
 Bản đồ thực địa (chồng lên ảnh vệ tinh, GPS, tải KML cho Google Earth): https://hocutien.github.io/nha-duyen-hai/map.html
 
 Mở bằng trình duyệt điện thoại hoặc máy tính, không cần cài app.

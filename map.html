@@ -28,6 +28,11 @@
     <button id="kml" class="light">Tải KML (Google Earth)</button>
     <a class="btn" href="index.html">Xem 3D</a>
   </div>
+  <div class="row">
+    <button id="gearth">🌍 Google Earth 3D</button>
+    <button id="gsv" class="light">🚶 Street View trước nhà</button>
+    <a class="btn" href="phuong-an-3d.kml" download style="background:#e5e7eb;color:#111">Tải KML 3D (nhà + PA A/B)</a>
+  </div>
   <div id="cal" hidden>
     <div class="row">Dời: <button class="light" data-m="0,1">↑ Bắc</button><button class="light" data-m="0,-1">↓ Nam</button><button class="light" data-m="-1,0">← Tây</button><button class="light" data-m="1,0">→ Đông</button>
       bước <select id="step"><option>0.2</option><option selected>0.5</option><option>1</option><option>2</option></select> m</div>
@@ -98,6 +103,8 @@ document.getElementById('gps').onclick=()=>{
     else{me.setLatLng(ll);acc.setLatLng(ll).setRadius(p.coords.accuracy);}
     document.getElementById('info').textContent=`Vị trí của anh: sai số ~${Math.round(p.coords.accuracy)}m. Đứng tại mốc ranh để so với bản vẽ.`;},
    e=>alertBox('Không lấy được vị trí: '+e.message),{enableHighAccuracy:true});};
+document.getElementById('gearth').onclick=()=>{const c=toLL([27,30]);window.open(`https://earth.google.com/web/@${c[0].toFixed(7)},${c[1].toFixed(7)},3a,140d,35y,${Math.round((BRG0+cal.rot-90+360)%360)}h,65t,0r`,'_blank');};
+document.getElementById('gsv').onclick=()=>{const c=toLL([12,-3.6]);window.open(`https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${c[0].toFixed(7)},${c[1].toFixed(7)}&heading=${Math.round((BRG0+cal.rot-90+360)%360)}&pitch=5`,'_blank');};
 function alertBox(t){document.getElementById('info').textContent=t;}
 document.getElementById('kml').onclick=()=>{
   const ring=pts=>pts.concat([pts[0]]).map(p=>{const ll=toLL(p);return ll[1].toFixed(8)+','+ll[0].toFixed(8)+',0';}).join(' ');
