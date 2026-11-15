@@ -186,12 +186,12 @@
 <h3>9. Máy lạnh</h3>
 <p>Dùng <b>1 máy 1,5HP có sẵn, lắp ở phòng ngủ</b> vì ban đêm là lúc dùng nhiều nhất. Máy 1,5HP cho phòng ~9,5m² hơi dư nhưng lạnh nhanh; nếu là máy loại thường (không inverter) thì để 26–27°C cho đỡ tắt bật liên tục. Dàn nóng đặt ở hông phải trên chân đế 40cm, có mái che. Kéo sẵn dây mạch C8 để sau này lắp thêm máy ở phòng khách nếu cần.</p>
 <h3>9b. Cây xanh – kiểu vườn rừng nhiệt đới</h3>
-<p>Trồng thành 3 tầng như rừng: tầng trên là cây to tán rộng che nắng, tầng giữa là cau và chuối, tầng dưới là môn, ráy giữ ẩm cho đất. Tất cả đều chịu được nắng nóng và đất ven sông; cây to được trồng cách xa nhà và bể tự hoại.</p>
+<p>Trồng thành 3 tầng như rừng: tầng trên là cây to tán rộng che nắng, tầng giữa là cau và chà là rừng, tầng dưới là dương xỉ, môn, ráy giữ ẩm cho đất. Tất cả đều chịu được nắng nóng và đất ven sông; cây to được trồng cách xa nhà và bể tự hoại.</p>
 <table><tr><th>Tầng / vị trí</th><th>Loại cây</th><th>Số lượng</th><th>Ghi chú</th></tr>
 <tr><td>Tầng trên – bên phải nhà (nắng chiều Tây Bắc)</td><td>Mù u ×2, còng (me tây) ×1</td><td>3</td><td>Mù u là cây bản địa ven biển, chịu mặn và bão, tán dày. Còng tán dù rất rộng, cho bóng nhiều. Trồng cách tường ≥6,5m; riêng còng cách nhà ≥12m.</td></tr>
 <tr><td>Tầng trên – phía sau (nắng chiều Tây Nam)</td><td>Mù u ×1, còng ×1</td><td>2</td><td>Đặt xa dây phơi về phía Tây Nam: buổi sáng dây phơi vẫn có nắng, buổi chiều được che.</td></tr>
-<tr><td>Tầng giữa</td><td>Cau ×4 dọc hông phải; chuối ×4 bụi phía sau</td><td>8</td><td>Cau rễ nhỏ nên trồng gần nhà được. Chuối đặt cạnh hố ga nước xám để hút bớt nước, có trái và lá dùng.</td></tr>
-<tr><td>Tầng dưới</td><td>Môn, ráy dưới tán cây</td><td>~6 bụi</td><td>Che đất, giữ ẩm, ít cỏ dại.</td></tr>
+<tr><td>Tầng giữa</td><td>Cau ×3 dọc hông phải; chà là rừng ×4 bụi phía sau và gần bờ sông</td><td>7</td><td>Chà là rừng (Phoenix paludosa) là cây bản địa rừng ngập mặn, chịu nước lợ và khô hạn, mọc thành bụi cao ~5m. Cuống lá có gai dài: trồng cách lối đi, dây phơi và chỗ trẻ chơi ≥1,5m.</td></tr>
+<tr><td>Tầng dưới</td><td>Dương xỉ ×10 bụi dưới tán mù u, còng; môn, ráy ×6</td><td>16</td><td>Dương xỉ cần bóng râm và ẩm, đặt dưới tán cây to. Che đất, giữ ẩm, ít cỏ dại.</td></tr>
 <tr><td>Bờ sông</td><td>Phi lao ~10, thêm 1 còng, 1 mù u</td><td>12</td><td>Phi lao chắn gió, cây to giữ bờ.</td></tr>
 <tr><td>Mặt tiền giáp lộ</td><td>Không trồng cây</td><td>–</td><td>Đợt 1 làm rào kẽm gai tạm, sau xây tường kín.</td></tr>
 </table>
@@ -530,6 +530,9 @@ function chuoi(a,b,s){s=s||1;for(let k=0;k<3;k++){const ox=Math.cos(k*2.1)*0.45*
  const g=new THREE.Group();g.position.set(a+ox,h,-(b+oy));for(let j=0;j<7;j++)leaf(g,1.8*s,0.5*s,0.75+0.15*Math.sin(j),0.5+0.2*Math.cos(j*2),j%3?0x6fa83a:0x5f9632,j*0.9+k);addT(g);}}
 function cau(a,b,s){s=s||1;const h=7*s;limb(a,b,-0.1,a,b,h,0.11*s,0.08*s,0x9a9384);limb(a,b,h,a,b,h+0.9*s,0.09*s,0.07*s,0x6e8f3c);
  const g=new THREE.Group();g.position.set(a,h+0.9*s,-b);for(let j=0;j<8;j++)leaf(g,2.4*s,0.32*s,0.55,0.75,j%2?0x4f8a35:0x5c9a3b,j*0.785+a);addT(g);}
+function chaLa(a,b,s){s=s||1;for(let k=0;k<5;k++){const t=k*1.31+a,r=k?0.45*s:0,ox=Math.cos(t)*r,oy=Math.sin(t)*r,h=(0.8+((k*37)%5)*0.45)*s,lx=Math.cos(t)*0.35*k*0.15,ly=Math.sin(t)*0.35*k*0.15;limb(a+ox,b+oy,-0.1,a+ox+lx,b+oy+ly,h,0.12*s,0.09*s,0x6b5a45);
+ const g=new THREE.Group();g.position.set(a+ox+lx,h,-(b+oy+ly));for(let j=0;j<9;j++)leaf(g,2.0*s,0.22*s,0.45+0.15*Math.sin(j),0.8,j%2?0x4f6f47:0x5d7d50,j*0.7+k);addT(g);}}
+function duongXi(a,b,s){s=s||1;const g=new THREE.Group();g.position.set(a,0.05,-b);for(let j=0;j<12;j++)leaf(g,0.95*s,0.22*s,0.9+0.2*Math.sin(j*1.7),0.3,j%2?0x6fae45:0x5f9c3a,j*0.523+a);addT(g);}
 function ray(a,b,s){s=s||1;for(let j=0;j<5;j++){const t=j*1.256+a,lm=mat(j%2?0x3f7f33:0x4a8f3a);lm.flatShading=true;const m=new THREE.Mesh(new THREE.CircleGeometry(0.42*s,7),lm);
  m.position.set(a+Math.cos(t)*0.35*s,0.55*s+0.1*(j%2),-(b+Math.sin(t)*0.35*s));m.rotation.set(-1.1,0,0);m.rotation.y=-t+1.57;m.rotation.order='YXZ';m.rotation.x=-0.9;addT(m);
  limb(a,b,-0.1,a+Math.cos(t)*0.3*s,b+Math.sin(t)*0.3*s,0.5*s,0.02,0.015,0x5f8f3a);}}
@@ -900,7 +903,8 @@ label('Mái hắt 1,2m che cửa sau (gió mưa Tây Nam)',15.5,19.4,3.3);
 planter(18.55,3.4);planter(18.55,4.8);
 mound(24.5,4);bigTree(24.5,4,0.9,'muu');mound(25,12.5);bigTree(25,12.5,0.95,'muu');mound(33,8,1.8);bigTree(33,8,1,'cong');
 bigTree(17.5,26.5,0.9,'muu');mound(25,25.5,1.8);bigTree(25,25.5,0.85,'cong');
-chuoi(5.8,21.6);chuoi(14.8,24.3,0.9);chuoi(21.3,20.8);chuoi(7.4,25.6,0.9);
+chaLa(5.8,21.6);chaLa(14.8,24.6,0.9);chaLa(21.3,20.8);chaLa(7.4,25.8,0.9);
+[[23.2,3.0],[26,5.2],[24,11.3],[26.3,13.6],[16.3,27.6],[18.8,25.6],[23.7,24.3],[26.2,26.8],[31.6,9.3],[34.2,7]].forEach((p,i)=>duongXi(p[0],p[1],0.9+0.15*(i%3)));
 cau(20.4,6.8);cau(20.2,12.4);cau(20.5,16.8);
 [[23.3,5.2],[24,13.8],[16.2,25.2],[19,27.6],[6.6,22.6],[21.8,22]].forEach(p=>ray(p[0],p[1]));
 bigTree(30,69.5,1.1,'cong');bigTree(45,67.5,1,'muu');
@@ -930,7 +934,7 @@ label('Đắp đợt 1: hông nhà + sân sau (~200m²)',15,23,1.6);
 label('Đắp đợt 2: dọc đường (~265m²)',32,7,1.6);
 
 label('Rào cây gai + kẽm gai',54.6,50,2.6);
-label('Mù u ×2 + còng trên ụ đất – che nắng chiều Tây Bắc',27,8,11);label('Vườn rừng nhiệt đới: mù u, còng, chuối, cau, môn ráy',19,25,9);
+label('Mù u ×2 + còng trên ụ đất – che nắng chiều Tây Bắc',27,8,11);label('Vườn rừng nhiệt đới: mù u, còng, chà là rừng, cau, dương xỉ, môn ráy',19,25,9);
 label('Phi lao chắn gió (~10 cây)',36,73,8.5);
 label('Hiên tiếp khách',16.5,3.6,2.0);
 label('Ao',36,55,1.5);
