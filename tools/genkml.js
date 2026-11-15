@@ -1,0 +1,16 @@
+const ROOT=require('path').join(__dirname,'..');
+const fs=require('fs');const s=fs.readFileSync(ROOT+'/map.html','utf8');
+const js=s.match(/<script>([\s\S]*?)<\/script>/)[1];
+const pre=js.split('const map=L.map')[0].replace(/try\{const v=JSON[^\n]*\n/,'');
+const localStorage={getItem:()=>null};
+eval(pre.replace(/^const /gm,'var ').replace(/^let /gm,'var '));
+const sq=(p,r)=>[[p[0]-r,p[1]-r],[p[0]+r,p[1]-r],[p[0]+r,p[1]+r],[p[0]-r,p[1]+r]];
+const ring=pts=>pts.concat([pts[0]]).map(p=>{const ll=toLL(p);return ll[1].toFixed(8)+','+ll[0].toFixed(8)+',0'}).join(' ');
+const col=(h,a)=>{const x=h.replace('#','');return Math.round(a*255).toString(16).padStart(2,'0')+x.slice(4,6)+x.slice(2,4)+x.slice(0,2)};
+const esc=t=>t.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+let k='<?xml version="1.0" encoding="UTF-8"?>\n<kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>Nhà Duyên Hải – phương án</name>\n';
+const items=F.map(f=>[f[0],f[1],f[2],Math.max(f[3],0.3),f[4]]).concat(P.filter(p=>!p[0].startsWith('Mốc')).map(p=>[p[0],sq(p[1],0.6),p[2],0.9,'']));
+items.forEach((f,i)=>{k+=`<Style id="s${i}"><LineStyle><color>${col(f[2],1)}</color><width>2</width></LineStyle><PolyStyle><color>${col(f[2],f[3])}</color></PolyStyle></Style>\n`;
+ k+=`<Placemark><name>${esc(f[0])}</name><description>${esc(f[4]||'')}</description><styleUrl>#s${i}</styleUrl><Polygon><outerBoundaryIs><LinearRing><coordinates>${ring(f[1])}</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>\n`});
+P.forEach(p=>{const ll=toLL(p[1]);k+=`<Placemark><name>${esc(p[0])}</name><Point><coordinates>${ll[1].toFixed(8)},${ll[0].toFixed(8)},0</coordinates></Point></Placemark>\n`});
+k+='</Document></kml>\n';fs.writeFileSync(ROOT+'/phuong-an.kml',k);console.log('items',items.length);
