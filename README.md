@@ -2,9 +2,12 @@
 
 Trang xem 3D: https://hocutien.github.io/nha-duyen-hai/
 
+Bản đồ thực địa (chồng lên ảnh vệ tinh, GPS, tải KML cho Google Earth): https://hocutien.github.io/nha-duyen-hai/map.html
+
 Mở bằng trình duyệt điện thoại hoặc máy tính, không cần cài app.
 - Kéo 1 ngón: xoay · 2 ngón: phóng to / di chuyển
 - Nút **Bên trong**: cắt ngang 2m để xem nội thất
+- Nút **Điện nước**, **Ẩn cây**, **📋 Thuyết minh** (phụ tải điện, mạch, cấp thoát nước, máy lạnh, tiêu chuẩn tham khảo)
 - Nút **Cao độ tương lai**: xem sân bằng mặt lộ (+0,5m) và nền nhà nâng +0,45m
 
 ## Hiện trạng

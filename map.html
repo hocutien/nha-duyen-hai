@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Nhà Duyên Hải – bản đồ thực địa</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+  html,body{margin:0;height:100%;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+  #map{position:fixed;inset:0}
+  .panel{position:fixed;left:8px;right:8px;bottom:8px;z-index:1000;background:rgba(255,255,255,.95);border-radius:12px;padding:8px 10px;font-size:12.5px;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+  .row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:3px 0}
+  .panel button,.panel a.btn{border:0;border-radius:16px;padding:7px 11px;font-size:12.5px;background:#1f2937;color:#fff;text-decoration:none}
+  .panel button.light{background:#e5e7eb;color:#111}
+  .muted{color:#555}
+  .leaflet-tooltip.lb{background:rgba(255,255,255,.9);border:0;box-shadow:none;font-weight:600;font-size:11px;padding:1px 4px}
+  #cal[hidden]{display:none}
+</style>
+</head>
+<body>
+<div id="map"></div>
+<div class="panel">
+  <div class="row">
+    <button id="gps">📍 Vị trí của tôi</button>
+    <button id="fit" class="light">Toàn thửa</button>
+    <button id="calbtn" class="light">Căn chỉnh</button>
+    <button id="kml" class="light">Tải KML (Google Earth)</button>
+    <a class="btn" href="index.html">Xem 3D</a>
+  </div>
+  <div id="cal" hidden>
+    <div class="row">Dời: <button class="light" data-m="0,1">↑ Bắc</button><button class="light" data-m="0,-1">↓ Nam</button><button class="light" data-m="-1,0">← Tây</button><button class="light" data-m="1,0">→ Đông</button>
+      bước <select id="step"><option>0.2</option><option selected>0.5</option><option>1</option><option>2</option></select> m</div>
+    <div class="row">Xoay: <button class="light" data-r="-0.5">⟲ 0,5°</button><button class="light" data-r="0.5">⟳ 0,5°</button><button class="light" id="reset">Đặt lại</button>
+      <span class="muted" id="calinfo"></span></div>
+  </div>
+  <div class="muted" id="info">Vàng: phần đã cấp GCN (thửa 320 tờ 51) · cam nhạt: phần chưa cấp (ước tính) · đỏ: nhà kiên cố · nâu: nền nhà tạm. Gốc định vị: mốc 2 (góc ranh giáp đường bên trái) lấy từ file KML vẽ tay – dùng <b>Căn chỉnh</b> cho khớp ảnh vệ tinh.</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+// Gốc: mốc 2 (góc ranh giáp đường, phía Đông Nam) – lấy từ KML "tạ hoàng sơn 2 công"
+const ORIGIN={lat:9.620423899037629,lon:106.4987583016721};
+const BRG0=319.67; // hướng cạnh giáp đường từ mốc 2 -> mốc 1 (theo sơ đồ GCN)
+const MLAT=110600, MLON=111320*Math.cos(ORIGIN.lat*Math.PI/180);
+let cal={dx:0,dy:0,rot:0};
+try{const v=JSON.parse(localStorage.getItem('ndh_cal')||'null');if(v)cal=v;}catch(e){}
+function toLL(p){ // p=[a,b]: a doc duong (mốc2->mốc1), b vao trong dat
+  const r=(BRG0+cal.rot)*Math.PI/180, ri=r-Math.PI/2;
+  const e=p[0]*Math.sin(r)+p[1]*Math.sin(ri)+cal.dx, n=p[0]*Math.cos(r)+p[1]*Math.cos(ri)+cal.dy;
+  return [ORIGIN.lat+n/MLAT, ORIGIN.lon+e/MLON];}
+const rect=(a0,b0,a1,b1)=>[[a0,b0],[a1,b0],[a1,b1],[a0,b1]];
+const F=[ // [ten, toa do (a,b) m, mau, do day nen, ghi chu]
+ ['Phần đã cấp GCN – thửa 320 tờ 51 – 2.064,2m²',[[0,0],[53.45,0],[53.84,44.91],[10.0,40.43]],'#fbbf24',0.08,'Cạnh 53,45 – 41,65 – 44,07 – 44,91m'],
+ ['Phần chưa cấp (ước tính ~2.000m²)',[[10.0,40.43],[53.84,44.91],[54.32,100.08],[23.25,93.99]],'#f59e0b',0.15,'Cần đo thực tế tới bờ sông'],
+ ['Ao',[[23,0.8],[52.6,0.8],[53.9,96.5],[24.5,91.5],[12.5,46],[8.0,32],[6.7,26],[23,26]],'#2b6c8f',0.25,''],
+ ['Đắp đợt 1: hông nhà + sân sau (~200m²)',[[18.2,0.2],[23,0.2],[23,25.5],[6.6,25.5],[5.2,20.0],[18.2,20.0]],'#84cc16',0.35,'Cần xin phép trước khi san lấp'],
+ ['Đắp đợt 2: dọc đường (~265m²)',[[23,0.2],[42,0.2],[42,14],[23,14]],'#a3e635',0.3,'Cần xin phép trước khi san lấp'],
+ ['Lối đi ra sau (đá mi)',[[0.4,0.0],[7.95,0.0],[7.95,19.6],[5.3,20.6]],'#d6d3d1',0.55,'Rộng 7,5m → 4,3m'],
+ ['Sân ô tô 6×7m',rect(8.2,0.5,14,7.8),'#9ca3af',0.6,''],
+ ['Nền nhà tạm: bếp, giặt sấy, WC',rect(8,7.8,14,18.5),'#a16207',0.6,'Mái + vách tôn cũ, cột gỗ cũ'],
+ ['WC (vị trí cũ, nền +0,5m)',rect(8.05,15.3,11.45,18.45),'#0ea5e9',0.7,''],
+ ['Nhà kiên cố 4×16m (cả hiên)',rect(14,2.5,18,18.5),'#dc2626',0.6,'Khách – hành lang – phòng ngủ – kho'],
+];
+const P=[ // diem
+ ['Giếng khoan có sẵn + bơm',[12.0,19.75],'#1d4ed8'],['Hầm cầu cũ (cách giếng ~2,3m!)',[9.8,19.4],'#7c2d12'],
+ ['Bồn nước 1.000L',[15.9,20.05],'#64748b'],['Bồn nước mưa 2.000L',[6.6,8.9],'#0f766e'],
+ ['Cổng chính',[10.2,0],'#111'],['Cổng phụ',[5.4,0],'#111'],['Tủ điện',[14.3,7.2],'#b91c1c'],
+ ['Mốc 1',[53.45,0],'#000'],['Mốc 2',[0,0],'#000'],['Mốc 3',[10,40.43],'#000'],['Mốc 4',[53.84,44.91],'#000'],
+];
+const map=L.map('map',{zoomControl:true,maxZoom:22}).setView([ORIGIN.lat,ORIGIN.lon],19);
+const sat=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxNativeZoom:18,maxZoom:22,attribution:'Ảnh vệ tinh © Esri'}).addTo(map);
+const osm=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxNativeZoom:19,maxZoom:22,attribution:'© OpenStreetMap'});
+const layer=L.layerGroup().addTo(map);
+L.control.layers({'Vệ tinh':sat,'Bản đồ đường':osm},{'Phương án':layer},{position:'topright'}).addTo(map);
+function draw(){layer.clearLayers();
+  F.forEach(f=>{const g=L.polygon(f[1].map(toLL),{color:f[2],weight:2,fillColor:f[2],fillOpacity:f[3]}).addTo(layer);
+    g.bindPopup('<b>'+f[0]+'</b>'+(f[4]?'<br>'+f[4]:''));});
+  P.forEach(p=>{L.circleMarker(toLL(p[1]),{radius:5,color:'#fff',weight:1.5,fillColor:p[2],fillOpacity:1}).addTo(layer)
+    .bindTooltip(p[0],{permanent:p[0].startsWith('Mốc')||p[0].startsWith('Giếng'),direction:'right',className:'lb'});});
+  document.getElementById('calinfo').textContent=`(Đông ${cal.dx.toFixed(1)}m, Bắc ${cal.dy.toFixed(1)}m, xoay ${cal.rot.toFixed(1)}°)`;}
+draw();
+const fitAll=()=>map.fitBounds(L.latLngBounds(F[0][1].concat(F[1][1]).map(toLL)),{padding:[20,20]});fitAll();
+function save(){try{localStorage.setItem('ndh_cal',JSON.stringify(cal));}catch(e){}}
+document.querySelectorAll('[data-m]').forEach(b=>b.onclick=()=>{const st=+document.getElementById('step').value;const [x,y]=b.dataset.m.split(',').map(Number);cal.dx+=x*st;cal.dy+=y*st;save();draw();});
+document.querySelectorAll('[data-r]').forEach(b=>b.onclick=()=>{cal.rot+=+b.dataset.r;save();draw();});
+document.getElementById('reset').onclick=()=>{cal={dx:0,dy:0,rot:0};save();draw();};
+document.getElementById('calbtn').onclick=()=>{const c=document.getElementById('cal');c.hidden=!c.hidden;};
+document.getElementById('fit').onclick=fitAll;
+let me=null,acc=null;
+document.getElementById('gps').onclick=()=>{
+  if(!navigator.geolocation){alertBox('Thiết bị không hỗ trợ định vị.');return;}
+  navigator.geolocation.watchPosition(p=>{const ll=[p.coords.latitude,p.coords.longitude];
+    if(!me){me=L.circleMarker(ll,{radius:7,color:'#fff',weight:2,fillColor:'#2563eb',fillOpacity:1}).addTo(map);acc=L.circle(ll,{radius:p.coords.accuracy,weight:1,fillOpacity:0.1}).addTo(map);map.setView(ll,20);}
+    else{me.setLatLng(ll);acc.setLatLng(ll).setRadius(p.coords.accuracy);}
+    document.getElementById('info').textContent=`Vị trí của anh: sai số ~${Math.round(p.coords.accuracy)}m. Đứng tại mốc ranh để so với bản vẽ.`;},
+   e=>alertBox('Không lấy được vị trí: '+e.message),{enableHighAccuracy:true});};
+function alertBox(t){document.getElementById('info').textContent=t;}
+document.getElementById('kml').onclick=()=>{
+  const ring=pts=>pts.concat([pts[0]]).map(p=>{const ll=toLL(p);return ll[1].toFixed(8)+','+ll[0].toFixed(8)+',0';}).join(' ');
+  const col=(h,a)=>{const x=h.replace('#','');return Math.round(a*255).toString(16).padStart(2,'0')+x.slice(4,6)+x.slice(2,4)+x.slice(0,2);};
+  let k='<?xml version="1.0" encoding="UTF-8"?>\n<kml xmlns="http://www.opengis.net/kml/2.2"><Document><name>Nhà Duyên Hải – phương án</name>';
+  F.forEach((f,i)=>{k+=`<Style id="s${i}"><LineStyle><color>${col(f[2],1)}</color><width>2</width></LineStyle><PolyStyle><color>${col(f[2],Math.max(f[3],0.3))}</color></PolyStyle></Style>`;
+    k+=`<Placemark><name>${f[0]}</name><description>${f[4]}</description><styleUrl>#s${i}</styleUrl><Polygon><outerBoundaryIs><LinearRing><coordinates>${ring(f[1])}</coordinates></LinearRing></outerBoundaryIs></Polygon></Placemark>`;});
+  P.forEach(p=>{const ll=toLL(p[1]);k+=`<Placemark><name>${p[0]}</name><Point><coordinates>${ll[1].toFixed(8)},${ll[0].toFixed(8)},0</coordinates></Point></Placemark>`;});
+  k+='</Document></kml>';
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([k],{type:'application/vnd.google-earth.kml+xml'}));a.download='nha-duyen-hai.kml';document.body.appendChild(a);a.click();a.remove();};
+</script>
+</body>
+</html>
