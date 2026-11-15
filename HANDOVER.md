@@ -4,7 +4,7 @@ Tài liệu này giúp người khác hoặc một tài khoản Claude khác ti�
 
 ## 1. Mục tiêu
 - Chủ nhà là Tiến. Hai vợ chồng dọn vào ở sớm; **vợ đang mang thai**.
-- Ngân sách đợt 1 khoảng **100–115tr**. Dự toán hiện tại 91–149tr, đã cộng 10% dự phòng. Đợt 2 khoảng 22–39tr.
+- Ngân sách đợt 1 khoảng **100–115tr**. Dự toán hiện tại 101–163tr, đã cộng 10% dự phòng và đã gồm nhà xe và cây xanh. Đợt 2 khoảng 24–41tr. Giá lấy theo thị trường (xem Thuyết minh mục 11).
 - Mọi việc làm ở đợt 1 phải dùng tiếp được khi nâng cấp về sau, không phải đập bỏ.
 - Thửa 320, tờ 51 (số cũ 595), 2.064,2m² theo GCN, cạnh 53,45 / 44,91 / 44,07 / 41,65m. Phía sau giáp sông lớn; phần đất sát sông (~1.200m²) chưa được cấp GCN.
 
@@ -46,6 +46,8 @@ Tài liệu này giúp người khác hoặc một tài khoản Claude khác ti�
   - cáp quang từ cột vào tủ mạng trong phòng kho, gồm ONT, MikroTik hEX, Lenovo M720q, NAS, UPS; switch PoE lắp ở đợt 2;
   - AP1 trên trần hành lang, AP2 trên trần bếp;
   - ~75m CAT6, có ống chờ cho 3 camera.
+- **Nhà xe:** sân 5,8×7,3m, mái tôn cũ, 4 cột ở 4 góc. Sedan ≤4,7×1,8m lùi vào, đầu xe ra cổng. 4 xe máy xếp so le bên phải, cách nhau 0,55m.
+- **Cây:** bàng Đài Loan ×3 bên phải, mù u ×4 phía sau, ~10 phi lao bờ sông, bông giấy rào mặt tiền. Không trồng trúc đào.
 - **Ban công trên cao:** hai phương án, chưa chọn.
   - PA A: sân thượng trên mái nhà chính, 32–53tr.
   - PA B: lầu gỗ kiểu Hà Giang trên nhà tạm, 50–80tr (bản đầy đủ 130–220tr).
@@ -89,6 +91,8 @@ python3 budget.py                 # khi sửa giá; dán out/b1.html, out/b2.htm
   - công tơ điện (≥80A?);
   - kiểm tra nước giếng (nitrat, asen, vi sinh).
 - [ ] Hỏi giá 2–3 thợ địa phương để thay giá ước tính trong `tools/budget.py`.
+- [ ] Tải Phụ lục II của Thông báo 573/TB-SXD (Sở Xây dựng Vĩnh Long, giá vật liệu khu vực Trà Vinh cũ) rồi thay giá vật liệu trong `tools/budget.py`.
+- [ ] Hỏi giá cây bàng Đài Loan, mù u, phi lao, bông giấy ở vựa Chợ Lách hoặc Trà Vinh.
 - [ ] Chọn PA A hay PA B, rồi nhờ kỹ sư kiểm tra kết cấu (dầm mái nhà chính, hoặc cột nhà tạm).
 - [ ] Danh sách kiểm tra in cho thợ: thử áp, đo cách điện, chụp ảnh đường ống trước khi che.
 - [ ] Đợt 2: kệ V lỗ phòng kho; đục cửa sau hành lang; sơn; san lấp ao; nâng nền +0,45m và sân +0,5m; switch PoE và camera; cảm biến rò nước.

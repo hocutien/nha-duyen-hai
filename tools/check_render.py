@@ -9,7 +9,7 @@ from playwright.sync_api import sync_playwright
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TOOLS = os.path.join(ROOT, 'tools'); OUT = os.path.join(TOOLS, 'out'); os.makedirs(OUT, exist_ok=True)
 CHROME = os.environ.get('CHROME', '/usr/bin/google-chrome')
-VIEWS = ['tong', 'trong', 'dn', 'song', 'pa', 'pb']   # id các nút trên thanh công cụ
+VIEWS = os.environ.get('VIEWS','tong,trong,dn,song,pa,pb').split(',')   # id các nút trên thanh công cụ
 
 html = open(os.path.join(ROOT, 'index.html'), encoding='utf-8').read()
 if os.path.isdir(os.path.join(TOOLS, 'node_modules', 'three')):
@@ -24,6 +24,8 @@ with sync_playwright() as p:
     pg.on('pageerror', lambda e: errs.append(str(e)))
     pg.on('console', lambda m: m.type == 'error' and errs.append(m.text))
     pg.goto('file://' + page); pg.wait_for_timeout(3000)
+    if os.environ.get('CAM'):
+        pg.evaluate('c=>{lblOn=false;syncLbl();setRoof(!'+('true' if os.environ.get('NOROOF') else 'false')+');const v=c.split(",").map(Number);camera.position.copy(S(v[0],v[1],v[2]));controls.target.copy(S(v[3],v[4],v[5]));controls.update();}', os.environ['CAM']); pg.wait_for_timeout(800); pg.screenshot(path=os.path.join(OUT,'cam.png'))
     for v in VIEWS:
         btn = pg.query_selector(f'#{v}') or pg.query_selector(f'[data-v="{v}"]')
         if not btn: errs.append('thiếu nút #' + v); continue
