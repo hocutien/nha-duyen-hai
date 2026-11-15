@@ -23,7 +23,7 @@ Mở bằng trình duyệt điện thoại hoặc máy tính, không cần cài 
 - Hướng nắng: chiều chiếu mạnh vào tường sau (Tây Nam) tháng 9–3, tường hông phải (Tây Bắc) tháng 5–8 → cây che phía sau và bên phải.
 
 ## Dự toán vào ở (ước tính)
-Đợt 1 (vào ở) ~95–157tr tùy mức giá; giữ ≤100tr nếu chọn giá thấp và tự làm phần đơn giản. Chi tiết trong nút **📋 Thuyết minh** (phụ tải, 11 mạch điện, nước, bể tự hoại, mái chống bão, an toàn cháy, mạng/camera, đồ cũ/mới, dự toán 2 đợt).
+Đợt 1 (gói dọn vào ở, tận dụng tủ lạnh, máy giặt, máy sấy, máy lạnh 1,5HP có sẵn) ~87–141tr, hợp lý ~100–110tr. Nút **PA A: sân thượng** (mái nhà chính, ~32–53tr) và **PA B: lầu gỗ** (trên nhà tạm, ~50–80tr) để so sánh hai cách làm ban công trên cao. Chi tiết trong nút **📋 Thuyết minh**.
 
 Đợt sau: san lấp ao, đắp sân bằng mặt lộ và nâng nền nhà +0,45m (~50–80tr).
 

@@ -39,6 +39,8 @@
   <button id="tl">Cao độ tương lai</button>
   <button id="dn">Điện nước</button>
   <button id="cay">Ẩn cây</button>
+  <button id="pa">PA A: sân thượng</button>
+  <button id="pb">PA B: lầu gỗ</button>
 </div>
 <button id="tm" class="tmbtn">📋 Thuyết minh</button>
 <a class="tmbtn" style="bottom:160px;text-decoration:none" href="https://hocutien.github.io/nha-duyen-hai/map.html">🗺 Bản đồ thực địa</a>
@@ -73,10 +75,10 @@
 <tr><td>Đèn LED, quạt, TV</td><td>0,5</td></tr><tr><td>Tủ mạng, server, camera, UPS</td><td>0,3</td></tr>
 <tr><td>Tủ lạnh</td><td>0,15</td></tr><tr><td><b>Bếp từ đôi</b></td><td><b>3,5</b></td></tr><tr><td>Nồi cơm, ấm, lò vi sóng</td><td>2,0</td></tr>
 <tr><td>Máy giặt</td><td>0,5</td></tr><tr><td>Máy sấy</td><td>2,5</td></tr>
-<tr><td>Bình nóng lạnh</td><td>2,5</td></tr><tr><td>Máy lạnh PN 9.000 + PK 12.000 BTU</td><td>1,9</td></tr>
+<tr><td>Bình nóng lạnh</td><td>2,5</td></tr><tr><td>Máy lạnh 1,5HP có sẵn</td><td>1,3</td></tr>
 <tr><td>Bơm giếng 1HP + bơm tăng áp</td><td>0,9</td></tr><tr><td>Máy rửa xe áp lực</td><td>1,8</td></tr>
 <tr><td>Chờ xưởng mộc (sau)</td><td>2,2</td></tr>
-<tr><th>Tổng lắp đặt</th><th>~18,8</th></tr><tr><th>Dùng đồng thời (hệ số ~0,55)</th><th>~10,3kW ≈ 47A</th></tr></table>
+<tr><th>Tổng lắp đặt</th><th>~18,2</th></tr><tr><th>Dùng đồng thời (hệ số ~0,55)</th><th>~10kW ≈ 45A</th></tr></table>
 <p>→ <b>CB tổng 2P 63A</b>, dây từ công tơ vào tủ <b>Cu 2×16mm²</b>, xin Điện lực công tơ 1 pha dòng tối đa <b>≥80A</b>.</p>
 <table><tr><th>Mạch</th><th>CB</th><th>Dây</th></tr>
 <tr><td>C1 Chiếu sáng (dây cũ, đo cách điện)</td><td>MCB 10A</td><td>1,5mm²</td></tr>
@@ -85,8 +87,8 @@
 <tr><td><b>C4 Bếp từ đôi (riêng)</b></td><td><b>RCBO 32A 30mA</b></td><td><b>4mm²</b></td></tr>
 <tr><td>C5 Giặt + sấy</td><td>RCBO 25A 30mA</td><td>4mm²</td></tr>
 <tr><td>C6 Bình nóng lạnh WC</td><td>RCBO 20A 30mA</td><td>2,5mm²</td></tr>
-<tr><td>C7 Máy lạnh phòng ngủ</td><td>MCB 16A</td><td>2,5mm²</td></tr>
-<tr><td>C8 Máy lạnh phòng khách</td><td>MCB 16A</td><td>2,5mm²</td></tr>
+<tr><td>C7 Máy lạnh phòng ngủ (1,5HP có sẵn)</td><td>MCB 16A</td><td>2,5mm²</td></tr>
+<tr><td>C8 Chờ máy lạnh thứ 2 (chỉ kéo dây sẵn)</td><td>MCB 16A</td><td>2,5mm²</td></tr>
 <tr><td>C9 Ngoài trời: bơm, rửa xe, đèn sân</td><td>RCBO 20A 30mA</td><td>4mm², ổ IP55</td></tr>
 <tr><td>C10 Tủ mạng, camera (qua UPS)</td><td>MCB 16A</td><td>2,5mm²</td></tr>
 <tr><td>C11 Chờ xưởng mộc</td><td>MCB 25A</td><td>4mm²</td></tr></table>
@@ -138,20 +140,15 @@
 <li>Bộ thứ hai đặt ở trần khu bếp, kéo <b>dây CAT6 về tủ mạng</b> (kết nối có dây, sóng ổn định hơn kết nối không dây).</li>
 <li>Đợt 2: 3 camera PoE ở cổng, cửa sau và lối đi/sân xe, cấp điện qua dây mạng nên không cần ổ cắm ngoài trời.</li></ul>
 <h3>9. Máy lạnh</h3>
-<table><tr><th>Phòng</th><th>Diện tích</th><th>Công suất</th></tr>
-<tr><td>Phòng ngủ</td><td>~9,5m²</td><td>9.000 BTU inverter</td></tr>
-<tr><td>Phòng khách</td><td>~15,5m², trần 3,3m</td><td>12.000 BTU inverter</td></tr></table>
-<p>Dàn nóng đặt ở hông phải trên chân đế 40cm, có mái che. Mua máy cũ phải kiểm tra dàn nóng có bị mục do muối biển không, gas còn đủ không, máy nén chạy êm không.</p>
+<p>Dùng <b>1 máy 1,5HP có sẵn, lắp ở phòng ngủ</b> vì ban đêm là lúc dùng nhiều nhất. Máy 1,5HP cho phòng ~9,5m² hơi dư nhưng lạnh nhanh; nếu là máy loại thường (không inverter) thì để 26–27°C cho đỡ tắt bật liên tục. Dàn nóng đặt ở hông phải trên chân đế 40cm, có mái che. Kéo sẵn dây mạch C8 để sau này lắp thêm máy ở phòng khách nếu cần.</p>
 <h3>10. Đồ cũ hay mới</h3>
 <table><tr><th>Mua cũ được</th><th>Bắt buộc mới</th></tr>
 <tr><td>Tủ lạnh, tủ/kệ bếp, bàn ghế, kệ V, hút mùi, bơm giếng, bồn inox, máy lạnh inverter (thợ kiểm tra), đèn, quạt, cửa sắt</td><td>CB/RCBO, dây cho mạch mới, dây + van gas, bếp từ (bo mạch hay hỏng), bình nóng lạnh, thiết bị WC, ống nước nóng, bể tự hoại</td></tr></table>
 <h3>11. Dự toán (triệu đồng, giá tham khảo – cần hỏi thợ địa phương)</h3>
-<p><b>Đợt 1 – đủ để vào ở</b></p>
+<p>Đồ đã có sẵn, không tính tiền: tủ lạnh, máy giặt, máy sấy, 1 máy lạnh 1,5HP (lắp ở phòng ngủ), cửa sắt cũ, tôn và gỗ của nhà tạm.</p>
+<p><b>Đợt 1 – gói dọn vào ở</b></p>
 <table><tr><th>Nhóm</th><th>Hạng mục</th><th>Cũ/mới</th><th>Triệu</th></tr>
 <tr><td>Nhà chính</td><td>Trát chống thấm chân tường cao 1,2m (phòng ở + hành lang)</td><td>Mới</td><td>5–8</td></tr>
-<tr><td></td><td>Sơn lại phòng ở + mặt tiền (tự sơn)</td><td>Mới</td><td>2–4</td></tr>
-<tr><td></td><td>Đục cửa sau, ô văng 80cm, ngạch + rãnh</td><td>Cửa sắt cũ</td><td>3–5</td></tr>
-<tr><td></td><td>Kệ sắt V lỗ phòng kho</td><td>Cũ</td><td>1–2</td></tr>
 <tr><td>Nền nhà tạm</td><td>Mua thêm xà gồ, vít, ke chống bão, úp nóc, máng xối</td><td>Khung gỗ + tôn cũ</td><td>6–10</td></tr>
 <tr><td></td><td>Vách tôn + cửa sắt lắp lại</td><td>Cũ</td><td>1–2</td></tr>
 <tr><td></td><td>Sửa, láng nền gạch cũ</td><td>Mới</td><td>3–5</td></tr>
@@ -174,28 +171,35 @@
 <tr><td></td><td>Bồn inox 1.000L + chân sắt 2,5m</td><td>Cũ được</td><td>3–5,5</td></tr>
 <tr><td></td><td>Ống PPR/uPVC + phụ kiện cấp, thoát</td><td>Mới</td><td>3–5</td></tr>
 <tr><td></td><td>Bình nóng lạnh 30L</td><td>Mới</td><td>2–3</td></tr>
-<tr><td></td><td>Xét nghiệm nước giếng + cột lọc thô</td><td>Mới</td><td>2–4</td></tr>
+<tr><td></td><td>Xét nghiệm nước giếng (lọc tính sau theo kết quả)</td><td>Mới</td><td>0,5–1</td></tr>
 <tr><td></td><td>Nhân công nước</td><td></td><td>2–4</td></tr>
+<tr><td>Máy lạnh</td><td>Tháo lắp, di dời máy lạnh 1,5HP có sẵn + ống đồng + châm gas</td><td>Có sẵn</td><td>1–1,5</td></tr>
 <tr><td>An toàn</td><td>2 bình chữa cháy 4kg, chăn chữa cháy, 3 báo khói/nhiệt, báo rò gas</td><td>Mới</td><td>1,5–2,5</td></tr>
 <tr><td>Sân, rào</td><td>Rào mặt tiền + cây giống (kẽm gai quanh đất làm đợt 2)</td><td>Mới</td><td>2–4</td></tr>
 <tr><td></td><td>Lắp lại cổng sắt cũ + trụ</td><td>Cũ</td><td>1–2</td></tr>
-<tr><td></td><td>Đá mi sân xe (lối đi làm đợt 2)</td><td>Mới</td><td>1–2</td></tr>
-<tr><th colspan=3>Cộng</th><th>86,6–143</th></tr>
-<tr><th colspan=3>Dự phòng 10%</th><th>8,7–14,3</th></tr>
-<tr><th colspan=3>Tổng đợt 1 (vào ở)</th><th>95,3–157,3</th></tr></table>
-<p>Muốn giữ ≤100tr thì chọn mức giá thấp ở hầu hết hạng mục: mua đồ cũ, tự sơn, tự láng nền, tự làm rào. So với bản trước, đợt 1 tăng thêm khoảng 15–20tr do có bể tự hoại mới, bếp từ, nâng cấp tủ điện, xét nghiệm nước và thiết bị an toàn cháy.</p>
-<p><b>Đợt 2 – nâng cấp dần</b></p>
+<tr><th colspan=3>Cộng</th><th>79,1–128,5</th></tr>
+<tr><th colspan=3>Dự phòng 10%</th><th>7,9–12,9</th></tr>
+<tr><th colspan=3>Tổng đợt 1 (vào ở)</th><th>87–141,4</th></tr></table>
+<p>Chi tiêu hợp lý ở mức khoảng 100–110tr. Phần không nên bớt là WC + bể tự hoại, điện, nước.</p>
+<p><b>Đợt 2 – làm dần sau khi đã ở</b></p>
 <table><tr><th>Hạng mục</th><th>Cũ/mới</th><th>Triệu</th></tr>
-<tr><td>Máy lạnh phòng ngủ 9.000 BTU inverter + lắp</td><td>Cũ được</td><td>4–6</td></tr>
-<tr><td>Máy lạnh phòng khách 12.000 BTU inverter + lắp</td><td>Cũ được</td><td>5–7</td></tr>
+<tr><td>Sơn lại phòng ở + mặt tiền (tự sơn)</td><td>Mới</td><td>2–4</td></tr>
+<tr><td>Đục cửa sau hành lang + ô văng</td><td>Cửa sắt cũ</td><td>3–5</td></tr>
+<tr><td>Kệ V lỗ phòng kho + đá mi sân xe</td><td>Cũ/mới</td><td>2–4</td></tr>
+<tr><td>Cột lọc nước (nếu xét nghiệm có phèn)</td><td>Mới</td><td>1,5–3</td></tr>
 <tr><td>3 camera PoE + switch PoE (Xiaomi BE6500 đã có)</td><td>Mới</td><td>2,5–4</td></tr>
 <tr><td>Bồn nước mưa 2.000L + máng</td><td>Mới</td><td>2,5–3,5</td></tr>
 <tr><td>Máy rửa xe áp lực</td><td>Mới</td><td>1,5–2,5</td></tr>
 <tr><td>Bơm tăng áp tự động</td><td>Mới</td><td>1–1,5</td></tr>
 <tr><td>Kẽm gai quanh đất + đá mi lối đi</td><td>Mới</td><td>5–9</td></tr>
-<tr><td>Tủ lạnh (nếu chưa có)</td><td>Cũ</td><td>2–3,5</td></tr>
 <tr><td>San lấp ao, đắp sân bằng mặt lộ, nâng nền +0,45m</td><td></td><td>50–80</td></tr>
-<tr><th>Cộng phần thiết bị (chưa tính san lấp)</th><th></th><th>23,5–37</th></tr></table>
+<tr><th>Cộng phần thiết bị (chưa tính san lấp)</th><th></th><th>21–36,5</th></tr></table>
+<p><b>Phương án ban công trên cao (bấm nút PA A / PA B để xem)</b></p>
+<table><tr><th>Phương án</th><th>Nội dung</th><th>Triệu</th></tr>
+<tr><td>A – Sân thượng mái nhà chính</td><td>Chống thấm mái ~60m², lan can sắt + tre ~40m, chòi 4×4 mái tôn giả ngói + sàn ván, cầu thang sắt ngoài trời 4,6m. <b>Phải kiểm tra sàn mái chịu tải trước</b></td><td>32–53</td></tr>
+<tr><td>B – Lầu gỗ trên nhà tạm</td><td>6 cột sắt hộp + móng mới, dầm + sàn ván 6×5,7m (cả ban công 1,5m), vách ván, cửa chữ Z, lan can tre, mái tôn giả ngói nâng ~7m, cầu thang ngoài</td><td>50–80</td></tr>
+<tr><td>B mở rộng cả nền 6×10,7m</td><td>Như B nhưng phủ toàn bộ nền nhà tạm</td><td>130–220</td></tr></table>
+<p>Em đề nghị làm A trước: rẻ hơn, nhìn được cả sông lẫn đường. B để dành, làm chung đợt nâng nền, nâng sân.</p>
 <h3>12. Kinh nghiệm thực tế từ người dùng Việt Nam</h3>
 <ul>
 <li><b>Bếp:</b>
@@ -435,10 +439,9 @@ cyl(12.0,19.75,-0.05,1.0,0.2,C.bt);cyl(12.0,19.75,0.15,0.1,0.45,0x455a64);
 box(2.2,3.9,0,1.5,2.4,0.14,C.bt);box(2.6,4.6,0.14,0.7,0.7,0.03,0x616161);box(2.6,5.5,0.14,0.7,0.7,0.03,0x616161);cyl(2.95,5.6,0.05,0.05,1.6,0x9e9e9e);
 
 // ---- MAY LANH (hien thuong truc) + TU MANG ----
-box(17.55,8.2,2.45,0.22,0.8,0.28,0xf5f5f5);box(18.05,8.15,0.4,0.3,0.8,0.55,0xb0bec5);box(18.0,8.1,0,0.4,0.9,0.4,C.bt);box(18.0,8.05,1.05,0.5,0.95,0.04,C.toncu);
 box(17.55,12.5,2.45,0.22,0.8,0.28,0xf5f5f5);box(18.05,12.45,0.4,0.3,0.8,0.55,0xb0bec5);box(18.0,12.4,0,0.4,0.9,0.4,C.bt);box(18.0,12.35,1.05,0.5,0.95,0.04,C.toncu);
 box(17.05,14.25,1.6,0.6,0.4,0.45,0x263238);
-label('Máy lạnh PK 12.000BTU',17.6,8.6,3.1);label('Máy lạnh PN 9.000BTU',17.6,12.9,3.1);label('Dàn nóng: chân đế 40cm + mái che',18.6,10.7,1.6);
+label('Máy lạnh 1,5HP có sẵn (phòng ngủ)',17.6,12.9,3.1);label('Dàn nóng: chân đế 40cm + mái che',18.6,10.7,1.6);
 
 // ---- DIEN NUOC (an/hien bang nut) ----
 const mep=new THREE.Group();site.add(mep);mep.visible=false;
@@ -497,8 +500,8 @@ pipe([[7.6,8.0,2.9],[7.3,8.0,2.9],[7.0,8.6,1.6]],TEA,0.04);
 (function(){const m=new THREE.Mesh(new THREE.CylinderGeometry(0.65,0.65,1.6,16),mat(0x00897b));m.position.set(6.6,0.8,-8.9);mep.add(m);})();
 pipe([[6.6,8.3,0.2],[6.6,7.2,0.2],[8.1,6.85,0.25]],TEA,0.025);
 // may lanh: duong rieng (xanh la)
-pipe([[14.3,7.2,3.2],[17.6,8.6,3.2],[17.6,8.6,2.75]],GRN,0.02);pipe([[14.8,12.0,3.2],[17.6,12.9,3.2],[17.6,12.9,2.75]],GRN,0.02);
-pipe([[18.0,8.6,2.6],[18.5,8.55,0.95]],0xb87333,0.02);pipe([[18.0,12.9,2.6],[18.5,12.85,0.95]],0xb87333,0.02);
+pipe([[14.8,12.0,3.2],[17.6,12.9,3.2],[17.6,12.9,2.75]],GRN,0.02);
+pipe([[18.0,12.9,2.6],[18.5,12.85,0.95]],0xb87333,0.02);
 // tu mang + UPS qua C9
 pipe([[14.8,16.2,3.2],[17.2,14.45,3.2],[17.2,14.45,2.05]],RED,0.015);
 label('Tủ mạng + UPS',17.3,14.45,2.6,mep);label('Ổ IP55 máy rửa xe (RCBO)',7.9,6.9,1.9,mep);label('Vòi xịt rửa xe',8.3,6.8,1.2,mep);
@@ -517,6 +520,64 @@ mbox(8.1,13.55,0.25,0.06,0.1,0.1,0xffeb3b);
 label('Báo nhiệt (bếp)',10.6,12.5,3.2,mep);label('Báo khói độc lập',16.6,12.0,3.5,mep);label('Báo rò gas (đặt thấp, gas nặng hơn không khí)',8.1,13.6,0.45,mep);
 // bom tang ap sau bon
 mbox(15.0,19.4,0,0.35,0.25,0.3,0x0d47a1);(function(){const m=new THREE.Mesh(new THREE.CylinderGeometry(0.13,0.13,1.3,12),mat(0x546e7a));m.position.set(13.6,0.65,-19.6);mep.add(m);})();label('Cột lọc cát mangan (nếu nước phèn)',13.6,19.6,1.6,mep);label('Bơm tăng áp tự động (khi vòi sen yếu)',15.1,19.5,0.7,mep);
+
+// ---- PHUONG AN NANG CAP: A san thuong mai nha chinh, B lau go tren nha tam (an/hien bang nut) ----
+const optA=new THREE.Group(),optB=new THREE.Group();site.add(optA);site.add(optB);optA.visible=false;optB.visible=false;
+const SAT=0x7a3326,TRE=0xc9a96a;
+function gb(g,a,b,z,w,d,h,c){const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),mat(c));m.position.set(a+w/2,z+h/2,-(b+d/2));g.add(m);return m;}
+function gcy(g,p,q,r,c){const P=new THREE.Vector3(p[0],p[2],-p[1]),Q=new THREE.Vector3(q[0],q[2],-q[1]),d=Q.clone().sub(P),L=d.length();
+ const m=new THREE.Mesh(new THREE.CylinderGeometry(r,r,L,7),mat(c));m.position.copy(P.clone().add(Q).multiplyScalar(0.5));m.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.normalize());g.add(m);}
+function railing(g,p,q,z){const L=Math.hypot(q[0]-p[0],q[1]-p[1]),ua=(q[0]-p[0])/L,ub=(q[1]-p[1])/L;
+ const np=Math.max(1,Math.round(L/1.5));for(let i=0;i<=np;i++){const t=i/np*L;gb(g,p[0]+ua*t-0.03,p[1]+ub*t-0.03,z,0.06,0.06,1.05,SAT);}
+ gcy(g,[p[0],p[1],z+1.05],[q[0],q[1],z+1.05],0.04,TRE);gcy(g,[p[0],p[1],z+0.12],[q[0],q[1],z+0.12],0.025,SAT);gcy(g,[p[0],p[1],z+0.55],[q[0],q[1],z+0.55],0.015,0x555555);
+ for(let t=0.2;t<L-0.1;t+=0.22)gcy(g,[p[0]+ua*t,p[1]+ub*t,z+0.12],[p[0]+ua*t,p[1]+ub*t,z+1.05],0.022,TRE);}
+function gslab(g,p,c){const m=slab8(p,c);g.add(m);}
+// ===== A: san thuong tren mai BTCT nha chinh (4 x 16m, cao 4,62m) =====
+(function(){const g=optA,Z=4.62;
+ gb(g,14,2.5,Z,4,16,0.02,0x9fb1a8); // lop chong tham
+ railing(g,[14.05,2.55],[17.95,2.55],Z);railing(g,[14.05,2.55],[14.05,18.45],Z);railing(g,[14.05,18.45],[17.95,18.45],Z);
+ railing(g,[17.95,2.55],[17.95,11.6],Z);railing(g,[17.95,12.6],[17.95,18.45],Z);
+ // chòi 4x4 phia sau (che nang chieu Tay Nam, nhin ra song)
+ gb(g,14.15,14.3,Z+0.02,3.7,4.0,0.12,0x2b2b2b);for(let x=14.2;x<17.85;x+=0.16)gb(g,x,14.3,Z+0.14,0.13,4.0,0.04,C.go);
+ [[14.15,14.3],[17.7,14.3],[14.15,18.15],[17.7,18.15]].forEach(p=>gb(g,p[0],p[1],Z,0.12,0.12,2.6,SAT));
+ gslab(g,[[13.9,14.0,Z+2.6],[18.1,14.0,Z+2.6],[18.1,16.4,Z+3.3],[13.9,16.4,Z+3.3],[13.9,14.0,Z+2.66],[18.1,14.0,Z+2.66],[18.1,16.4,Z+3.36],[13.9,16.4,Z+3.36]],0x8a3b2a);
+ gslab(g,[[13.9,16.4,Z+3.3],[18.1,16.4,Z+3.3],[18.1,18.8,Z+2.6],[13.9,18.8,Z+2.6],[13.9,16.4,Z+3.36],[18.1,16.4,Z+3.36],[18.1,18.8,Z+2.66],[13.9,18.8,Z+2.66]],0x8a3b2a);
+ for(let y=14.3;y<18.2;y+=0.5)gcy(g,[14.2,y,Z+2.55],[17.75,y,Z+2.55],0.03,TRE); // tran lam tre
+ gb(g,15.3,15.6,Z+0.14,1.2,0.7,0.45,C.go);[[15.0,15.4],[16.6,15.4]].forEach(p=>gb(g,p[0],p[1],Z+0.14,0.4,0.4,0.42,TRE));
+ const lmp=new THREE.Mesh(new THREE.SphereGeometry(0.22,10,6,0,6.3,0,1.6),mat(0xd9b46a));lmp.position.set(16.0,Z+2.3,-16.2);g.add(lmp);
+ // cau thang sat ngoai troi doc hong phai: chan o sau nha (b 18.3) len mai (b 11.8)
+ const N=25,run=6.5,X=18.25,Wd=0.9;for(let i=0;i<N;i++){const b=18.3-(i+1)*run/N,z=(i+1)*Z/N;gb(g,X,b,z-0.04,Wd,0.26,0.04,C.go);}
+ gcy(g,[X+0.03,18.3,0],[X+0.03,11.8,Z],0.05,SAT);gcy(g,[X+Wd-0.03,18.3,0],[X+Wd-0.03,11.8,Z],0.05,SAT);
+ gcy(g,[X+Wd,18.3,1.0],[X+Wd,11.8,Z+1.0],0.035,TRE);for(let t=0.5;t<6.5;t+=1.0){const b=18.3-t,z=t/6.5*Z;gb(g,X+Wd-0.03,b,z,0.05,0.05,1.0,SAT);}
+ [[X+0.4,15.0],[X+0.4,12.5]].forEach(p=>gb(g,p[0],p[1],0,0.1,0.1,(18.3-p[1])/6.5*Z,SAT));
+ label('PA A – Sân thượng mái nhà chính ~32–53tr',16,10,Z+1.8,g);label('Chòi 4×4: mái tôn giả ngói, trần lam tre, sàn ván',16,16.2,Z+3.8,g);
+ label('Lan can khung sắt đỏ nâu + tre (~40m)',14.0,6,Z+1.4,g);label('Cầu thang sắt ngoài trời, bậc ván gỗ (cao 4,6m)',19.4,14.5,2.6,g);
+ label('⚠ Kiểm tra sàn mái chịu tải trước khi làm',16,4,Z+2.6,g);})();
+// ===== B: lau go tren phan truoc nha tam (6 x 4m) + ban cong 1,5m nhin ra san =====
+(function(){const g=optB,Z=3.72,a0=7.75,a1=14.0,b0=7.6,b1=11.8,bc=6.1;
+ // 4 cot sat hop moi + 2 cot ban cong (khung cu khong chiu duoc tang tren)
+ [[a0,b0],[a1-0.15,b0],[a0,b1-0.15],[a1-0.15,b1-0.15],[a0,bc],[a1-0.15,bc]].forEach(p=>gb(g,p[0],p[1],0,0.15,0.15,Z+2.6,0x5a4a42));
+ gb(g,a0,bc,Z-0.25,a1-a0,b1-bc,0.25,0x5a4a42); // dam
+ for(let x=a0;x<a1;x+=0.18)gb(g,x,bc,Z,0.16,b1-bc,0.05,C.go); // san van
+ // vach van go (thung van dung) + cua chu Z
+ function vach(ax,x0,y0,L,ops){for(let s=0;s<L;s+=0.2){const mid=s+0.1;if(ops.some(o=>mid>o[0]&&mid<o[1]))continue;
+   if(ax==='x')gb(g,x0+s,y0,Z+0.05,0.18,0.04,2.4,0x9c7448);else gb(g,x0,y0+s,Z+0.05,0.04,0.18,2.4,0x9c7448);}}
+ vach('x',a0,b0,a1-a0,[[2.5,3.7],[4.6,5.4]]);vach('x',a0,b1-0.04,a1-a0,[]);vach('y',a0,b0,b1-b0,[[1.4,2.4]]);
+ [[a0+2.5,b0-0.35],[a0+3.12,b0-0.35]].forEach(p=>{gb(g,p[0],p[1],Z+0.05,0.58,0.04,2.1,0xb08a5a);gslab(g,[[p[0]+0.05,p[1]-0.01,Z+0.2],[p[0]+0.12,p[1]-0.01,Z+0.2],[p[0]+0.56,p[1]-0.01,Z+1.95],[p[0]+0.49,p[1]-0.01,Z+1.95],[p[0]+0.05,p[1]-0.05,Z+0.2],[p[0]+0.12,p[1]-0.05,Z+0.2],[p[0]+0.56,p[1]-0.05,Z+1.95],[p[0]+0.49,p[1]-0.05,Z+1.95]],0x7a5634);});
+ // ban cong + lan can tre
+ railing(g,[a0+0.05,bc+0.05],[a1-0.05,bc+0.05],Z+0.05);railing(g,[a1-0.05,bc+0.05],[a1-0.05,b0],Z+0.05);railing(g,[a0+0.05,bc+0.05],[a0+0.05,bc+0.7],Z+0.05);
+ // mai hai mai ton gia ngoi, nang len ~7m
+ gslab(g,[[a0-0.4,bc-0.5,Z+2.5],[a1+0.1,bc-0.5,Z+2.5],[a1+0.1,(bc+b1)/2,Z+3.4],[a0-0.4,(bc+b1)/2,Z+3.4],[a0-0.4,bc-0.5,Z+2.56],[a1+0.1,bc-0.5,Z+2.56],[a1+0.1,(bc+b1)/2,Z+3.46],[a0-0.4,(bc+b1)/2,Z+3.46]],0x8a3b2a);
+ gslab(g,[[a0-0.4,(bc+b1)/2,Z+3.4],[a1+0.1,(bc+b1)/2,Z+3.4],[a1+0.1,b1+0.5,Z+2.5],[a0-0.4,b1+0.5,Z+2.5],[a0-0.4,(bc+b1)/2,Z+3.46],[a1+0.1,(bc+b1)/2,Z+3.46],[a1+0.1,b1+0.5,Z+2.56],[a0-0.4,b1+0.5,Z+2.56]],0x8a3b2a);
+ // bap + lua treo, den ro tre
+ for(let x=a0+0.4;x<a1-0.3;x+=0.35){const m=new THREE.Mesh(new THREE.CylinderGeometry(0.05,0.035,0.28,6),mat(0xe8a23a));m.position.set(x,Z+2.15,-(bc-0.1));g.add(m);}
+ [[9.5,6.9],[12.3,6.9]].forEach(p=>{const m=new THREE.Mesh(new THREE.SphereGeometry(0.2,10,6,0,6.3,0,1.6),mat(0xd9b46a));m.position.set(p[0],Z+2.25,-p[1]);g.add(m);});
+ // cau thang go/sat ngoai vach trai, tu loi di len ban cong
+ const N=20,X=7.0,Wd=0.8,bs=12.6,be=7.0;gb(g,X,6.2,Z-0.12,Wd,0.8,0.12,0x5a4a42);for(let i=0;i<N;i++){const b=bs-(i+1)*(bs-be)/N,z=(i+1)*Z/N;gb(g,X,b,z-0.04,Wd,0.26,0.04,C.go);}
+ gcy(g,[X+0.03,bs,0],[X+0.03,be,Z],0.05,SAT);gcy(g,[X+Wd-0.03,bs,0],[X+Wd-0.03,be,Z],0.05,SAT);gcy(g,[X,bs,1.0],[X,be,Z+1.0],0.035,TRE);
+ gb(g,X,6.25,0,0.1,0.1,Z,SAT);
+ label('PA B – Lầu gỗ 6×4m + ban công 1,5m ~50–80tr',10.9,9,Z+3.9,g);label('Cột sắt hộp + móng mới (khung tạm cũ không chịu được)',8.2,6.1,1.8,g);
+ label('Vách ván gỗ, cửa ván chữ Z, lan can tre khung đỏ nâu',10.9,6.2,Z+1.3,g);label('Cầu thang ngoài vách trái',6.9,10,2.4,g);})();
 
 // ---- CAO DO TUONG LAI (an/hien bang nut) ----
 const fut=new THREE.Group();site.add(fut);fut.visible=false;
@@ -575,6 +636,8 @@ document.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>go(b.dataset.v));
 document.getElementById('mai').onclick=()=>setRoof(!roofOn);
 let lblOn=true;document.getElementById('nhan').onclick=e=>{lblOn=!lblOn;labels.forEach(l=>l.visible=lblOn);e.target.textContent=lblOn?'Ẩn chữ':'Hiện chữ';};
 document.getElementById('dn').onclick=e=>{mep.visible=!mep.visible;e.target.classList.toggle('on',mep.visible);};
+document.getElementById('pa').onclick=e=>{optA.visible=!optA.visible;e.target.classList.toggle('on',optA.visible);if(optA.visible){camera.position.copy(S(30,-6,16));controls.target.copy(S(15,11,4));controls.update();}};
+document.getElementById('pb').onclick=e=>{optB.visible=!optB.visible;e.target.classList.toggle('on',optB.visible);if(optB.visible){camera.position.copy(S(2,-10,9));controls.target.copy(S(11,8,4));controls.update();}};
 let treeOn=true;document.getElementById('cay').onclick=e=>{treeOn=!treeOn;treeObjs.forEach(o=>o.visible=treeOn);e.target.textContent=treeOn?'Ẩn cây':'Hiện cây';};
 document.getElementById('tl').onclick=e=>{fut.visible=!fut.visible;e.target.classList.toggle('on',fut.visible);};
 document.getElementById('tm').onclick=()=>{document.getElementById('tmp').hidden=false;};document.getElementById('tmx').onclick=()=>{document.getElementById('tmp').hidden=true;};
