@@ -1,7 +1,7 @@
 # Sinh bang du toan cho panel thuyet minh tu out/dutoan.json (chay dutoan.py truoc)
 import json, os
 D = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.join(D, "out")
-R = json.load(open(os.path.join(OUT, "dutoan.json")))
+R = [x for x in json.load(open(os.path.join(OUT, "dutoan.json"))) if not x[0].startswith("Đợt 2")]
 f = lambda x: f"{x:,.1f}".replace(",", "X").replace(".", ",").replace("X", ".")
 grp = {}
 for x in R:

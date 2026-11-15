@@ -177,7 +177,7 @@ r("2 trụ thép hộp 100×100×2 (~30kg) + sơn", "kg", 30, 21.6, "Vật tư",
 r("Bê tông chân trụ", "m³", 0.2, 1100, "Vật tư", "PL II KV10")
 r("Thợ hàn lắp cổng", "công", 1, TC, "Nhân công", "Thị trường")
 
-g("17. Nhà xe gỗ góc trái 5,7×7,1m")
+g("Đợt 2 – Nhà xe gỗ góc trái 5,7×7,1m")
 r("Gỗ tràm/bạch đàn xẻ, đã xử lý (4 cột 12×12, đà, kèo, xà gồ)", "m³", 0.6, 7500, "Vật tư", "Ước tính", "Thép hộp rẻ hơn ~20% nếu đổi ý")
 r("Đế bê tông rời 4 cái + bulông, bản mã, ke chống bão", "bộ", 1, 900, "Vật tư", "Ước tính")
 r("Tôn cũ lợp (~44m²)", "m²", 44, 0, "Đồ cũ", "Có sẵn")
@@ -185,7 +185,7 @@ r("Máng xối + ống xuống", "m", 7, 90, "Vật tư", "Ước tính")
 r("Đá mi sàng lót nền dày 5cm", "m³", 2, 760, "Vật tư", "PL II KV10")
 r("Thợ mộc", "công", 5, TC, "Nhân công", "Thị trường", "2 người × 2–3 ngày")
 
-g("18. Cây xanh – vườn rừng nhiệt đới")
+g("17. Cây xanh – vườn rừng nhiệt đới")
 r("Mù u cây nhỡ 2–3m", "cây", 3, 150, "Vật tư", "Ước tính", "Hỏi vựa cây Trà Vinh")
 r("Còng cây nhỡ 2–3m", "cây", 2, 200, "Vật tư", "Ước tính")
 r("Cau", "cây", 3, 80, "Vật tư", "Ước tính")
@@ -195,13 +195,14 @@ r("Phi lao cây con bờ sông", "cây", 10, 25, "Vật tư", "Ước tính")
 r("Đất mặt đắp ụ + phân hữu cơ", "m³", 3, 300, "Vật tư", "Ước tính")
 r("Công trồng", "công", 2, PH, "Nhân công", "Thị trường")
 
-g("19. Chi phí chung")
+g("18. Chi phí chung")
 r("Vận chuyển vật liệu rời (gạch, đá, cát xây) về công trình", "chuyến", 3, 400, "Khác", "Ước tính")
 r("Hao hụt, vật tư phụ (đinh, dây kẽm, que hàn, đá cắt)", "gói", 1, 1500, "Vật tư", "Ước tính")
 
 for x in R: x.append(round(x[3]*x[4],1))
-tot = sum(x[8] for x in R)
-pl = sum(x[8] for x in R if x[6].startswith("PL") and x[5]!="Nhân công")
+P1 = [x for x in R if not x[0].startswith("Đợt 2")]
+tot = sum(x[8] for x in P1)
+pl = sum(x[8] for x in P1 if x[6].startswith("PL") and x[5]!="Nhân công")
 print(len(R), "dong; cong", round(tot), "; PL", round(pl), "; VAT", round(pl*0.1), "; +DP10%", round((tot+pl*0.1)*1.1))
 from collections import OrderedDict
 s = OrderedDict()
