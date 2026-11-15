@@ -17,12 +17,12 @@ Mở bằng trình duyệt điện thoại hoặc máy tính, không cần cài 
 
 ## Bố trí
 - Nhà kiên cố: phòng khách → hành lang bên trái → phòng ngủ, phòng kho + thay đồ (kệ sắt V lỗ). Cửa sổ cuối hành lang đục thành cửa sau (cao 2,7m, ô văng 80cm, ngạch + rãnh thu nước).
-- Nền nhà tạm (vách + mái tôn cũ, cột gỗ cũ): sân ô tô phía trước, bếp (tủ lạnh → chậu → sơ chế → bếp; cao 85, sâu 60), bàn ăn, WC xây tại vị trí WC cũ (nền +0,5m), giặt sấy.
+- Nền nhà tạm (vách + mái tôn cũ, cột gỗ cũ): sân ô tô phía trước, bếp (tủ lạnh → chậu → sơ chế 90cm → bếp từ đôi → bếp gas đơn dự phòng; cao 85, sâu 60, hút mùi, bình gas ngoài vách), bàn ăn, WC xây tại vị trí WC cũ (nền +0,5m), bể tự hoại composite 3 ngăn mới đặt dưới lối đi, cách giếng ~16m; hầm cũ lấp bỏ, giặt sấy.
 - Lối đi ra sau bên trái, cổng chính + cổng phụ (cửa sắt cũ), rào kẽm gai + cây gai/bông giấy.
 - Hướng nắng: chiều chiếu mạnh vào tường sau (Tây Nam) tháng 9–3, tường hông phải (Tây Bắc) tháng 5–8 → cây che phía sau và bên phải.
 
 ## Dự toán vào ở (ước tính)
-~82–125tr (thường ~95–100tr), điện tận dụng hệ thống cũ, chân tường trát chống thấm.
+Đợt 1 (vào ở) ~95–157tr tùy mức giá; giữ ≤100tr nếu chọn giá thấp và tự làm phần đơn giản. Chi tiết trong nút **📋 Thuyết minh** (phụ tải, 11 mạch điện, nước, bể tự hoại, mái chống bão, an toàn cháy, mạng/camera, đồ cũ/mới, dự toán 2 đợt).
 
 Đợt sau: san lấp ao, đắp sân bằng mặt lộ và nâng nền nhà +0,45m (~50–80tr).
 
