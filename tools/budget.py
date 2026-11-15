@@ -5,7 +5,7 @@ R = [x for x in json.load(open(os.path.join(OUT, "dutoan.json"))) if not x[0].st
 f = lambda x: f"{x:,.1f}".replace(",", "X").replace(".", ",").replace("X", ".")
 grp = {}
 for x in R:
-    g = grp.setdefault(x[0], {"Vật tư": 0, "Thiết bị": 0, "Nhân công": 0, "Khác": 0, "Đồ cũ": 0})
+    g = grp.setdefault(x[0], {"Vật tư": 0, "Thiết bị": 0, "Nhân công": 0, "Khác": 0, "Đồ cũ": 0, "Tự làm": 0})
     g[x[5]] += x[8]
 tot = sum(x[8] for x in R)
 vat = sum(x[8] for x in R if x[6].startswith("PL") and x[5] != "Nhân công") * 0.1

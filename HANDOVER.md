@@ -4,7 +4,7 @@ Tài liệu này giúp người khác hoặc một tài khoản Claude khác ti�
 
 ## 1. Mục tiêu
 - Chủ nhà là Tiến. Hai vợ chồng dọn vào ở sớm; **vợ đang mang thai**.
-- Ngân sách đợt 1 khoảng **100–115tr**. Dự toán chi tiết (bóc tách 152 dòng, đơn giá Thông báo 561/TB-SXD Vĩnh Long PL II KV10 + PL IV, kỳ 01–15/9/2026) = **~189tr** gồm VAT + 10% dự phòng (nhà xe gỗ ~10tr đã dời sang đợt 2), **gần gấp đôi mốc 100tr**: chủ nhà cần chọn hạng mục để dời sang đợt 2. Nguồn số liệu: `tools/dutoan.py` → `tools/out/dutoan.json`; bảng tính Sheets https://claude.ai/artifact/B8LPuDUHWvyX6ktExjic4L. Đã bỏ ổ sạc xe điện và mua bình nóng lạnh (chủ nhà không có xe điện, đã có bình). Bơm tăng áp đưa lên đợt 1. Đợt 2: 30–46tr thiết bị + nhà xe + san lấp ao 50–80tr + tường mặt tiền 70–110tr.
+- Ngân sách đợt 1 khoảng **100–115tr**. Dự toán chi tiết (bóc tách 152 dòng, đơn giá Thông báo 561/TB-SXD Vĩnh Long PL II KV10 + PL IV, kỳ 01–15/9/2026) = **~136tr** gồm VAT + 10% dự phòng (gói vào ở, chốt tối 15/11), vượt mốc 100tr ~36tr: chủ nhà cần chọn hạng mục để dời sang đợt 2. Nguồn số liệu: `tools/dutoan.py` → `tools/out/dutoan.json`; bảng tính Sheets https://claude.ai/artifact/B8LPuDUHWvyX6ktExjic4L. Đã bỏ ổ sạc xe điện và mua bình nóng lạnh (chủ nhà không có xe điện, đã có bình). Bơm tăng áp đưa lên đợt 1. Đợt 2: 30–46tr thiết bị + nhà xe + san lấp ao 50–80tr + tường mặt tiền 70–110tr.
 - Mọi việc làm ở đợt 1 phải dùng tiếp được khi nâng cấp về sau, không phải đập bỏ.
 - Thửa 320, tờ 51 (số cũ 595), 2.064,2m² theo GCN, cạnh 53,45 / 44,91 / 44,07 / 41,65m. Phía sau giáp sông lớn; phần đất sát sông (~1.200m²) chưa được cấp GCN.
 
@@ -133,3 +133,4 @@ python3 budget.py                 # khi sửa giá; dán out/b1.html, out/b2.htm
 - Các script nằm ngoài repo → đã chuyển vào `tools/`.
 
 - 15/11 tối: nhà xe chuyển vào lớp `fut` (đợt 2, bật nút Tương lai). Ống thông hơi bể tự hoại dời từ giữa cửa nhà phụ (10,9; 7,68) lên góc trái nhà chính (13,88; 6,0), cao 5,3m. Ống âm (đáy dưới +0,45m) trong nhóm `mep` dùng depthTest=false để hiện xuyên nền; thêm 2 hố thu + ống Ø114 ra ao, hố ga góc rẽ ống xí, bơm tăng áp.
+- 15/11 khuya: gói vào ở. Nhà phụ: vách gạch ống 10cm trát (vách trái b7,85–15,3; vách sau a11,35–14; mặt trước) trên đà kiềng, dải bông gió xi măng tháo từ nhà 914 (màu xám, `bong(...,col)`), 1 quạt trần, 2 quả cầu hút nhiệt. Mí lộ + rào tạm chuyển vào lớp `fut`. Máy giặt–sấy trên giá chồng, ống thoát hơi Ø100. Bàn làm việc ở phòng khách, kệ sắt + tủ mạng ở phòng kho. Dự toán: loại `Tự làm` (0đ, ghi tiết kiệm), `Đồ cũ` (0đ); nhóm `Đợt 2 – ...` không cộng vào đợt 1.
