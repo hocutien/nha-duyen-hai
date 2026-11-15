@@ -4,7 +4,7 @@ Tài liệu này giúp người khác hoặc một tài khoản Claude khác ti�
 
 ## 1. Mục tiêu
 - Chủ nhà là Tiến. Hai vợ chồng dọn vào ở sớm; **vợ đang mang thai**.
-- Ngân sách đợt 1 khoảng **100–115tr**. Dự toán hiện tại 101–163tr, đã cộng 10% dự phòng và đã gồm nhà xe và cây xanh. Đợt 2 khoảng 24–41tr. Giá lấy theo thị trường (xem Thuyết minh mục 11).
+- Ngân sách đợt 1 khoảng **100–115tr**. Dự toán hiện tại 100–162tr, đã cộng 10% dự phòng và đã gồm nhà xe và cây xanh. Đợt 2 khoảng 24–41tr. Giá lấy theo thị trường (xem Thuyết minh mục 11).
 - Mọi việc làm ở đợt 1 phải dùng tiếp được khi nâng cấp về sau, không phải đập bỏ.
 - Thửa 320, tờ 51 (số cũ 595), 2.064,2m² theo GCN, cạnh 53,45 / 44,91 / 44,07 / 41,65m. Phía sau giáp sông lớn; phần đất sát sông (~1.200m²) chưa được cấp GCN.
 
@@ -19,7 +19,7 @@ Tài liệu này giúp người khác hoặc một tài khoản Claude khác ti�
    - mạch C8 dự phòng cho máy lạnh thứ hai.
 4. An toàn trước, thẩm mỹ sau:
    - điện: RCBO, nối đất, chống sét lan truyền;
-   - bể tự hoại cách giếng ≥15m (hiện ~16m);
+   - bể tự hoại cách giếng ≥15m (hiện ~15,9m);
    - chữa cháy: báo khói, báo rò gas, 2 bình chữa cháy 4kg, ô cửa sổ thoát hiểm;
    - thai phụ: lưới chống muỗi, gạch chống trơn, tay vịn, đèn cảm biến đêm.
 5. Phần âm (điện, nước, mạng, chống thấm, bể tự hoại) làm đúng một lần. Phần hoàn thiện làm dần.
@@ -28,9 +28,10 @@ Tài liệu này giúp người khác hoặc một tài khoản Claude khác ti�
    - cửa WC không nhìn ra bàn ăn;
    - khu tắm sát máy giặt + sấy, **không làm phòng giặt riêng**;
    - đường đi đêm từ phòng ngủ đến WC ngắn và có đèn.
-8. Ống đi nổi, dễ kiểm tra. Thử áp ống nước và đo cách điện trước khi che lại.
-9. Làm đúng ranh GCN và đúng thủ tục: xả thải, san lấp ao, sửa nhà.
-10. Số liệu là ước tính, phải hỏi giá thợ địa phương. PA A và PA B cần kỹ sư kiểm tra kết cấu.
+8. Hạng mục phụ (nhà xe, mái che) ưu tiên vật liệu rẻ, khung gỗ bắt bulông, để sau này sửa hoặc dời dễ.
+9. Ống đi nổi, dễ kiểm tra. Thử áp ống nước và đo cách điện trước khi che lại.
+10. Làm đúng ranh GCN và đúng thủ tục: xả thải, san lấp ao, sửa nhà.
+11. Số liệu là ước tính, phải hỏi giá thợ địa phương. PA A và PA B cần kỹ sư kiểm tra kết cấu.
 
 ## 3. Quyết định đã chốt (đừng đổi lại nếu chủ nhà chưa đồng ý)
 - **Bếp:** bếp từ đôi (mạch C4, RCBO 32A, dây 4mm²) cộng bếp gas đơn dự phòng; bình gas đặt trong lồng ngoài vách. Thứ tự trên bàn: tủ lạnh → chậu → sơ chế 90cm → bếp. Ổ cắm mặt bếp cách chậu ≥0,6m.
@@ -40,13 +41,16 @@ Tài liệu này giúp người khác hoặc một tài khoản Claude khác ti�
   - lên WC: chiếu nghỉ 0,5m, rồi 2 bậc ~17cm, có tay vịn;
   - quạt hút thổi ra vách ngoài;
   - máy giặt + sấy đặt chồng cạnh WC; lavabo ngoài; cửa sau ra dây phơi.
-- **Thoát nước:** bể tự hoại composite 3 ngăn ~2m³ mới, đặt dưới lối đi. Hầm cũ hút sạch, rắc vôi, lấp cát, đậy bê tông.
+- **Thoát nước:** bể tự hoại 3 ngăn ~2m³ mới, đặt dưới sân trước bếp (cách giếng ~15,9m; không đậu ô tô lên nắp). Hầm cũ hút sạch, rắc vôi, lấp cát, đậy bê tông.
 - **Điện:** CB tổng 63A, dây Cu 2×16mm², 11 mạch C1–C11 (bảng chi tiết trong Thuyết minh mục 3). Máy nước nóng có ELCB và nối đất; máy bơm có rơ-le chống chạy khô.
 - **Mạng:**
   - cáp quang từ cột vào tủ mạng trong phòng kho, gồm ONT, MikroTik hEX, Lenovo M720q, NAS, UPS; switch PoE lắp ở đợt 2;
   - AP1 trên trần hành lang, AP2 trên trần bếp;
   - ~75m CAT6, có ống chờ cho 3 camera.
-- **Nhà xe:** sân 5,8×7,3m, mái tôn cũ, 4 cột ở 4 góc. Sedan ≤4,7×1,8m lùi vào, đầu xe ra cổng. 4 xe máy xếp so le bên phải, cách nhau 0,55m.
+- **Nhà xe:** góc trước bên trái, 5,7×7,1m, xe vào bằng cổng phụ 4,5m.
+  - Kết cấu: 4 cột gỗ 12×12 trên đế bê tông rời (chân sắt U bắt bulông), đà và xà gồ gỗ nối bulông và ke, tôn cũ, nền đá mi. Tháo và dời được, không đổ bê tông.
+  - Sedan ≤4,7×1,8m lùi vào, đầu xe ra cổng. 4 xe máy xếp so le sát rào trái, cách nhau 0,55m.
+  - Sân trước bếp để trống làm lối đi và chỗ xe khách.
 - **Cây:** bàng Đài Loan ×3 bên phải, mù u ×4 phía sau, ~10 phi lao bờ sông, bông giấy rào mặt tiền. Không trồng trúc đào.
 - **Ban công trên cao:** hai phương án, chưa chọn.
   - PA A: sân thượng trên mái nhà chính, 32–53tr.

@@ -20,15 +20,15 @@ Mở bằng trình duyệt điện thoại hoặc máy tính, không cần cài 
 
 ## Bố trí
 - Nhà kiên cố: phòng khách → hành lang bên trái → phòng ngủ, phòng kho + thay đồ. Để sang đợt 2: kệ sắt V lỗ, đục cửa sổ cuối hành lang thành cửa sau (cao 2,7m, ô văng 80cm).
-- Nền nhà tạm (vách + mái tôn cũ, cột gỗ cũ): sân ô tô phía trước, bếp (tủ lạnh → chậu → sơ chế 90cm → bếp từ đôi → bếp gas đơn dự phòng; cao 85, sâu 60, hút mùi, bình gas ngoài vách), bàn ăn, WC xây tại vị trí WC cũ (nền +0,5m), bể tự hoại composite 3 ngăn mới đặt dưới lối đi, cách giếng ~16m; hầm cũ lấp bỏ, khu tắm–giặt: cửa lùa WC quay vào khu giặt (không nhìn ra bàn ăn), chiếu nghỉ 0,5m + 2 bậc thấp + tay vịn, máy giặt + sấy chồng cạnh WC, lavabo ngoài, cửa sau ra dây phơi.
+- Nền nhà tạm (vách + mái tôn cũ, cột gỗ cũ): sân ô tô phía trước, bếp (tủ lạnh → chậu → sơ chế 90cm → bếp từ đôi → bếp gas đơn dự phòng; cao 85, sâu 60, hút mùi, bình gas ngoài vách), bàn ăn, WC xây tại vị trí WC cũ (nền +0,5m), bể tự hoại 3 ngăn mới đặt dưới sân trước bếp, cách giếng ~15,9m; hầm cũ lấp bỏ, khu tắm–giặt: cửa lùa WC quay vào khu giặt (không nhìn ra bàn ăn), chiếu nghỉ 0,5m + 2 bậc thấp + tay vịn, máy giặt + sấy chồng cạnh WC, lavabo ngoài, cửa sau ra dây phơi.
 - Điện: CB tổng 63A, 11 mạch (RCBO), nối đất, chống sét lan truyền. Mạng: cáp quang → tủ mạng trong phòng kho, 2 AP, ~75m CAT6, ống chờ camera và lên mái. Chữa cháy: báo khói, báo rò gas, 2 bình 4kg, ô cửa sổ thoát hiểm.
-- Nhà xe 5,8×7,3m mái tôn cũ: sedan lùi vào (đầu ra cổng) + 4 xe máy xếp so le bên phải.
+- Nhà xe ở góc trái 5,7×7,1m, vào bằng cổng phụ: khung gỗ bắt bulông trên đế bê tông rời, tôn cũ, nền đá mi (tháo dời được). Sedan lùi vào, 4 xe máy so le sát rào. Sân trước bếp để trống làm lối đi và chỗ xe khách; bể tự hoại nằm dưới sân này.
 - Cây: bàng Đài Loan ×3 bên phải, mù u ×4 phía sau che nắng chiều; phi lao chắn gió bờ sông; bông giấy rào mặt tiền. Không trồng trúc đào (độc).
 - Lối đi ra sau bên trái, cổng chính + cổng phụ (cửa sắt cũ), rào kẽm gai + cây gai/bông giấy.
 - Hướng nắng: chiều chiếu mạnh vào tường sau (Tây Nam) tháng 9–3, tường hông phải (Tây Bắc) tháng 5–8 → cây che phía sau và bên phải.
 
 ## Dự toán vào ở (ước tính)
-Đợt 1 (gói dọn vào ở, tận dụng tủ lạnh, máy giặt, máy sấy, máy lạnh 1,5HP có sẵn; gồm cả an toàn cháy, mạng và các hạng mục cho thai phụ) ~101–163tr (đã gồm nhà xe và cây xanh; giá vật tư và nhân công lấy theo thị trường 10–11/2026), nếu cần giữ ~115tr thì dời mái nhà xe sang đợt 2. Đợt 2 ~24–41tr. Nút **PA A: sân thượng** (mái nhà chính, ~32–53tr) và **PA B: lầu gỗ** (trên nhà tạm, ~50–80tr) để so sánh hai cách làm ban công trên cao. Chi tiết trong nút **📋 Thuyết minh**.
+Đợt 1 (gói dọn vào ở, tận dụng tủ lạnh, máy giặt, máy sấy, máy lạnh 1,5HP có sẵn; gồm cả an toàn cháy, mạng và các hạng mục cho thai phụ) ~100–162tr (đã gồm nhà xe khung gỗ và cây xanh; giá vật tư và nhân công lấy theo thị trường 10–11/2026), nếu cần giữ ~115tr thì dời mái nhà xe sang đợt 2. Đợt 2 ~24–41tr. Nút **PA A: sân thượng** (mái nhà chính, ~32–53tr) và **PA B: lầu gỗ** (trên nhà tạm, ~50–80tr) để so sánh hai cách làm ban công trên cao. Chi tiết trong nút **📋 Thuyết minh**.
 
 Đợt sau: san lấp ao, đắp sân bằng mặt lộ và nâng nền nhà +0,45m (~50–80tr).
 

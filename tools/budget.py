@@ -31,7 +31,7 @@ P1=[
 ("G","Thai phụ","Lưới chống muỗi cửa sổ + cửa đi, đèn cảm biến đêm, gạch chống trơn + tay vịn WC","Mới",2,3.5),
 ("G","An toàn cháy","2 bình chữa cháy 4kg, chăn chữa cháy, 4 đầu báo khói/nhiệt, báo rò gas, ổ sạc xe điện ngoài trời","Mới",2,3),
 ("H","Sân, rào","Rào mặt tiền ~40m: trụ + kẽm gai (kẽm gai quanh đất làm đợt 2)","Mới",1.5,3),
-("H","Nhà xe","Mái che 5,8×7,3m: 4 cột + đà sắt hộp mạ kẽm, xà gồ, lợp tôn cũ, máng xối; thợ hàn 2 người × 3 ngày","Tôn cũ",5,8),
+("H","Nhà xe","Nhà xe góc trái 5,7×7,1m: 4 cột gỗ trên đế BT rời, đà/xà gồ gỗ bắt bulông, ke chống bão, tôn cũ, máng xối, đá mi nền; thợ mộc 2 người × 2–3 ngày","Gỗ + tôn cũ",4,7),
 ("H","Cây xanh","7 cây che nắng (bàng Đài Loan ×3 bên phải, mù u ×4 phía sau) cao 2–2,5m + 10 phi lao chắn gió + ~70 gốc bông giấy rào mặt tiền + đất, phân","Mới",3,6),
 ("H","","Lắp lại cổng sắt cũ + trụ","Cũ",1,2),
 ]
