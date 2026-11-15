@@ -13,6 +13,7 @@
   .panel button,.panel a.btn{border:0;border-radius:16px;padding:7px 11px;font-size:12.5px;background:#1f2937;color:#fff;text-decoration:none}
   .panel button.light{background:#e5e7eb;color:#111}
   .muted{color:#555}
+  .leaflet-tooltip.dim{background:#fde68a!important;color:#000}
   .leaflet-tooltip.lb{background:rgba(255,255,255,.9);border:0;box-shadow:none;font-weight:600;font-size:11px;padding:1px 4px}
   #cal[hidden]{display:none}
 </style>
@@ -71,9 +72,13 @@ const sat=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Worl
 const osm=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxNativeZoom:19,maxZoom:22,attribution:'© OpenStreetMap'});
 const layer=L.layerGroup().addTo(map);
 L.control.layers({'Vệ tinh':sat,'Bản đồ đường':osm},{'Phương án':layer},{position:'topright'}).addTo(map);
+function L_lbl(ll,t){L.marker(ll,{opacity:0,interactive:false,icon:L.divIcon({className:'',html:''})}).bindTooltip(t,{permanent:true,direction:'center',className:'lb dim'}).addTo(layer);}
 function draw(){layer.clearLayers();
   F.forEach(f=>{const g=L.polygon(f[1].map(toLL),{color:f[2],weight:2,fillColor:f[2],fillOpacity:f[3]}).addTo(layer);
     g.bindPopup('<b>'+f[0]+'</b>'+(f[4]?'<br>'+f[4]:''));});
+  // nhãn chiều dài cạnh theo GCN
+  const G=F[0][1];for(let i=0;i<4;i++){const p=G[i],q=G[(i+1)%4],len=Math.hypot(q[0]-p[0],q[1]-p[1]);
+    L_lbl(toLL([(p[0]+q[0])/2,(p[1]+q[1])/2]),len.toFixed(2).replace('.',',')+' m');}
   P.forEach(p=>{L.circleMarker(toLL(p[1]),{radius:5,color:'#fff',weight:1.5,fillColor:p[2],fillOpacity:1}).addTo(layer)
     .bindTooltip(p[0],{permanent:p[0].startsWith('Mốc')||p[0].startsWith('Giếng'),direction:'right',className:'lb'});});
   document.getElementById('calinfo').textContent=`(Đông ${cal.dx.toFixed(1)}m, Bắc ${cal.dy.toFixed(1)}m, xoay ${cal.rot.toFixed(1)}°)`;}
