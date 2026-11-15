@@ -32,7 +32,7 @@ P1=[
 ("G","An toàn cháy","2 bình chữa cháy 4kg, chăn chữa cháy, 4 đầu báo khói/nhiệt, báo rò gas, ổ sạc xe điện ngoài trời","Mới",2,3),
 ("H","Sân, rào","Rào mặt tiền ~40m: trụ + kẽm gai (kẽm gai quanh đất làm đợt 2)","Mới",1.5,3),
 ("H","Nhà xe","Nhà xe góc trái 5,7×7,1m: 4 cột gỗ trên đế BT rời, đà/xà gồ gỗ bắt bulông, ke chống bão, tôn cũ, máng xối, đá mi nền; thợ mộc 2 người × 2–3 ngày","Gỗ + tôn cũ",4,7),
-("H","Cây xanh","7 cây che nắng (bàng Đài Loan ×3 bên phải, mù u ×4 phía sau) cao 2–2,5m + 10 phi lao chắn gió + ~70 gốc bông giấy rào mặt tiền + đất, phân","Mới",3,6),
+("H","Cây xanh","Vườn rừng nhiệt đới: 3 mù u + 2 còng (cây nhỡ 2–3m, trồng trên ụ đất) + 4 cau + 4 bụi chuối + môn ráy + 10 phi lao bờ sông + ~70 gốc bông giấy rào + đất, phân","Mới",3,6),
 ("H","","Lắp lại cổng sắt cũ + trụ","Cũ",1,2),
 ]
 P2=[("Sơn lại phòng ở + mặt tiền (tự sơn)","Mới",2,4),

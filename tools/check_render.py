@@ -23,15 +23,16 @@ with sync_playwright() as p:
     pg = b.new_page(viewport={'width': 1280, 'height': 800})
     pg.on('pageerror', lambda e: errs.append(str(e)))
     pg.on('console', lambda m: m.type == 'error' and errs.append(m.text))
-    pg.goto('file://' + page); pg.wait_for_timeout(3000)
+    pg.goto('file://' + page); pg.wait_for_timeout(int(os.environ.get('WAIT0','3000')))
+    print('frame ms', pg.evaluate('''()=>{const t=performance.now();renderer.render(scene,camera);return Math.round(performance.now()-t)}'''), 'meshes', pg.evaluate('''()=>{let n=0;scene.traverse(o=>{if(o.isMesh)n++});return n}'''))
     if os.environ.get('CAM'):
-        pg.evaluate('c=>{lblOn=false;syncLbl();setRoof(!'+('true' if os.environ.get('NOROOF') else 'false')+');const v=c.split(",").map(Number);camera.position.copy(S(v[0],v[1],v[2]));controls.target.copy(S(v[3],v[4],v[5]));controls.update();}', os.environ['CAM']); pg.wait_for_timeout(800); pg.screenshot(path=os.path.join(OUT,'cam.png'))
+        pg.evaluate('c=>{lblOn=false;syncLbl();setRoof(!'+('true' if os.environ.get('NOROOF') else 'false')+');const v=c.split(",").map(Number);camera.position.copy(S(v[0],v[1],v[2]));controls.target.copy(S(v[3],v[4],v[5]));controls.update();}', os.environ['CAM']); pg.wait_for_timeout(800); pg.screenshot(path=os.path.join(OUT,'cam.png'), timeout=120000)
     for v in VIEWS:
         btn = pg.query_selector(f'#{v}') or pg.query_selector(f'[data-v="{v}"]')
         if not btn: errs.append('thiếu nút #' + v); continue
-        btn.click(); pg.wait_for_timeout(1200)
-        pg.screenshot(path=os.path.join(OUT, v + '.png'))
-        btn.click() if v in ('dn', 'pa', 'pb') else None
+        pg.evaluate('''el=>el.click()''', btn); pg.wait_for_timeout(int(os.environ.get('WAIT','1200')))
+        pg.screenshot(path=os.path.join(OUT, v + '.png'), timeout=120000)
+        pg.evaluate('''el=>el.click()''', btn) if v in ('dn', 'pa', 'pb') else None
     b.close()
 os.remove(page)
 print('Ảnh ->', OUT); print('LỖI:' if errs else 'Không lỗi JS', *errs, sep='\n')

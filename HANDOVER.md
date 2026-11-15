@@ -51,7 +51,12 @@ Tài liệu này giúp người khác hoặc một tài khoản Claude khác ti�
   - Kết cấu: 4 cột gỗ 12×12 trên đế bê tông rời (chân sắt U bắt bulông), đà và xà gồ gỗ nối bulông và ke, tôn cũ, nền đá mi. Tháo và dời được, không đổ bê tông.
   - Sedan ≤4,7×1,8m lùi vào, đầu xe ra cổng. 4 xe máy xếp so le sát rào trái, cách nhau 0,55m.
   - Sân trước bếp để trống làm lối đi và chỗ xe khách.
-- **Cây:** bàng Đài Loan ×3 bên phải, mù u ×4 phía sau, ~10 phi lao bờ sông, bông giấy rào mặt tiền. Không trồng trúc đào.
+- **Cây (chủ nhà thích kiểu rừng nhiệt đới, cây to):** 3 tầng.
+  - Tầng trên: mù u ×3, còng ×2, trên ụ đất cao +0,5m. Còng cách nhà ≥12m.
+  - Tầng giữa: cau ×4 hông phải, chuối ×4 bụi phía sau cạnh hố ga nước xám.
+  - Tầng dưới: môn, ráy.
+  - Thêm phi lao bờ sông, bông giấy rào mặt tiền. Không trồng trúc đào.
+- **Thẩm mỹ:** tường trắng ngà, gỗ nâu (nhà xe, lam gỗ mặt bếp), mái xám đậm, cổng song sắt nâu.
 - **Ban công trên cao:** hai phương án, chưa chọn.
   - PA A: sân thượng trên mái nhà chính, 32–53tr.
   - PA B: lầu gỗ kiểu Hà Giang trên nhà tạm, 50–80tr (bản đầy đủ 130–220tr).
@@ -67,6 +72,12 @@ Tài liệu này giúp người khác hoặc một tài khoản Claude khác ti�
 | `tools/export_kmz.py` | `index.html` + `map.html` → `nha-duyen-hai-3d.kmz` |
 | `tools/budget.py` | Danh sách hạng mục đợt 1 và đợt 2 → bảng HTML trong `tools/out/b1.html`, `b2.html`, dán vào Thuyết minh mục 11. |
 | `tools/check_render.py` | Mở trang ở chế độ ẩn, báo lỗi JS, chụp ảnh các góc nhìn vào `tools/out/`. |
+
+Cách vẽ chân thật trong `index.html`:
+- `mat(màu)` tra bảng `MT` theo mã màu để gán vân (`TEX`: plaster, brick, wood, ton, gravel, grass, asphalt, concrete, tile), độ nhám và độ kim loại. Muốn thêm vật liệu mới thì thêm dòng `mt([...],{...})`.
+- Cuối trang có một bước tính UV theo mét và bật bóng đổ cho mọi khối gần nhà.
+- Mặt trời đặt ở hướng 245°, cao 42° (khoảng 15h).
+- Hàm vẽ cây: `bigTree(a,b,tỉ_lệ,'cong'|'muu')`, `cau`, `chuoi`, `ray`, `phiLao`, `mound` (ụ đất). Hàng rào cây: `hedge`. Cổng song: `gate`.
 
 Hệ toạ độ trong `index.html`:
 - `a` chạy dọc mặt lộ, `b` chạy từ lộ vào trong (về phía sông), `z` là cao độ (m).

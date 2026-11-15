@@ -23,7 +23,8 @@ Mở bằng trình duyệt điện thoại hoặc máy tính, không cần cài 
 - Nền nhà tạm (vách + mái tôn cũ, cột gỗ cũ): sân ô tô phía trước, bếp (tủ lạnh → chậu → sơ chế 90cm → bếp từ đôi → bếp gas đơn dự phòng; cao 85, sâu 60, hút mùi, bình gas ngoài vách), bàn ăn, WC xây tại vị trí WC cũ (nền +0,5m), bể tự hoại 3 ngăn mới đặt dưới sân trước bếp, cách giếng ~15,9m; hầm cũ lấp bỏ, khu tắm–giặt: cửa lùa WC quay vào khu giặt (không nhìn ra bàn ăn), chiếu nghỉ 0,5m + 2 bậc thấp + tay vịn, máy giặt + sấy chồng cạnh WC, lavabo ngoài, cửa sau ra dây phơi.
 - Điện: CB tổng 63A, 11 mạch (RCBO), nối đất, chống sét lan truyền. Mạng: cáp quang → tủ mạng trong phòng kho, 2 AP, ~75m CAT6, ống chờ camera và lên mái. Chữa cháy: báo khói, báo rò gas, 2 bình 4kg, ô cửa sổ thoát hiểm.
 - Nhà xe ở góc trái 5,7×7,1m, vào bằng cổng phụ: khung gỗ bắt bulông trên đế bê tông rời, tôn cũ, nền đá mi (tháo dời được). Sedan lùi vào, 4 xe máy so le sát rào. Sân trước bếp để trống làm lối đi và chỗ xe khách; bể tự hoại nằm dưới sân này.
-- Cây: bàng Đài Loan ×3 bên phải, mù u ×4 phía sau che nắng chiều; phi lao chắn gió bờ sông; bông giấy rào mặt tiền. Không trồng trúc đào (độc).
+- Cây kiểu vườn rừng nhiệt đới 3 tầng: mù u ×3 + còng ×2 (trồng trên ụ đất, cách nhà ≥6,5–12m), cau ×4, chuối ×4 bụi, môn ráy dưới tán; phi lao chắn gió bờ sông; bông giấy rào mặt tiền. Không trồng trúc đào (độc).
+- Hình 3D vẽ chân thật: nắng và bóng đổ theo hướng thật (~15h), vân tôn, gỗ, gạch, đá mi, cỏ, nhựa đường; cổng song sắt; la bàn góc phải. Chữ chú thích ẩn sẵn, bấm **Hiện chữ** để xem.
 - Lối đi ra sau bên trái, cổng chính + cổng phụ (cửa sắt cũ), rào kẽm gai + cây gai/bông giấy.
 - Hướng nắng: chiều chiếu mạnh vào tường sau (Tây Nam) tháng 9–3, tường hông phải (Tây Bắc) tháng 5–8 → cây che phía sau và bên phải.
 

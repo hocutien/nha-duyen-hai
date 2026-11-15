@@ -20,13 +20,13 @@ JS = r"""
 () => {
  site.updateMatrixWorld(true);
  const inv=new THREE.Matrix4().copy(site.matrixWorld).invert(), out={}, v=new THREE.Vector3(), trees=new Set(treeObjs);
- function folderOf(o){let p=o;while(p&&p!==site){if(p===optA)return 'A';if(p===optB)return 'B';if(p===mep||p===fut)return null;p=p.parent;}return 'D';}
+ function folderOf(o){let p=o;while(p&&p!==site){if(trees.has(p))return null;if(p===optA)return 'A';if(p===optB)return 'B';if(p===mep||p===fut)return null;p=p.parent;}return 'D';}
  site.traverse(o=>{
-  if(!o.isMesh||o.isInstancedMesh||trees.has(o))return; const f=folderOf(o); if(!f)return;
+  if(!o.isMesh||o.isInstancedMesh)return; const f=folderOf(o); if(!f)return;
   const g=o.geometry; if(!g||!g.attributes.position)return;
   const M=new THREE.Matrix4().multiplyMatrices(inv,o.matrixWorld); g.computeBoundingBox(); const bb=g.boundingBox.clone().applyMatrix4(M);
   if(f==='D'){ if(bb.min.x<-3||bb.max.x>26||-bb.max.z<-9||-bb.min.z>26) return; if(bb.max.x-bb.min.x>25||bb.max.z-bb.min.z>25) return; }
-  const key=f+'|'+o.material.color.getHexString()+'|'+(o.material.opacity??1).toFixed(2), arr=out[key]||(out[key]=[]);
+  const key=f+'|'+o.material.color.clone().convertLinearToSRGB().getHexString()+'|'+(o.material.opacity??1).toFixed(2), arr=out[key]||(out[key]=[]);
   const pos=g.attributes.position, idx=g.index, n=idx?idx.count:pos.count;
   for(let i=0;i<n;i+=3){const t=[];for(let k=0;k<3;k++){const j=idx?idx.getX(i+k):i+k;v.fromBufferAttribute(pos,j).applyMatrix4(M);t.push([+v.x.toFixed(3),+(-v.z).toFixed(3),+v.y.toFixed(3)]);}arr.push(t);}
  });
