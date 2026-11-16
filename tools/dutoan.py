@@ -51,7 +51,9 @@ r("Thợ lắp bồn, ống, hố ga", "công", 2, TC, "Nhân công", "Thị tr�
 g("3. Lấp hầm cũ + sân miệng giếng")
 r("Cát san lấp lấp hầm cũ", "m³", 3, 250, "Vật tư", "PL II KV10")
 r("Bê tông sân miệng giếng ~2m² dày 8cm", "m³", 0.2, 1100, "Vật tư", "PL II KV10", "Quy từ XM, cát, đá")
-r("Lấp hầm, đổ sân giếng (tự làm sau khi xe hút hầm)", "công", 2, 0, "Tự làm", "Tự làm", "Tiết kiệm 0,6tr")
+r("Xe hút hầm cũ trước khi lấp (1 chuyến)", "chuyến", 1, 800, "Khác", "Ước tính", "Hỏi giá dịch vụ hút hầm ở Duyên Hải")
+r("Thợ chính: đập nắp hầm, đổ sân bê tông miệng giếng", "công", 1, 500, "Nhân công", "Thị trường")
+r("Phụ: lấp cát hầm cũ, đầm từng lớp 30cm, rắc vôi", "công", 2, 300, "Nhân công", "Thị trường")
 
 g("Đợt 2 – Nhà chính, chống thấm chân tường")
 r("Xi măng Tây Đô PCB40 (vữa trát 1,5cm × 50m²)", "bao", 5, 82, "Vật tư", "PL II KV10")
