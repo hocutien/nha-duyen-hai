@@ -107,21 +107,20 @@
 <tr><td>Bơm giếng 1HP + bơm tăng áp</td><td>0,9</td></tr><tr><td>Máy rửa xe áp lực</td><td>1,8</td></tr>
 <tr><td>Chờ xưởng mộc (sau)</td><td>2,2</td></tr>
 <tr><th>Tổng lắp đặt</th><th>~18,2</th></tr><tr><th>Dùng đồng thời (hệ số ~0,55)</th><th>~10kW ≈ 45A</th></tr></table>
-<p>→ <b>CB tổng 2P 63A</b>, dây từ công tơ vào tủ <b>Cu 2×16mm²</b>, xin Điện lực công tơ 1 pha dòng tối đa <b>≥80A</b>.</p>
-<table><tr><th>Mạch</th><th>CB</th><th>Dây</th></tr>
-<tr><td>C1 Chiếu sáng (dây cũ, đo cách điện)</td><td>MCB 10A</td><td>1,5mm²</td></tr>
-<tr><td>C2 Ổ cắm nhà chính (dây cũ, đo cách điện)</td><td>MCB 20A</td><td>2,5mm²</td></tr>
-<tr><td>C3 Ổ cắm bếp: nồi cơm, ấm, tủ lạnh, hút mùi</td><td>RCBO 20A 30mA</td><td>2,5mm²</td></tr>
-<tr><td><b>C4 Bếp từ đôi (riêng)</b></td><td><b>RCBO 32A 30mA</b></td><td><b>4mm²</b></td></tr>
-<tr><td>C5 Giặt + sấy</td><td>RCBO 25A 30mA</td><td>4mm²</td></tr>
-<tr><td>C6 Bình nóng lạnh WC</td><td>RCBO 20A 30mA</td><td>2,5mm²</td></tr>
-<tr><td>C7 Máy lạnh phòng ngủ (1,5HP có sẵn)</td><td>MCB 16A</td><td>2,5mm²</td></tr>
-<tr><td>C8 Chờ máy lạnh thứ 2 (chỉ kéo dây sẵn)</td><td>MCB 16A</td><td>2,5mm²</td></tr>
-<tr><td>C9 Ngoài trời: bơm, rửa xe, đèn sân</td><td>RCBO 20A 30mA</td><td>4mm², ổ IP55</td></tr>
-<tr><td>C10 Tủ mạng, camera (qua UPS)</td><td>MCB 16A</td><td>2,5mm²</td></tr>
-<tr><td>C11 Chờ xưởng mộc</td><td>MCB 25A</td><td>4mm²</td></tr></table>
+<p>→ <b>CB tổng 2P 50A</b>, dây từ công tơ vào tủ <b>CVV 2×6mm²</b> (đo dây cũ, nhỏ hơn thì thay), sau CB tổng có <b>chống sét lan truyền (SPD) loại 2</b>. Chi tiết trong bản thiết kế điện + mạng.</p>
+<table><tr><th>Mạch</th><th>Bảo vệ</th><th>Dây</th></tr>
+<tr><td>C1 Đèn trong nhà + quạt trần (dây có sẵn)</td><td>MCB 10A</td><td>1,5mm²</td></tr>
+<tr><td>C2 Ổ cắm nhà chính (dây có sẵn, đo cách điện)</td><td>MCB 20A</td><td>2,5mm²</td></tr>
+<tr><td>C3 Máy lạnh 1,5HP phòng ngủ</td><td>MCB 20A</td><td>2,5mm²</td></tr>
+<tr><td>C4 Tủ mạng: UPS → PDU (không cắm gì khác)</td><td>MCB 10A</td><td>1,5mm²</td></tr>
+<tr><td><b>R1 Bếp từ (đợt 1 kéo sẵn dây)</b></td><td><b>RCBO 32A 30mA</b></td><td><b>4mm²</b></td></tr>
+<tr><td>R2 Ổ cắm bếp, tủ lạnh, nồi cơm, ấm</td><td>RCBO 20A 30mA</td><td>2,5mm²</td></tr>
+<tr><td>R3 Máy giặt + máy sấy (2 ổ đơn)</td><td>RCBO 20A 30mA</td><td>2,5mm²</td></tr>
+<tr><td>R4 Bình nóng lạnh có sẵn</td><td>RCBO 20A 30mA</td><td>2,5mm²</td></tr>
+<tr><td>R5 Ngoài trời: ổ IP55, đèn sân, đèn cảm biến, nhánh vườn</td><td>RCBO 16A 30mA</td><td>2,5mm²</td></tr>
+<tr><td>Dự phòng 2–4 module: nhà xe, bơm tăng áp, xưởng mộc, máy lạnh thứ 2</td><td>–</td><td>–</td></tr></table>
 <ul>
-<li>Tủ điện có <b>chống sét lan truyền (SPD)</b> và <b>cọc tiếp địa</b>; đo điện trở nối đất khi nghiệm thu.</li>
+<li><b>Tiếp địa:</b> 3 cọc đồng Ø16×2,4m, mục tiêu ≤4 Ω; tủ điện, tủ mạng và chống sét mạng nối chung một hệ.</li>
 <li>Ổ cắm đặt cao ≥1,0m, chừa cho lúc nâng nền.</li>
 <li>Dây cũ chỉ dùng lại cho C1, C2 sau khi đo cách điện đạt; các mạch tải lớn và mạch có nước đi dây mới.</li></ul>
 <h3>4. Cấp nước</h3>
@@ -163,28 +162,23 @@
 <tr><td>Điện</td><td>Dây đúng tiết diện, mỗi thiết bị tải lớn một mạch riêng, không dùng ổ cắm kéo dài cho máy sấy hay bếp. Tủ điện có chống sét lan truyền</td></tr>
 <tr><td>Đợt 2</td><td>Đầu báo khói và cảm biến rò nước loại Zigbee: báo về điện thoại qua Home Assistant khi đi vắng</td></tr></table>
 <p>Nhà 1 tầng ở riêng lẻ không bắt buộc thẩm duyệt phòng cháy chữa cháy theo QCVN 06:2022/BXD (sửa đổi 1:2023). Các mục trên là mức tối thiểu nên có.</p>
-<h3>8. Mạng – đi dây cùng lúc với điện (đợt 1)</h3>
-<p>Kéo đủ dây CAT6 ngay từ đầu, đi nổi trong ống chung tuyến với dây điện nhưng là ống riêng. Camera và switch PoE mua sau, chỉ việc gắn vào.</p>
-<table><tr><th>Tuyến</th><th>Cáp</th><th>Dài ~</th></tr>
-<tr><td>Cột điện → trụ cổng → tủ mạng (phòng kho)</td><td>Cáp quang nhà mạng kéo vào, đặt ONT trong tủ</td><td>nhà mạng kéo</td></tr>
-<tr><td>Tủ → AP1 Xiaomi BE6500 trên trần hành lang (phủ phòng khách + phòng ngủ)</td><td>CAT6</td><td>4m</td></tr>
-<tr><td>Tủ → AP2 Xiaomi BE6500 trên trần bếp nhà tạm (nối dây về tủ)</td><td>CAT6</td><td>12m</td></tr>
-<tr><td>Tủ → ổ mạng TV phòng khách</td><td>CAT6</td><td>9m</td></tr>
-<tr><td>Tủ → ổ mạng phòng ngủ (bàn làm việc)</td><td>CAT6</td><td>3m</td></tr>
-<tr><td>Tủ → camera cổng / cửa sau / lối đi + sân xe</td><td>CAT6 ngoài trời, kéo sẵn</td><td>20 + 5 + 16m</td></tr>
-<tr><td>Tủ → ống chờ lên mái (camera, AP ngoài trời khi làm sân thượng)</td><td>Ống trống có dây mồi</td><td>4m</td></tr>
-<tr><th>Tổng CAT6</th><th></th><th>~75m</th></tr></table>
+<h3>8. Mạng – đợt 1 chỉ làm phần chờ sẵn</h3>
+<p>Đợt 1 làm hết những gì chôn trong tường, nền, đất (làm sau phải đục). Tủ mạng gỗ, patch panel, chống sét mạng, switch PoE, camera làm dần ở đợt 2.</p>
+<table><tr><th>Tuyến (ống riêng, không chung ống điện)</th><th>Đợt 1</th><th>Dài ~</th></tr>
+<tr><td>Cột điện → trụ cổng → kho</td><td>Cáp quang nhà mạng kéo, ONT đặt ở kho</td><td>nhà mạng kéo</td></tr>
+<tr><td>Kho → 10 ổ mạng trong nhà: TV, bàn làm việc ×2, phòng ngủ ×2, BE6500 phòng khách, bếp ×2 (BE6500 + dự phòng), trần hành lang ×2 (AP-325, Zigbee)</td><td>Ống Ø20 + cáp CAT6 có sẵn, cuộn chờ ở kho, đánh số 2 đầu</td><td>~80m</td></tr>
+<tr><td><b>Kho → bàn làm việc: ống Ø25 trống</b></td><td>Chỉ dây mồi, để kéo thêm cáp hoặc cáp quang</td><td>~10m</td></tr>
+<tr><td>Kho → hộp A (trụ cổng), B (góc nhà phụ – sân xe), C (hiên sau)</td><td>Ống (A qua ống Ø32 mí lộ, B, C ống HDPE Ø32 chôn 0,5m) + dây mồi + hộp IP66. Cáp ngoài trời kéo ở đợt 2</td><td>~40m</td></tr>
+<tr><td>Hộp C → hộp D bờ sông</td><td>Đợt 2</td><td>–</td></tr>
+<tr><td>Kho → ống chờ lên mái</td><td>Ống trống có dây mồi</td><td>4m</td></tr></table>
 <ul>
-<li><b>Tủ mạng</b> đặt ở phòng kho, chỗ khô, cao hơn sàn ≥0,6m.
-<ul><li>Bên trong: ONT, MikroTik hEX, Lenovo M720q (Proxmox + Home Assistant + AdGuard), NAS, UPS Prolink 1200. Đợt 2 thêm switch PoE.</li>
-<li>Cấp điện: mạch C10 riêng.</li></ul></li>
-<li><b>Mất điện:</b> UPS giữ cho tủ mạng và wifi chạy được một lúc, đủ để báo tin và gọi điện.</li>
-<li><b>Chuẩn bị cho nhà thông minh:</b>
-<ul><li>Mọi hộp công tắc đều dùng loại sâu và <b>kéo sẵn dây trung tính (N)</b>, để sau lắp công tắc Zigbee không phải đi dây lại.</li>
-<li>Đặt Zigbee dongle trên M720q, ở giữa nhà cho sóng phủ đều.</li></ul></li>
+<li><b>Tủ mạng gỗ tự đóng</b> (đợt 2, treo vách kho, đáy cách sàn ≥0,3m): lòng 450×620×450mm, vừa 12U khổ 19". Plywood 18mm (không dùng MDF vì ẩm), cặp thanh tai rack 12U, quạt 120mm hút ở nóc, khe gió đáy trước, cửa nan/lưới, sơn chống ẩm + chống mối, thanh đồng nối đất bên trong. UPS Prolink 1200 đặt sàn dưới tủ. Trước khi có tủ: thiết bị đặt tạm trên kệ, cáp cuộn gọn.</li>
+<li>Đợt 1 kéo sẵn tới vị trí tủ: <b>ổ điện mạch C4</b> và <b>dây đất 6mm²</b> từ thanh đất tủ điện.</li>
+<li><b>Tủ ở kho, bàn làm việc cách ~5m</b> không ảnh hưởng tốc độ (cáp mạng chạy tốt tới 100m). Cần thêm cổng ở bàn thì kéo thêm cáp qua ống Ø25 hoặc đặt switch nhỏ tại bàn; quản lý NAS, Proxmox qua web.</li>
+<li><b>Chuẩn bị cho nhà thông minh:</b> mọi hộp công tắc là hộp 86 sâu, <b>kéo sẵn dây trung tính (N)</b>. Zigbee dongle tạm cắm M720q, đợt 2 thay bằng bộ Zigbee PoE trên trần hành lang.</li>
 <li>Bấm đầu mạng xong thì đo thông mạch từng tuyến, dán nhãn hai đầu dây.</li></ul>
 <h3>9. Máy lạnh</h3>
-<p>Dùng <b>1 máy 1,5HP có sẵn, lắp ở phòng ngủ</b> vì ban đêm là lúc dùng nhiều nhất. Máy 1,5HP cho phòng ~9,5m² hơi dư nhưng lạnh nhanh; nếu là máy loại thường (không inverter) thì để 26–27°C cho đỡ tắt bật liên tục. Dàn nóng đặt ở hông phải trên chân đế 40cm, có mái che. Kéo sẵn dây mạch C8 để sau này lắp thêm máy ở phòng khách nếu cần.</p>
+<p>Dùng <b>1 máy 1,5HP có sẵn, lắp ở phòng ngủ</b> vì ban đêm là lúc dùng nhiều nhất. Máy 1,5HP cho phòng ~9,5m² hơi dư nhưng lạnh nhanh; nếu là máy loại thường (không inverter) thì để 26–27°C cho đỡ tắt bật liên tục. Dàn nóng đặt ở hông phải trên chân đế 40cm, có mái che. Tủ điện chừa module dự phòng để sau này lắp thêm máy ở phòng khách nếu cần.</p>
 <h3>9b. Cây xanh – kiểu vườn rừng nhiệt đới</h3>
 <p>Trồng thành 3 tầng như rừng: tầng trên là cây to tán rộng che nắng, tầng giữa là cau và chà là rừng, tầng dưới là dương xỉ, môn, ráy giữ ẩm cho đất. Tất cả đều chịu được nắng nóng và đất ven sông; cây to được trồng cách xa nhà và bể tự hoại.</p>
 <table><tr><th>Tầng / vị trí</th><th>Loại cây</th><th>Số lượng</th><th>Ghi chú</th></tr>
@@ -252,25 +246,26 @@
 <tr><td>4. Nền nhà tạm 6×10,7m (mái, vách, nền)</td><td>6,2</td><td>7,7</td><td>0,0</td><td>13,9</td></tr>
 <tr><td>5. Nhà phụ – xây gạch, bông gió tận dụng, chống nóng</td><td>12,6</td><td>4,8</td><td>0,5</td><td>17,9</td></tr>
 <tr><td>6. Cửa sau + 2 mái hắt</td><td>1,9</td><td>2,1</td><td>0,0</td><td>4,0</td></tr>
-<tr><td>7. Điện</td><td>11,2</td><td>1,5</td><td>0,0</td><td>12,7</td></tr>
-<tr><td>8. Mạng + ống chờ</td><td>0,4</td><td>0,0</td><td>0,0</td><td>0,4</td></tr>
+<tr><td>7. Điện</td><td>11,5</td><td>1,5</td><td>0,0</td><td>13,0</td></tr>
+<tr><td>8. Mạng + ống chờ</td><td>2,7</td><td>0,0</td><td>0,0</td><td>2,7</td></tr>
 <tr><td>9. Nước cấp + thoát</td><td>8,3</td><td>1,0</td><td>0,7</td><td>10,0</td></tr>
 <tr><td>10. Bếp</td><td>4,7</td><td>0,0</td><td>0,0</td><td>4,7</td></tr>
 <tr><td>11. Máy lạnh có sẵn – di dời</td><td>0,5</td><td>0,8</td><td>0,0</td><td>1,3</td></tr>
 <tr><td>12. An toàn cho thai phụ + cháy nổ</td><td>4,0</td><td>0,0</td><td>0,0</td><td>4,0</td></tr>
 <tr><td>13. Cổng sắt cũ lắp lại</td><td>0,9</td><td>0,5</td><td>0,0</td><td>1,4</td></tr>
 <tr><td>14. Chi phí chung</td><td>1,5</td><td>0,0</td><td>1,2</td><td>2,7</td></tr>
-<tr><th colspan=4>Cộng trước thuế</th><th>119,0</th></tr>
-<tr><th colspan=4>VAT 10% phần vật tư lấy giá công bố (chưa VAT)</th><th>4,6</th></tr>
-<tr><th colspan=4>Dự phòng 10%</th><th>12,4</th></tr>
-<tr><th colspan=4>Tổng đợt 1 (vào ở)</th><th>136,0</th></tr></table>
-<p>Tổng đợt 1 (gói vào ở) ≈ <b>136tr</b> gồm VAT và dự phòng, vượt ngân sách 100tr khoảng 36tr. Đã trừ: dây điện, cáp + thiết bị mạng, bông gió nhà 914 có sẵn (0đ) và khoảng 9,1tr tiền công nhờ chủ nhà tự làm. <b>Tự làm:</b> đào hố bể, lấp hầm, tháo bông gió, lắp tấm cách nhiệt, đi ống luồn + kéo dây + lắp ổ cắm, đèn, đi ống nước uPVC, lắp lưới chống muỗi, ngâm thử chống thấm WC. <b>Để thợ:</b> xây trát, chống thấm WC, tủ điện + tiếp địa + đóng điện, lợp mái, hàn, máy lạnh. Đơn giá vật liệu theo Thông báo 561/TB-SXD Vĩnh Long (PL II khu vực 10, PL IV, kỳ 01–15/9/2026, chưa VAT).</p>
+<tr><th colspan=4>Cộng trước thuế</th><th>121,6</th></tr>
+<tr><th colspan=4>VAT 10% phần vật tư lấy giá công bố (chưa VAT)</th><th>4,7</th></tr>
+<tr><th colspan=4>Dự phòng 10%</th><th>12,6</th></tr>
+<tr><th colspan=4>Tổng đợt 1 (vào ở)</th><th>139,0</th></tr></table>
+<p>Tổng đợt 1 (gói vào ở) ≈ <b>139tr</b> gồm VAT và dự phòng, vượt ngân sách 100tr khoảng 39tr (đã gồm ~2,9tr ống chờ mạng, hộp ổ mạng, hộp ngoài trời, RCBO thứ 5). Đã trừ: dây điện, cáp + thiết bị mạng, bông gió nhà 914 có sẵn (0đ) và khoảng 9,7tr tiền công nhờ chủ nhà tự làm. <b>Tự làm:</b> đào hố bể, lấp hầm, tháo bông gió, lắp tấm cách nhiệt, đi ống luồn + kéo dây + lắp ổ cắm, đèn, kéo cáp mạng + đánh số, đi ống nước uPVC, lắp lưới chống muỗi, ngâm thử chống thấm WC. <b>Để thợ:</b> xây trát, chống thấm WC, tủ điện + tiếp địa + đóng điện, lợp mái, hàn, máy lạnh. Đơn giá vật liệu theo Thông báo 561/TB-SXD Vĩnh Long (PL II khu vực 10, PL IV, kỳ 01–15/9/2026, chưa VAT).</p>
 <p><b>Đợt 2 – làm dần sau khi đã ở</b></p>
 <table><tr><th>Hạng mục</th><th>Cũ/mới</th><th>Triệu</th></tr>
 <tr><td>Sơn lại phòng ở + mặt tiền (tự sơn)</td><td>Mới</td><td>2–4</td></tr>
 <tr><td>Kệ V lỗ phòng kho + đá mi sân xe</td><td>Cũ/mới</td><td>2–4</td></tr>
 <tr><td>Cột lọc nước (nếu xét nghiệm có phèn)</td><td>Mới</td><td>1,5–3</td></tr>
-<tr><td>3 camera PoE + switch PoE (dây đã kéo sẵn ở đợt 1)</td><td>Mới</td><td>2,5–4</td></tr>
+<tr><td>Tủ mạng gỗ tự đóng + patch panel + PDU + cáp ngoài trời + 4 chống sét mạng + switch PoE TL-SG2210MP (bóc tách trong bảng tính)</td><td>Mới</td><td>7,5</td></tr>
+<tr><td>3 camera PoE (ống đã chờ sẵn ở đợt 1)</td><td>Mới</td><td>3–6</td></tr>
 <tr><td>Cảm biến Zigbee: khói, rò nước, cửa (báo về điện thoại qua Home Assistant)</td><td>Mới</td><td>1–2</td></tr>
 <tr><td>Bồn nước mưa 2.000L nhựa (4,29tr, ĐMX) + máng</td><td>Mới</td><td>4,5–5,5</td></tr>
 <tr><td>Máy rửa xe áp lực</td><td>Mới</td><td>1,5–2,5</td></tr>
@@ -279,7 +274,7 @@
 <tr><td>Móng + đà kiềng + tường mặt tiền kín cao 2,6m ~45m, trát 2 mặt, 5 ô bông gió, cổng gỗ kín (~500 nghìn/m² tường ≤2m +170 nghìn/m² phần trên 2m, bảng đơn giá bồi thường cũ – cần báo giá)</td><td></td><td>70–110</td></tr>
 <tr><td>Nhà xe gỗ góc trái 5,7×7,1m: cột gỗ trên đế BT rời, tôn cũ, đá mi (bóc tách chi tiết trong bảng tính)</td><td>Gỗ + tôn cũ</td><td>10–12</td></tr>
 <tr><td>Chống thấm chân tường nhà chính; nâng dải mí lộ; rào kẽm gai tạm; cây xanh; bếp từ; bơm tăng áp; ống thoát sân Ø114 ra ao (bóc tách trong bảng tính)</td><td>Mới</td><td>32,5</td></tr>
-<tr><th>Cộng phần thiết bị và hạng mục dời (chưa tính san lấp và tường mặt tiền)</th><th></th><th>62–78</th></tr></table>
+<tr><th>Cộng phần thiết bị và hạng mục dời (chưa tính san lấp và tường mặt tiền)</th><th></th><th>70–88</th></tr></table>
 <p><b>Giá thị trường dùng để tính (tra 15/11/2026)</b></p>
 <table><tr><th>Hạng mục</th><th>Giá</th><th>Nguồn</th></tr>
 <tr><td>Thợ hồ chính công nhật</td><td>400–600 nghìn/ngày</td><td>Việc Làm Tốt, 10/2026</td></tr>
@@ -644,7 +639,7 @@ box(9.85,2.8,0.4,1.5,2.4,0.06,C.bt);box(10.25,3.2,0.46,0.7,0.7,0.02,0x616161);bo
 
 // ---- MAY LANH (hien thuong truc) + TU MANG ----
 box(17.55,12.5,2.45,0.22,0.8,0.28,0xf5f5f5);box(18.05,12.45,0.4,0.3,0.8,0.55,0xb0bec5);box(18.0,12.4,0,0.4,0.9,0.4,C.bt);box(18.0,12.35,1.05,0.5,0.95,0.04,C.toncu);
-box(17.05,14.25,1.6,0.6,0.4,0.45,0x263238);
+box(17.05,14.25,0.9,0.5,0.49,0.66,0x8d6e63);box(17.07,14.73,0.93,0.46,0.02,0.6,0x5d4037);box(17.15,14.3,0,0.3,0.4,0.25,0x263238);label('Tủ mạng gỗ 12U tự đóng (đợt 2) + UPS dưới sàn',17.3,14.45,1.9);
 label('Máy lạnh 1,5HP có sẵn (phòng ngủ)',17.6,12.9,3.1);label('Dàn nóng: chân đế 40cm + mái che',18.6,10.7,1.6);
 
 // ---- DIEN NUOC (an/hien bang nut) ----
@@ -713,7 +708,7 @@ pipe([[14.8,12.0,3.2],[17.6,12.9,3.2],[17.6,12.9,2.75]],GRN,0.02);
 pipe([[18.0,12.9,2.6],[18.5,12.85,0.95]],0xb87333,0.02);
 // tu mang + UPS qua C9
 pipe([[14.8,16.2,3.2],[17.2,14.45,3.2],[17.2,14.45,2.05]],RED,0.015);
-label('Tủ mạng + UPS',17.3,14.45,2.6,mep);label('Ổ IP55 máy rửa xe (RCBO)',7.9,6.9,1.9,mep);label('Vòi xịt rửa xe',8.3,6.8,1.2,mep);
+label('Ổ điện C4 + dây đất 6mm² chờ ở tủ mạng',17.3,14.45,2.6,mep);label('Ổ IP55 máy rửa xe (RCBO)',7.9,6.9,1.9,mep);label('Vòi xịt rửa xe',8.3,6.8,1.2,mep);
 label('Rãnh + bẫy dầu-cát nước rửa xe',7.6,0.6,0.7,mep);label('Bồn nước mưa 2.000L (tưới, rửa xe)',6.6,8.9,2.2,mep);
 label('Hố ga lắng → thoát ra ao',7.5,20.2,0.6,mep);
 // mang: CAT6 tu tu mang -> AP2 (Xiaomi BE6500 thu 2, backhaul day) + camera PoE
@@ -722,13 +717,13 @@ pipe([[17.2,14.45,2.05],[17.2,14.45,3.25],[14.85,14.0,3.25],[14.05,13.0,2.6],[11
 pipe([[14.05,13.0,2.6],[14.05,8.0,2.6],[12.05,-0.1,2.4]],NET,0.012);mbox(11.95,-0.25,2.35,0.2,0.12,0.12,0xeeeeee);
 pipe([[14.85,14.0,3.25],[14.85,18.2,3.0]],NET,0.012);mbox(14.75,18.25,2.75,0.2,0.12,0.12,0xeeeeee);
 pipe([[8.3,8.1,2.15],[8.0,7.8,2.45]],NET,0.012);mbox(7.85,7.6,2.4,0.2,0.12,0.12,0xeeeeee);
-label('AP2: Xiaomi BE6500 (dây CAT6)',10.9,11.9,2.9,mep);
+label('BE6500 #2 nhà phụ (dây về tủ)',10.9,11.9,2.9,mep);
 const FIB=0xff7043;pipe([[13.0,-6.1,6.3],[12.3,-0.15,2.5],[14.25,2.6,3.05],[14.85,10.0,3.25],[17.2,14.45,3.25]],FIB,0.012);label('Cáp quang nhà mạng → ONT trong tủ mạng',13.4,1.5,3.3,mep);
-pipe([[14.85,12.5,3.25],[14.85,12.5,3.28]],NET,0.012);(function(){const m=new THREE.Mesh(new THREE.CylinderGeometry(0.16,0.16,0.05,16),mat(0xfafafa));m.position.set(14.85,3.24,-12.5);mep.add(m);})();label('AP1: Xiaomi BE6500 trần hành lang (phủ khách + ngủ)',14.85,12.5,3.6,mep);
-pipe([[17.2,14.45,3.25],[17.7,9.0,3.25],[17.7,7.2,3.25],[17.7,7.2,0.45]],NET,0.012);mbox(17.66,7.1,0.4,0.06,0.12,0.12,0xffffff);label('Ổ mạng TV phòng khách',17.6,7.2,0.9,mep);
-pipe([[17.2,14.45,3.25],[17.7,13.6,3.25],[17.7,13.6,0.45]],NET,0.012);mbox(17.66,13.5,0.4,0.06,0.12,0.12,0xffffff);label('Ổ mạng phòng ngủ (bàn làm việc)',17.6,13.6,0.9,mep);
+pipe([[14.85,12.5,3.25],[14.85,12.5,3.28]],NET,0.012);(function(){const m=new THREE.Mesh(new THREE.CylinderGeometry(0.16,0.16,0.05,16),mat(0xfafafa));m.position.set(14.85,3.24,-12.5);mep.add(m);})();label('Aruba AP-325 trần hành lang (PoE) + chờ Zigbee PoE',14.85,12.5,3.6,mep);
+pipe([[17.2,14.45,3.25],[17.7,9.0,3.25],[17.7,7.2,3.25],[17.7,7.2,0.45]],NET,0.012);mbox(17.66,7.1,0.4,0.06,0.12,0.12,0xffffff);label('Ổ mạng TV + BE6500 #1 phòng khách',17.6,7.2,0.9,mep);
+pipe([[17.2,14.45,3.25],[17.7,13.6,3.25],[17.7,13.6,0.45]],NET,0.012);mbox(17.66,13.5,0.4,0.06,0.12,0.12,0xffffff);label('Ổ mạng phòng ngủ ×2',17.6,13.6,0.9,mep);
 pipe([[17.2,14.45,3.25],[17.5,14.45,4.65]],0x9e9e9e,0.03);label('Ống chờ lên mái (camera/AP ngoài trời sau này)',17.5,14.45,5.0,mep);
-label('Tủ mạng: ONT + MikroTik hEX + M720q + NAS + UPS Prolink 1200 (+ switch PoE đợt 2)',17.2,14.45,1.4,mep);
+label('Đợt 1: ống Ø20 riêng + cáp có sẵn cuộn chờ ở kho, đánh số 2 đầu',17.2,14.45,1.4,mep);pipe([[17.2,14.45,3.25],[16.6,10.6,3.25],[16.6,10.02,3.25],[16.6,10.02,1.1]],0x9e9e9e,0.0175);mbox(16.45,9.98,1.05,0.3,0.04,0.12,0xffffff);label('Ống Ø25 trống kho → bàn làm việc + ổ mạng ×2',16.6,10.0,1.7,mep);mbox(11.85,-0.32,2.2,0.3,0.12,0.3,0x90a4ae);label('Hộp A IP66 trụ cổng (ống + dây mồi)',12.0,-0.3,2.8,mep);mbox(7.7,7.5,2.6,0.3,0.12,0.3,0x90a4ae);label('Hộp B IP66 sân xe',7.85,7.55,3.2,mep);mbox(14.65,18.3,2.5,0.3,0.12,0.3,0x90a4ae);label('Hộp C IP66 hiên sau (cáp ngoài trời + chống sét: đợt 2)',14.8,18.35,3.4,mep);
 label('Hộp công tắc sâu, có dây N (để sau lắp công tắc Zigbee)',14.3,6.2,1.5,mep);
 // PCCC bo sung
 cyl(14.55,6.0,0,0.08,0.5,0xc62828);label('Bình chữa cháy 4kg phòng khách',14.6,6.0,0.8,mep);
@@ -925,7 +920,7 @@ label('WC + tắm – cửa mở vào khu giặt, không nhìn ra bàn ăn',9.7,
 label('Nhà kiên cố 4 × 16m (cả hiên)',16,10,6.2);
 label('Phòng khách',16,7.8,5.4);
 box(15.85,9.25,0,1.75,0.7,0.76,0x7b3f1f);box(15.85,9.25,0,0.45,0.66,0.72,0x6a3519);box(17.2,9.25,0,0.4,0.66,0.72,0x6a3519);box(16.4,9.62,0.76,0.5,0.06,0.38,0x222222);label('Bàn làm việc gỗ mang theo (sát vách phòng ngủ)',16.7,9.6,1.4);
-label('Kệ sắt 2 khoang mang theo + tủ mạng/NAS/UPS (không để trên nóc tủ lạnh)',16.6,17.9,2.8);
+label('Kệ sắt 2 khoang mang theo (đặt tạm NAS, mini PC trước khi có tủ mạng; không để trên nóc tủ lạnh)',16.6,17.9,2.8);
 label('Phòng ngủ',16.7,12,4.2);label('Hành lang',14.8,13,3.6);label('Trần thả ~3,3m',16,8.5,3.9);
 label('Phòng 2: kho + thay đồ (kệ V lỗ – đợt 2)',16.7,16.2,4.2);label('Chân tường ẩm: trát chống thấm 1,2m',15.8,15,1.6);
 label('Khu tắm–giặt: máy giặt + sấy chồng, lavabo ngoài',12.7,16.9,2.9);label('Lối từ hành lang nhà chính → WC (không qua bàn ăn)',13.6,17.1,2.3);label('Cửa ra dây phơi',13.5,18.6,2.4);label('Dây phơi đồ (nắng sáng–trưa)',11.0,21.4,2.3);label('Chiếu nghỉ + 2 bậc thấp, tay vịn, cửa lùa',12.0,15.6,0.8);label('Cửa sau hành lang (đợt 1): cao 2,7m, mái hắt 1,2m, gió vườn sau vào nhà',14.8,19.6,3.3);label('Rãnh thu nước + ngạch 12cm',14.8,19.5,0.8);label('Cây che nắng chiều (Tây Nam)',16,24,6.9);
