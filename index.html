@@ -10,6 +10,9 @@
   .bar{position:fixed;left:8px;right:8px;top:8px;display:flex;flex-wrap:wrap;gap:6px;z-index:2}
   .bar button{border:0;border-radius:18px;padding:8px 12px;font-size:13px;background:#fff;color:#222;box-shadow:0 1px 3px rgba(0,0,0,.2)}
   .bar button.on{background:#1f2937;color:#fff}
+  .bar2 button{padding:6px 10px;font-size:12px}
+  .bar2 .lg{background:#fff;border-radius:14px;padding:6px 10px;font-size:12px;box-shadow:0 1px 3px rgba(0,0,0,.2)}
+  .bar2 .lg i{display:inline-block;width:16px;height:5px;margin:0 3px 2px 6px;vertical-align:middle}
   .note{position:fixed;left:8px;right:8px;bottom:8px;z-index:2;background:rgba(255,255,255,.92);border-radius:10px;padding:8px 10px;font-size:12px;line-height:1.4;color:#333}
   .note b{color:#000}
   .tmbtn{position:fixed;right:8px;bottom:118px;z-index:3;border:0;border-radius:18px;padding:9px 13px;font-size:13px;background:#1f2937;color:#fff;box-shadow:0 1px 4px rgba(0,0,0,.3)}
@@ -44,6 +47,7 @@
   <button id="pa">PA A: sân thượng</button>
   <button id="pb">PA B: lầu gỗ</button>
 </div>
+<div class="bar bar2" id="ckt" style="display:none"><button data-k="all" class="on">Tất cả mạch</button><button data-k="FD">Nguồn + tiếp địa</button><button data-k="C1">C1 đèn</button><button data-k="C2">C2 ổ nhà chính</button><button data-k="C3">C3 máy lạnh</button><button data-k="C4">C4 tủ mạng</button><button data-k="R1">R1 bếp từ</button><button data-k="R2">R2 ổ bếp</button><button data-k="R3">R3 giặt sấy</button><button data-k="R4">R4 nóng lạnh</button><button data-k="R5">R5 ngoài trời</button><span class="lg"><i style="background:#e53935"></i>L <i style="background:#1e88e5"></i>N <i style="background:repeating-linear-gradient(90deg,#43a047 0 4px,#fdd835 4px 8px)"></i>PE</span></div>
 <button id="tm" class="tmbtn">📋 Thuyết minh</button>
 <a class="tmbtn" style="bottom:160px;text-decoration:none" href="https://hocutien.github.io/nha-duyen-hai/map.html">🗺 Bản đồ thực địa</a>
 <a class="tmbtn" style="bottom:244px;text-decoration:none" href="dien.html">⚡ Điện · 💧 Nước · 🌐 Mạng</a>
@@ -139,19 +143,19 @@
 <tr><td>Áp lực</td><td>Bồn cao 2,5m cho áp yếu ở vòi sen → lắp bơm tăng áp tự động sau bồn khi cần</td></tr>
 <tr><td>Chất lượng</td><td>Xét nghiệm nước giếng (vi sinh, sắt, mặn, asen) trước khi dùng. Nếu nhiễm phèn, xử lý theo cách nhiều hộ hay làm: giàn mưa → bể lắng → cột lọc cát mangan → RO cho nước uống</td></tr>
 <tr><td>Nếu giếng mặn</td><td>Nhiều hộ ven biển Trà Vinh trữ nước mưa để uống. Khi đó đưa bồn nước mưa 2.000L lên đợt 1 (thêm ~2,5–3,5tr)</td></tr>
-<tr><td>Rửa xe</td><td>Vòi xịt + ổ IP55 ở sân trước; sân dốc 1–2% về rãnh → bẫy dầu-cát → hố ga</td></tr>
+<tr><td>Rửa xe</td><td>Vòi xịt + ổ IP55 ở sân trước; phễu → bẫy dầu-cát → ống chính → bể (đậy nắp phễu khi không rửa để nước mưa không vào bể)</td></tr>
 <tr><td>Nước mưa (đợt 2)</td><td>Máng xối mái nền tạm (~70m²) → bồn 2.000L; mưa 10mm thu ~0,7m³ để tưới cây, rửa xe</td></tr></table>
 <h3>5. Thoát nước và bể tự hoại</h3>
 <ul>
 <li><b>Bỏ hầm cũ:</b> hầm cũ chỉ cách giếng ~2,3m. Thuê xe hút sạch, rắc vôi khử trùng, thợ lấp cát đầm từng lớp 30cm, đổ nắp bê tông.</li>
-<li><b>Bể mới:</b> bể tự hoại composite 3 ngăn ~2m³, đặt dưới sân trước bếp (nhà xe đã dời sang góc trái), <b>cách giếng ~15,9m</b>. Xe hút hầm đậu ngay ở cổng chính. Không đậu ô tô lên nắp bể. Theo khuyến cáo của CDC Mỹ, bể tự hoại cách giếng tối thiểu 50ft (~15m). Nắp bê tông chịu xe máy. Ống thông hơi dựng theo vách bếp, cao hơn mái.</li>
+<li><b>Bể mới (không có cống chung, ao có triều giữ nuôi cá tôm):</b> bể tự hoại nhựa <b>2.000L nằm ngang có ngăn lọc vi sinh</b>, nhận cả nước đen lẫn nước xám, đặt <b>trước hiên nhà chính</b>, cách giếng ~19m, không nằm dưới dốc cổng. Xe hút hầm đậu ngoài đường. Ống thông hơi Ø42 dọc cột hiên lên trên mái. Không cho ô tô chạy lên nắp bể. Thuê máy đào mini nửa ngày (chủ nhà không tự đào); đào lúc triều ròng, đóng cừ tràm chống sạt lề đường.</li>
 <li><b>Lắp bể (ven sông, mạch nước ngầm cao):</b>
 <ul><li>Đào hố rộng hơn bể 30–40cm mỗi bên.</li>
-<li>Đổ bê tông lót đáy dày 10–15cm, có 4 tai neo để chằng bể chống bị đẩy nổi.</li>
+<li>Đổ bê tông lót đáy dày 10cm, 2 đai neo chằng bể chống bị đẩy nổi; hút bùn lúc triều ròng và châm nước lại ngay.</li>
 <li>Thử nước kín các mối nối ống trước khi lấp đất: rò rỉ thường xảy ra ở mối nối, không phải ở thân bể.</li></ul></li>
-<li><b>Ống xí:</b> uPVC Ø90 dán keo kín, dài ~16m, dốc ≥2% (tụt ~0,32m). Nền WC +0,5m nên đủ độ dốc.</li>
-<li><b>Nước sau bể</b> thoát ra rãnh ven đường; hỏi xã trước khi đấu nối.</li>
-<li><b>Thoát nước xám:</b> uPVC Ø60 (~27m), dốc ≥2%, có siphon. Chậu rửa có bẫy mỡ inox ngay dưới chậu (thay hố ga bẫy mỡ xây). Bếp, khu giặt, sàn WC gom về <b>1 hố lắng sau nhà</b> rồi ra ao. Nước đen (bồn cầu) đi ống Ø90 riêng ra bể tự hoại.</li>
+<li><b>Ống chính:</b> uPVC Ø90 dán keo kín ~25m, dốc ≥2%: WC → dọc hông trái nhà phụ → hố ga (nhập nước xám) → góc trước cổng (tê kiểm tra) → bể. Nền WC +0,5m nên đủ độ dốc.</li>
+<li><b>Nước sau bể:</b> qua nắp lật 1 chiều (triều cao nhất thấp hơn nền 0,30m) → ống Ø60 ~12m → <b>rãnh thấm 7m dọc rào trước bên trái</b> (ống Ø60 khoan lỗ trong đá/gạch vỡ bọc vải địa), cách ao ≥15m, cách giếng ≥19m. Ao lúc ròng thấp hơn nền ~2m nên rãnh rút được. Không xả ra ao, không dẫn ra sông (ao lấy nước sông theo con nước).</li>
+<li><b>Thoát nước xám:</b> uPVC Ø60 (~26m), dốc ≥2%, có siphon. Chậu rửa có bẫy mỡ inox ngay dưới chậu. Bếp, khu giặt, sàn WC, bệ rửa chân, rửa xe (qua bẫy dầu-cát) chảy ra phía trước, nhập ống chính Ø90 tại hố ga rồi vào bể. Ao chỉ nhận nước mưa.</li>
 <li><b>Cấp nước:</b> Ø34 chỉ đoạn 5m dưới bồn; ống chính Ø27 chôn 0,3m chạy sau nhà phụ; nhánh Ø21 tới từng thiết bị, mỗi nhánh có van khoá.</li>
 <li><b>Rửa chén:</b> chậu rửa trên mặt bếp nhà phụ, van dưới chậu, bẫy mỡ inox ngay dưới chậu.</li>
 <li><b>Vòi rửa tay chân khi về nhà:</b> góc sân xe, cạnh cửa nhà phụ: trụ vòi cao 0,7m + bệ láng xi măng 0,8×0,6m gờ 10cm, phễu thu nối đường thoát bếp. Dùng chung để rửa xe. Thêm ≈0,6tr.</li>
@@ -252,24 +256,24 @@
 <p><b>Đợt 1 – gói dọn vào ở</b> (triệu đồng, bóc tách khối lượng × đơn giá; chi tiết 152 dòng trong bảng tính <a href="https://claude.ai/artifact/B8LPuDUHWvyX6ktExjic4L" target="_blank">Dự toán chi tiết đợt 1</a>)</p>
 <table><tr><th>Hạng mục</th><th>Vật tư + TB</th><th>Nhân công</th><th>Khác</th><th>Cộng</th></tr>
 <tr><td>1. WC + tắm (3,4×3,15m, nền +0,5m)</td><td>28,4</td><td>8,0</td><td>0,0</td><td>36,4</td></tr>
-<tr><td>2. Bể tự hoại + ống thoát</td><td>7,8</td><td>1,0</td><td>0,0</td><td>8,8</td></tr>
-<tr><td>3. Lấp hầm cũ + sân miệng giếng</td><td>1,0</td><td>1,1</td><td>0,8</td><td>2,9</td></tr>
+<tr><td>2. Bể tự hoại + ống thoát</td><td>11,0</td><td>2,8</td><td>0,0</td><td>13,8</td></tr>
+<tr><td>3. Lấp hầm cũ + sân miệng giếng</td><td>1,4</td><td>1,4</td><td>0,8</td><td>3,6</td></tr>
 <tr><td>4. Nền nhà tạm 6×10,7m (mái, vách, nền)</td><td>6,2</td><td>7,7</td><td>0,0</td><td>13,9</td></tr>
 <tr><td>5. Nhà phụ – xây gạch, bông gió tận dụng, chống nóng</td><td>12,6</td><td>4,8</td><td>0,5</td><td>17,9</td></tr>
 <tr><td>6. Cửa sau + 2 mái hắt</td><td>1,9</td><td>2,1</td><td>0,0</td><td>4,0</td></tr>
-<tr><td>7. Điện</td><td>10,7</td><td>1,5</td><td>0,0</td><td>12,2</td></tr>
+<tr><td>7. Điện</td><td>10,9</td><td>1,5</td><td>0,0</td><td>12,4</td></tr>
 <tr><td>8. Mạng + ống chờ</td><td>0,7</td><td>0,0</td><td>0,0</td><td>0,7</td></tr>
-<tr><td>9. Nước cấp + thoát</td><td>7,9</td><td>1,0</td><td>0,7</td><td>9,6</td></tr>
+<tr><td>9. Nước cấp + thoát</td><td>7,1</td><td>1,0</td><td>0,7</td><td>8,8</td></tr>
 <tr><td>10. Bếp</td><td>4,7</td><td>0,0</td><td>0,0</td><td>4,7</td></tr>
 <tr><td>11. Máy lạnh có sẵn – di dời</td><td>0,5</td><td>0,8</td><td>0,0</td><td>1,3</td></tr>
 <tr><td>12. An toàn cho thai phụ + cháy nổ</td><td>4,0</td><td>0,0</td><td>0,0</td><td>4,0</td></tr>
 <tr><td>13. Cổng sắt cũ lắp lại</td><td>0,9</td><td>0,5</td><td>0,0</td><td>1,4</td></tr>
 <tr><td>14. Chi phí chung</td><td>1,5</td><td>0,0</td><td>1,2</td><td>2,7</td></tr>
-<tr><th colspan=4>Cộng trước thuế</th><th>120,3</th></tr>
-<tr><th colspan=4>VAT 10% phần vật tư lấy giá công bố (chưa VAT)</th><th>4,4</th></tr>
-<tr><th colspan=4>Dự phòng 10%</th><th>12,5</th></tr>
-<tr><th colspan=4>Tổng đợt 1 (vào ở)</th><th>137,2</th></tr></table>
-<p>Tổng đợt 1 (gói vào ở) ≈ <b>137,2tr</b> gồm VAT và dự phòng, vượt ngân sách 100tr khoảng 37,2tr (phương án vừa đủ dọn vào ở: nước, mạng chỉ làm phần dùng ngay + phần phải chôn; phòng cuối là phòng ngủ 2, tủ mạng ở phòng khách). Đã tối ưu điện – nước – mạng (bớt ~3,6tr so với 141tr): CB tổng 40A, RCCB chung thay 4 RCBO, cáp nguồn 15m theo tuyến đo, giữ dây cũ đi nổi ở nhà chính, bồn inox mua cũ, ống Ø34 chỉ 5m, mạng 1 trục Ø32 + 4 mặt ổ, chỉ chôn ống ra cổng; đã bù các khoản thiếu (ổ đơn, cáp ngoài trời, bẫy mỡ, hố lắng, ống Ø60 27m). Đã trừ: dây điện, cáp + thiết bị mạng, bông gió nhà 914 có sẵn (0đ) và khoảng 9,1tr tiền công nhờ chủ nhà tự làm. <b>Tự làm:</b> đào hố bể, tháo bông gió, lắp tấm cách nhiệt, đi ống luồn + kéo dây + lắp ổ cắm, đèn, kéo cáp mạng + đánh số, đi ống nước uPVC, lắp lưới chống muỗi, ngâm thử chống thấm WC. <b>Để thợ:</b> hút + lấp hầm cũ, xây trát, chống thấm WC, tủ điện + tiếp địa + đóng điện, lợp mái, hàn, máy lạnh. Đơn giá vật liệu theo Thông báo 561/TB-SXD Vĩnh Long (PL II khu vực 10, PL IV, kỳ 01–15/9/2026, chưa VAT).</p>
+<tr><th colspan=4>Cộng trước thuế</th><th>125,5</th></tr>
+<tr><th colspan=4>VAT 10% phần vật tư lấy giá công bố (chưa VAT)</th><th>4,5</th></tr>
+<tr><th colspan=4>Dự phòng 10%</th><th>13,0</th></tr>
+<tr><th colspan=4>Tổng đợt 1 (vào ở)</th><th>142,9</th></tr></table>
+<p>Tổng đợt 1 (gói vào ở) ≈ <b>142,9tr</b> gồm VAT và dự phòng, vượt ngân sách 100tr khoảng 42,9tr (+5,7tr so với bản trước do xử lý nước thải tại chỗ: bể 2.000L có ngăn lọc nhận cả nước xám, ống chính ra trước nhà + ống về rãnh thấm, thuê máy đào, neo bể, cừ tràm, nắp lật; dốc cổng + gờ chặn nước; cáp R5 đổi 3×2,5 có PE) (phương án vừa đủ dọn vào ở: nước, mạng chỉ làm phần dùng ngay + phần phải chôn; phòng cuối là phòng ngủ 2, tủ mạng ở phòng khách). Đã tối ưu điện – nước – mạng (bớt ~3,6tr so với 141tr): CB tổng 40A, RCCB chung thay 4 RCBO, cáp nguồn 15m theo tuyến đo, giữ dây cũ đi nổi ở nhà chính, bồn inox mua cũ, ống Ø34 chỉ 5m, mạng 1 trục Ø32 + 4 mặt ổ, chỉ chôn ống ra cổng; đã bù các khoản thiếu (ổ đơn, cáp ngoài trời, bẫy mỡ, ống Ø60). Đã trừ: dây điện, cáp + thiết bị mạng, bông gió nhà 914 có sẵn (0đ) và khoảng 9,1tr tiền công nhờ chủ nhà tự làm. <b>Tự làm:</b> tháo bông gió, lắp tấm cách nhiệt, đi ống luồn + kéo dây + lắp ổ cắm, đèn, kéo cáp mạng + đánh số, đi ống nước uPVC, lắp lưới chống muỗi, ngâm thử chống thấm WC. <b>Để thợ:</b> thuê máy đào hố bể + rãnh, hút + lấp hầm cũ, xây trát, chống thấm WC, tủ điện + tiếp địa + đóng điện, lợp mái, hàn, máy lạnh. Đơn giá vật liệu theo Thông báo 561/TB-SXD Vĩnh Long (PL II khu vực 10, PL IV, kỳ 01–15/9/2026, chưa VAT).</p>
 <p><b>Đợt 2 – làm dần sau khi đã ở</b></p>
 <table><tr><th>Hạng mục</th><th>Cũ/mới</th><th>Triệu</th></tr>
 <tr><td>Sơn lại phòng ở + mặt tiền (tự sơn)</td><td>Mới</td><td>2–4</td></tr>
@@ -347,14 +351,14 @@
 <li>NKBA Kitchen Planning Guidelines – tam giác bếp, mặt để đồ, lối đi</li></ul>
 <h3>14. Cần đo/xác nhận tại chỗ</h3>
 <ul>
-<li>Cao độ đáy ống thoát WC so với rãnh ven đường, để kiểm tra độ dốc tới bể mới.</li>
+<li>Đã đo: sân thấp hơn nền 0,10m, mặt đường cao hơn sân 0,50m, triều cao nhất thấp hơn nền 0,30m, ao lúc ròng thấp hơn nền ~2m. Còn cần: cao độ đáy ống WC tại bồn cầu để chốt độ dốc ống chính.</li>
 <li>Đất dưới lối đi có đào đặt bể được không (mạch nước ngầm cao thì phải chằng neo bể chống đẩy nổi).</li>
 <li>Khả năng cấp điện của trạm biến áp và cỡ công tơ Điện lực cho lắp.</li>
 <li>Kết quả xét nghiệm nước giếng.</li></ul>
 </div></div>
 
 <div id="compass" title="Hướng Bắc" style="position:fixed;right:12px;top:60px;width:48px;height:48px;z-index:6;border-radius:50%;background:rgba(255,255,255,.92);box-shadow:0 1px 6px rgba(0,0,0,.3)"><svg id="cneedle" viewBox="-24 -24 48 48" width="48" height="48"><polygon points="0,-17 6,0 -6,0" fill="#d32f2f"/><polygon points="0,17 6,0 -6,0" fill="#90a4ae"/><text x="0" y="-8" font-size="8" font-weight="700" text-anchor="middle" fill="#fff">B</text></svg></div>
-<div class="note"><b>Kéo 1 ngón</b>: xoay · <b>2 ngón</b>: phóng to. Ranh vàng: đất sử dụng (phần đã cấp theo GCN + phần chưa cấp ~1.200m² dò theo ảnh vệ tinh), vạch đỏ: ranh GCN phía sau. Bật riêng từng lớp: <b>Điện</b> (C1 vàng đèn · C2 đỏ ổ cắm · C3 xanh lá máy lạnh · C4 xám tủ mạng · R1 ống chờ bếp từ màu xám nhạt · R2 cam ổ bếp · R3 tím giặt sấy · R4 hồng nóng lạnh · R5 xanh ngọc ngoài trời · xanh nõn PE) · <b>Nước</b> (xanh dương cấp · đỏ van khoá · cam đỏ nước nóng · xám thoát nước xám · nâu ra bể tự hoại · xanh mòng két nước mưa) · <b>Mạng</b> (xanh tím trục Ø32 + nhánh cáp mạng · cam cáp quang · xám ống chờ).</div>
+<div class="note"><b>Kéo 1 ngón</b>: xoay · <b>2 ngón</b>: phóng to. Ranh vàng: đất sử dụng (phần đã cấp theo GCN + phần chưa cấp ~1.200m² dò theo ảnh vệ tinh), vạch đỏ: ranh GCN phía sau. Bật riêng từng lớp: <b>Điện</b> (vẽ từng sợi: đỏ = pha L · xanh dương = trung tính N · sọc vàng-xanh = tiếp địa PE · ống luồn xám mờ; bấm C1…R5 để xem riêng từng mạch) · <b>Nước</b> (xanh dương = nước lạnh · đỏ = nước nóng · xám = thoát nước thải · xám nhạt = nước mưa · đen = van khoá, vàng = van an toàn) · <b>Mạng</b> (xanh tím trục Ø32 + nhánh cáp mạng · cam cáp quang · xám ống chờ).</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script>
@@ -645,7 +649,7 @@ box(11.55,17.75,0,0.62,0.62,0.85,C.may);box(11.53,17.73,0.85,0.66,0.66,0.03,0x9e
 box(9.2,18.9,-0.1,1.2,1.0,0.12,C.bt);
 cyl(12.0,19.75,-0.05,1.0,0.2,C.bt);cyl(12.0,19.75,0.15,0.1,0.45,0x455a64);
 // be tu hoai moi: composite 3 ngan ~2m3, cach gieng ~16m, nap be tong tren loi di
-box(9.85,2.8,0.4,1.5,2.4,0.06,C.bt);box(10.25,3.2,0.46,0.7,0.7,0.02,0x616161);box(10.25,4.1,0.46,0.7,0.7,0.02,0x616161);cyl(13.88,6.0,0,0.03,5.3,0x9e9e9e);cyl(13.88,6.0,5.3,0.06,0.12,0x9e9e9e);[1,2.2,3.4,4.4].forEach(z=>box(13.84,5.94,z,0.08,0.12,0.03,0x616161));
+cyl(15.3,1.15,0.25,0.3,0.07,0x546e7a);cyl(16.6,1.15,0.25,0.3,0.07,0x546e7a);cyl(13.9,2.35,0,0.03,5.3,0x9e9e9e);cyl(13.9,2.35,5.3,0.06,0.12,0x9e9e9e);[1,2.2,3.4,4.4].forEach(z=>box(13.86,2.29,z,0.08,0.12,0.03,0x616161));
 
 // ---- MAY LANH (hien thuong truc) + TU MANG ----
 box(17.55,12.5,2.45,0.22,0.8,0.28,0xf5f5f5);box(18.05,12.45,0.4,0.3,0.8,0.55,0xb0bec5);box(18.0,12.4,0,0.4,0.9,0.4,C.bt);box(18.0,12.35,1.05,0.5,0.95,0.04,C.toncu);
@@ -658,7 +662,7 @@ function pipe(pts,c,r){for(let i=0;i<pts.length-1;i++){const p=new THREE.Vector3
   const d=q.clone().sub(p),L=d.length();if(L<1e-3)continue;const m=new THREE.Mesh(new THREE.CylinderGeometry(r,r,L,6),mat(c));
   m.position.copy(p.clone().add(q).multiplyScalar(0.5));m.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.normalize());MG.add(m);}}
 function mbox(a,b,z,w,d,h,c){const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),mat(c));m.position.set(a+w/2,z+h/2,-(b+d/2));MG.add(m);}
-const RED=0xe53935,ORG=0xfb8c00,PUR=0x8e24aa,YEL=0xfdd835,BLU=0x1e88e5,GRY=0x6d6d6d,BRN=0x6d4c41;
+const RED=0xe53935,ORG=0xfb8c00,PUR=0x8e24aa,YEL=0xfdd835,BLU=0x1e88e5,GRY=0x6d6d6d,BRN=0x6d4c41,DRN2=0x5f5f5f,RAIN=0xb0bec5;
 MG=mD;mbox(12.9,-6.2,0,0.25,0.25,7,0x9e9e9e);pipe([[13.0,-6.1,6.5],[12.05,-0.15,2.2]],0x222222,0.02);
 MG=mD;mbox(11.85,-0.45,1.4,0.35,0.15,0.45,0xeeeeee);
 MG=mD;mbox(14.21,6.95,1.35,0.08,0.5,0.6,0x37474f);
@@ -668,28 +672,28 @@ MG=mN;(function(){const m=new THREE.Mesh(new THREE.CylinderGeometry(0.12,0.12,0.
 MG=mN;mbox(12.5,19.35,0,0.45,0.3,0.35,0x1565c0);
 MG=mN;[[15.4,19.6],[16.3,19.6],[15.4,20.5],[16.3,20.5]].forEach(p=>mbox(p[0],p[1],0,0.08,0.08,2.5,0x9e9e9e));
 MG=mN;(function(){const m=new THREE.Mesh(new THREE.CylinderGeometry(0.55,0.55,1.2,16),mat(0xcfd8dc));m.position.set(15.9,3.1,-20.05);MG.add(m);})();
-MG=mN;pipe([[8.55,17.75,0.45],[7.3,17.75,0.2],[7.3,8.2,0.0],[9.2,7.3,-0.1],[10.6,5.2,-0.2]],BRN,0.05);
-MG=mN;(function(){const m=new THREE.Mesh(new THREE.CylinderGeometry(0.6,0.6,2.2,16),mat(0x8d6e63));m.rotation.x=Math.PI/2;m.position.set(10.6,-0.55,-4.0);MG.add(m);})();
-MG=mN;pipe([[10.6,2.85,-0.4],[10.6,1.0,-0.5],[10.2,-0.6,-0.6]],0x5d4037,0.04);
-MG=mN;mbox(9.8,2.65,-1.3,1.6,2.7,0.13,0x9e9e9e);[[9.95,3.3],[9.95,4.7],[11.15,3.3],[11.15,4.7]].forEach(p=>mbox(p[0],p[1],-1.17,0.06,0.06,1.2,0x424242));label('Đáy BT lót + 4 tai neo chống nổi',10.6,4.0,-0.3,MG);
-MG=mN;label('Bể tự hoại 3 ngăn ~2m³ dưới sân trước bếp (cách giếng ~15,9m)',10.6,4.0,1.4,MG);label('Nước sau bể → rãnh ven đường',10.2,0.6,0.9,MG);label('Ống thông hơi Ø42 lên góc nhà chính, cao hơn mái 0,7m',13.9,6.0,5.7,MG);pipe([[11.1,4.9,-0.15],[12.6,5.6,-0.15],[13.88,6.0,-0.1],[13.88,6.0,0.4]],0x5d4037,0.025);label('Ống xí uPVC Ø90 dán keo kín, dốc ≥2%',7.3,12,0.6,MG);
+MG=mN;pipe([[8.55,17.75,0.3],[7.3,17.75,0.15],[7.3,8.05,-0.12],[7.3,1.15,-0.28],[14.8,1.15,-0.42]],0x37474f,0.05);
+MG=mN;(function(){const m=new THREE.Mesh(new THREE.CylinderGeometry(0.6,0.6,2.3,20),mat(0x546e7a));m.rotation.z=Math.PI/2;m.position.set(15.95,-0.8,-1.15);MG.add(m);[15.3,16.6].forEach(a=>{const r=new THREE.Mesh(new THREE.CylinderGeometry(0.3,0.3,0.5,16),mat(0x546e7a));r.position.set(a,0.0,-1.15);MG.add(r);});[15.0,16.9].forEach(a=>mbox(a,0.5,-1.42,0.06,1.3,1.25,0x212121));})();
+MG=mN;pipe([[17.1,1.15,-0.5],[17.45,1.15,-0.5],[17.45,0.3,-0.55],[7.6,0.3,-0.65],[7.6,0.8,-0.67]],DRN2,0.045);mbox(17.3,0.15,-0.75,0.35,0.3,0.4,0x212121);pipe([[7.6,0.8,-0.67],[0.6,0.8,-0.72]],DRN2,0.045);mbox(0.6,0.55,-0.95,7.0,0.5,0.45,0x9e9d8f);
+MG=mN;mbox(14.7,0.45,-1.52,2.5,1.4,0.1,0x9e9e9e);label('Đáy BT lót 10cm + 2 đai neo chống nổi · cừ tràm chống sạt lề đường khi đào',15.95,0.3,-1.2,MG);
+MG=mN;label('Bể tự hoại nhựa 2.000L nằm ngang, có ngăn lọc vi sinh · nhận nước đen + nước xám · trước hiên nhà chính, cách giếng ~19m',15.95,1.15,1.5,MG);label('Nắp lật 1 chiều chống triều đẩy ngược',17.45,0.3,0.6,MG);label('Rãnh thấm 7m dọc rào trước: ống Ø60 đục lỗ trong lớp đá/gạch vỡ bọc vải địa · cách ao ≥15m, cách giếng ≥19m',4.1,0.8,0.5,MG);label('Ống thông hơi Ø42 dọc cột hiên, cao hơn mái 0,7m',13.9,2.35,5.7,MG);pipe([[15.3,1.15,-0.25],[14.0,2.35,-0.15],[13.9,2.35,0.1]],0x37474f,0.025);label('Ống chính uPVC Ø90 dán keo kín, dốc ≥2% (nước đen + nước xám) → bể',7.3,12,0.6,MG);
 MG=mD;label('Công tơ trên trụ cổng',11.6,-0.6,2.4,MG);
 MG=mN;label('Giếng khoan có sẵn + bơm 0,75kW',12.2,19.8,1.4,MG);label('Hầm cũ: hút sạch, rắc vôi, lấp cát + nắp BT',9.8,19.4,1.9,MG);label('Miệng giếng: sân BT bán kính 1m, cao hơn nền',12.0,20.9,0.9,MG);label('Bồn nước 1.000L trên chân 2,5m',15.9,20.1,4.1,MG);
-MG=mN;mbox(7.0,7.9,-0.45,0.6,0.6,0.5,0x424242);label('Hố ga kiểm tra ống xí (góc rẽ)',7.3,8.2,0.7,MG);
-MG=mN;[[9.4,2.2],[13.0,1.6]].forEach(p=>{mbox(p[0]-0.25,p[1]-0.25,-0.45,0.5,0.5,0.5,0x424242);mbox(p[0]-0.25,p[1]-0.25,0.02,0.5,0.5,0.03,0x263238);});
-MG=mN;pipe([[9.4,2.2,-0.35],[13.0,1.6,-0.38],[18.0,1.9,-0.43],[23.6,2.6,-0.5]],0x0277bd,0.057);
-MG=mN;label('Thoát nước sân: 2 hố thu + ống uPVC Ø114 dốc 1% ra ao',16,1.9,0.8,MG);
+MG=mN;mbox(7.0,7.75,-0.45,0.6,0.6,0.5,0x424242);mbox(7.2,1.05,-0.32,0.2,0.2,0.36,0x424242);label('Hố ga kiểm tra: nước xám nhập ống Ø90',7.3,8.1,0.7,MG);label('Tê kiểm tra có nắp (góc rẽ)',7.3,1.1,0.55,MG);
+MG=mN;[[13.0,2.2]].forEach(p=>{mbox(p[0]-0.25,p[1]-0.25,-0.45,0.5,0.5,0.5,0x424242);mbox(p[0]-0.25,p[1]-0.25,0.02,0.5,0.5,0.03,0x263238);});
+MG=mN;pipe([[13.0,2.2,-0.38],[18.3,2.2,-0.43],[23.6,2.6,-0.5]],RAIN,0.057);
+MG=mN;label('Chỉ nước mưa ra ao: rãnh cổng → hố thu → ống Ø114 dốc 1%',19,2.2,0.8,MG);
 MG=mD;// ---- BO SUNG: rua xe, nuoc mua, may lanh, tu mang ----
 MG=mD;const CYA=0x00acc1,GRN=0x43a047,TEA=0x26a69a;
 MG=mN;// rua xe: ranh + bay dau-cat -> ho ga bay mo
 MG=mN;mbox(8.2,0.55,0.38,5.8,0.25,0.04,0x37474f);mbox(7.3,0.3,-0.12,0.6,0.6,0.15,0x424242);
 MG=mN;// nuoc mua: mang xoi nen tam -> ong xuong -> bon 2000L
-MG=mN;pipe([[7.6,8.0,2.9],[7.3,8.0,2.9],[7.0,8.6,1.6]],TEA,0.04);
+MG=mN;pipe([[7.6,8.0,2.9],[7.3,8.0,2.9],[7.0,8.6,1.6]],RAIN,0.04);
 MG=mN;(function(){const m=new THREE.Mesh(new THREE.CylinderGeometry(0.65,0.65,1.6,16),mat(0x00897b));m.position.set(6.6,0.8,-8.9);MG.add(m);})();
-MG=mN;pipe([[6.6,8.3,0.2],[6.6,7.2,0.2],[8.1,6.85,0.25]],TEA,0.025);
+MG=mN;pipe([[6.6,8.3,0.2],[6.6,7.2,0.2],[8.1,6.85,0.25]],RAIN,0.025);
 MG=mD;pipe([[18.0,12.9,2.6],[18.5,12.85,0.95]],0xb87333,0.02);
 MG=mN;label('Vòi xịt rửa xe',8.3,6.8,1.2,MG);
-MG=mN;label('Rãnh + bẫy dầu-cát nước rửa xe',7.6,0.6,0.7,MG);label('Bồn nước mưa 2.000L (tưới, rửa xe)',6.6,8.9,2.2,MG);
+MG=mN;label('Bẫy dầu-cát rửa xe → ống chính ra bể (đậy nắp phễu khi không rửa xe)',7.6,0.6,0.7,MG);label('Bồn nước mưa 2.000L (tưới, rửa xe)',6.6,8.9,2.2,MG);
 MG=mD;label('Mọi hộp công tắc: hộp 86 sâu, có dây N (để sau lắp công tắc Zigbee)',14.3,6.1,0.95,MG);
 MG=mD;// PCCC bo sung
 MG=mD;cyl(14.55,6.0,0,0.08,0.5,0xc62828);label('Bình chữa cháy 4kg phòng khách',14.6,6.0,0.8,MG);
@@ -706,24 +710,37 @@ MG=mN;mbox(15.0,19.4,0,0.35,0.25,0.3,0x0d47a1);(function(){const m=new THREE.Mes
 
 box(7.95,6.1,0,0.8,0.6,0.1,0x8f8c82);box(7.95,6.1,0.1,0.8,0.06,0.06,0x9e9a90);box(7.95,6.64,0.1,0.8,0.06,0.06,0x9e9a90);box(8.69,6.1,0.1,0.06,0.6,0.06,0x9e9a90);box(8.2,6.7,0,0.15,0.15,0.75,0x90a4ae);cyl(8.3,6.6,0.68,0.02,0.1,0xb0bec5);
 label('Vòi rửa tay chân khi về nhà (cao 0,7m, dùng chung rửa xe) + bệ rửa chân 0,8×0,6m',8.3,6.4,1.3);
-// ---- DIEN CHI TIET: 9 mach tu tu dien, moi mach 1 mau; L-N-PE di chung ong ----
+// ---- DIEN CHI TIET: 9 mach tu tu dien; ve tung soi L do, N xanh, PE vang-xanh trong ong luon xam; loc theo mach ----
 MG=mD;
 const CC={C1:0xfdd835,C2:0xe53935,C3:0x43a047,C4:0x546e7a,R1:0xbf360c,R2:0xfb8c00,R3:0x8e24aa,R4:0xd81b60,R5:0x00acc1,PE:0x9ccc65,FD:0x212121};
-const run=(c,pts,r)=>pipe(pts,CC[c],r||0.018);
+const WS={FD:['L','N'],PE:['PE'],C1:['L','N'],C2:['L','N','PE'],C3:['L','N','PE'],C4:['L','N','PE'],R1:[],R2:['L','N','PE'],R3:['L','N','PE'],R4:['L','N','PE'],R5:['L','N','PE']};
+const DG={};['FD','C1','C2','C3','C4','R1','R2','R3','R4','R5'].forEach(k=>{DG[k]=new THREE.Group();mD.add(DG[k]);});
+const WCOL={L:0xe53935,N:0x1e88e5};
+const peTex=(()=>{const cv=document.createElement('canvas');cv.width=4;cv.height=32;const x=cv.getContext('2d');x.fillStyle='#43a047';x.fillRect(0,0,4,16);x.fillStyle='#fdd835';x.fillRect(0,16,4,16);const t=new THREE.CanvasTexture(cv);t.wrapS=t.wrapT=THREE.RepeatWrapping;return t;})();
+const CDM=new THREE.MeshStandardMaterial({color:0x8a8a8a,transparent:true,opacity:0.18,depthWrite:false});
+const CDM1=new THREE.MeshStandardMaterial({color:0x9e9e9e,transparent:true,opacity:0.55,depthWrite:false});
+function run(c,pts){const g=DG[c==='PE'?'FD':c]||mD,ws=WS[c]||['L','N'];const R=c==='FD'?0.05:(c==='PE'?0:0.036),sp=c==='FD'?0.026:0.02,wr=c==='FD'?0.011:0.0085;
+ for(let i=0;i<pts.length-1;i++){const p=new THREE.Vector3(pts[i][0],pts[i][2],-pts[i][1]),q=new THREE.Vector3(pts[i+1][0],pts[i+1][2],-pts[i+1][1]);const d=q.clone().sub(p),L=d.length();if(L<1e-3)continue;
+  const u=d.clone().normalize(),mid=p.clone().add(q).multiplyScalar(0.5),qt=new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0,1,0),u);
+  if(R){const m=new THREE.Mesh(new THREE.CylinderGeometry(R,R,L,10),c==='R1'?CDM1:CDM);m.position.copy(mid);m.quaternion.copy(qt);g.add(m);}
+  const up=Math.abs(u.y)>0.9?new THREE.Vector3(1,0,0):new THREE.Vector3(0,1,0),pp=u.clone().cross(up).normalize(),n=ws.length;
+  ws.forEach((w,j)=>{const off=pp.clone().multiplyScalar((j-(n-1)/2)*sp);let mt;if(w==='PE'){const t=peTex.clone();t.needsUpdate=true;t.repeat.set(1,L/0.08);mt=new THREE.MeshStandardMaterial({map:t});}else mt=mat(WCOL[w]);
+   const m=new THREE.Mesh(new THREE.CylinderGeometry(c==='PE'?0.008:wr,c==='PE'?0.008:wr,L+0.012,6),mt);m.position.copy(mid).add(off);m.quaternion.copy(qt);g.add(m);});}}
+const LBL=(t,a,b,z)=>{const k=(t.match(/^(C\d|R\d)/)||[])[1];label(t,a,b,z,k?DG[k]:(/^(Cáp|Tiếp địa|Đợt 2: dây PE)/.test(t)?DG.FD:mD));};
 const sk=(a,b,z,c)=>mbox(a-0.04,b-0.07,z-0.07,0.08,0.14,0.14,c||0xffffff);
 const sw=(a,b,z)=>mbox(a-0.035,b-0.05,z-0.05,0.07,0.1,0.1,0x90a4ae);
 const jb=(a,b,z)=>mbox(a-0.05,b-0.05,z-0.05,0.1,0.1,0.1,0x37474f);
 const lp=(a,b,z)=>lamp(a,b,z);
 // tu dien + nguon + tiep dia
 mbox(14.21,6.95,1.35,0.08,0.5,0.6,0x37474f);
-label('Tủ điện 12 module: CB tổng 2P 40A → SPD → C1–C4 MCB · R2 RCBO 30mA · RCCB 30mA chung → R3, R4, R5 (MCB) · R1 bếp từ đợt 2',14.3,7.2,2.15,MG);
-run('FD',[[12.03,-0.3,1.4],[12.03,-0.3,-0.5],[14.12,6.95,-0.5],[14.12,7.15,-0.5],[14.12,7.15,1.4],[14.21,7.15,1.4]],0.03);
-label('Cáp CVV 2×6mm² công tơ → tủ, chôn 0,5m trong ống HDPE',13.0,3.2,0.3,MG);
+LBL('Tủ điện 12 module: CB tổng 2P 40A → SPD → C1–C4 MCB · R2 RCBO 30mA · RCCB 30mA chung → R3, R4, R5 (MCB) · R1 bếp từ đợt 2',14.3,7.2,2.15);
+run('FD',[[12.03,-0.3,1.4],[12.03,-0.3,-0.5],[14.12,6.95,-0.5],[14.12,7.15,-0.5],[14.12,7.15,1.4],[14.21,7.15,1.4]]);
+LBL('Cáp CVV 2×6mm² (L đỏ + N xanh) công tơ → tủ, chôn 0,5m trong ống HDPE',13.0,3.2,0.3);
 [4.3,6.7].forEach(b=>{mbox(13.585,b-0.015,-2.4,0.03,0.03,2.4,0x8d6e63);mbox(13.5,b-0.1,-0.05,0.2,0.2,0.08,0x616161);});
-run('PE',[[13.6,4.3,-0.5],[13.6,6.7,-0.5],[14.15,7.4,-0.5],[14.15,7.4,1.38],[14.21,7.4,1.38]],0.014);
-label('Tiếp địa: 2 cọc đồng Ø16×2,4m cách 2,4m, đo; >10 Ω mới đóng cọc 3 · cáp đồng trần về thanh PE tủ',13.6,5.5,0.5,MG);
-run('PE',[[14.27,7.42,1.95],[14.27,7.42,3.24],[14.69,7.42,3.24],[14.69,9.92,3.24],[15.66,9.92,3.24],[15.66,9.92,1.56]],0.012);
-label('Đợt 2: dây PE 6mm² đi chung ống C4 → thanh đồng tủ mạng',15.3,9.9,3.45,MG);
+run('PE',[[13.6,4.3,-0.5],[13.6,6.7,-0.5],[14.15,7.4,-0.5],[14.15,7.4,1.38],[14.21,7.4,1.38]]);
+LBL('Tiếp địa: 2 cọc đồng Ø16×2,4m cách 2,4m, đo; >10 Ω mới đóng cọc 3 · cáp đồng trần về thanh PE tủ',13.6,5.5,0.5);
+run('PE',[[14.27,7.42,1.95],[14.27,7.42,3.24],[14.69,7.42,3.24],[14.69,9.92,3.24],[15.66,9.92,3.24],[15.66,9.92,1.56]]);
+LBL('Đợt 2: dây PE 6mm² đi chung ống C4 → thanh đồng tủ mạng',15.3,9.9,3.45);
 // C1 den + quat
 run('C1',[[14.25,7.0,1.95],[14.25,7.0,3.2],[14.35,7.0,3.2],[14.35,6.1,3.2],[14.25,6.1,3.2],[14.25,6.1,1.3]]);sw(14.24,6.1,1.25);
 run('C1',[[14.35,7.0,3.2],[14.35,17.9,3.2],[14.25,17.9,3.2],[14.25,17.9,1.3]]);sw(14.24,17.9,1.25);
@@ -739,11 +756,11 @@ run('C1',[[11.75,9.6,2.9],[9.1,9.6,2.9],[9.1,13.0,2.9]]);lp(9.1,11.2,2.85);lp(9.
 run('C1',[[11.75,15.1,2.9],[12.7,15.1,2.9],[12.7,16.9,2.9]]);lp(12.7,16.9,2.85);run('C1',[[12.7,16.55,2.9],[13.93,16.55,2.9],[13.93,16.55,1.3]]);sw(13.93,16.55,1.25);
 run('C1',[[11.75,15.1,2.9],[11.4,15.1,2.9],[11.4,15.2,2.97],[9.7,15.2,2.97],[9.7,15.5,2.86],[9.7,16.8,2.86],[9.5,18.1,2.86],[9.5,18.1,2.5]]);lp(9.7,16.8,2.8);mbox(9.35,18.1,2.2,0.3,0.12,0.3,0x78909c);
 run('C1',[[11.75,15.1,2.9],[11.75,16.62,2.9],[11.49,16.62,2.9],[11.49,16.62,1.3]]);sw(11.49,16.62,1.25);
-label('C1 đèn + quạt · MCB 10A · dây 1,5mm² · nhà chính giữ dây cũ đi nổi nếu đo đạt',14.35,9.0,3.45,MG);
-label('Công tắc 2 đèn phòng khách · cao 1,25m',14.3,6.1,1.6,MG);label('Công tắc 2 chiều đầu + cuối hành lang',14.3,10.35,1.6,MG);
-label('Công tắc phòng ngủ 1',15.6,11.65,1.6,MG);label('Công tắc phòng ngủ 2',15.6,15.75,1.6,MG);
-label('Cụm công tắc nhà phụ: đèn bếp · đèn bàn ăn · hộp số quạt',11.65,7.95,1.6,MG);label('Công tắc khu giặt',13.9,16.55,1.6,MG);
-label('Ngoài cửa WC: công tắc đèn + quạt hút (dưới), công tắc 2 cực có đèn cho nóng lạnh (trên)',11.5,16.75,1.9,MG);label('Quạt hút WC',9.5,18.1,2.6,MG);
+LBL('C1 đèn + quạt · MCB 10A · 2 sợi L+N 1,5mm² · ống Ø16 · nhà chính giữ dây cũ đi nổi nếu đo đạt',14.35,9.0,3.45);
+LBL('Công tắc 2 đèn phòng khách · cao 1,25m',14.3,6.1,1.6);LBL('Công tắc 2 chiều đầu + cuối hành lang',14.3,10.35,1.6);
+LBL('Công tắc phòng ngủ 1',15.6,11.65,1.6);LBL('Công tắc phòng ngủ 2',15.6,15.75,1.6);
+LBL('Cụm công tắc nhà phụ: đèn bếp · đèn bàn ăn · hộp số quạt',11.65,7.95,1.6);LBL('Công tắc khu giặt',13.9,16.55,1.6);
+LBL('Ngoài cửa WC: công tắc đèn + quạt hút (dưới), công tắc 2 cực có đèn cho nóng lạnh (trên)',11.5,16.75,1.9);LBL('Quạt hút WC',9.5,18.1,2.6);
 // C2 o cam nha chinh
 run('C2',[[14.25,7.05,1.95],[14.25,7.05,3.2],[14.45,7.05,3.2],[14.45,16.8,3.2],[17.76,16.8,3.2],[17.76,16.05,3.2],[17.76,16.05,1.05]]);run('C2',[[17.76,16.8,3.2],[17.76,17.55,3.2],[17.76,17.55,1.05]]);sk(17.76,16.05,1.0);sk(17.76,17.55,1.0);
 run('C2',[[14.45,7.05,3.2],[17.76,7.05,3.2],[17.76,7.05,1.05]]);sk(17.76,7.05,1.0);
@@ -751,29 +768,28 @@ run('C2',[[14.45,8.3,3.2],[14.25,8.3,3.2],[14.25,8.3,1.05]]);sk(14.25,8.3,1.0);
 run('C2',[[14.45,9.96,3.2],[17.2,9.96,3.2],[17.2,9.96,1.15]]);run('C2',[[16.2,9.96,3.2],[16.2,9.96,1.15]]);sk(16.2,9.96,1.1);sk(17.2,9.96,1.1);
 run('C2',[[14.45,10.8,3.2],[17.76,10.8,3.2],[17.76,10.8,1.05]]);sk(17.76,10.8,1.0);
 run('C2',[[14.45,14.05,3.2],[17.4,14.05,3.2],[17.4,14.05,1.05]]);run('C2',[[16.0,14.05,3.2],[16.0,14.05,1.05]]);sk(16.0,14.05,1.0);sk(17.4,14.05,1.0);
-label('C2 ổ cắm nhà chính · MCB 20A · giữ dây cũ đi nổi nếu đo cách điện ≥1MΩ · ổ mới cao 1,0m',14.45,8.6,3.45,MG);
-label('TV',17.7,7.05,1.3,MG);label('Sofa',14.3,8.3,1.3,MG);label('Bàn làm việc ×2 (cao 1,1m)',16.7,9.9,1.45,MG);label('Đầu giường P1 ×2',16.7,14.0,1.3,MG);label('Đầu giường P2 ×2',17.7,16.8,1.3,MG);
+LBL('C2 ổ cắm nhà chính · MCB 20A · 3 sợi L+N+PE 2,5mm² · ống Ø20 · giữ dây cũ đi nổi nếu đo cách điện ≥1MΩ · ổ mới cao 1,0m',14.45,8.6,3.45);
+LBL('TV',17.7,7.05,1.3);LBL('Sofa',14.3,8.3,1.3);LBL('Bàn làm việc ×2 (cao 1,1m)',16.7,9.9,1.45);LBL('Đầu giường P1 ×2',16.7,14.0,1.3);LBL('Đầu giường P2 ×2',17.7,16.8,1.3);
 // C3 may lanh
 run('C3',[[14.25,7.1,1.95],[14.25,7.1,3.2],[14.55,7.1,3.2],[14.55,12.3,3.2],[17.76,12.3,3.2],[17.76,12.3,2.45]]);sk(17.76,12.3,2.4);
-mbox(14.5,7.0,3.12,0.5,11.0,0.06,0xeceff1);label('Máng nhựa 60×40 chung cho C3, C4, R3, R4, R5 dọc trần hành lang',14.75,12.5,3.35,MG);label('C3 máy lạnh · MCB 20A · dây 2,5mm² · ổ đơn cạnh dàn lạnh cao 2,4m',17.4,12.3,2.8,MG);
+mbox(14.5,7.0,3.12,0.5,11.0,0.06,0xeceff1);LBL('Máng nhựa 60×40 chung cho C3, C4, R3, R4, R5 dọc trần hành lang',14.75,12.5,3.35);LBL('C3 máy lạnh · MCB 20A · 3 sợi L+N+PE 2,5mm² · ống Ø20 · ổ đơn cạnh dàn lạnh cao 2,4m',17.4,12.3,2.8);
 // C4 tu mang
 run('C4',[[14.25,7.15,1.95],[14.25,7.15,3.2],[14.65,7.15,3.2],[14.65,9.88,3.2],[15.5,9.88,3.2],[15.5,9.96,3.2],[15.5,9.96,0.65]]);sk(15.5,9.96,0.6);
-label('C4 tủ mạng · MCB 10A · ổ đơn sau UPS (cao 0,6m) → PDU',15.6,9.9,0.3,MG);
+LBL('C4 tủ mạng · MCB 10A · 3 sợi L+N+PE 1,5mm² · ống Ø16 · ổ đơn sau UPS (cao 0,6m) → PDU',15.6,9.9,0.3);
 // R1 bep tu
-pipe([[14.25,7.2,1.95],[14.25,7.2,2.45],[14.25,8.1,2.45],[8.35,8.1,2.45],[8.35,12.75,2.45],[8.08,12.75,2.45],[8.08,12.75,0.65]],0xbdbdbd,0.024);mbox(8.04,12.68,0.53,0.08,0.14,0.14,0xbdbdbd);
-label('R1 bếp từ: đợt 1 chỉ đi ống Ø25 chờ + dây mồi; dây 4mm², RCBO 32A, ổ 32A mua cùng bếp (đợt 2)',8.4,12.75,0.35,MG);
+run('R1',[[14.25,7.2,1.95],[14.25,7.2,2.45],[14.25,8.1,2.45],[8.35,8.1,2.45],[8.35,12.75,2.45],[8.08,12.75,2.45],[8.08,12.75,0.65]]);mbox(8.04,12.68,0.53,0.08,0.14,0.14,0xbdbdbd);
+LBL('R1 bếp từ: đợt 1 chỉ đi ống Ø25 chờ + dây mồi (ống xám đậm, chưa có dây); đợt 2 kéo 3 sợi L+N+PE 4mm², RCBO 32A, ổ 32A mua cùng bếp (đợt 2)',8.4,12.75,0.35);
 // R2 o cam bep
 run('R2',[[14.25,7.25,1.95],[14.25,7.25,2.4],[14.25,8.2,2.4],[8.2,8.2,2.4],[8.2,13.95,2.4]]);run('R2',[[13.9,8.2,2.4],[13.9,10.7,2.4],[13.96,10.7,2.4],[13.96,10.7,1.85]]);sk(13.96,10.7,1.8);
 [[9.45,1.15],[12.25,1.15],[13.95,1.15],[12.9,2.05]].forEach(p=>{run('R2',[[8.2,p[0],2.4],[8.07,p[0],2.4],[8.07,p[0],p[1]]]);sk(8.07,p[0],p[1]-0.05);});
-label('R2 ổ cắm bếp · RCBO 20A 30mA · dây 2,5mm²: tủ lạnh, 2 ổ mặt bếp (cách chậu ≥0,6m), máy hút mùi',8.3,11.0,1.5,MG);
+LBL('R2 ổ cắm bếp · RCBO 20A 30mA · 3 sợi L+N+PE 2,5mm² · ống Ø20: tủ lạnh, 2 ổ mặt bếp (cách chậu ≥0,6m), máy hút mùi',8.3,11.0,1.5);
 // R3 giat say
 run('R3',[[14.25,7.3,1.95],[14.25,7.3,3.2],[14.75,7.3,3.2],[14.75,17.6,3.2],[14.25,17.6,3.2],[14.25,17.6,2.45],[11.5,17.6,2.45],[11.5,17.6,1.3]]);sk(11.49,17.5,1.2);sk(11.49,17.7,1.2);
-label('R3 máy giặt + sấy · RCCB chung + MCB 20A · 2 ổ đơn cao 1,2m',11.6,17.6,1.55,MG);
+LBL('R3 máy giặt + sấy · RCCB chung + MCB 20A · 3 sợi L+N+PE 2,5mm² · ống Ø20 · 2 ổ đơn cao 1,2m',11.6,17.6,1.55);
 // R4 nong lanh
 run('R4',[[14.25,7.35,1.95],[14.25,7.35,3.2],[14.85,7.35,3.2],[14.85,16.85,3.2],[14.25,16.85,3.2],[14.25,16.85,2.45],[11.5,16.85,2.45],[11.5,16.85,1.6]]);sw(11.49,16.85,1.55);
 run('R4',[[11.5,16.85,2.45],[11.5,16.85,2.97],[11.3,17.15,2.97],[8.45,17.15,2.86],[8.45,17.15,2.72]]);jb(8.45,17.25,2.78);
-run('PE',[[11.5,16.9,2.45],[11.5,16.9,2.99],[11.3,17.2,2.99],[8.5,17.2,2.88],[8.5,17.2,2.72]],0.01);
-label('R4 nóng lạnh · RCCB chung + MCB 20A · dây 2,5mm² · đấu cố định qua hộp kín, dây PE nối vỏ bình · không đặt ổ cắm trong WC',9.8,17.15,3.2,MG);
+LBL('R4 nóng lạnh · RCCB chung + MCB 20A · 3 sợi L+N+PE 2,5mm² · ống Ø20 · công tắc 2 cực cắt cả L và N · đấu cố định qua hộp kín, dây PE nối vỏ bình · không đặt ổ cắm trong WC',9.8,17.15,3.2);
 // R5 ngoai troi
 run('R5',[[14.25,7.4,1.95],[14.25,7.4,2.3],[13.85,7.4,2.3]]);jb(13.85,7.4,2.3);
 run('R5',[[13.85,7.4,2.3],[13.85,7.62,2.3],[8.0,7.62,2.3]]);mbox(7.88,7.55,2.25,0.1,0.14,0.1,0x263238);
@@ -783,14 +799,14 @@ run('R5',[[13.85,7.4,2.3],[13.85,5.35,2.3],[14.3,5.35,2.3],[14.3,5.35,2.5]]);lp(
 run('R5',[[14.25,7.4,2.3],[14.25,7.4,3.2],[14.95,7.4,3.2],[14.95,18.1,3.2],[14.95,18.1,2.95],[14.95,18.6,2.95]]);lp(14.95,18.6,2.85);
 run('R5',[[14.95,18.6,2.95],[15.8,18.6,2.95],[15.8,18.6,1.25]]);sk(15.8,18.58,1.2,0x455a64);
 run('R5',[[15.8,18.6,1.2],[15.8,18.6,-0.35],[12.95,19.5,-0.35],[12.95,19.5,0.35]]);
-label('R5 ngoài trời · RCCB chung + MCB 16A · cáp CVV 2×2,5mm² đi nổi trên tường, chỉ chôn 5m ra bơm',13.85,7.4,2.7,MG);
-label('Ổ IP55 sân xe',8.6,7.6,1.5,MG);label('Đèn pha cảm biến sân xe',7.9,7.55,2.6,MG);label('Đèn cổng năng lượng mặt trời có cảm biến (khỏi kéo cáp)',12.3,-0.3,2.95,MG);label('Đèn hiên trước (cảm biến)',14.3,5.3,2.95,MG);
-label('Đèn + ổ IP55 hiên sau',15.4,18.6,3.2,MG);label('Bơm giếng 0,75kW: ổ IP55 + công tắc kín cạnh bơm',12.95,19.5,0.75,MG);
+LBL('R5 ngoài trời · RCCB chung + MCB 16A · cáp CVV 3×2,5mm² (L+N+PE) đi nổi trên tường, chỉ chôn 5m ra bơm',13.85,7.4,2.7);
+LBL('Ổ IP55 sân xe',8.6,7.6,1.5);LBL('Đèn pha cảm biến sân xe',7.9,7.55,2.6);LBL('Đèn cổng năng lượng mặt trời có cảm biến (khỏi kéo cáp)',12.3,-0.3,2.95);LBL('Đèn hiên trước (cảm biến)',14.3,5.3,2.95);
+LBL('Đèn + ổ IP55 hiên sau',15.4,18.6,3.2);LBL('Bơm giếng 0,75kW: ổ IP55 + công tắc kín cạnh bơm',12.95,19.5,0.75);
 // binh nong lanh (thiet bi co san) + cap nuoc nong lanh
 box(8.15,16.65,2.3,0.42,0.75,0.4,0xf5f5f5);
 MG=mD;
 // ---- NUOC CHI TIET (da toi uu) ----
-MG=mN;const HOT=0xff5722,VAN=0xc62828,DRN=0x6d6d6d;const van=(a,b,z)=>mbox(a-0.04,b-0.04,z-0.04,0.08,0.08,0.08,VAN);const ftd=(a,b,z)=>mbox(a-0.08,b-0.08,z,0.16,0.16,0.02,0x263238);
+MG=mN;const HOT=0xe53935,VAN=0x212121,DRN=0x7a7a7a;const van=(a,b,z)=>mbox(a-0.04,b-0.04,z-0.04,0.08,0.08,0.08,VAN);const ftd=(a,b,z)=>mbox(a-0.08,b-0.08,z,0.16,0.16,0.02,0x263238);
 pipe([[12.0,19.75,0.35],[12.5,19.5,0.2]],BLU,0.025);pipe([[12.95,19.5,0.2],[13.47,19.6,0.2]],BLU,0.025);
 pipe([[13.73,19.6,1.25],[15.45,19.75,1.25],[15.45,19.75,3.75],[15.75,19.95,3.75]],BLU,0.025);
 label('Giếng → bơm 0,75kW → cột lọc (chỉ lắp nếu nước phèn) → ống Ø27 lên bồn, phao điện ngắt bơm khi đầy',14.6,19.75,4.1,MG);
@@ -805,7 +821,7 @@ pipe([[13.4,18.75,-0.3],[13.4,19.0,-0.3],[13.4,19.0,0.7]],D2W,0.015);
 pipe([[7.75,11.25,-0.3],[8.25,11.25,-0.3],[8.25,11.25,0.55]],BLU,0.018);van(8.25,11.25,0.55);
 label('Vòi máy giặt 1,0m',11.85,18.3,1.25,MG);label('Lavabo: van góc',12.55,18.3,0.85,MG);label('Vòi sân sau (đợt 2: chừa tê)',13.4,19.0,0.95,MG);label('Van dưới chậu (chừa tê cho lọc RO sau)',8.4,11.3,0.35,MG);
 // WC: lanh vao binh, bon cau, van tron sen
-pipe([[9.5,18.75,-0.3],[8.22,18.75,-0.3],[8.22,18.1,0.6],[8.22,17.55,0.6],[8.22,17.55,2.2],[8.3,17.3,2.3]],BLU,0.02);van(8.22,17.55,2.0);
+pipe([[9.5,18.75,-0.3],[8.22,18.75,-0.3],[8.22,18.1,0.6],[8.22,17.55,0.6],[8.22,17.55,2.2],[8.3,17.3,2.3]],BLU,0.02);van(8.22,17.55,1.9);mbox(8.18,17.51,2.0,0.08,0.08,0.06,0x616161);mbox(8.17,17.5,2.1,0.1,0.1,0.07,0xffb300);
 pipe([[8.22,18.1,0.6],[8.22,18.2,0.7],[8.95,18.2,0.7]],BLU,0.015);van(8.95,18.2,0.7);
 pipe([[8.22,17.55,1.6],[8.22,16.15,1.6]],BLU,0.018);
 pipe([[8.3,16.72,2.3],[8.28,16.5,2.05],[8.24,16.3,1.8],[8.22,16.15,1.7]],HOT,0.012);
@@ -813,18 +829,16 @@ mbox(8.17,15.98,1.55,0.08,0.24,0.2,0xb0bec5);pipe([[8.22,16.05,1.75],[8.22,16.05
 label('Nước lạnh vào bình: van khoá + van 1 chiều + van an toàn (ống xả không được bịt)',8.3,17.55,2.05,MG);
 label('Nóng: dây cấp mềm inox 1m bình → van trộn sen cao 1,1m',8.3,16.4,1.75,MG);
 label('Bình nóng lạnh có sẵn: đáy cách sàn WC ≥1,8m, ngoài vùng nước sen',8.4,17.0,2.95,MG);label('Van + vòi xịt bồn cầu',8.95,18.15,0.95,MG);
-// thoat nuoc xam: 1 ho lang chung -> ao
+// thoat nuoc xam: ve phia truoc, nhap ong chinh O90 tai ho ga -> be tu hoai co ngan loc
 mbox(8.25,11.05,0.15,0.3,0.4,0.25,0xb0bec5);label('Bẫy mỡ inox ngay dưới chậu',8.4,11.2,0.05,MG);
-pipe([[8.4,11.25,0.7],[8.4,11.25,0.4]],DRN,0.03);pipe([[8.4,11.25,0.15],[8.4,11.25,-0.15],[7.55,11.25,-0.2],[7.55,19.45,-0.4]],DRN,0.03);
-mbox(7.25,19.45,-0.75,0.6,0.6,0.75,0x424242);mbox(7.25,19.45,0.0,0.6,0.6,0.04,0x263238);
-pipe([[7.55,20.05,-0.5],[6.8,25.5,-0.7]],DRN,0.03);
+pipe([[8.4,11.25,0.7],[8.4,11.25,0.4]],DRN,0.03);pipe([[8.4,11.25,0.15],[8.4,11.25,-0.15],[7.55,11.25,-0.06]],DRN,0.03);pipe([[7.55,19.2,0.0],[7.55,8.05,-0.1],[7.3,8.05,-0.12]],DRN,0.035);
 ftd(13.0,17.3,0.0);ftd(12.25,18.2,0.0);pipe([[12.55,18.25,0.55],[12.55,18.25,-0.15]],DRN,0.025);
-pipe([[13.0,17.3,-0.1],[13.0,18.2,-0.15],[12.25,18.2,-0.18],[12.25,19.2,-0.25],[7.85,19.75,-0.4]],DRN,0.03);
-ftd(8.75,16.0,0.5);pipe([[8.75,16.0,0.48],[8.75,16.0,0.15],[10.6,16.0,0.12],[10.6,19.15,-0.25],[7.85,19.7,-0.4]],DRN,0.03);
-label('Hố lắng nước xám chung (bếp + giặt + sàn WC) → ống Ø60 ra ao',7.55,19.75,0.45,MG);
+pipe([[13.0,17.3,0.12],[13.0,18.2,0.1],[12.25,18.2,0.08],[12.25,19.2,0.06],[7.55,19.2,0.0]],DRN,0.03);
+ftd(8.75,16.0,0.5);pipe([[8.75,16.0,0.48],[8.75,16.0,0.15],[7.55,16.0,-0.03]],DRN,0.03);
+
 label('Phễu thu sàn khu giặt + máy giặt (có bẫy mùi)',12.7,17.8,0.3,MG);label('Phễu thu sàn tắm',8.75,16.0,0.75,MG);
-label('Nước xám đi riêng, không vào bể tự hoại · ống Ø60 dốc ≥2%',10.6,17.5,0.4,MG);
-pipe([[7.6,0.6,-0.08],[9.15,2.2,-0.3]],DRN,0.035);ftd(8.35,6.4,0.12);pipe([[8.35,6.4,0.1],[8.35,6.4,-0.1],[7.9,6.4,-0.12],[7.9,11.25,-0.2],[7.55,11.25,-0.2]],DRN,0.025);label('Bệ rửa chân: phễu thu → Ø60 nối đường thoát bếp → hố lắng',7.9,8.8,0.3,MG);
+label('Nước xám: ống Ø60 dốc ≥2% dọc hông trái ra phía trước, nhập ống chính tại hố ga',7.55,14.0,0.35,MG);
+pipe([[7.6,0.6,-0.12],[7.3,1.0,-0.27]],DRN,0.035);ftd(8.35,6.4,0.12);pipe([[8.35,6.4,0.1],[8.35,6.4,-0.1],[7.3,6.4,-0.2]],DRN,0.025);label('Bệ rửa chân: phễu thu → Ø60 nhập ống chính ra bể',7.9,6.4,0.35,MG);
 pipe([[17.8,12.9,2.45],[18.15,12.9,2.4],[18.15,12.9,0.1]],DRN,0.01);label('Ống nước ngưng máy lạnh ra ngoài',18.2,12.9,1.0,MG);
 // ---- MANG CHI TIET (vua du don vao o; tu mang o phong khach canh ban lam viec) ----
 MG=mM;const NET=0x3949ab,FIB=0xff7043,OC=0x9e9e9e,D2N=0xcfd8dc;const rj=(a,b,z)=>mbox(a-0.04,b-0.07,z-0.07,0.08,0.14,0.14,0xe8eaf6);
@@ -1025,7 +1039,7 @@ label('Lối đi ra sau (sau nhà xe): rộng ~6m → 4,3m (đá mi)',4.6,12,1.4
 label('Chỗ đậu xe góc trái (đợt 1 để trống, đợt 2 làm nhà xe gỗ)',5.1,4,1.6);label('Sedan lùi vào, đầu ra cổng (≤4,7 × 1,8m)',6.76,3.0,2.0);label('4 xe máy đậu xéo 45° sau đuôi ô tô',5.8,6.5,1.5);label('Cột gỗ trên đế BT rời, chân sắt U',2.4,0.6,1.0);label('Lối đi dọc rào ≥1,3m ra sau nhà',3.0,5.5,0.9);label('Sân trước bếp: lối đi cổng chính → hiên, bếp; chỗ đậu xe khách',11.1,3.0,2.2);
 label('Nền nhà tạm 6 × 10,7m',11,12.5,4.4);label('Mái tôn cũ: xà gồ ≤0,85m, vít + ke chống bão, úp nóc/úp sườn',11,9,4.2);
 label('Bàn bếp 3,4m × sâu 60 × cao 85cm',8.6,12.1,2.9);label('Chậu đôi 80×45',8.4,11.25,1.3);label('Bếp từ đôi 73×43',8.4,12.9,1.25);label('Bếp gas đơn dự phòng',8.4,13.55,1.05);label('Hút mùi (đáy cao 1,55m)',8.4,12.9,2.05);label('Lồng bình gas ngoài vách',7.5,13.5,1.1);label('Bình chữa cháy 4kg',9.4,8.0,0.75);label('Tủ lạnh 70×70',8.45,9.95,2.05);label('Tủ chén 120×40×180',8.7,8.1,2.1);label('Bàn ăn 80×120, 4 ghế',11.3,11.2,1.15);label('Lối đi 2,2m',9.8,11.2,0.4);
-label('WC + tắm – cửa mở vào khu giặt, không nhìn ra bàn ăn',9.7,16.8,3.5);label('Hầm cũ – lấp bỏ',9.8,19.4,1.0);label('Nắp bể tự hoại (không đậu ô tô lên)',10.6,4.0,0.9);
+label('WC + tắm – cửa mở vào khu giặt, không nhìn ra bàn ăn',9.7,16.8,3.5);label('Hầm cũ – lấp bỏ',9.8,19.4,1.0);label('Nắp bể tự hoại (không cho ô tô chạy lên)',15.95,1.15,0.9);
 label('Nhà kiên cố 4 × 16m (cả hiên)',16,10,6.2);
 label('Phòng khách',16,7.8,5.4);
 box(15.95,9.25,0,1.75,0.7,0.76,0x7b3f1f);box(15.95,9.25,0,0.45,0.66,0.72,0x6a3519);box(17.3,9.25,0,0.4,0.66,0.72,0x6a3519);box(16.5,9.62,0.76,0.5,0.06,0.38,0x222222);label('Bàn làm việc gỗ mang theo (sát vách phòng ngủ)',16.7,9.6,1.4);
@@ -1056,6 +1070,8 @@ document.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>go(b.dataset.v));
 document.getElementById('mai').onclick=()=>setRoof(!roofOn);
 let lblOn=false;function syncLbl(){labels.forEach(l=>{const own=l.parent===site;l.visible=lblOn&&!(own&&(mD.visible||mN.visible||mM.visible));});}
 document.getElementById('nhan').onclick=e=>{lblOn=!lblOn;syncLbl();e.target.textContent=lblOn?'Ẩn chữ':'Hiện chữ';};
+const CK=document.getElementById('ckt');CK.querySelectorAll('button').forEach(bt=>bt.onclick=()=>{const k=bt.dataset.k;Object.entries(DG).forEach(([kk,g])=>g.visible=(k==='all'||kk===k));CK.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===bt));});
+document.getElementById('dn').addEventListener('click',()=>setTimeout(()=>{CK.style.display=mD.visible?'flex':'none';CK.style.top=(document.querySelector('.bar').offsetHeight+14)+'px';}));
 [['dn',mD],['nc',mN],['mg',mM]].forEach(([id,g])=>{document.getElementById(id).onclick=e=>{g.visible=!g.visible;e.target.classList.toggle('on',g.visible);syncLbl();};});
 document.getElementById('pa').onclick=e=>{optA.visible=!optA.visible;e.target.classList.toggle('on',optA.visible);if(optA.visible){camera.position.copy(S(30,-6,16));controls.target.copy(S(15,11,4));controls.update();}};
 document.getElementById('pb').onclick=e=>{optB.visible=!optB.visible;e.target.classList.toggle('on',optB.visible);if(optB.visible){camera.position.copy(S(2,-10,9));controls.target.copy(S(11,8,4));controls.update();}};
@@ -1077,7 +1093,7 @@ go('lo');syncLbl();
  const az=245*Math.PI/180,el=42*Math.PI/180;sun.position.copy(sT).add(new THREE.Vector3(Math.sin(az)*Math.cos(el),Math.sin(el),-Math.cos(az)*Math.cos(el)).multiplyScalar(120));})();
 
 // duong ong am: hien xuyen nen khi bat Dien nuoc
-[mD,mN,mM].forEach(g=>{g.updateMatrixWorld(true);g.children.forEach(m=>{if(!m.isMesh)return;const bb=new THREE.Box3().setFromObject(m);if(bb.max.y<0.45){m.material=m.material.clone();m.material.depthTest=false;m.material.transparent=true;m.material.opacity=0.85;m.renderOrder=5;}});});
+[mD,mN,mM].forEach(g=>{g.updateMatrixWorld(true);g.traverse(m=>{if(!m.isMesh||m.material.opacity<0.6)return;const bb=new THREE.Box3().setFromObject(m);if(bb.max.y<0.45){m.material=m.material.clone();m.material.depthTest=false;m.material.transparent=true;m.material.opacity=0.85;m.renderOrder=5;}});});
 addEventListener('resize',()=>{camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);});
 (function loop(){requestAnimationFrame(loop);wtex.offset.x+=0.00025;wtex.offset.y+=0.0001;controls.update();cneedle.style.transform='rotate('+controls.getAzimuthalAngle()+'rad)';renderer.render(scene,camera);})();
 </script>
