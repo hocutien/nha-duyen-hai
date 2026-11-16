@@ -46,7 +46,7 @@ for ax,x0,y0,Ln,T,ops in walls:
         if ax=='x': o.append(f'<rect x="{X(x0+a):.1f}" y="{Y(y0+T):.1f}" width="{(b-a)*S:.1f}" height="{max(T*S,3):.1f}" fill="#9e9e9e"/>')
         else: o.append(f'<rect x="{X(x0):.1f}" y="{Y(y0+b):.1f}" width="{max(T*S,3):.1f}" height="{(b-a)*S:.1f}" fill="#9e9e9e"/>')
 # room names
-for t,a,b in [('PHÒNG KHÁCH',16.2,6.3),('PHÒNG NGỦ',16.6,12.6),('KHO',16.6,16.9),('HÀNH LANG',14.8,15.2),('BẾP – ĂN',10.6,9.4),('KHU GIẶT',13.0,15.6),('WC + TẮM',9.9,17.6),('SÂN XE / SÂN TRƯỚC',10.9,5.6),('CỔNG',12.0,-0.9),('GIẾNG',12.0,20.0)]:
+for t,a,b in [('PHÒNG KHÁCH',16.2,6.3),('PHÒNG NGỦ 1',16.6,12.6),('PHÒNG NGỦ 2',16.6,15.3),('HÀNH LANG',14.8,15.2),('BẾP – ĂN',10.6,9.4),('KHU GIẶT',13.0,15.6),('WC + TẮM',9.9,17.6),('SÂN XE / SÂN TRƯỚC',10.9,5.6),('CỔNG',12.0,-0.9),('GIẾNG',12.0,20.0)]:
     o.append(f'<text x="{X(a):.0f}" y="{Y(b):.0f}" fill="#bdbdbd" font-size="11" font-weight="bold" text-anchor="middle">{t}</text>')
 o.append(f'<rect x="{X(14.5):.1f}" y="{Y(18.0):.1f}" width="{0.5*S:.1f}" height="{11*S:.1f}" fill="#eceff1" stroke="#b0bec5"/>')
 o.append(f'<text x="{X(14.75):.0f}" y="{Y(17.4):.0f}" font-size="9" text-anchor="middle" fill="#607d8b">máng chung</text>')
@@ -64,6 +64,7 @@ for a,b,z in sw:
 for a,b,z,c in sk:
     fill='#455a64' if c=='0x455a64' else ('#bdbdbd' if c in('0xffe0b2','r1') else '#fff')
     o.append(f'<g transform="translate({X(a):.1f},{Y(b):.1f})"><path d="M-6,0A6,6 0 0 1 6,0Z" fill="{fill}" stroke="#333"/><line x1="0" y1="-6" x2="0" y2="-10" stroke="#333"/></g>')
+o.append(f'<rect x="{X(15.42):.1f}" y="{Y(10.0):.1f}" width="{0.486*S:.1f}" height="{0.49*S:.1f}" fill="#8d6e63" stroke="#4e342e"/><text x="{X(15.66):.0f}" y="{Y(9.5)+12:.0f}" text-anchor="middle" fill="#4e342e" font-size="9">tủ mạng</text>')
 # tu dien, quat, cot dia, hop noi
 o.append(f'<rect x="{X(14.21)-5:.1f}" y="{Y(7.45):.1f}" width="12" height="{0.5*S:.1f}" fill="#263238"/><text x="{X(14.21)+10:.0f}" y="{Y(7.2)+3:.0f}" font-weight="bold">TỦ ĐIỆN</text>')
 o.append(f'<rect x="{X(11.85):.1f}" y="{Y(-0.3):.1f}" width="16" height="8" fill="#fff" stroke="#333"/><text x="{X(11.85):.0f}" y="{Y(-0.3)+18:.0f}">Công tơ</text>')
@@ -76,7 +77,7 @@ o.append(f'<rect x="{X(8.15):.1f}" y="{Y(17.4):.1f}" width="{0.42*S:.1f}" height
 o.append(f'<rect x="{X(12.5):.1f}" y="{Y(19.65):.1f}" width="{0.45*S:.1f}" height="{0.3*S:.1f}" fill="#bbdefb" stroke="#1565c0"/><text x="{X(12.5)-2:.0f}" y="{Y(19.65)-3:.0f}" text-anchor="end">Bơm giếng</text>')
 o.append(f'<text x="{X(12.45):.0f}" y="{Y(-0.3)-10:.0f}" fill="#00838f">Đèn NLMT</text>')
 # ghi chu thiet bi
-notes=[('TV',17.7,7.05,'end',4),('Sofa',14.3,8.3,'start',4),('Bàn LV ×2',16.7,9.7,'middle',14),('Ổ máy lạnh 2,4m',17.0,12.1,'middle',16),('Đầu giường ×2',16.7,13.75,'middle',14),('Ổ tủ mạng (C4)',16.3,14.75,'middle',0),('Ổ kho',16.4,18.0,'middle',14),
+notes=[('TV',17.7,7.05,'end',4),('Sofa',14.3,8.3,'start',4),('Bàn LV ×2',16.7,9.7,'middle',14),('Ổ máy lạnh 2,4m',17.0,12.1,'middle',16),('Đầu giường P1 ×2',16.7,13.75,'middle',14),('Ổ C4 tủ mạng',15.5,9.6,'middle',16),('Đầu giường P2 ×2',17.6,16.8,'end',4),
        ('Tủ lạnh',7.9,9.45,'end',4),('Mặt bếp',7.9,12.2,'end',8),('Ổ bếp từ đợt 2',7.9,12.62,'end',4),('Hút mùi',7.9,13.0,'end',0),('Đầu bàn',7.9,13.95,'end',4),('Ổ BE6500 #2',13.9,10.7,'end',4),
        ('Giặt + sấy 1,2m',11.6,17.6,'start',-8),('CT nóng lạnh',11.6,16.85,'start',18),('IP55 sân xe',8.6,7.64,'start',14),('IP55 hiên sau',15.8,18.58,'start',4)]
 for t,a,b,anc,dy in notes:
@@ -89,9 +90,9 @@ o.append('</svg>')
 plan='\n'.join(o)
 # --- so do nguyen ly
 CIRC=[('C1','MCB 1P 10A','1,5','Đèn 13 bóng + quạt trần + quạt hút WC',0.4,'MCB'),
-      ('C2','MCB 1P 20A','2,5','Ổ cắm nhà chính: TV, sofa, bàn LV ×2, phòng ngủ ×3, kho',1.5,'MCB'),
+      ('C2','MCB 1P 20A','2,5','Ổ cắm nhà chính: TV, sofa, bàn LV ×2, phòng ngủ 1 ×3, phòng ngủ 2 ×2',1.5,'MCB'),
       ('C3','MCB 1P 20A','2,5','Máy lạnh 1,5HP phòng ngủ',1.2,'MCB'),
-      ('C4','MCB 1P 10A','1,5','Tủ mạng: UPS → PDU',0.15,'MCB'),
+      ('C4','MCB 1P 10A','1,5','Tủ mạng (phòng khách cạnh bàn LV): UPS → PDU',0.15,'MCB'),
       ('R2','RCBO 2P 20A 30mA','2,5','Ổ bếp ×4: tủ lạnh, mặt bếp, hút mùi, đầu bàn + ổ BE6500 #2',2.2,'RCBO'),
       ('R3','MCB 1P 20A','2,5','Máy giặt + máy sấy (2 ổ đơn)',2.5,'RCCB'),
       ('R4','MCB 1P 20A','2,5','Bình nóng lạnh có sẵn (đấu cố định)',2.5,'RCCB'),
@@ -135,7 +136,7 @@ g.append('</svg>')
 one='\n'.join(g)
 # --- bang tinh
 rows=[]
-CNT={'C1':(0,8,10,'+ quạt trần, quạt hút WC'),'C2':(8,0,0,''),'C3':(1,0,0,'ổ đơn'),'C4':(1,0,0,'ổ đơn'),'R2':(5,0,0,''),'R3':(2,0,0,'ổ đơn'),'R4':(0,1,0,'CT 2 cực + hộp đấu kín'),'R5':(2,0,3,'IP55; + bơm giếng'),'R1':(1,0,0,'ổ 32A đợt 2')}
+CNT={'C1':(0,8,10,'+ quạt trần, quạt hút WC'),'C2':(9,0,0,''),'C3':(1,0,0,'ổ đơn'),'C4':(1,0,0,'ổ đơn'),'R2':(5,0,0,''),'R3':(2,0,0,'ổ đơn'),'R4':(0,1,0,'CT 2 cực + hộp đấu kín'),'R5':(2,0,3,'IP55; + bơm giếng'),'R1':(1,0,0,'ổ 32A đợt 2')}
 def seglen_np(c):
     t=0
     for cc,p in runs:
