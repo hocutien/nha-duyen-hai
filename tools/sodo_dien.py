@@ -35,7 +35,7 @@ def X(a): return (a-A0)*S
 def Y(b): return (B1-b)*S
 W,H=X(A1),Y(B0)
 o=[]
-o.append(f'<svg viewBox="0 0 {W:.0f} {H:.0f}" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="10">')
+o.append(f'<svg viewBox="0 0 {W:.0f} {H:.0f}" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="10"><style>text{{paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round}}</style>')
 o.append(f'<rect width="{W:.0f}" height="{H:.0f}" fill="#fff"/>')
 for ax,x0,y0,Ln,T,ops in walls:
     segs=[];cur=0
@@ -48,6 +48,8 @@ for ax,x0,y0,Ln,T,ops in walls:
 # room names
 for t,a,b in [('PHÒNG KHÁCH',16.2,6.3),('PHÒNG NGỦ',16.6,12.6),('KHO',16.6,16.9),('HÀNH LANG',14.8,15.2),('BẾP – ĂN',10.6,9.4),('KHU GIẶT',13.0,15.6),('WC + TẮM',9.9,17.6),('SÂN XE / SÂN TRƯỚC',10.9,5.6),('CỔNG',12.0,-0.9),('GIẾNG',12.0,20.0)]:
     o.append(f'<text x="{X(a):.0f}" y="{Y(b):.0f}" fill="#bdbdbd" font-size="11" font-weight="bold" text-anchor="middle">{t}</text>')
+o.append(f'<rect x="{X(14.5):.1f}" y="{Y(18.0):.1f}" width="{0.5*S:.1f}" height="{11*S:.1f}" fill="#eceff1" stroke="#b0bec5"/>')
+o.append(f'<text x="{X(14.75):.0f}" y="{Y(17.4):.0f}" font-size="9" text-anchor="middle" fill="#607d8b">máng chung</text>')
 order=['FD','PE','R1','C4','C3','C2','R3','R4','R5','R2','C1']
 for c in order:
     for cc,p in runs:
@@ -159,13 +161,17 @@ for c,ong,day,ns,nw,nl,nt in rows:
     tb.append(f'<tr><td style="color:{COL[c]};font-weight:bold">{c}</td><td>{cb}</td><td>{d}</td><td>{str(kw).replace(".",",")}</td><td>{ong}</td><td>{day if day else "đợt 2"}</td><td>{ns}</td><td>{nw}</td><td>{nl}</td><td>{nt}</td></tr>')
 tb.append('</table>')
 tot_r=round(tot,2)
+import sys
+sys.path.insert(0,'/home/claude/nha-duyen-hai/tools')
+from plan_common import nav
+NAV=nav('dien.html')
 page=f'''<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Sơ đồ điện chi tiết – nhà Duyên Hải</title>
 <style>body{{font-family:Arial,sans-serif;margin:0;padding:12px;color:#263238;max-width:1100px;margin:auto}}h1{{font-size:20px}}h2{{font-size:16px;margin-top:22px;border-bottom:2px solid #eceff1;padding-bottom:4px}}
 svg{{width:100%;height:auto;border:1px solid #eceff1;border-radius:6px}}table{{border-collapse:collapse;width:100%;font-size:13px}}td,th{{border:1px solid #cfd8dc;padding:4px 6px;text-align:left}}th{{background:#eceff1}}
 .lg span{{display:inline-block;margin:2px 10px 2px 0;font-size:13px}}.lg i{{display:inline-block;width:22px;height:4px;vertical-align:middle;margin-right:4px}}a{{color:#1565c0}}ul{{font-size:14px;line-height:1.5}}
 @media print{{a.back{{display:none}}}}</style></head><body>
-<a class="back" href="./">← Về mô hình 3D</a>
+{NAV}
 <h1>Sơ đồ điện chi tiết – nhà Duyên Hải (đợt 1, đã tối ưu)</h1>
 <p style="font-size:14px">Cùng toạ độ với lớp <b>Điện</b> trong mô hình 3D. Nét liền: đi nổi trong nhà; nét đứt: đi ngầm hoặc ống chờ. Tỉ lệ thước 2m ở góc dưới.</p>
 <div class="lg">{''.join(f'<span><i style="background:{COL[c]}"></i>{c}</span>' for c in ['C1','C2','C3','C4','R1','R2','R3','R4','R5'])}<span><i style="background:#212121"></i>Cáp nguồn</span><span><i style="background:#7cb342"></i>Tiếp địa PE</span></div>
@@ -190,8 +196,8 @@ svg{{width:100%;height:auto;border:1px solid #eceff1;border-radius:6px}}table{{b
 <ul>
 <li>Đợt 1 (chưa có bếp từ): tải đồng thời ≈ 32A → CB tổng 40A + cáp CVV 2×6 đủ.</li>
 <li>Đợt 2 có bếp từ 3,5kW: nếu bếp từ + máy sấy + nóng lạnh chạy cùng lúc ≈ 41–43A → nhảy CB 40A. Cáp nguồn chôn ngầm, thay sau phải đào lại.</li>
-<li>Phương án A: giữ 6mm² + CB 40A, quy ước không chạy máy sấy cùng lúc bếp từ (0đ).</li>
-<li>Phương án B: chôn luôn CVV 2×10mm² (~15m) + CB tổng 50A, thêm ước ≈ 0,7tr; trước đó xem dòng định mức trên công tơ EVN (ví dụ 10(40)A thì CB tổng không vượt 40A, phải xin nâng công tơ).</li>
+<li><b>Đã chọn phương án A (vừa đủ dọn vào ở):</b> giữ 6mm² + CB 40A, quy ước không chạy máy sấy cùng lúc bếp từ (0đ).</li>
+<li>Phương án B (không chọn lúc này): chôn luôn CVV 2×10mm² (~15m) + CB tổng 50A, thêm ước ≈ 0,7tr; trước đó xem dòng định mức trên công tơ EVN (ví dụ 10(40)A thì CB tổng không vượt 40A, phải xin nâng công tơ).</li>
 </ul>
 </body></html>'''
 open('/home/claude/nha-duyen-hai/dien.html','w').write(page)
