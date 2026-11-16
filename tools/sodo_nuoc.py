@@ -8,7 +8,7 @@ P.rooms([('PHÒNG KHÁCH',16.2,6.4),('PHÒNG NGỦ 1',16.6,12.6),('PHÒNG NGỦ 
 # --- dot 2 (net dut, xam)
 P.line([[9.4,2.2],[13.0,1.6],[18.0,1.9],[20.3,2.2]],'#0277bd',2,True);P.text('Đợt 2: thoát sân 2 hố thu + Ø114 → ao',17.5,1.9,'middle','#0277bd',-8)
 for a,b in [(9.4,2.2),(13.0,1.6)]: P.rect(a-0.25,b-0.25,0.5,0.5,'#eceff1','#0277bd',True)
-P.line([[7.75,11.25],[7.75,6.8],[8.3,6.8]],D2,2,True);P.text('Đợt 2: vòi rửa xe',8.3,6.8,'start',D2)
+P.line([[7.75,11.25],[7.75,6.8],[8.3,6.8]],BLU,2.5);P.circle(8.3,6.8,3.5,'#c62828','#c62828');P.rect(7.95,6.1,0.8,0.6,'#e0e0e0','#757575');P.rect(8.27,6.32,0.16,0.16,'#263238','#263238');P.line([[8.35,6.4],[7.9,6.4],[7.9,11.25],[7.55,11.25]],GRY,2,True);P.text('Vòi rửa tay chân',7.85,6.5,'end','#0d47a1',0,-6,10,True);P.text('+ bệ rửa chân, rửa xe',7.85,6.5,'end','#0d47a1',13,-6)
 P.line([[13.4,18.75],[13.4,19.0]],D2,2,True);P.text('Đợt 2: vòi sân sau',13.45,18.75,'start',D2,-6)
 P.circle(6.6,8.9,0.65*34,'none','#26a69a',True);P.text('Đợt 2: bồn nước mưa 2.000L',6.6,8.9,'middle','#26a69a',4)
 P.rect(15.0,19.4,0.35,0.25,'#e3f2fd',D2,True);P.text('Đợt 2: bơm tăng áp',15.4,19.35,'start',D2,10)
@@ -20,7 +20,7 @@ P.line([[12.0,19.75],[12.5,19.5]],BLU,2.5)
 P.line([[12.95,19.5],[13.6,19.6],[15.45,19.75],[15.75,19.95]],BLU,2.5)
 P.circle(15.9,20.05,0.55*34,'#e3f2fd',BLU);P.text('Bồn inox 1.000L',15.9,20.05,'middle','#0d47a1',2,0,10,True);P.text('chân 2,5m · phao điện',15.9,20.05,'middle','#37474f',14)
 P.line([[15.9,20.05],[15.35,19.55]],BLU,3);P.line([[15.0,19.5],[14.6,19.5],[14.6,18.75],[7.75,18.75],[7.75,11.25]],BLU,3)
-P.text('Ống chính Ø27 chôn 0,3m (~18m)',10.0,18.85,'middle',BLU,-6)
+P.text('Ống chính Ø27 chôn 0,3m (~23m)',10.0,18.85,'middle',BLU,-6)
 br=[([[11.85,18.75],[11.85,18.38]],(11.85,18.38),'Máy giặt 1,0m','start'),([[12.55,18.75],[12.55,18.38]],(12.55,18.38),'Lavabo','start'),
     ([[7.75,11.25],[8.25,11.25]],(8.25,11.25),'Chậu bếp (van dưới chậu)','start'),
     ([[9.5,18.75],[8.22,18.75],[8.22,18.1],[8.22,17.55]],(8.22,17.55),'Van + van 1 chiều + van an toàn vào bình','start'),
@@ -28,7 +28,7 @@ br=[([[11.85,18.75],[11.85,18.38]],(11.85,18.38),'Máy giặt 1,0m','start'),([[
 for pts,v,t,anc in br:
     P.line(pts,BLU,2)
     if v: P.circle(v[0],v[1],3.5,'#c62828','#c62828')
-for t,a,b,anc,dy in [('Máy giặt 1,0m',11.85,18.38,'end',-6),('Lavabo',12.55,18.38,'start',14),('Chậu bếp',8.25,11.25,'start',4),('Van khoá + 1 chiều + an toàn',8.6,17.5,'start',4),('Bồn cầu',8.95,18.2,'start',4)]:
+for t,a,b,anc,dy in [('Máy giặt 1,0m',11.85,18.38,'end',-6),('Lavabo',12.55,18.38,'start',14),('Chậu rửa chén',8.25,11.25,'start',4),('Van khoá + 1 chiều + an toàn',8.6,17.5,'start',4),('Bồn cầu',8.95,18.2,'start',4)]:
     P.text(t,a,b,anc,'#37474f',dy)
 P.rect(8.15,16.65,0.42,0.75,'#fce4ec','#d81b60');P.text('Bình NL',8.6,17.0,'start','#ad1457',4)
 P.line([[8.3,16.72],[8.22,16.15]],HOT,2.5);P.circle(8.2,16.05,4,'#b0bec5');P.text('Van trộn sen 1,1m',8.35,16.3,'start',HOT,-2)
@@ -54,22 +54,22 @@ def bx(x,y,w,t1,t2='',fill='#e3f2fd',stroke='#1e88e5',dash=False):
     d=' stroke-dasharray="4 3"' if dash else ''
     return f'<rect x="{x}" y="{y}" width="{w}" height="38" rx="6" fill="{fill}" stroke="{stroke}"{d}/><text x="{x+w/2}" y="{y+16}" text-anchor="middle" font-weight="bold">{t1}</text><text x="{x+w/2}" y="{y+30}" text-anchor="middle" font-size="9.5">{t2}</text>'
 def ar(x1,y1,x2,y2,c='#1e88e5',dash=False): return f'<path d="M{x1},{y1}L{x2},{y2}" stroke="{c}" stroke-width="2"{" stroke-dasharray=\"4 3\"" if dash else ""} marker-end="url(#a)"/>'
-g=['<svg viewBox="0 0 900 470" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11"><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#555"/></marker></defs><rect width="900" height="470" fill="#fff"/>',
+g=['<svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11"><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#555"/></marker></defs><rect width="900" height="500" fill="#fff"/>',
    '<text x="10" y="18" font-weight="bold" fill="#1565c0">CẤP NƯỚC</text>']
 g+= [bx(10,30,100,'Giếng khoan','có sẵn'),ar(110,49,135,49),bx(135,30,105,'Bơm 0,75kW','bảo dưỡng phốt, tụ'),ar(240,49,262,49),
      bx(262,30,110,'Cột lọc','chỉ khi nước phèn','#eceff1','#90a4ae',True),ar(372,49,395,49),bx(395,30,120,'Bồn inox 1.000L','mua cũ · chân 2,5m'),
      ar(515,49,537,49),bx(537,30,105,'Van tổng Ø34','đoạn 5m'),ar(642,49,662,49),bx(662,30,110,'Bơm tăng áp','đợt 2 (nối thẳng)','#eceff1','#90a4ae',True),
-     ar(772,49,790,49),bx(790,30,100,'Ống chính Ø27','ngầm 0,3m ~18m')]
+     ar(772,49,790,49),bx(790,30,100,'Ống chính Ø27','ngầm 0,3m ~23m')]
 x=60
-for t1,t2,d in [('Máy giặt','van 1,0m',False),('Lavabo','van góc',False),('Bồn cầu','van + vòi xịt',False),('Bình nóng lạnh','van an toàn → dây mềm → sen',False),('Chậu bếp','van, chừa tê RO',False),('Vòi sân sau · rửa xe','đợt 2',True)]:
+for t1,t2,d in [('Máy giặt','van 1,0m',False),('Lavabo','van góc',False),('Bồn cầu','van + vòi xịt',False),('Bình nóng lạnh','van an toàn → dây mềm → sen',False),('Chậu rửa chén','van, chừa tê RO',False),('Vòi trước nhà','rửa tay chân + rửa xe',False)]:
     g.append(bx(x,110,128,t1,t2,'#eceff1' if d else '#e3f2fd','#90a4ae' if d else '#1e88e5',d)); g.append(ar(840,68,x+64,110,'#90a4ae' if d else '#1e88e5',d)); x+=138
 g.append('<text x="10" y="190" font-weight="bold" fill="#424242">THOÁT NƯỚC XÁM</text>')
-g+= [bx(10,200,140,'Chậu bếp','bẫy mỡ inox dưới chậu','#f5f5f5','#616161'),bx(10,245,140,'Khu giặt','máy giặt + lavabo + phễu sàn','#f5f5f5','#616161'),bx(10,290,140,'Sàn tắm WC','phễu thu có bẫy mùi','#f5f5f5','#616161'),
+g+= [bx(10,200,140,'Chậu bếp','bẫy mỡ inox dưới chậu','#f5f5f5','#616161'),bx(10,245,140,'Khu giặt','máy giặt + lavabo + phễu sàn','#f5f5f5','#616161'),bx(10,290,140,'Sàn tắm WC','phễu thu có bẫy mùi','#f5f5f5','#616161'),bx(10,335,140,'Bệ rửa chân trước nhà','phễu thu → đường thoát bếp','#f5f5f5','#616161'),ar(150,354,240,268,'#616161'),
      ar(150,219,240,262,'#616161'),ar(150,264,240,264,'#616161'),ar(150,309,240,266,'#616161'),bx(240,245,150,'Hố lắng chung','sau nhà, gạch + nắp BT','#e0e0e0','#424242'),ar(390,264,450,264,'#616161'),bx(450,245,120,'Ao','ống Ø60 dốc ≥2%','#e0f2f1','#00897b')]
-g.append('<text x="10" y="365" font-weight="bold" fill="#5d4037">NƯỚC ĐEN (BỒN CẦU)</text>')
-g+= [bx(10,375,120,'Bồn cầu','ống Ø90 riêng','#efebe9','#6d4c41'),ar(130,394,160,394,'#6d4c41'),bx(160,375,130,'Hố ga kiểm tra','góc rẽ','#efebe9','#6d4c41'),ar(290,394,320,394,'#6d4c41'),
-     bx(320,375,170,'Bể tự hoại 3 ngăn','~2m³ · cách giếng 15,9m','#efebe9','#6d4c41'),ar(490,394,520,394,'#6d4c41'),bx(520,375,140,'Rãnh ven đường','nước sau bể','#efebe9','#6d4c41'),
-     '<text x="680" y="390" font-size="10" fill="#5d4037">Ống thông hơi Ø42 từ bể lên</text><text x="680" y="403" font-size="10" fill="#5d4037">góc nhà chính, cao hơn mái 0,7m</text>']
+g.append('<text x="10" y="395" font-weight="bold" fill="#5d4037">NƯỚC ĐEN (BỒN CẦU)</text>')
+g+= [bx(10,405,120,'Bồn cầu','ống Ø90 riêng','#efebe9','#6d4c41'),ar(130,424,160,424,'#6d4c41'),bx(160,405,130,'Hố ga kiểm tra','góc rẽ','#efebe9','#6d4c41'),ar(290,424,320,424,'#6d4c41'),
+     bx(320,405,170,'Bể tự hoại 3 ngăn','~2m³ · cách giếng 15,9m','#efebe9','#6d4c41'),ar(490,424,520,424,'#6d4c41'),bx(520,405,140,'Rãnh ven đường','nước sau bể','#efebe9','#6d4c41'),
+     '<text x="680" y="420" font-size="10" fill="#5d4037">Ống thông hơi Ø42 từ bể lên</text><text x="680" y="433" font-size="10" fill="#5d4037">góc nhà chính, cao hơn mái 0,7m</text>']
 g.append('<text x="600" y="210" font-size="10.5" fill="#455a64">Nước xám không vào bể tự hoại</text><text x="600" y="224" font-size="10.5" fill="#455a64">để bể không đầy nhanh.</text>')
 g.append('</svg>')
 one='\n'.join(g)
@@ -82,7 +82,9 @@ page=f'''<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><meta name="
 <h2>1. Phản biện trước khi vẽ – phần cắt cho vừa đủ</h2>
 <ul>
 <li>Giữ đủ chỗ dùng hằng ngày: bếp, WC + tắm nóng lạnh, máy giặt, lavabo; thoát nước xám riêng ra 1 hố lắng, nước đen ra bể tự hoại.</li>
-<li>Cắt sang đợt 2: vòi rửa xe sân trước, vòi sân sau (ống chính Ø27 từ 30m còn ~18m, bớt 1 van) → <b>bớt ≈ 0,22tr</b>; bơm tăng áp, thoát sân Ø114, bồn nước mưa vẫn để đợt 2.</li>
+<li><b>Rửa chén:</b> chậu rửa trên mặt bếp nhà phụ (van dưới chậu + bẫy mỡ inox).</li>
+<li><b>Thêm vòi rửa tay chân khi về nhà</b> ở góc sân xe cạnh cửa nhà phụ: nối Ø27 thêm ~5m, 1 vòi đồng + van, bệ láng xi măng 0,8×0,6m có phễu thu nối vào đường thoát bếp (dốc 2%) → <b>thêm ≈ 0,6tr</b>. Đặt ở đây để dùng chung rửa xe, khỏi làm vòi rửa xe riêng; không chôn đường thoát riêng ra ao.</li>
+<li>Vẫn để đợt 2: vòi sân sau, bơm tăng áp, thoát sân Ø114, bồn nước mưa.</li>
 <li>Không cắt: bồn trên chân 2,5m (mái nhà chính lợp tôn, không đặt bồn lên được; hạ bồn thì sen + bình nóng lạnh yếu áp), xét nghiệm nước giếng (nhà có bầu), van an toàn bình nóng lạnh.</li>
 <li>Cột lọc chỉ lắp khi xét nghiệm báo phèn/sắt cao.</li>
 </ul>
