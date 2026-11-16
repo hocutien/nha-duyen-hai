@@ -122,6 +122,9 @@
 <tr><td>R5 Ngoài trời: ổ IP55, đèn sân, đèn cảm biến, nhánh vườn</td><td>RCBO 16A 30mA</td><td>2,5mm²</td></tr>
 <tr><td>Dự phòng 2–4 module: nhà xe, bơm tăng áp, xưởng mộc, máy lạnh thứ 2</td><td>–</td><td>–</td></tr></table>
 <ul>
+<li><b>Màu dây trong lớp Điện (3D):</b> C1 vàng · C2 đỏ · C3 xanh lá · C4 xám xanh · R1 cam đậm · R2 cam · R3 tím · R4 hồng · R5 xanh ngọc · đen cáp nguồn công tơ → tủ · xanh nõn chuối dây tiếp địa PE. Mỗi mạch đi ống riêng từ tủ, trong ống có đủ 3 dây L–N–PE.</li>
+<li><b>Chiều cao lắp:</b> công tắc 1,25m cạnh mép cửa phía tay nắm; ổ cắm 1,0m (chừa nâng nền); ổ bàn làm việc, mặt bếp 1,1m; ổ máy giặt, sấy 1,2m; ổ máy lạnh 2,4m cạnh dàn lạnh; ổ bếp từ dưới mặt bếp 0,6m.</li>
+<li><b>Nóng lạnh (R4):</b> công tắc 2 cực có đèn đặt ngoài cửa WC; cáp 2,5mm² đi trên đỉnh tường WC tới hộp đấu dây kín cạnh bình; dây PE nối vỏ bình; không đặt ổ cắm trong WC. Bình treo đáy cách sàn WC ≥1,8m, ngoài vùng nước sen; đầu nước lạnh vào lắp van khoá + van 1 chiều + van an toàn (không bịt ống xả); ống nóng PPR chịu nhiệt tới van trộn sen cao 1,1m.</li>
 <li><b>Tiếp địa:</b> 3 cọc đồng Ø16×2,4m, mục tiêu ≤4 Ω; tủ điện, tủ mạng và chống sét mạng nối chung một hệ.</li>
 <li>Ổ cắm đặt cao ≥1,0m, chừa cho lúc nâng nền.</li>
 <li>Dây cũ chỉ dùng lại cho C1, C2 sau khi đo cách điện đạt; các mạch tải lớn và mạch có nước đi dây mới.</li></ul>
@@ -345,7 +348,7 @@
 </div></div>
 
 <div id="compass" title="Hướng Bắc" style="position:fixed;right:12px;top:60px;width:48px;height:48px;z-index:6;border-radius:50%;background:rgba(255,255,255,.92);box-shadow:0 1px 6px rgba(0,0,0,.3)"><svg id="cneedle" viewBox="-24 -24 48 48" width="48" height="48"><polygon points="0,-17 6,0 -6,0" fill="#d32f2f"/><polygon points="0,17 6,0 -6,0" fill="#90a4ae"/><text x="0" y="-8" font-size="8" font-weight="700" text-anchor="middle" fill="#fff">B</text></svg></div>
-<div class="note"><b>Kéo 1 ngón</b>: xoay · <b>2 ngón</b>: phóng to. Ranh vàng: đất sử dụng (phần đã cấp theo GCN + phần chưa cấp ~1.200m² dò theo ảnh vệ tinh), vạch đỏ: ranh GCN phía sau. Bật riêng từng lớp: <b>Điện</b> (đỏ chiếu sáng/ổ cắm · cam bếp · cam đậm bếp từ · tím giặt-WC · vàng bơm · xanh ngọc ngoài trời · xanh lá máy lạnh) · <b>Nước</b> (xanh dương cấp · xám thoát · nâu ra bể tự hoại · xanh mòng két nước mưa) · <b>Mạng</b> (xanh tím cáp mạng · cam cáp quang · xám ống chờ).</div>
+<div class="note"><b>Kéo 1 ngón</b>: xoay · <b>2 ngón</b>: phóng to. Ranh vàng: đất sử dụng (phần đã cấp theo GCN + phần chưa cấp ~1.200m² dò theo ảnh vệ tinh), vạch đỏ: ranh GCN phía sau. Bật riêng từng lớp: <b>Điện</b> (C1 vàng đèn · C2 đỏ ổ cắm · C3 xanh lá máy lạnh · C4 xám tủ mạng · R1 cam đậm bếp từ · R2 cam ổ bếp · R3 tím giặt sấy · R4 hồng nóng lạnh · R5 xanh ngọc ngoài trời · xanh nõn PE) · <b>Nước</b> (xanh dương cấp · cam đỏ nước nóng · xám thoát · nâu ra bể tự hoại · xanh mòng két nước mưa) · <b>Mạng</b> (xanh tím cáp mạng · cam cáp quang · xám ống chờ).</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 <script>
@@ -652,20 +655,9 @@ function mbox(a,b,z,w,d,h,c){const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d)
 const RED=0xe53935,ORG=0xfb8c00,PUR=0x8e24aa,YEL=0xfdd835,BLU=0x1e88e5,GRY=0x6d6d6d,BRN=0x6d4c41;
 MG=mD;mbox(12.9,-6.2,0,0.25,0.25,7,0x9e9e9e);pipe([[13.0,-6.1,6.5],[12.05,-0.15,2.2]],0x222222,0.02);
 MG=mD;mbox(11.85,-0.45,1.4,0.35,0.15,0.45,0xeeeeee);
-MG=mD;pipe([[12.05,-0.15,1.6],[12.05,-0.15,3.2],[14.3,2.6,3.2],[14.3,7.2,3.2],[14.3,7.2,1.9]],RED,0.03);
 MG=mD;mbox(14.21,6.95,1.35,0.08,0.5,0.6,0x37474f);
 MG=mD;function outlet(a,b,z){mbox(a-0.05,b-0.05,z,0.1,0.1,0.1,0xffffff);}
 MG=mD;function lamp(a,b,z){const m=new THREE.Mesh(new THREE.SphereGeometry(0.12,8,6),mat(0xfff59d));m.position.set(a,z,-b);MG.add(m);}
-MG=mD;pipe([[14.3,7.2,3.2],[16,7.8,3.2]],RED,0.02);lamp(16,7.8,3.15);
-MG=mD;pipe([[14.3,7.2,3.2],[14.8,10.3,3.2],[14.8,17.8,3.2]],RED,0.02);
-MG=mD;pipe([[14.8,12.0,3.2],[16.6,12.0,3.2]],RED,0.02);lamp(16.6,12,3.15);pipe([[14.8,16.2,3.2],[16.6,16.2,3.2]],RED,0.02);lamp(16.6,16.2,3.15);lamp(14.8,14.5,3.15);
-MG=mD;[[17.7,6.9],[14.3,6.4],[17.7,12.6],[15.6,11.1],[17.7,16.0]].forEach(p=>{pipe([[p[0],p[1],3.2],[p[0],p[1],1.05]],RED,0.015);outlet(p[0],p[1],1.0);});
-MG=mD;pipe([[14.3,7.2,2.3],[14.0,8.0,2.3],[8.2,8.0,2.3],[8.2,13.6,2.3]],ORG,0.025);lamp(10.9,11.2,2.6);pipe([[8.2,11.2,2.3],[10.9,11.2,2.55]],ORG,0.015);
-MG=mD;pipe([[14.3,7.2,2.15],[14.0,8.1,2.15],[8.3,8.1,2.15],[8.3,12.9,2.15],[8.3,12.9,0.6]],0xbf360c,0.03);mbox(8.2,12.8,0.5,0.15,0.2,0.15,0xffffff);label('C4 bếp từ: RCBO 32A, dây 4mm² riêng',8.3,12.9,0.35,MG);
-MG=mD;[[8.15,10.0,1.0],[8.1,12.25,1.1],[8.1,12.4,1.1],[8.1,12.9,2.0]].forEach(p=>{pipe([[p[0],p[1],2.3],[p[0],p[1],p[2]+0.05]],ORG,0.015);outlet(p[0],p[1],p[2]);});
-MG=mD;pipe([[14.8,17.0,3.2],[14.1,17.0,2.3],[12.0,18.2,2.3],[12.0,18.2,1.05]],PUR,0.03);outlet(12.0,18.2,1.0);
-MG=mD;pipe([[12.0,18.2,2.3],[11.4,17.0,2.6],[8.3,16.2,2.6],[8.3,16.2,2.0]],PUR,0.02);mbox(8.1,15.9,1.6,0.35,0.6,0.4,0xf5f5f5);lamp(9.8,16.9,2.85);
-MG=mD;pipe([[14.8,17.8,3.2],[14.8,18.6,2.9],[12.75,19.5,2.9],[12.75,19.5,0.4]],YEL,0.02);
 MG=mN;(function(){const m=new THREE.Mesh(new THREE.CylinderGeometry(0.12,0.12,0.6,8),mat(0x455a64));m.position.set(12.0,0.2,-19.75);MG.add(m);})();
 MG=mN;mbox(12.5,19.35,0,0.45,0.3,0.35,0x1565c0);
 MG=mN;[[15.4,19.6],[16.3,19.6],[15.4,20.5],[16.3,20.5]].forEach(p=>mbox(p[0],p[1],0,0.08,0.08,2.5,0x9e9e9e));
@@ -673,7 +665,7 @@ MG=mN;(function(){const m=new THREE.Mesh(new THREE.CylinderGeometry(0.55,0.55,1.
 MG=mN;pipe([[12.0,19.75,0.3],[12.5,19.5,0.3]],BLU,0.03);pipe([[12.95,19.5,0.3],[15.35,19.9,0.3],[15.9,20.05,2.5]],BLU,0.03);
 MG=mN;pipe([[15.9,20.05,2.5],[15.9,20.05,0.3],[15.9,18.65,0.3],[7.9,18.65,0.3],[7.9,11.0,0.3],[8.3,11.0,0.7]],BLU,0.03);
 MG=mN;pipe([[11.85,18.65,0.3],[11.85,18.35,0.9]],BLU,0.02);
-MG=mN;pipe([[12.6,18.65,0.3],[12.6,18.35,0.8]],BLU,0.02);pipe([[9.5,18.65,0.3],[8.7,18.0,0.7],[8.7,16.1,1.9]],BLU,0.02);pipe([[8.9,18.65,0.3],[8.6,17.9,0.7]],BLU,0.02);
+MG=mN;pipe([[12.6,18.65,0.3],[12.6,18.35,0.8]],BLU,0.02);pipe([[8.9,18.65,0.3],[8.6,17.9,0.7]],BLU,0.02);
 MG=mN;pipe([[8.4,11.0,0.6],[8.4,11.0,0.02],[7.7,11.0,-0.05],[7.6,14.5,-0.08]],GRY,0.04);mbox(7.3,14.3,-0.12,0.6,0.6,0.15,0x424242);
 MG=mN;pipe([[7.6,14.6,-0.08],[7.6,19.8,-0.1]],GRY,0.045);mbox(7.3,19.6,-0.12,0.6,0.6,0.15,0x424242);
 MG=mN;pipe([[12.2,18.0,0.4],[12.2,18.6,0.0],[11.8,19.6,-0.05],[7.9,19.8,-0.1]],GRY,0.04);pipe([[8.7,16.0,0.5],[9.3,18.6,0.05],[9.0,19.6,-0.05]],GRY,0.035);
@@ -683,7 +675,7 @@ MG=mN;(function(){const m=new THREE.Mesh(new THREE.CylinderGeometry(0.6,0.6,2.2,
 MG=mN;pipe([[10.6,2.85,-0.4],[10.6,1.0,-0.5],[10.2,-0.6,-0.6]],0x5d4037,0.04);
 MG=mN;mbox(9.8,2.65,-1.3,1.6,2.7,0.13,0x9e9e9e);[[9.95,3.3],[9.95,4.7],[11.15,3.3],[11.15,4.7]].forEach(p=>mbox(p[0],p[1],-1.17,0.06,0.06,1.2,0x424242));label('Đáy BT lót + 4 tai neo chống nổi',10.6,4.0,-0.3,MG);
 MG=mN;label('Bể tự hoại 3 ngăn ~2m³ dưới sân trước bếp (cách giếng ~15,9m)',10.6,4.0,1.4,MG);label('Nước sau bể → rãnh ven đường',10.2,0.6,0.9,MG);label('Ống thông hơi Ø42 lên góc nhà chính, cao hơn mái 0,7m',13.9,6.0,5.7,MG);pipe([[11.1,4.9,-0.15],[12.6,5.6,-0.15],[13.88,6.0,-0.1],[13.88,6.0,0.4]],0x5d4037,0.025);label('Ống xí uPVC Ø90 dán keo kín, dốc ≥2%',7.3,12,0.6,MG);
-MG=mD;label('Công tơ trên trụ cổng',11.6,-0.6,2.4,MG);label('Tủ điện: CB tổng 50A + RCBO + chống sét lan truyền',14.3,7.0,2.5,MG);mbox(13.6,6.7,-0.6,0.03,0.03,0.8,0x8d6e63);label('Cọc tiếp địa',13.4,6.7,0.4,MG);
+MG=mD;label('Công tơ trên trụ cổng',11.6,-0.6,2.4,MG);
 MG=mN;label('Giếng khoan có sẵn + bơm 0,75kW',12.2,19.8,1.4,MG);label('Hầm cũ: hút sạch, rắc vôi, lấp cát + nắp BT',9.8,19.4,1.9,MG);label('Miệng giếng: sân BT bán kính 1m, cao hơn nền',12.0,20.9,0.9,MG);label('Bồn nước 1.000L trên chân 2,5m',15.9,20.1,4.1,MG);
 MG=mN;label('Hố ga bẫy mỡ',7.6,14.5,0.6,MG);
 MG=mN;mbox(7.0,7.9,-0.45,0.6,0.6,0.5,0x424242);label('Hố ga kiểm tra ống xí (góc rẽ)',7.3,8.2,0.7,MG);
@@ -693,8 +685,6 @@ MG=mN;label('Thoát nước sân: 2 hố thu + ống uPVC Ø114 dốc 1% ra ao',
 MG=mN;mbox(14.9,19.55,0,0.35,0.25,0.3,0x0d47a1);label('Bơm tăng áp sau bồn',15.1,19.6,0.7,MG);
 MG=mD;// ---- BO SUNG: rua xe, nuoc mua, may lanh, tu mang ----
 MG=mD;const CYA=0x00acc1,GRN=0x43a047,TEA=0x26a69a;
-MG=mD;// ngoai troi C8: o IP55 rua xe + den san
-MG=mD;pipe([[8.2,8.0,2.3],[7.95,7.6,2.3],[7.95,7.0,1.25]],CYA,0.025);mbox(7.85,6.9,1.2,0.12,0.16,0.18,0x263238);
 MG=mN;// voi xit rua xe o san truoc
 MG=mN;pipe([[7.9,11.0,0.3],[7.9,6.8,0.3],[8.3,6.8,0.3],[8.3,6.8,0.85]],BLU,0.025);mbox(8.2,6.7,0,0.15,0.15,0.9,0x90a4ae);
 MG=mN;// rua xe: ranh + bay dau-cat -> ho ga bay mo
@@ -704,12 +694,8 @@ MG=mN;// nuoc mua: mang xoi nen tam -> ong xuong -> bon 2000L
 MG=mN;pipe([[7.6,8.0,2.9],[7.3,8.0,2.9],[7.0,8.6,1.6]],TEA,0.04);
 MG=mN;(function(){const m=new THREE.Mesh(new THREE.CylinderGeometry(0.65,0.65,1.6,16),mat(0x00897b));m.position.set(6.6,0.8,-8.9);MG.add(m);})();
 MG=mN;pipe([[6.6,8.3,0.2],[6.6,7.2,0.2],[8.1,6.85,0.25]],TEA,0.025);
-MG=mD;// may lanh: duong rieng (xanh la)
-MG=mD;pipe([[14.8,12.0,3.2],[17.6,12.9,3.2],[17.6,12.9,2.75]],GRN,0.02);
 MG=mD;pipe([[18.0,12.9,2.6],[18.5,12.85,0.95]],0xb87333,0.02);
-MG=mD;// tu mang + UPS qua C9
-MG=mD;pipe([[14.8,16.2,3.2],[17.2,14.45,3.2],[17.2,14.45,2.05]],RED,0.015);
-MG=mD;label('Ổ điện C4 + dây đất 6mm² chờ ở tủ mạng',17.3,14.45,2.6,MG);label('Ổ IP55 máy rửa xe (RCBO)',7.9,6.9,1.9,MG);MG=mN;label('Vòi xịt rửa xe',8.3,6.8,1.2,MG);
+MG=mN;label('Vòi xịt rửa xe',8.3,6.8,1.2,MG);
 MG=mN;label('Rãnh + bẫy dầu-cát nước rửa xe',7.6,0.6,0.7,MG);label('Bồn nước mưa 2.000L (tưới, rửa xe)',6.6,8.9,2.2,MG);
 MG=mN;label('Hố ga lắng → thoát ra ao',7.5,20.2,0.6,MG);
 MG=mM;// mang: CAT6 tu tu mang -> AP2 (Xiaomi BE6500 thu 2, backhaul day) + camera PoE
@@ -725,10 +711,9 @@ MG=mM;pipe([[17.2,14.45,3.25],[17.7,9.0,3.25],[17.7,7.2,3.25],[17.7,7.2,0.45]],N
 MG=mM;pipe([[17.2,14.45,3.25],[17.7,13.6,3.25],[17.7,13.6,0.45]],NET,0.012);mbox(17.66,13.5,0.4,0.06,0.12,0.12,0xffffff);label('Ổ mạng phòng ngủ ×2',17.6,13.6,0.9,MG);
 MG=mM;pipe([[17.2,14.45,3.25],[17.5,14.45,4.65]],0x9e9e9e,0.03);label('Ống chờ lên mái (camera/AP ngoài trời sau này)',17.5,14.45,5.0,MG);
 MG=mM;label('Đợt 1: ống Ø20 riêng + cáp có sẵn cuộn chờ ở kho, đánh số 2 đầu',17.2,14.45,1.4,MG);pipe([[17.2,14.45,3.25],[16.6,10.6,3.25],[16.6,10.02,3.25],[16.6,10.02,1.1]],0x9e9e9e,0.0175);mbox(16.45,9.98,1.05,0.3,0.04,0.12,0xffffff);label('Ống Ø25 trống kho → bàn làm việc + ổ mạng ×2',16.6,10.0,1.7,MG);mbox(11.85,-0.32,2.2,0.3,0.12,0.3,0x90a4ae);label('Hộp A IP66 trụ cổng (ống + dây mồi)',12.0,-0.3,2.8,MG);mbox(7.7,7.5,2.6,0.3,0.12,0.3,0x90a4ae);label('Hộp B IP66 sân xe',7.85,7.55,3.2,MG);mbox(14.65,18.3,2.5,0.3,0.12,0.3,0x90a4ae);label('Hộp C IP66 hiên sau (cáp ngoài trời + chống sét: đợt 2)',14.8,18.35,3.4,MG);
-MG=mD;label('Hộp công tắc sâu, có dây N (để sau lắp công tắc Zigbee)',14.3,6.2,1.5,MG);
+MG=mD;label('Mọi hộp công tắc: hộp 86 sâu, có dây N (để sau lắp công tắc Zigbee)',14.3,6.1,0.95,MG);
 MG=mD;// PCCC bo sung
 MG=mD;cyl(14.55,6.0,0,0.08,0.5,0xc62828);label('Bình chữa cháy 4kg phòng khách',14.6,6.0,0.8,MG);
-MG=mD;mbox(7.88,7.6,2.3,0.1,0.14,0.08,0x263238);label('Đèn pha LED cảm biến chuyển động (sân xe, góc nhà phụ)',7.4,7.2,2.6,MG);
 MG=mD;label('Song cửa sổ phòng ngủ có 1 ô mở bằng khoá (thoát hiểm)',17.8,11.6,1.9,MG);
 MG=mN;mbox(11.6,17.7,0.0,0.1,0.06,0.03,0x29b6f6);label('Cảm biến rò nước dưới máy giặt (đợt 2)',11.7,17.6,0.25,MG);
 MG=mD;[[15.45,13.2],[14.25,15.5],[14.25,17.6],[12.9,16.4]].forEach(p=>{const m=new THREE.Mesh(new THREE.SphereGeometry(0.06,8,6),mat(0xfff59d));m.position.set(p[0],0.35,-p[1]);MG.add(m);});
@@ -740,6 +725,98 @@ MG=mD;label('Báo nhiệt (bếp)',10.6,12.5,3.2,MG);label('Báo khói độc l�
 MG=mN;// bom tang ap sau bon
 MG=mN;mbox(15.0,19.4,0,0.35,0.25,0.3,0x0d47a1);(function(){const m=new THREE.Mesh(new THREE.CylinderGeometry(0.13,0.13,1.3,12),mat(0x546e7a));m.position.set(13.6,0.65,-19.6);MG.add(m);})();label('Cột lọc cát mangan (nếu nước phèn)',13.6,19.6,1.6,MG);label('Bơm tăng áp tự động (khi vòi sen yếu)',15.1,19.5,0.7,MG);
 
+// ---- DIEN CHI TIET: 9 mach tu tu dien, moi mach 1 mau; L-N-PE di chung ong ----
+MG=mD;
+const CC={C1:0xfdd835,C2:0xe53935,C3:0x43a047,C4:0x546e7a,R1:0xbf360c,R2:0xfb8c00,R3:0x8e24aa,R4:0xd81b60,R5:0x00acc1,PE:0x9ccc65,FD:0x212121};
+const run=(c,pts,r)=>pipe(pts,CC[c],r||0.018);
+const sk=(a,b,z,c)=>mbox(a-0.04,b-0.07,z-0.07,0.08,0.14,0.14,c||0xffffff);
+const sw=(a,b,z)=>mbox(a-0.035,b-0.05,z-0.05,0.07,0.1,0.1,0x90a4ae);
+const jb=(a,b,z)=>mbox(a-0.05,b-0.05,z-0.05,0.1,0.1,0.1,0x37474f);
+const lp=(a,b,z)=>lamp(a,b,z);
+// tu dien + nguon + tiep dia
+mbox(14.21,6.95,1.35,0.08,0.5,0.6,0x37474f);
+label('Tủ điện âm tường 12 module: CB tổng 2P 50A → SPD → C1–C4 (MCB) · R1–R5 (RCBO 30mA)',14.3,7.2,2.15,MG);
+run('FD',[[12.03,-0.3,1.4],[12.03,-0.3,-0.5],[14.12,6.95,-0.5],[14.12,7.15,-0.5],[14.12,7.15,1.4],[14.21,7.15,1.4]],0.03);
+label('Cáp CVV 2×6mm² công tơ → tủ, chôn 0,5m trong ống HDPE',13.0,3.2,0.3,MG);
+[1.9,4.3,6.7].forEach(b=>{mbox(13.585,b-0.015,-2.4,0.03,0.03,2.4,0x8d6e63);mbox(13.5,b-0.1,-0.05,0.2,0.2,0.08,0x616161);});
+run('PE',[[13.6,1.9,-0.5],[13.6,6.7,-0.5],[14.15,7.4,-0.5],[14.15,7.4,1.38],[14.21,7.4,1.38]],0.014);
+label('Tiếp địa: 3 cọc đồng Ø16×2,4m cách 2,4m, cáp đồng trần 16mm² về thanh PE tủ (≤4 Ω)',13.6,4.3,0.5,MG);
+run('PE',[[14.27,7.42,1.95],[14.27,7.42,3.24],[14.69,7.42,3.24],[14.69,14.38,3.24],[17.12,14.38,3.24],[17.12,14.3,3.24],[17.12,14.3,1.56]],0.012);
+label('Dây PE 6mm² riêng → thanh đồng tủ mạng',16.0,14.45,3.45,MG);
+// C1 den + quat
+run('C1',[[14.25,7.0,1.95],[14.25,7.0,3.2],[14.35,7.0,3.2],[14.35,6.1,3.2],[14.25,6.1,3.2],[14.25,6.1,1.3]]);sw(14.24,6.1,1.25);
+run('C1',[[14.35,7.0,3.2],[14.35,17.9,3.2],[14.25,17.9,3.2],[14.25,17.9,1.3]]);sw(14.24,17.9,1.25);
+run('C1',[[14.35,7.9,3.2],[16.7,7.9,3.2]]);lp(15.3,7.9,3.15);lp(16.7,7.9,3.15);
+run('C1',[[14.35,10.35,3.2],[14.25,10.35,3.2],[14.25,10.35,1.3]]);sw(14.24,10.35,1.25);
+run('C1',[[14.35,11.5,3.2],[14.8,11.5,3.2]]);lp(14.8,11.5,3.15);run('C1',[[14.35,16.0,3.2],[14.8,16.0,3.2]]);lp(14.8,16.0,3.15);
+run('C1',[[14.35,12.1,3.2],[16.6,12.1,3.2]]);lp(16.6,12.1,3.15);run('C1',[[15.52,12.1,3.2],[15.52,11.65,3.2],[15.52,11.65,1.3]]);sw(15.52,11.65,1.25);
+run('C1',[[14.35,16.4,3.2],[16.6,16.4,3.2]]);lp(16.6,16.4,3.15);run('C1',[[15.52,16.4,3.2],[15.52,15.75,3.2],[15.52,15.75,1.3]]);sw(15.52,15.75,1.25);
+run('C1',[[14.35,8.0,3.2],[14.25,8.0,3.2],[14.25,8.0,2.9],[11.75,8.0,2.9],[11.75,15.1,2.9]]);
+run('C1',[[11.65,8.0,2.9],[11.65,7.9,2.9],[11.65,7.9,1.3]]);sw(11.65,7.89,1.25);
+run('C1',[[11.75,11.2,2.9],[11.75,11.2,3.15],[11.3,11.2,3.15]]);
+run('C1',[[11.75,9.6,2.9],[9.1,9.6,2.9],[9.1,13.0,2.9]]);lp(9.1,11.2,2.85);lp(9.1,13.0,2.85);
+run('C1',[[11.75,15.1,2.9],[12.7,15.1,2.9],[12.7,16.9,2.9]]);lp(12.7,16.9,2.85);run('C1',[[12.7,16.55,2.9],[13.93,16.55,2.9],[13.93,16.55,1.3]]);sw(13.93,16.55,1.25);
+run('C1',[[11.75,15.1,2.9],[11.4,15.1,2.9],[11.4,15.2,2.97],[9.7,15.2,2.97],[9.7,15.5,2.86],[9.7,16.8,2.86],[9.5,18.1,2.86],[9.5,18.1,2.5]]);lp(9.7,16.8,2.8);mbox(9.35,18.1,2.2,0.3,0.12,0.3,0x78909c);
+run('C1',[[11.75,15.1,2.9],[11.75,16.62,2.9],[11.49,16.62,2.9],[11.49,16.62,1.3]]);sw(11.49,16.62,1.25);
+label('C1 đèn + quạt · MCB 10A · dây 1,5mm²',14.35,9.0,3.45,MG);
+label('Công tắc 2 đèn phòng khách · cao 1,25m',14.3,6.1,1.6,MG);label('Công tắc 2 chiều đầu + cuối hành lang',14.3,10.35,1.6,MG);
+label('Công tắc phòng ngủ',15.6,11.65,1.6,MG);label('Công tắc kho',15.6,15.75,1.6,MG);
+label('Cụm công tắc nhà phụ: đèn bếp · đèn bàn ăn · hộp số quạt',11.65,7.95,1.6,MG);label('Công tắc khu giặt',13.9,16.55,1.6,MG);
+label('Ngoài cửa WC: công tắc đèn + quạt hút (dưới), công tắc 2 cực có đèn cho nóng lạnh (trên)',11.5,16.75,1.9,MG);label('Quạt hút WC',9.5,18.1,2.6,MG);
+// C2 o cam nha chinh
+run('C2',[[14.25,7.05,1.95],[14.25,7.05,3.2],[14.45,7.05,3.2],[14.45,18.0,3.2],[16.4,18.0,3.2],[16.4,18.26,3.2],[16.4,18.26,1.05]]);sk(16.4,18.26,1.0);
+run('C2',[[14.45,7.05,3.2],[17.76,7.05,3.2],[17.76,7.05,1.05]]);sk(17.76,7.05,1.0);
+run('C2',[[14.45,8.3,3.2],[14.25,8.3,3.2],[14.25,8.3,1.05]]);sk(14.25,8.3,1.0);
+run('C2',[[14.45,9.96,3.2],[17.2,9.96,3.2],[17.2,9.96,1.15]]);run('C2',[[16.2,9.96,3.2],[16.2,9.96,1.15]]);sk(16.2,9.96,1.1);sk(17.2,9.96,1.1);
+run('C2',[[14.45,10.8,3.2],[17.76,10.8,3.2],[17.76,10.8,1.05]]);sk(17.76,10.8,1.0);
+run('C2',[[14.45,14.05,3.2],[17.4,14.05,3.2],[17.4,14.05,1.05]]);run('C2',[[16.0,14.05,3.2],[16.0,14.05,1.05]]);sk(16.0,14.05,1.0);sk(17.4,14.05,1.0);
+label('C2 ổ cắm nhà chính · MCB 20A · dây 2,5mm² · ổ đôi 3 chấu cao 1,0m',14.45,8.6,3.45,MG);
+label('TV',17.7,7.05,1.3,MG);label('Sofa',14.3,8.3,1.3,MG);label('Bàn làm việc ×2 (cao 1,1m)',16.7,9.9,1.45,MG);label('Đầu giường ×2',16.7,14.0,1.3,MG);label('Kho',16.4,18.2,1.3,MG);
+// C3 may lanh
+run('C3',[[14.25,7.1,1.95],[14.25,7.1,3.2],[14.55,7.1,3.2],[14.55,12.3,3.2],[17.76,12.3,3.2],[17.76,12.3,2.45]]);sk(17.76,12.3,2.4);
+label('C3 máy lạnh · MCB 20A · dây 2,5mm² · ổ đơn cạnh dàn lạnh cao 2,4m',17.4,12.3,2.8,MG);
+// C4 tu mang
+run('C4',[[14.25,7.15,1.95],[14.25,7.15,3.2],[14.65,7.15,3.2],[14.65,14.33,3.2],[16.85,14.33,3.2],[16.85,14.24,3.2],[16.85,14.24,1.35]]);sk(16.85,14.24,1.3);
+label('C4 tủ mạng · MCB 10A · ổ đơn → UPS → PDU (không cắm gì khác)',16.6,14.3,1.75,MG);
+// R1 bep tu
+run('R1',[[14.25,7.2,1.95],[14.25,7.2,2.45],[14.25,8.1,2.45],[8.35,8.1,2.45],[8.35,12.75,2.45],[8.08,12.75,2.45],[8.08,12.75,0.65]],0.024);sk(8.08,12.75,0.6,0xffe0b2);
+label('R1 bếp từ · RCBO 32A 30mA · dây 4mm² · ổ 32A/hộp đấu dưới mặt bếp',8.4,12.75,0.35,MG);
+// R2 o cam bep
+run('R2',[[14.25,7.25,1.95],[14.25,7.25,2.4],[14.25,8.2,2.4],[8.2,8.2,2.4],[8.2,13.95,2.4]]);
+[[9.45,1.15],[12.25,1.15],[13.95,1.15],[12.9,2.05]].forEach(p=>{run('R2',[[8.2,p[0],2.4],[8.07,p[0],2.4],[8.07,p[0],p[1]]]);sk(8.07,p[0],p[1]-0.05);});
+label('R2 ổ cắm bếp · RCBO 20A 30mA · dây 2,5mm²: tủ lạnh, 2 ổ mặt bếp (cách chậu ≥0,6m), máy hút mùi',8.3,11.0,1.5,MG);
+// R3 giat say
+run('R3',[[14.25,7.3,1.95],[14.25,7.3,3.2],[14.75,7.3,3.2],[14.75,17.6,3.2],[14.25,17.6,3.2],[14.25,17.6,2.45],[11.5,17.6,2.45],[11.5,17.6,1.3]]);sk(11.49,17.5,1.2);sk(11.49,17.7,1.2);
+label('R3 máy giặt + sấy · RCBO 20A 30mA · 2 ổ đơn cao 1,2m',11.6,17.6,1.55,MG);
+// R4 nong lanh
+run('R4',[[14.25,7.35,1.95],[14.25,7.35,3.2],[14.85,7.35,3.2],[14.85,16.85,3.2],[14.25,16.85,3.2],[14.25,16.85,2.45],[11.5,16.85,2.45],[11.5,16.85,1.6]]);sw(11.49,16.85,1.55);
+run('R4',[[11.5,16.85,2.45],[11.5,16.85,2.97],[11.3,17.15,2.97],[8.45,17.15,2.86],[8.45,17.15,2.72]]);jb(8.45,17.25,2.78);
+run('PE',[[11.5,16.9,2.45],[11.5,16.9,2.99],[11.3,17.2,2.99],[8.5,17.2,2.88],[8.5,17.2,2.72]],0.01);
+label('R4 nóng lạnh · RCBO 20A 30mA · dây 2,5mm² · đấu cố định qua hộp kín, dây PE nối vỏ bình · không đặt ổ cắm trong WC',9.8,17.15,3.2,MG);
+// R5 ngoai troi
+run('R5',[[14.25,7.4,1.95],[14.25,7.4,2.3],[13.85,7.4,2.3]]);jb(13.85,7.4,2.3);
+run('R5',[[13.85,7.4,2.3],[13.85,7.62,2.3],[8.0,7.62,2.3]]);mbox(7.88,7.55,2.25,0.1,0.14,0.1,0x263238);
+run('R5',[[8.6,7.62,2.3],[8.6,7.62,1.25]]);sk(8.6,7.64,1.2,0x455a64);
+run('R5',[[13.85,7.4,2.3],[13.85,7.4,-0.35],[12.3,-0.1,-0.35],[12.3,-0.3,-0.35],[12.3,-0.3,2.5]]);lp(12.3,-0.3,2.6);
+run('R5',[[13.85,7.4,2.3],[13.85,5.35,2.3],[14.3,5.35,2.3],[14.3,5.35,2.5]]);lp(14.3,5.3,2.6);
+run('R5',[[14.25,7.4,2.3],[14.25,7.4,3.2],[14.95,7.4,3.2],[14.95,18.1,3.2],[14.95,18.1,2.95],[14.95,18.6,2.95]]);lp(14.95,18.6,2.85);
+run('R5',[[14.95,18.6,2.95],[15.8,18.6,2.95],[15.8,18.6,1.25]]);sk(15.8,18.58,1.2,0x455a64);
+run('R5',[[15.8,18.6,1.2],[15.8,18.6,-0.35],[12.95,19.5,-0.35],[12.95,19.5,0.35]]);
+label('R5 ngoài trời · RCBO 16A 30mA · cáp CVV 2,5mm² trong ống, ngầm 0,5m',13.85,7.4,2.7,MG);
+label('Ổ IP55 sân xe',8.6,7.6,1.5,MG);label('Đèn pha cảm biến sân xe',7.9,7.55,2.6,MG);label('Đèn cổng (cảm biến)',12.3,-0.3,2.95,MG);label('Đèn hiên trước (cảm biến)',14.3,5.3,2.95,MG);
+label('Đèn + ổ IP55 hiên sau',15.4,18.6,3.2,MG);label('Bơm giếng 0,75kW: ổ IP55 + công tắc kín cạnh bơm',12.95,19.5,0.75,MG);
+// binh nong lanh (thiet bi co san) + cap nuoc nong lanh
+box(8.15,16.65,2.3,0.42,0.75,0.4,0xf5f5f5);
+MG=mN;const HOT=0xff5722;
+pipe([[9.5,18.65,0.3],[8.22,18.65,0.3],[8.22,18.1,0.6],[8.22,17.55,0.6],[8.22,17.55,2.2],[8.3,17.3,2.3]],BLU,0.02);
+mbox(8.17,17.5,1.95,0.1,0.1,0.12,0xc62828);
+pipe([[8.22,17.55,1.6],[8.22,16.15,1.6]],BLU,0.018);
+pipe([[8.3,16.75,2.3],[8.24,16.72,2.2],[8.24,16.72,1.7],[8.24,16.15,1.7]],HOT,0.018);
+mbox(8.17,15.98,1.55,0.08,0.24,0.2,0xb0bec5);pipe([[8.22,16.05,1.75],[8.22,16.05,2.45],[8.4,16.05,2.45]],0x9e9e9e,0.012);cyl(8.42,16.05,2.38,0.07,0.04,0x9e9e9e);
+label('Nước lạnh vào bình: van khoá + van 1 chiều + van an toàn (ống xả không được bịt)',8.3,17.55,2.05,MG);
+label('Ống nóng PPR chịu nhiệt → van trộn sen cao 1,1m',8.3,16.4,1.75,MG);
+label('Bình nóng lạnh có sẵn: đáy cách sàn WC ≥1,8m, ngoài vùng nước sen',8.4,17.0,2.95,MG);
+MG=mD;
 // ---- PHUONG AN NANG CAP: A san thuong mai nha chinh, B lau go tren nha tam (an/hien bang nut) ----
 const optA=new THREE.Group(),optB=new THREE.Group();site.add(optA);site.add(optB);optA.visible=false;optB.visible=false;
 const SAT=0x7a3326,TRE=0xc9a96a;
