@@ -113,26 +113,27 @@
 <tr><td>Máy nước nóng trực tiếp (có sẵn)</td><td>4,5</td></tr><tr><td>Máy lạnh 1,5HP có sẵn</td><td>1,3</td></tr>
 <tr><td>Bơm giếng 1HP + bơm tăng áp</td><td>0,9</td></tr><tr><td>Máy rửa xe áp lực</td><td>1,8</td></tr>
 <tr><td>Chờ xưởng mộc (sau)</td><td>2,2</td></tr>
-<tr><th>Tổng lắp đặt (cả tải sau này)</th><th>~20,2</th></tr><tr><th>Đồng thời đợt 1, chưa bếp từ (hệ số ~0,6)</th><th>~8,1kW ≈ 37A</th></tr><tr><th>Khi có bếp từ</th><th>~10,2kW ≈ 46A</th></tr></table>
-<p>→ <b>CB tổng 2P 40A</b>, dây từ công tơ vào tủ <b>CVV 2×6mm²</b> ~15m, sau CB tổng có <b>chống sét lan truyền (SPD) loại 2</b>. <b style="color:#c62828">Cần chốt trước khi chôn cáp:</b> máy nước nóng 4,5kW làm đợt 1 đã sát 40A (nóng lạnh + máy sấy + ấm siêu tốc cùng lúc ≈ 40A); khi có bếp từ ≈ 46A. Nếu công tơ cho phép, chôn luôn CVV 2×10 + CB 50A (thêm ~0,7tr). Chi tiết trang Điện.</p>
+<tr><th>Tổng lắp đặt (cả tải sau này)</th><th>~20,2</th></tr><tr><th>Đồng thời đợt 1, chưa bếp từ (hệ số ~0,6)</th><th>~8,1kW ≈ 37A</th></tr><tr><th>Khi có bếp từ</th><th>~10,2kW ≈ 46A</th></tr><tr><th>Đủ thiết bị tương lai</th><th>~12,3kW ≈ 56A → CB tổng 63A</th></tr></table>
+<p>→ <b>CB tổng 2P 63A</b> làm sẵn cho thiết bị lớn sau này (cần công tơ EVN ≥63A, ví dụ 10(80)A; công tơ 10(40)A thì xin Điện lực nâng), dây từ công tơ vào tủ <b>CVV 2×25mm²</b> ~15m trong ống HDPE Ø50 (6mm² chôn ngầm chỉ chịu ~34–40A), sau CB tổng có <b>chống sét lan truyền (SPD) loại 2</b>. Tải tương lai (bếp từ, máy lạnh thứ 2, xưởng mộc, máy rửa xe, bơm tăng áp) ~22kW lắp đặt, dùng đồng thời ~12kW ≈ 56A: vẫn dưới 63A. Chi tiết trang Điện.</p>
 <table><tr><th>Mạch</th><th>Bảo vệ</th><th>Dây</th></tr>
-<tr><td>C1 Đèn trong nhà + quạt trần + quạt hút WC (dây có sẵn, có PE)</td><td>RCCB 30mA #1 + MCB 10A</td><td>3×1,5mm²</td></tr>
-<tr><td>C2 Ổ cắm nhà chính (dây có sẵn, đo cách điện)</td><td>RCCB 30mA #1 + MCB 20A</td><td>2,5mm²</td></tr>
-<tr><td>C3 Máy lạnh 1,5HP phòng ngủ</td><td>RCCB 30mA #1 + MCB 20A</td><td>2,5mm²</td></tr>
+<tr><td>C1 Đèn trong nhà + quạt trần + quạt hút WC (dây có sẵn, có PE)</td><td>RCCB 63A 30mA #1 + MCB 10A</td><td>3×1,5mm²</td></tr>
+<tr><td>C2 Ổ cắm nhà chính (dây có sẵn, đo cách điện)</td><td>RCCB 63A 30mA #1 + MCB 20A</td><td>2,5mm²</td></tr>
+<tr><td>C3 Máy lạnh 1,5HP phòng ngủ</td><td>RCCB 63A 30mA #1 + MCB 20A</td><td>2,5mm²</td></tr>
 <tr><td>C4 Tủ mạng: UPS → PDU (không cắm gì khác)</td><td>RCBO 10A 30mA riêng</td><td>1,5mm²</td></tr>
-<tr><td><b>R1 Bếp từ: đợt 1 chỉ đi ống Ø25 chờ; dây 4mm² + RCBO mua khi mua bếp (đợt 2)</b></td><td><b>RCBO 32A 30mA</b></td><td><b>4mm²</b></td></tr>
+<tr><td><b>R1 Bếp từ: đợt 1 chỉ đi ống Ø25 chờ; dây 4mm² + RCBO mua khi mua bếp (đợt 2)</b></td><td><b>RCBO 25A 30mA</b></td><td><b>4mm²</b></td></tr>
 <tr><td>R2 Ổ cắm bếp, tủ lạnh, nồi cơm, ấm</td><td>RCBO 20A 30mA</td><td>2,5mm²</td></tr>
-<tr><td>R3 Máy giặt + máy sấy (2 ổ đơn)</td><td>RCCB 30mA #2 + MCB 20A</td><td>2,5mm²</td></tr>
-<tr><td><b>R4 Máy nước nóng trực tiếp Panasonic 4500W có sẵn (~19,6A)</b></td><td><b>RCCB #2 + MCB 32A</b></td><td><b>4mm² (mua mới)</b></td></tr>
+<tr><td>R3 Máy giặt + máy sấy (2 ổ đơn)</td><td>RCCB 63A 30mA #2 + MCB 20A</td><td>2,5mm²</td></tr>
+<tr><td><b>R4 Máy nước nóng trực tiếp Panasonic 4500W có sẵn (~19,6A)</b></td><td><b>RCBO 25A 30mA riêng</b></td><td><b>4mm² (mua mới), ống riêng</b></td></tr>
 <tr><td>R5 Ngoài trời: ổ IP55 sân xe + hiên sau, đèn hiên, đèn pha cảm biến, bơm giếng (đèn cổng dùng năng lượng mặt trời, khỏi kéo cáp)</td><td>RCCB #2 + MCB 16A</td><td>CVV 3×2,5mm² (có PE)</td></tr>
 <tr><td>Dự phòng 2–4 module: nhà xe, bơm tăng áp, xưởng mộc, máy lạnh thứ 2</td><td>–</td><td>–</td></tr></table>
 <ul>
 <li><b>Màu dây trong lớp Điện (3D):</b> C1 vàng · C2 đỏ · C3 xanh lá · C4 xám xanh · R1 xám nhạt (ống chờ) · R2 cam · R3 tím · R4 hồng · R5 xanh ngọc · đen cáp nguồn công tơ → tủ · xanh nõn chuối dây tiếp địa PE. Mỗi mạch đi ống riêng từ tủ, trong ống có đủ 3 dây L–N–PE.</li>
 <li><b>Chiều cao lắp:</b> công tắc 1,25m cạnh mép cửa phía tay nắm; ổ cắm 1,0m (chừa nâng nền); ổ bàn làm việc, mặt bếp 1,1m; ổ máy giặt, sấy 1,2m; ổ máy lạnh 2,4m cạnh dàn lạnh; ổ bếp từ dưới mặt bếp 0,6m.</li>
-<li><b>Nóng lạnh (R4):</b> máy trực tiếp Panasonic DH-4VP1VW 4500W có bơm (đồ cũ, có sẵn sen). Dây 4mm² + MCB 32A, công tắc 2 cực ≥32A có đèn đặt ngoài cửa WC, cáp đi trên đỉnh tường WC tới hộp đấu dây kín cạnh máy; PE nối vỏ máy; không đặt ổ cắm trong WC. Máy treo cạnh chỗ tắm, đáy cao ~1,4m so với sàn WC, ngoài tia nước; nước vào chỉ cần 1 van khoá (máy chạy từ áp ~0,05 bar, bồn 2,5m là dư).</li>
-<li><b>Chống giật cho mọi mạch:</b> nhà nối đất bằng cọc riêng, khi rò ra vỏ dòng sự cố chỉ ~15–20A nên MCB không cắt. Vì vậy C1–C3 qua RCCB 30mA #1; C4 tủ mạng RCBO riêng (rò chỗ khác không tắt UPS, NAS); R2 bếp + tủ lạnh RCBO riêng; R3, R4, R5 qua RCCB 30mA #2. Tủ 24 module (đợt 1 dùng 17).</li>
+<li><b>Nóng lạnh (R4):</b> máy trực tiếp Panasonic DH-4VP1VW 4500W có bơm (đồ cũ, có sẵn sen). Dây 4mm² đi ống riêng + RCBO 25A 30mA riêng, công tắc 2 cực ≥25A có đèn đặt ngoài cửa WC, cáp đi trên đỉnh tường WC tới hộp đấu dây kín cạnh máy; PE nối vỏ máy; không đặt ổ cắm trong WC. Máy treo cạnh chỗ tắm, đáy cao ~1,4m so với sàn WC, ngoài tia nước; nước vào chỉ cần 1 van khoá (máy chạy từ áp ~0,05 bar, bồn 2,5m là dư).</li>
+<li><b>Chống giật cho mọi mạch:</b> nhà nối đất bằng cọc riêng, khi rò ra vỏ dòng sự cố chỉ ~15–20A nên MCB không cắt. Vì vậy C1–C3 qua RCCB 30mA #1; C4 tủ mạng, R2 bếp + tủ lạnh, R4 máy nước nóng mỗi mạch 1 RCBO riêng; R3, R5 qua RCCB 30mA #2. Hai RCCB loại 63A cho khớp CB tổng 63A. Tủ 24 module (đợt 1 dùng 18, còn trống cho thiết bị lớn).</li>
+<li><b>Cỡ dây đã kiểm theo sức chịu khi đi ống, trời nóng:</b> 1,5mm² ≤10A; 2,5mm² ≤20A (đi ống riêng, không chung máng với mạch tải lớn); 4mm² ≤25A; cáp nguồn chôn 2×25mm² cho 63A. Dây cũ mạch C2 phải đúng 2,5mm², nếu là 1,5mm² thì hạ MCB xuống 16A.</li>
 <li><b>Nhà chính:</b> dây hiện hữu đang đi nổi → giữ tuyến cũ cho C1, C2 nếu đo cách điện ≥1MΩ; dây mới đi ống nổi/nẹp sát trần, không đục tường.</li>
-<li><b>Tiếp địa:</b> đóng 2 cọc đồng Ø16×2,4m cách nhau 2,4m, đo; trên 10 Ω mới đóng cọc 3; tủ điện, tủ mạng và chống sét mạng nối chung một hệ.</li>
+<li><b>Tiếp địa:</b> đóng 1 cọc đồng Ø16×2,4m ở bãi đất ẩm (mọi mạch đã có chống giật 30mA nên không cần đạt ≤10 Ω; đo thấy dưới ~100 Ω là dư); tủ điện, tủ mạng và chống sét mạng nối chung một hệ.</li>
 <li>Ổ cắm đặt cao ≥1,0m, chừa cho lúc nâng nền.</li>
 <li>Dây cũ chỉ dùng lại cho C1, C2 sau khi đo cách điện đạt; các mạch tải lớn và mạch có nước đi dây mới.</li></ul>
 <h3>4. Cấp nước</h3>
@@ -259,7 +260,7 @@
 <tr><td>4. Nền nhà tạm 6×10,7m (mái, vách, nền)</td><td>6,2</td><td>7,7</td><td>0,0</td><td>13,9</td></tr>
 <tr><td>5. Nhà phụ – xây gạch, bông gió tận dụng, chống nóng</td><td>10,9</td><td>4,8</td><td>0,5</td><td>16,2</td></tr>
 <tr><td>6. Cửa sau + 2 mái hắt</td><td>1,9</td><td>2,1</td><td>0,0</td><td>4,0</td></tr>
-<tr><td>7. Điện</td><td>13,8</td><td>1,5</td><td>0,0</td><td>15,3</td></tr>
+<tr><td>7. Điện</td><td>15,7</td><td>1,5</td><td>0,0</td><td>17,2</td></tr>
 <tr><td>8. Mạng + ống chờ</td><td>0,6</td><td>0,0</td><td>0,0</td><td>0,6</td></tr>
 <tr><td>9. Nước cấp + thoát</td><td>6,8</td><td>1,0</td><td>0,7</td><td>8,5</td></tr>
 <tr><td>10. Bếp</td><td>4,7</td><td>0,0</td><td>0,0</td><td>4,7</td></tr>
@@ -267,11 +268,11 @@
 <tr><td>12. An toàn cho thai phụ + cháy nổ</td><td>4,0</td><td>0,0</td><td>0,0</td><td>4,0</td></tr>
 <tr><td>13. Cổng sắt cũ lắp lại</td><td>0,9</td><td>0,5</td><td>0,0</td><td>1,4</td></tr>
 <tr><td>14. Chi phí chung</td><td>1,5</td><td>0,0</td><td>1,2</td><td>2,7</td></tr>
-<tr><th colspan=4>Cộng trước thuế</th><th>126,0</th></tr>
-<tr><th colspan=4>VAT 10% phần vật tư lấy giá công bố (chưa VAT)</th><th>4,5</th></tr>
-<tr><th colspan=4>Dự phòng 10%</th><th>13,0</th></tr>
-<tr><th colspan=4>Tổng đợt 1 (vào ở)</th><th>143,5</th></tr></table>
-<p>Tổng đợt 1 (gói vào ở) ≈ <b>143,5tr</b> gồm VAT và dự phòng, vượt ngân sách 100tr khoảng 43,5tr. Bản 17/11 (so với 142,9tr; đã bỏ 2 quả cầu hút nhiệt): <b>thêm</b> cầu dao chống giật thứ 2 cho C1–C3, RCBO riêng tủ mạng, tủ điện 24 module, dây 4mm² + MCB 32A + công tắc 2 cực cho máy nước nóng 4500W, tấm đan che ống, ống đứng máy giặt, bệ rửa chân cao; <b>bớt</b> sen tắm (máy có sẵn sen), bộ van bình chứa, nắp lật, hố ga, ~20m ống Ø60 nước xám, trục mạng tới Aruba (không dùng). Đã trừ: dây 1,5/2,5mm², cáp + thiết bị mạng, bông gió nhà 914, máy nước nóng có sẵn (0đ) và khoảng 7,9tr tiền công nhờ chủ nhà tự làm. <b>Tự làm:</b> tháo bông gió, lắp tấm cách nhiệt, đi ống luồn + kéo dây + lắp ổ cắm, đèn, kéo cáp mạng + đánh số, đi ống nước uPVC, lắp lưới chống muỗi, ngâm thử chống thấm WC. <b>Để thợ:</b> thuê máy đào (hố thử thấm trước, rồi hố bể + rãnh + bãi thấm), hút + lấp hầm cũ, xây trát, chống thấm WC, tủ điện + tiếp địa + đóng điện, lợp mái, hàn, máy lạnh. Đơn giá vật liệu theo Thông báo 561/TB-SXD Vĩnh Long (PL II khu vực 10, PL IV, kỳ 01–15/9/2026, chưa VAT).</p>
+<tr><th colspan=4>Cộng trước thuế</th><th>127,9</th></tr>
+<tr><th colspan=4>VAT 10% phần vật tư lấy giá công bố (chưa VAT)</th><th>4,4</th></tr>
+<tr><th colspan=4>Dự phòng 10%</th><th>13,2</th></tr>
+<tr><th colspan=4>Tổng đợt 1 (vào ở)</th><th>145,6</th></tr></table>
+<p>Tổng đợt 1 (gói vào ở) ≈ <b>145,6tr</b> gồm VAT và dự phòng, vượt ngân sách 100tr khoảng 45,6tr. Bản 17/11 (so với 142,9tr; đã bỏ 2 quả cầu hút nhiệt; CB tổng 63A + cáp 2×25 làm sẵn cho thiết bị lớn, 1 cọc tiếp địa): <b>thêm</b> cầu dao chống giật thứ 2 cho C1–C3, RCBO riêng tủ mạng, tủ điện 24 module, dây 4mm² + RCBO 25A + công tắc 2 cực cho máy nước nóng 4500W, tấm đan che ống, ống đứng máy giặt, bệ rửa chân cao; <b>bớt</b> sen tắm (máy có sẵn sen), bộ van bình chứa, nắp lật, hố ga, ~20m ống Ø60 nước xám, trục mạng tới Aruba (không dùng). Đã trừ: dây 1,5/2,5mm², cáp + thiết bị mạng, bông gió nhà 914, máy nước nóng có sẵn (0đ) và khoảng 7,9tr tiền công nhờ chủ nhà tự làm. <b>Tự làm:</b> tháo bông gió, lắp tấm cách nhiệt, đi ống luồn + kéo dây + lắp ổ cắm, đèn, kéo cáp mạng + đánh số, đi ống nước uPVC, lắp lưới chống muỗi, ngâm thử chống thấm WC. <b>Để thợ:</b> thuê máy đào (hố thử thấm trước, rồi hố bể + rãnh + bãi thấm), hút + lấp hầm cũ, xây trát, chống thấm WC, tủ điện + tiếp địa + đóng điện, lợp mái, hàn, máy lạnh. Đơn giá vật liệu theo Thông báo 561/TB-SXD Vĩnh Long (PL II khu vực 10, PL IV, kỳ 01–15/9/2026, chưa VAT).</p>
 <p><b>Đợt 2 – làm dần sau khi đã ở</b></p>
 <table><tr><th>Hạng mục</th><th>Cũ/mới</th><th>Triệu</th></tr>
 <tr><td>Sơn lại phòng ở + mặt tiền (tự sơn)</td><td>Mới</td><td>2–4</td></tr>
@@ -352,7 +353,7 @@
 <li>Đã đo: sân thấp hơn nền 0,10m, mặt đường cao hơn sân 0,50m, triều cao nhất thấp hơn nền 0,30m, ao lúc ròng thấp hơn nền ~2m.</li>
 <li><b>Hố thử thấm ở dải rào trái</b> (làm đầu tiên ngày thuê máy đào): sâu 0,6m, đổ đầy nước, đo tốc độ rút; ghi mực nước ngầm trong hố, nếu được thì xem lại lúc triều cường. Kết quả quyết định diện tích bãi thấm.</li>
 <li>Cao độ đáy ống thoát bồn cầu WC (thiết kế giả định +0,30 so với nền).</li>
-<li>Dòng định mức công tơ EVN (ghi trên mặt, ví dụ 10(40)A): quyết định CB tổng 40A hay 50A và cỡ cáp nguồn.</li>
+<li>Dòng định mức công tơ EVN (ghi trên mặt, ví dụ 10(40)A): CB tổng 63A cần công tơ ≥63A (ví dụ 10(80)A); nếu là 10(40)A thì xin Điện lực nâng trước khi đóng điện.</li>
 <li>Model máy giặt: áp lực nước tối thiểu (bồn 2,5m cho ~0,15–0,25 bar).</li>
 <li>Kết quả xét nghiệm nước giếng.</li></ul>
 </div></div>
@@ -732,12 +733,12 @@ const jb=(a,b,z)=>mbox(a-0.05,b-0.05,z-0.05,0.1,0.1,0.1,0x37474f);
 const lp=(a,b,z)=>lamp(a,b,z);
 // tu dien + nguon + tiep dia
 mbox(14.21,6.95,1.35,0.08,0.5,0.6,0x37474f);
-LBL('Tủ điện 24 module: CB tổng 2P 40A → SPD → RCCB 30mA #1 → C1, C2, C3 (MCB) · C4 RCBO 10A 30mA · R2 RCBO 20A 30mA · RCCB 30mA #2 → R3, R4 (MCB 32A), R5 · R1 bếp từ đợt 2',14.3,7.2,2.15);
+LBL('Tủ điện 24 module: CB tổng 2P 63A → SPD → RCCB 63A 30mA #1 → C1, C2, C3 (MCB) · C4 RCBO 10A · R2 RCBO 20A · R4 RCBO 25A · RCCB 63A 30mA #2 → R3, R5 · R1 bếp từ RCBO 25A đợt 2 · còn module trống cho thiết bị lớn',14.3,7.2,2.15);
 run('FD',[[12.03,-0.3,1.4],[12.03,-0.3,-0.5],[14.12,6.95,-0.5],[14.12,7.15,-0.5],[14.12,7.15,1.4],[14.21,7.15,1.4]]);
-LBL('Cáp CVV 2×6mm² (L đỏ + N xanh) công tơ → tủ, chôn 0,5m trong ống HDPE',13.0,3.2,0.3);
-[4.3,6.7].forEach(b=>{mbox(13.585,b-0.015,-2.4,0.03,0.03,2.4,0x8d6e63);mbox(13.5,b-0.1,-0.05,0.2,0.2,0.08,0x616161);});
+LBL('Cáp CVV 2×25mm² (L đỏ + N xanh) công tơ → tủ, chôn 0,5m trong ống HDPE Ø50',13.0,3.2,0.3);
+[4.3].forEach(b=>{mbox(13.585,b-0.015,-2.4,0.03,0.03,2.4,0x8d6e63);mbox(13.5,b-0.1,-0.05,0.2,0.2,0.08,0x616161);});
 run('PE',[[13.6,4.3,-0.5],[13.6,6.7,-0.5],[14.15,7.4,-0.5],[14.15,7.4,1.38],[14.21,7.4,1.38]]);
-LBL('Tiếp địa: 2 cọc đồng Ø16×2,4m cách 2,4m, đo; >10 Ω mới đóng cọc 3 · cáp đồng trần về thanh PE tủ',13.6,5.5,0.5);
+LBL('Tiếp địa: 1 cọc đồng Ø16×2,4m (mọi mạch có chống giật 30mA) · cáp đồng trần về thanh PE tủ',13.6,5.5,0.5);
 run('PE',[[14.27,7.42,1.95],[14.27,7.42,3.24],[14.69,7.42,3.24],[14.69,9.92,3.24],[15.66,9.92,3.24],[15.66,9.92,1.56]]);
 LBL('Đợt 2: dây PE 6mm² đi chung ống C4 → thanh đồng tủ mạng',15.3,9.9,3.45);
 // C1 den + quat
@@ -771,7 +772,7 @@ LBL('C2 ổ cắm nhà chính · RCCB 30mA + MCB 20A · 3 sợi L+N+PE 2,5mm² �
 LBL('TV',17.7,7.05,1.3);LBL('Sofa',14.3,8.3,1.3);LBL('Bàn làm việc ×2 (cao 1,1m)',16.7,9.9,1.45);LBL('Đầu giường P1 ×2',16.7,14.0,1.3);LBL('Đầu giường P2 ×2',17.7,16.8,1.3);
 // C3 may lanh
 run('C3',[[14.25,7.1,1.95],[14.25,7.1,3.2],[14.55,7.1,3.2],[14.55,12.3,3.2],[17.76,12.3,3.2],[17.76,12.3,2.45]]);sk(17.76,12.3,2.4);
-mbox(14.5,7.0,3.12,0.5,11.0,0.06,0xeceff1);LBL('Máng nhựa 60×40 chung cho C3, C4, R3, R4, R5 dọc trần hành lang',14.75,12.5,3.35);LBL('C3 máy lạnh · RCCB 30mA + MCB 20A · 3 sợi L+N+PE 2,5mm² · ống Ø20 · ổ đơn cạnh dàn lạnh cao 2,4m',17.4,12.3,2.8);
+mbox(14.5,7.0,3.12,0.2,11.0,0.06,0xeceff1);LBL('Máng nhựa chung chỉ cho C3, C4 · R3, R4, R5 đi ống riêng cách nhau ≥2cm (dây tải lớn không nóng)',14.75,12.5,3.35);LBL('C3 máy lạnh · RCCB 30mA + MCB 20A · 3 sợi L+N+PE 2,5mm² · ống Ø20 · ổ đơn cạnh dàn lạnh cao 2,4m',17.4,12.3,2.8);
 // C4 tu mang
 run('C4',[[14.25,7.15,1.95],[14.25,7.15,3.2],[14.65,7.15,3.2],[14.65,9.88,3.2],[15.5,9.88,3.2],[15.5,9.96,3.2],[15.5,9.96,0.65]]);sk(15.5,9.96,0.6);
 LBL('C4 tủ mạng · RCBO 10A 30mA riêng · 3 sợi L+N+PE 1,5mm² · ống Ø16 · ổ đơn sau UPS (cao 0,6m) → PDU',15.6,9.9,0.3);
@@ -784,11 +785,11 @@ run('R2',[[14.25,7.25,1.95],[14.25,7.25,2.4],[14.25,8.2,2.4],[8.2,8.2,2.4],[8.2,
 LBL('R2 ổ cắm bếp · RCBO 20A 30mA · 3 sợi L+N+PE 2,5mm² · ống Ø20: tủ lạnh, 2 ổ mặt bếp (cách chậu ≥0,6m), máy hút mùi',8.3,11.0,1.5);
 // R3 giat say
 run('R3',[[14.25,7.3,1.95],[14.25,7.3,3.2],[14.75,7.3,3.2],[14.75,17.6,3.2],[14.25,17.6,3.2],[14.25,17.6,2.45],[11.5,17.6,2.45],[11.5,17.6,1.3]]);sk(11.49,17.5,1.2);sk(11.49,17.7,1.2);
-LBL('R3 máy giặt + sấy · RCCB chung + MCB 20A · 3 sợi L+N+PE 2,5mm² · ống Ø20 · 2 ổ đơn cao 1,2m',11.6,17.6,1.55);
+LBL('R3 máy giặt + sấy · RCCB #2 + MCB 20A · ống riêng · 3 sợi L+N+PE 2,5mm² · ống Ø20 · 2 ổ đơn cao 1,2m',11.6,17.6,1.55);
 // R4 nong lanh
 run('R4',[[14.25,7.35,1.95],[14.25,7.35,3.2],[14.85,7.35,3.2],[14.85,16.85,3.2],[14.25,16.85,3.2],[14.25,16.85,2.45],[11.5,16.85,2.45],[11.5,16.85,1.6]]);sw(11.49,16.85,1.55);
 run('R4',[[11.5,16.85,2.45],[11.5,16.85,2.97],[11.3,16.6,2.97],[8.3,16.6,2.86],[8.3,16.6,2.35]]);jb(8.3,16.6,2.35);
-LBL('R4 máy nước nóng trực tiếp 4500W (~19,6A) · RCCB #2 + MCB 32A · 3 sợi L+N+PE 4mm² · ống Ø25 · công tắc 2 cực ≥32A cắt cả L và N · đấu cố định qua hộp kín, PE nối vỏ máy · không đặt ổ cắm trong WC',9.8,16.6,3.2);
+LBL('R4 máy nước nóng trực tiếp 4500W (~19,6A) · RCBO 25A 30mA riêng · ống riêng · 3 sợi L+N+PE 4mm² · ống Ø25 · công tắc 2 cực ≥32A cắt cả L và N · đấu cố định qua hộp kín, PE nối vỏ máy · không đặt ổ cắm trong WC',9.8,16.6,3.2);
 // R5 ngoai troi
 run('R5',[[14.25,7.4,1.95],[14.25,7.4,2.3],[13.85,7.4,2.3]]);jb(13.85,7.4,2.3);
 run('R5',[[13.85,7.4,2.3],[13.85,7.62,2.3],[8.0,7.62,2.3]]);mbox(7.88,7.55,2.25,0.1,0.14,0.1,0x263238);
