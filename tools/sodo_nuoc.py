@@ -11,7 +11,7 @@ P.line([[13.0,2.2],[18.3,2.2],[20.3,2.3]],'#b0bec5',2,True);P.text('Đợt 2: ch
 P.rect(12.75,1.95,0.5,0.5,'#eceff1','#b0bec5',True)
 P.line([[7.62,11.25],[7.62,6.9],[8.3,6.9]],BLU,2.5);P.circle(8.3,6.9,3.5,'#212121','#212121');P.rect(8.1,6.1,0.8,0.6,'#e0e0e0','#757575');P.rect(8.42,6.32,0.16,0.16,'#263238','#263238');P.line([[8.5,6.4],[7.65,6.4]],GRY,2);P.text('Vòi rửa tay chân',9.0,6.9,'start','#0d47a1',0,None,10,True);P.text('+ bệ rửa chân cao 0,3m',9.0,6.9,'start','#0d47a1',13)
 P.line([[13.4,18.75],[13.4,19.0]],D2,2,True);P.text('Đợt 2: vòi sân sau',13.45,18.75,'start',D2,-6)
-P.circle(5.2,10.5,0.65*34,'none','#26a69a',True);P.text('Đợt 2: bồn nước mưa 2.000L',5.2,10.5,'middle','#26a69a',4)
+P.circle(6.9,20.5,0.65*46,'none','#26a69a',True);P.text('Đợt 2: bồn nước mưa',6.9,20.5,'middle','#26a69a',4)
 P.rect(15.0,19.4,0.35,0.25,'#e3f2fd',D2,True);P.text('Đợt 2: bơm tăng áp (chỉ khi máy giặt thiếu áp)',15.4,19.35,'start',D2,10)
 P.circle(13.6,19.6,0.13*34,'#eceff1',D2,True);P.text('Cột lọc (chỉ khi nước phèn)',13.6,20.2,'middle',D2,-4)
 # --- cap
