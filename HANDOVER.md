@@ -44,7 +44,7 @@ Tài liệu này giúp người khác hoặc một tài khoản Claude khác ti�
 - **Thoát nước (chốt 17/11):** bể tự hoại nhựa 2.000L nằm ngang có ngăn lọc, ở sân trước bếp, trục dọc vào trong (a 8,4–9,6; b 2,3–4,6), cách giếng ≥15,3m, nắp nhô ~0,35m đắp đất, không cho xe lên. Ống chính Ø90 dốc 1,5% từ khu giặt → dưới sàn WC → đi nổi chân tường hông trái → bể; đầu ra bể ≈ 0,0 (cao hơn triều cao nhất −0,3). Co lơi 45° mọi chỗ rẽ, chếch Y nhập nhánh, thông hơi Ø60 ở đầu tuyến sau WC. Khu giặt không phễu sàn; bệ rửa chân cao 0,3m; rửa xe không vào bể. Bãi thấm dự kiến ~10m² dọc rào trái, **chốt kích thước sau khi thử thấm**. Hầm cũ hút sạch, rắc vôi, lấp cát, đậy bê tông.
 - **Điện:** CB tổng 40A, cáp CVV 2×6 (cần chốt 2×10 + 50A theo công tơ vì máy nước nóng 4,5kW), 9 mạch C1–C4, R1–R5. Chống giật mọi mạch: RCCB #1 cho C1–C3, RCBO riêng C4 tủ mạng và R2 bếp, RCCB #2 cho R3–R5. R4 máy nước nóng 4500W: dây 4mm² + MCB 32A. R5 ngoài trời CVV 3×2,5 có PE. Tủ 24 module. Chi tiết trang dien.html.
 - **Mạng:**
-  - cáp quang từ cột vào tủ mạng ở phòng khách cạnh bàn làm việc, gồm ONT, MikroTik hEX, Lenovo M720q, NAS, UPS; switch PoE lắp ở đợt 2;
+  - cáp quang từ cột vào tủ mạng ở phòng khách cạnh bàn làm việc, gồm ONT, MikroTik hEX (RB750), switch thường có sẵn, NAS DS220j + WD, UPS; PC i7-6700 ở bàn làm việc cắm thẳng switch; không dùng Lenovo M720q, không mua switch PoE (camera dùng nguồn PoE rời);
   - **không dùng Aruba**: wifi bằng 2 Xiaomi BE6500 chế độ AP nối dây (phòng khách cạnh TV, kệ cao ở bếp);
   - ~80m CAT6 có sẵn, có ống chờ cho camera.
 - **Nhà xe:** góc trước bên trái, 5,7×7,1m, xe vào bằng cổng phụ 4,5m.

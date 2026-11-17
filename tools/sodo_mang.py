@@ -43,21 +43,21 @@ def ln(x1,y1,x2,y2,c='#3949ab',dash=False,lab=''):
     return t
 g=['<svg viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11"><rect width="900" height="430" fill="#fff"/>']
 g+= [bx(20,20,130,'Cáp quang nhà mạng','kéo treo, miễn phí','#fbe9e7','#ff7043'),ln(150,39,190,39,'#ff7043'),bx(190,20,110,'ONT','đặt trong tủ mạng'),
-     ln(300,39,350,39,lab='ether1 WAN'),bx(350,20,150,'MikroTik hEX','router · DHCP · AdGuard DNS'),
+     ln(300,39,350,39,lab='ether1 WAN'),bx(350,20,150,'MikroTik hEX (RB750)','router · DHCP · AdGuard DNS'),
      bx(560,20,140,'4G dự phòng','ether4 · khi cần','#eceff1','#90a4ae',True),ln(500,39,560,39,'#90a4ae',True),
      ln(380,58,180,120,'#90a4ae',True,'ether2'),ln(425,58,425,120,lab='ether3'),ln(470,58,690,120,lab='ether5'),
-     bx(100,120,170,'Đợt 2: switch PoE','ether2 trunk VLAN','#eceff1','#90a4ae',True),
+     bx(100,120,170,'ether2 trống','dự phòng / đợt 2','#eceff1','#90a4ae',True),
      bx(340,120,170,'Switch thường có sẵn','≥8 cổng · VLAN 20'),bx(610,120,170,'09 BE6500 #2 (AP)','nhà phụ, dây về tủ'),ln(690,158,690,190),bx(620,190,150,'10 dự phòng','cáp chờ ở bếp','#eceff1','#90a4ae',True)]
 x=20
-for t1,t2 in [('DS220j + WD','trong tủ'),('M720q','Proxmox · HA'),('03 BE6500 #1 (AP)','wifi nhà chính · TV cắm LAN'),('Bàn làm việc (2 máy)','cắm thẳng, không qua ổ'),('04 dự phòng','cáp chờ ở TV')]:
+for t1,t2 in [('DS220j + WD','trong tủ'),('PC i7-6700','bàn làm việc, cắm thẳng'),('03 BE6500 #1 (AP)','wifi nhà chính · TV cắm LAN'),('04 dự phòng','cáp chờ ở TV'),('Switch thường thêm','có sẵn, cắm khi cần')]:
     g.append(ln(425,158,x+75,260)); g.append(bx(x,260,150,t1,t2)); x+=170
-g+= [bx(20,330,260,'Đợt 2: switch PoE TL-SG2210MP / CSS610','gom Zigbee, camera, AP vườn','#eceff1','#90a4ae',True),
+g+= [bx(20,330,260,'Đợt 2: camera PoE','nguồn PoE rời + switch thường có sẵn','#eceff1','#90a4ae',True),
      bx(300,330,260,'Đợt 2: tủ gỗ 12U + patch panel 24 cổng','đợt 1 cáp cuộn chờ, đánh số 2 đầu','#eceff1','#90a4ae',True),
      bx(580,330,300,'Đợt 2: camera cổng (11–12), sân xe (13), hiên sau (14)','+ AP vườn (15), hộp D bờ sông (16)','#eceff1','#90a4ae',True)]
 g.append('</svg>')
 topo='\n'.join(g)
 pt=['<table><tr><th>Số</th><th>Đầu kia</th><th>Cắm vào (đợt 1)</th><th>Ghi chú</th></tr>']
-for r in [('02','Trần hành lang – Zigbee PoE','–','Đợt 2; đợt 1 dùng USB Zigbee cắm M720q'),
+for r in [('02','Trần hành lang – Zigbee PoE','–','Đợt 2; đợt 1 dùng USB Zigbee cắm PC i7-6700'),
           ('03','Phòng khách – BE6500 #1','Switch thường','TV cắm cổng LAN của BE6500'),('04','Phòng khách – dự phòng','–','Cáp có sẵn, chờ'),
           ('–','Bàn làm việc','Switch thường (dây nhảy trực tiếp)','Tủ ngay cạnh bàn, không cần ổ tường'),
           ('09','Bếp – BE6500 #2','hEX ether5','Nguồn từ ổ R2 cạnh kệ'),('10','Bếp – dự phòng','–',''),('11–12','Ống ngầm ra cổng','–','Chỉ ống + dây mồi, bịt nắp; camera đợt 2'),
@@ -93,7 +93,8 @@ page=f'''<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><meta name="
 <ul>
 <li>Ống mạng cách dây điện ≥30cm, không đi chung ống; chỗ cắt ngang dây điện thì cắt vuông góc.</li>
 <li>Bấm đầu T568B cả hai đầu; test từng đường bằng máy test cáp, đạt 1Gbps mới đóng mặt ổ.</li>
-<li>Đợt 1 chưa có tủ: ONT, hEX, switch, NAS, M720q đặt trên kệ nhỏ đúng vị trí tủ (phòng khách cạnh bàn), UPS dưới sàn cắm ổ C4.</li>
+<li>Thiết bị: 2 Xiaomi BE6500, MikroTik hEX (RB750), switch thường có sẵn (cần bao nhiêu cắm bấy nhiêu), NAS DS220j + WD, PC i7-6700. Không dùng Aruba, không dùng Lenovo M720q.</li>
+<li>Đợt 1 chưa có tủ: ONT, hEX, switch, NAS đặt trên kệ nhỏ đúng vị trí tủ (phòng khách cạnh bàn), UPS dưới sàn cắm ổ C4.</li>
 <li>2 BE6500 chế độ AP, nối dây về switch; cùng tên wifi + mật khẩu; kênh 5GHz khác nhau.</li>
 </ul></body></html>'''
 open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'mang.html'),'w').write(page); print('mang ok',round(t8),round(tD))

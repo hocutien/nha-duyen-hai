@@ -255,7 +255,7 @@ r("Thanh quản lý cáp 1U", "cái", 1, 100, "Thiết bị", "Ước tính")
 r("PDU 6 ổ có CB", "cái", 1, 250, "Thiết bị", "Ước tính")
 r("Cáp CAT6 ngoài trời vỏ PE (A, B, C)", "m", 100, 8, "Vật tư", "Ước tính")
 r("Chống sét mạng Ubiquiti ETH-SP-G2 (2 đầu × 2 nhánh có camera)", "cái", 4, 300, "Thiết bị", "Ước tính", "Giá VN chưa kiểm chứng")
-r("Switch PoE quản lý TP-Link TL-SG2210MP", "cái", 1, 3627, "Thiết bị", "Phi Long", "3,99tr gồm VAT; CSS610 ~6–7tr")
+r("Nguồn PoE rời 802.3af cho camera PoE (cắm vào switch thường có sẵn)", "cái", 3, 200, "Thiết bị", "Ước tính", "Không mua switch PoE; chủ nhà có sẵn switch thường")
 
 g("14. Chi phí chung")
 r("Vận chuyển vật liệu rời (gạch, đá, cát xây) về công trình", "chuyến", 3, 400, "Khác", "Ước tính")

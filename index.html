@@ -188,7 +188,7 @@
 <li><b>Tủ mạng gỗ tự đóng</b> (đợt 2, treo vách phòng khách cạnh bàn làm việc, đáy cách sàn ≥0,3m): lòng 450×620×450mm, vừa 12U khổ 19". Plywood 18mm, quạt 120mm êm ở nóc, cửa nan. UPS Prolink 1200 đặt sàn dưới tủ. Trước khi có tủ: thiết bị để tạm trên kệ đúng chỗ đó.</li>
 <li>Đợt 1 kéo sẵn tới vị trí tủ: <b>ổ điện mạch C4</b> cao 0,6m sau UPS. Dây đất 6mm² riêng chỉ cần khi lắp chống sét mạng (đợt 2).</li>
 <li>NAS và quạt tủ có tiếng ồn nhẹ cạnh bàn làm việc; chọn quạt 120mm loại êm, NAS cài chế độ ngủ đĩa khi rảnh.</li>
-<li><b>Chuẩn bị cho nhà thông minh:</b> mọi hộp công tắc là hộp 86 sâu, <b>kéo sẵn dây trung tính (N)</b>. Zigbee dongle tạm cắm M720q, đợt 2 thay bằng bộ Zigbee PoE trên trần hành lang.</li>
+<li><b>Chuẩn bị cho nhà thông minh:</b> mọi hộp công tắc là hộp 86 sâu, <b>kéo sẵn dây trung tính (N)</b>. Zigbee dongle tạm cắm PC i7-6700 ở bàn làm việc, đợt 2 thay bằng bộ Zigbee PoE trên trần hành lang.</li>
 <li>Bấm đầu mạng xong thì đo thông mạch từng tuyến, dán nhãn hai đầu dây.</li></ul>
 <h3>9. Máy lạnh</h3>
 <p>Dùng <b>1 máy 1,5HP có sẵn, lắp ở phòng ngủ</b> vì ban đêm là lúc dùng nhiều nhất. Máy 1,5HP cho phòng ~9,5m² hơi dư nhưng lạnh nhanh; nếu là máy loại thường (không inverter) thì để 26–27°C cho đỡ tắt bật liên tục. Dàn nóng đặt ở hông phải trên chân đế 40cm, có mái che. Tủ điện chừa module dự phòng để sau này lắp thêm máy ở phòng khách nếu cần.</p>
@@ -277,7 +277,7 @@
 <tr><td>Sơn lại phòng ở + mặt tiền (tự sơn)</td><td>Mới</td><td>2–4</td></tr>
 <tr><td>Kệ V lỗ để đồ phòng ngủ 2 + đá mi sân xe</td><td>Cũ/mới</td><td>2–4</td></tr>
 <tr><td>Cột lọc nước (nếu xét nghiệm có phèn)</td><td>Mới</td><td>1,5–3</td></tr>
-<tr><td>Tủ mạng gỗ tự đóng + patch panel + PDU + cáp ngoài trời + 4 chống sét mạng + switch PoE TL-SG2210MP (bóc tách trong bảng tính)</td><td>Mới</td><td>7,5</td></tr>
+<tr><td>Tủ mạng gỗ tự đóng + patch panel + PDU + cáp ngoài trời + 4 chống sét mạng + 3 nguồn PoE rời cho camera (dùng switch thường có sẵn, không mua switch PoE)</td><td>Mới</td><td>5,6</td></tr>
 <tr><td>3 camera PoE (ống đã chờ sẵn ở đợt 1)</td><td>Mới</td><td>3–6</td></tr>
 <tr><td>Cảm biến Zigbee: khói, rò nước, cửa (báo về điện thoại qua Home Assistant)</td><td>Mới</td><td>1–2</td></tr>
 <tr><td>Bồn nước mưa 2.000L nhựa (4,29tr, ĐMX) + máng</td><td>Mới</td><td>4,5–5,5</td></tr>
@@ -840,10 +840,10 @@ pipe([[17.8,12.9,2.45],[18.15,12.9,2.4],[18.15,12.9,0.1]],DRN,0.01);label('Ống
 MG=mM;const NET=0x3949ab,FIB=0xff7043,OC=0x9e9e9e,D2N=0xcfd8dc;const rj=(a,b,z)=>mbox(a-0.04,b-0.07,z-0.07,0.08,0.14,0.14,0xe8eaf6);
 pipe([[15.6,9.95,1.56],[15.6,9.95,3.27],[15.25,9.95,3.27]],NET,0.03);pipe([[15.25,5.85,3.27],[15.25,11.0,3.27]],NET,0.03);pipe([[15.25,11.0,3.27],[15.25,18.1,3.27]],D2N,0.025);
 label('Trục ống Ø32 đi nổi sát trần đầu hành lang (cách dây điện ≥30cm) · đoạn sau là đợt 2',15.25,9.0,3.55,MG);
-label('Tủ mạng gỗ cạnh bàn làm việc: ONT · hEX · switch · M720q · NAS; UPS dưới sàn',15.6,9.7,1.9,MG);
+label('Tủ mạng gỗ cạnh bàn làm việc: ONT · MikroTik hEX (RB750) · switch có sẵn · NAS DS220j + WD; UPS dưới sàn',15.6,9.7,1.9,MG);
 pipe([[15.25,12.2,3.27],[14.95,12.2,3.27]],D2N,0.012);label('02 Zigbee PoE (đợt 2)',14.85,12.1,3.4,MG);
 pipe([[15.25,7.35,3.27],[17.76,7.35,3.27],[17.76,7.35,1.05]],NET,0.015);rj(17.76,7.35,1.0);label('03–04 TV + Xiaomi BE6500 #1 (mặt 2 cổng) · wifi nhà chính',17.7,7.35,1.3,MG);
-label('05–06 bàn làm việc: cắm thẳng switch trong tủ bên cạnh, không cần ổ',16.6,9.6,1.45,MG);
+label('Bàn làm việc: PC i7-6700 cắm thẳng switch trong tủ bên cạnh, không cần ổ',16.6,9.6,1.45,MG);
 pipe([[15.25,13.9,3.27],[16.7,13.9,3.27],[16.7,14.06,3.27],[16.7,14.06,1.05]],D2N,0.012);label('Đợt 2 · ổ mạng phòng ngủ 1 (đi nổi, thêm khi cần)',16.7,14.0,1.4,MG);
 pipe([[15.25,11.0,3.27],[14.25,11.0,3.27],[14.25,11.0,2.45],[13.96,11.0,2.45],[13.96,11.0,1.85]],NET,0.015);rj(13.96,11.0,1.8);mbox(13.7,10.8,1.95,0.22,0.35,0.22,0x212121);
 label('09–10 bếp: BE6500 #2 trên kệ nhỏ cao 2m + 1 dự phòng',13.8,11.0,2.4,MG);
