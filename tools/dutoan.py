@@ -100,7 +100,6 @@ r("Nẹp, vít, dây kẽm treo tấm cách nhiệt", "bộ", 1, 300, "Vật tư
 r("Lắp tấm cách nhiệt (tự làm, 2 người)", "công", 2, 0, "Tự làm", "Tự làm", "Tiết kiệm 0,8tr")
 r("Quạt trần KDK 3 cánh (1 cái, trên bàn ăn)", "cái", 1, 1790, "Thiết bị", "Thị trường", "META")
 r("Móc treo quạt + hộp số", "bộ", 1, 150, "Vật tư", "Ước tính")
-r("Quả cầu hút nhiệt inox trên mái (không dùng điện) + keo trám chân", "cái", 2, 850, "Thiết bị", "Ước tính", "Hỏi tiệm inox tại chỗ")
 r("Thợ chính (móng, đà kiềng, xây, trát, xây bông gió)", "công", 6, TC, "Nhân công", "Thị trường")
 r("Phụ hồ", "công", 6, PH, "Nhân công", "Thị trường")
 
