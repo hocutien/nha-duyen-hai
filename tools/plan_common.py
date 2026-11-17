@@ -1,5 +1,7 @@
 import re, json, math
-SRC='/home/claude/nha3d.html'
+import os
+TOOLS=os.path.dirname(os.path.abspath(__file__)); ROOT=os.path.dirname(TOOLS)
+SRC=os.path.join(ROOT,'index.html')
 def src(): return open(SRC).read()
 def walls(s):
     out=[]
@@ -51,7 +53,7 @@ def nav(cur):
     items=[('dien.html','⚡ Điện'),('nuoc.html','💧 Nước'),('mang.html','🌐 Mạng')]
     return '<p><a class="back" href="./">← Mô hình 3D</a> · '+' · '.join(f'<b>{t}</b>' if h==cur else f'<a href="{h}">{t}</a>' for h,t in items)+'</p>'
 def bom_table(groups,phase1=True):
-    R=json.load(open('/home/claude/nha-duyen-hai/tools/out/dutoan.json'))
+    R=json.load(open(os.path.join(TOOLS,'out','dutoan.json')))
     rows=[x for x in R if x[0] in groups]
     t=['<table><tr><th>Cấu thành</th><th>KL</th><th>ĐVT</th><th>Đơn giá (nghìn)</th><th>Thành tiền (nghìn)</th><th>Loại</th><th>Ghi chú</th></tr>']
     tot=0

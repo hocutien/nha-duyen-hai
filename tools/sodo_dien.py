@@ -1,6 +1,9 @@
+import os
 # Sinh trang so do dien chi tiet (mat bang + nguyen ly + bang tinh) tu cung toa do mo hinh 3D
 import re, json, math, html
-SRC='/home/claude/nha3d.html'
+import os
+TOOLS=os.path.dirname(os.path.abspath(__file__)); ROOT=os.path.dirname(TOOLS)
+SRC=os.path.join(ROOT,'index.html')
 s=open(SRC).read()
 blk=s[s.index('// ---- DIEN CHI TIET'):s.index('// ---- NUOC CHI TIET')]
 COL={'C1':'#c9a100','C2':'#e53935','C3':'#43a047','C4':'#546e7a','R1':'#9e9e9e','R2':'#ef6c00','R3':'#8e24aa','R4':'#ec407a','R5':'#00acc1','PE':'#7cb342','FD':'#212121'}
@@ -51,7 +54,7 @@ for t,a,b in [('PHÒNG KHÁCH',16.2,6.3),('PHÒNG NGỦ 1',16.6,12.6),('PHÒNG N
 o.append(f'<rect x="{X(14.5):.1f}" y="{Y(18.0):.1f}" width="{0.5*S:.1f}" height="{11*S:.1f}" fill="#eceff1" stroke="#b0bec5"/>')
 o.append(f'<text x="{X(14.75):.0f}" y="{Y(17.4):.0f}" font-size="9" text-anchor="middle" fill="#607d8b">máng chung</text>')
 TAGDONE=set()
-WIRES={'C1':'2×1,5','C2':'3×2,5','C3':'3×2,5','C4':'3×1,5','R1':'ống chờ Ø25','R2':'3×2,5','R3':'3×2,5','R4':'3×2,5','R5':'CVV 3×2,5'}
+WIRES={'C1':'3×1,5','C2':'3×2,5','C3':'3×2,5','C4':'3×1,5','R1':'ống chờ Ø25','R2':'3×2,5','R3':'3×2,5','R4':'3×4','R5':'CVV 3×2,5'}
 order=['FD','PE','R1','C4','C3','C2','R3','R4','R5','R2','C1']
 for c in order:
     for cc,p in runs:
@@ -82,7 +85,7 @@ for b in (4.3,6.7):
 o.append(f'<text x="{X(13.6)-8:.0f}" y="{Y(5.5):.0f}" fill="#558b2f" text-anchor="end">2 cọc tiếp địa</text>')
 o.append(f'<g transform="translate({X(11.3):.1f},{Y(11.2):.1f})"><circle r="9" fill="none" stroke="#333"/><path d="M0,0L8,-3M0,0L-6,6M0,0L-2,-8" stroke="#333" stroke-width="2"/></g><text x="{X(11.3)+12:.0f}" y="{Y(11.2)+4:.0f}">Quạt trần</text>')
 o.append(f'<rect x="{X(9.35):.1f}" y="{Y(18.2):.1f}" width="14" height="6" fill="#78909c"/><text x="{X(9.35):.0f}" y="{Y(18.2)-3:.0f}">Quạt hút</text>')
-o.append(f'<rect x="{X(8.15):.1f}" y="{Y(17.4):.1f}" width="{0.42*S:.1f}" height="{0.75*S:.1f}" fill="#fce4ec" stroke="#d81b60"/><text x="{X(8.6)+2:.0f}" y="{Y(17.0):.0f}" fill="#ad1457">Bình NL</text>')
+o.append(f'<rect x="{X(8.12):.1f}" y="{Y(16.59):.1f}" width="{0.1*S:.1f}" height="{0.19*S:.1f}" fill="#fce4ec" stroke="#d81b60"/><text x="{X(8.3)+2:.0f}" y="{Y(16.5):.0f}" fill="#ad1457">Máy NL 4,5kW</text>')
 o.append(f'<rect x="{X(12.5):.1f}" y="{Y(19.65):.1f}" width="{0.45*S:.1f}" height="{0.3*S:.1f}" fill="#bbdefb" stroke="#1565c0"/><text x="{X(12.5)-2:.0f}" y="{Y(19.65)-3:.0f}" text-anchor="end">Bơm giếng</text>')
 o.append(f'<text x="{X(12.45):.0f}" y="{Y(-0.3)-10:.0f}" fill="#00838f">Đèn NLMT</text>')
 # ghi chu thiet bi
@@ -98,13 +101,13 @@ o.append(f'<g transform="translate({W-40:.0f},40)"><path d="M0,14L0,-14M0,-14L-5
 o.append('</svg>')
 plan='\n'.join(o)
 # --- so do nguyen ly
-CIRC=[('C1','MCB 1P 10A','2×1,5mm² (L+N)','Đèn 13 bóng + quạt trần + quạt hút WC',0.4,'MCB'),
-      ('C2','MCB 1P 20A','3×2,5mm² (L+N+PE)','Ổ cắm nhà chính: TV, sofa, bàn LV ×2, phòng ngủ 1 ×3, phòng ngủ 2 ×2',1.5,'MCB'),
-      ('C3','MCB 1P 20A','3×2,5mm² (L+N+PE)','Máy lạnh 1,5HP phòng ngủ',1.2,'MCB'),
-      ('C4','MCB 1P 10A','3×1,5mm² (L+N+PE)','Tủ mạng (phòng khách cạnh bàn LV): UPS → PDU',0.15,'MCB'),
+CIRC=[('C1','MCB 1P 10A','3×1,5mm² (L+N+PE)','Đèn 10 bóng + quạt trần + quạt hút WC',0.4,'RCCB1'),
+      ('C2','MCB 1P 20A','3×2,5mm² (L+N+PE)','Ổ cắm nhà chính: TV, sofa, bàn LV ×2, phòng ngủ 1 ×3, phòng ngủ 2 ×2',1.5,'RCCB1'),
+      ('C3','MCB 1P 20A','3×2,5mm² (L+N+PE)','Máy lạnh 1,5HP phòng ngủ',1.2,'RCCB1'),
+      ('C4','RCBO 1P+N 10A 30mA','3×1,5mm² (L+N+PE)','Tủ mạng (phòng khách cạnh bàn LV): UPS → PDU',0.15,'RCBO'),
       ('R2','RCBO 2P 20A 30mA','3×2,5mm² (L+N+PE)','Ổ bếp ×4: tủ lạnh, mặt bếp, hút mùi, đầu bàn + ổ BE6500 #2',2.2,'RCBO'),
       ('R3','MCB 1P 20A','3×2,5mm² (L+N+PE)','Máy giặt + máy sấy (2 ổ đơn)',2.5,'RCCB'),
-      ('R4','MCB 1P 20A','3×2,5mm² (L+N+PE)','Bình nóng lạnh có sẵn (đấu cố định)',2.5,'RCCB'),
+      ('R4','MCB 1P 32A','3×4mm² (L+N+PE)','Máy nước nóng trực tiếp Panasonic 4500W có sẵn (đấu cố định)',4.5,'RCCB'),
       ('R5','MCB 1P 16A','CVV 3×2,5mm² (L+N+PE)','Ngoài trời: đèn hiên ×2, đèn pha, IP55 ×2, bơm giếng 0,75kW',1.1,'RCCB'),
       ('R1','RCBO 2P 32A (đợt 2)','3×4mm² (đợt 2)','Bếp từ đôi 3,5kW – đợt 1 chỉ ống chờ Ø25',3.5,'D2')]
 sw_=34*len(CIRC)+40
@@ -114,21 +117,21 @@ g.append('<path d="M100,37H150" stroke="#212121" stroke-width="3"/><text x="104"
 g.append('<rect x="150" y="22" width="70" height="30" fill="#eceff1" stroke="#333"/><text x="185" y="35" text-anchor="middle" font-weight="bold">CB tổng</text><text x="185" y="47" text-anchor="middle">2P 40A</text>')
 g.append('<path d="M220,37H250" stroke="#333" stroke-width="2"/><path d="M250,37V' + str(sw_) + '" stroke="#333" stroke-width="4"/>')
 g.append('<path d="M236,37V70" stroke="#333"/><rect x="200" y="70" width="38" height="22" fill="#fff3e0" stroke="#333"/><text x="219" y="85" text-anchor="middle">SPD</text><path d="M219,92V108" stroke="#7cb342" stroke-width="2"/><text x="160" y="106" font-size="9" fill="#558b2f">→ thanh PE</text>')
-y=60; rccb_y=None
+y=60; seen=set()
 for i,(c,cb,day,tai,kw,kind) in enumerate(CIRC):
     y=60+i*34
     x0=250
-    if kind=='RCCB':
-        if rccb_y is None:
-            rccb_y=y
-            g.append(f'<path d="M250,{y}H262" stroke="#333" stroke-width="2"/><rect x="262" y="{y-12}" width="92" height="24" fill="#e1f5fe" stroke="#0277bd"/><text x="308" y="{y+4}" text-anchor="middle" font-size="9.5">RCCB 2P 40A 30mA</text>')
-            g.append(f'<path d="M360,{y}V{y+68}" stroke="#333" stroke-width="3"/>')
+    if kind in('RCCB','RCCB1'):
+        if kind not in seen:
+            seen.add(kind); cnt=sum(1 for q in CIRC if q[5]==kind)
+            g.append(f'<path d="M250,{y}H262" stroke="#333" stroke-width="2"/><rect x="262" y="{y-12}" width="92" height="24" fill="#e1f5fe" stroke="#0277bd"/><text x="308" y="{y+4}" text-anchor="middle" font-size="9.5">RCCB {'#1' if kind=='RCCB1' else '#2'} 40A 30mA</text>')
+            g.append(f'<path d="M360,{y}V{y+34*(cnt-1)}" stroke="#333" stroke-width="3"/>')
         x0=360
     else:
-        g.append(f'<path d="M250,{y}H{x0+110 if False else 375}" stroke="#333" stroke-width="2"/>') if False else None
+        pass
         g.append(f'<path d="M250,{y}H375" stroke="#333" stroke-width="2"/>')
         x0=375-0
-    if kind=='RCCB': g.append(f'<path d="M360,{y}H375" stroke="#333" stroke-width="2"/>')
+    if kind in('RCCB','RCCB1'): g.append(f'<path d="M360,{y}H375" stroke="#333" stroke-width="2"/>')
     dash=' stroke-dasharray="4 3"' if kind=='D2' else ''
     g.append(f'<rect x="375" y="{y-11}" width="120" height="22" fill="#fff" stroke="#333"{dash}/><text x="435" y="{y+4}" text-anchor="middle" font-size="10">{cb}</text>')
     g.append(f'<path d="M495,{y}H525" stroke="#263238" stroke-width="3"{dash}/><text x="530" y="{y-2}" font-weight="bold" fill="#263238">{c} · {day}</text><text x="530" y="{y+11}" font-size="9.5" fill="#37474f">{html.escape(tai)}</text>')
@@ -140,7 +143,7 @@ for k in range(2):
     cx=105+60*k
     g.append(f'<path d="M{cx},{yb+80}V{yb+95}M{cx-12},{yb+95}H{cx+12}M{cx-8},{yb+100}H{cx+8}M{cx-4},{yb+105}H{cx+4}" stroke="#7cb342" stroke-width="2"/>')
 g.append(f'<path d="M105,{yb+80}H165" stroke="#7cb342" stroke-width="2"/><text x="180" y="{yb+100}" font-size="9.5" fill="#558b2f">2 cọc đồng Ø16×2,4m cách 2,4m · đo &gt;10 Ω mới đóng cọc 3</text>')
-g.append(f'<text x="290" y="{yb+36}" font-size="10" fill="#37474f">Mỗi mạch đi ống riêng từ tủ, đủ 3 dây L – N – PE. Tủ 12 module.</text>')
+g.append(f'<text x="290" y="{yb+36}" font-size="10" fill="#37474f">Mỗi mạch một tuyến từ tủ, trong mạch rẽ nhánh; đủ 3 dây L – N – PE. Tủ 24 module (đợt 1 dùng 17).</text>')
 g.append('</svg>')
 one='\n'.join(g)
 # --- so do tach soi tung mach
@@ -183,14 +186,14 @@ def csvg(c,prot,ws,sw,loads,cond,note,d2=False):
     return f'<h3 style="font-size:14px;margin:16px 0 4px">{c} – {note}</h3>'+''.join(q)
 DIAG=[
  ('FD','CB tổng 2P 40A',['L','N','PE'],None,[('Công tơ EVN → tủ','CVV 2×6mm²: L đỏ + N xanh'),('Thanh PE trong tủ','từ 2 cọc đồng Ø16×2,4m, cáp đồng 16mm²')],'Cáp CVV 2×6 chôn 0,5m trong ống HDPE · PE riêng từ cọc','Nguồn vào + tiếp địa'),
- ('C1','MCB 1P 10A',['L','N'],'CT 1 cực',[('Đèn ×13','PK, HL, 2 PN, bếp, ăn, giặt, WC'),('Quạt trần bếp','qua hộp số'),('Quạt hút WC','CT chung với đèn WC')],'Ống PVC Ø16 · 2 sợi 1,5mm² (L+N)','Đèn + quạt · thêm PE 1,5 nếu đèn/quạt vỏ kim loại'),
- ('C2','MCB 1P 20A',['L','N','PE'],None,[('Ổ đôi phòng khách ×4','TV, sofa, bàn LV ×2 (1,1m)'),('Ổ đôi phòng ngủ 1 ×3','đầu giường, cao 1,0m'),('Ổ đôi phòng ngủ 2 ×2','đầu giường, cao 1,0m')],'Ống PVC Ø20 · 3 sợi 2,5mm² (L+N+PE)','Ổ cắm nhà chính'),
- ('C3','MCB 1P 20A',['L','N','PE'],None,[('Ổ đơn máy lạnh','cao 2,4m cạnh dàn lạnh PN1')],'Ống PVC Ø20 · 3 sợi 2,5mm²','Máy lạnh 1,5HP'),
- ('C4','MCB 1P 10A',['L','N','PE'],None,[('Ổ đơn sau UPS','cao 0,6m → UPS → PDU')],'Ống PVC Ø16 · 3 sợi 1,5mm²','Tủ mạng'),
+ ('C1','RCCB #1 + MCB 10A',['L','N','PE'],'CT 1 cực',[('Đèn ×10','PK, HL, 2 PN, bếp, giặt, WC'),('Quạt trần bàn ăn','qua hộp số'),('Quạt hút WC','CT chung với đèn WC')],'Ống PVC Ø16 · 3 sợi 1,5mm² (L+N+PE)','Đèn + quạt (PE cho quạt, đèn vỏ kim loại)'),
+ ('C2','RCCB #1 + MCB 20A',['L','N','PE'],None,[('Ổ đôi phòng khách ×4','TV, sofa, bàn LV ×2 (1,1m)'),('Ổ đôi phòng ngủ 1 ×3','đầu giường, cao 1,0m'),('Ổ đôi phòng ngủ 2 ×2','đầu giường, cao 1,0m')],'Ống PVC Ø20 · 3 sợi 2,5mm² (L+N+PE)','Ổ cắm nhà chính'),
+ ('C3','RCCB #1 + MCB 20A',['L','N','PE'],None,[('Ổ đơn máy lạnh','cao 2,4m cạnh dàn lạnh PN1')],'Ống PVC Ø20 · 3 sợi 2,5mm²','Máy lạnh 1,5HP'),
+ ('C4','RCBO 10A 30mA',['L','N','PE'],None,[('Ổ đơn sau UPS','cao 0,6m → UPS → PDU')],'Ống PVC Ø16 · 3 sợi 1,5mm²','Tủ mạng'),
  ('R2','RCBO 2P 20A 30mA',['L','N','PE'],None,[('Ổ tủ lạnh','cao 1,1m'),('Ổ mặt bếp ×2','cách chậu ≥0,6m, cao 1,1m'),('Ổ hút mùi + đầu bàn','+ ổ BE6500 #2')],'Ống PVC Ø20 · 3 sợi 2,5mm²','Ổ cắm bếp'),
- ('R3','RCCB 30mA + MCB 20A',['L','N','PE'],None,[('Ổ đơn máy giặt','cao 1,2m'),('Ổ đơn máy sấy','cao 1,2m')],'Ống PVC Ø20 · 3 sợi 2,5mm²','Máy giặt + máy sấy'),
- ('R4','RCCB 30mA + MCB 20A',['L','N','PE'],'CT 2 cực',[('Bình nóng lạnh có sẵn (~2,5kW)','qua hộp nối kín IP55 · PE bắt vỏ bình')],'Ống PVC Ø20 · 3 sợi 2,5mm²','Bình nóng lạnh (CT 2 cực có đèn ngoài cửa WC)'),
- ('R5','RCCB 30mA + MCB 16A',['L','N','PE'],None,[('Đèn hiên trước + sau','cảm biến'),('Đèn pha sân xe','cảm biến'),('Ổ IP55 ×2','sân xe, hiên sau'),('Bơm giếng 0,75kW','ổ IP55 + CT kín')],'Cáp CVV 3×2,5mm² đi nổi · đoạn chôn trong HDPE','Ngoài trời'),
+ ('R3','RCCB #2 + MCB 20A',['L','N','PE'],None,[('Ổ đơn máy giặt','cao 1,2m'),('Ổ đơn máy sấy','cao 1,2m')],'Ống PVC Ø20 · 3 sợi 2,5mm²','Máy giặt + máy sấy'),
+ ('R4','RCCB #2 + MCB 32A',['L','N','PE'],'CT 2 cực',[('Máy nước nóng trực tiếp 4500W','Panasonic DH-4VP1VW · hộp nối kín · PE bắt vỏ')],'Ống PVC Ø25 · 3 sợi 4mm² (mua mới)','Nóng lạnh (CT 2 cực ≥32A có đèn ngoài cửa WC)'),
+ ('R5','RCCB #2 + MCB 16A',['L','N','PE'],None,[('Đèn hiên trước + sau','cảm biến'),('Đèn pha sân xe','cảm biến'),('Ổ IP55 ×2','sân xe, hiên sau'),('Bơm giếng 0,75kW','ổ IP55 + CT kín')],'Cáp CVV 3×2,5mm² đi nổi · đoạn chôn trong HDPE','Ngoài trời'),
  ('R1','RCBO 2P 32A (đợt 2)',['L','N','PE'],None,[('Ổ 32A bếp từ (đợt 2)','dưới mặt bếp 0,6m')],'Đợt 1: ống PVC Ø25 chờ + dây mồi · đợt 2 kéo 3×4mm²','Bếp từ (nét đứt = làm đợt 2)')]
 multi=''.join(csvg(c,p,ws,sw,ld,cd,nt,d2=(c=='R1')) for c,p,ws,sw,ld,cd,nt in DIAG)
 # --- bang tinh
@@ -207,12 +210,13 @@ newwire=0
 for c in ['C1','C2','C3','C4','R2','R3','R4','R5','R1']:
     ns,nw,nl,nt=CNT[c]
     r=route.get(c,0); ong=math.ceil(r*1.1)
-    nwr=2 if c=='C1' else 3
+    nwr=3
     day=0 if c=='R1' else math.ceil(ong*nwr+(ns+nw+nl)*0.6*nwr)
     rows.append((c,ong,day,ns,nw,nl,nt))
 c1np=seglen_np('C1')
-newwire=math.ceil(c1np*1.1*2)+sum(r[2] for r in rows if r[0] in('C3','C4','R2','R3','R4'))
-info={'route':{k:round(v,1) for k,v in route.items()},'rows':rows,'c1np':round(c1np,1),'newwire':newwire}
+newwire=math.ceil(c1np*1.1*3)+sum(r[2] for r in rows if r[0] in('C3','C4','R2','R3'))
+r4wire=[r[2] for r in rows if r[0]=='R4'][0]
+info={'route':{k:round(v,1) for k,v in route.items()},'rows':rows,'c1np':round(c1np,1),'newwire':newwire,'r4wire':r4wire}
 json.dump(info,open('/tmp/dien_info.json','w'),ensure_ascii=False)
 CI={c[0]:c for c in CIRC}
 tb=['<table><tr><th>Mạch</th><th>Bảo vệ</th><th>Dây</th><th>Tải ước (kW)</th><th>Ống ~m</th><th>Dây ~m (tổng các sợi)</th><th>Ổ</th><th>Công tắc</th><th>Đèn</th><th>Ghi chú</th></tr>']
@@ -223,7 +227,7 @@ for c,ong,day,ns,nw,nl,nt in rows:
 tb.append('</table>')
 tot_r=round(tot,2)
 import sys
-sys.path.insert(0,'/home/claude/nha-duyen-hai/tools')
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from plan_common import nav
 NAV=nav('dien.html')
 page=f'''<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -249,23 +253,23 @@ svg{{width:100%;height:auto;border:1px solid #eceff1;border-radius:6px}}table{{b
 {multi}
 <h2>4. Bảng tính theo mạch</h2>
 {''.join(tb)}
-<p style="font-size:13px">Tổng tải lắp đặt đợt 1 ≈ <b>{str(tot_r).replace(".",",")} kW</b> (chưa gồm bếp từ). Hệ số đồng thời ~0,6 → ≈ {str(round(tot_r*0.6,1)).replace(".",",")} kW ≈ <b>{round(tot_r*0.6*1000/220)}A</b>; <b style="color:#c62828">khi có bếp từ ≈ {round((tot_r+3.5)*0.6*1000/220)}A, vượt CB 40A</b> nếu bếp từ + máy sấy + nóng lạnh chạy cùng lúc (xem mục 5). Chiều dài ống đo theo tuyến 3D +10%; dây = ống × 3 lõi + 0,6m mỗi thiết bị. C1, C2 ở nhà chính giữ dây cũ đi nổi nên <b>dây mới chỉ cần ≈ {newwire} m</b> (C1 phần nhà phụ, C3, C4, R2, R3, R4), dùng dây có sẵn; R5 dùng cáp CVV 2×2,5 cho đoạn ngoài trời ≈ 18–20m.</p>
+<p style="font-size:13px">Tổng tải lắp đặt đợt 1 ≈ <b>{str(tot_r).replace(".",",")} kW</b> (chưa gồm bếp từ). Hệ số đồng thời ~0,6 → ≈ {str(round(tot_r*0.6,1)).replace(".",",")} kW ≈ <b>{round(tot_r*0.6*1000/220)}A</b>; <b style="color:#c62828">khi có bếp từ ≈ {round((tot_r+3.5)*0.6*1000/220)}A, vượt CB 40A</b> (xem mục 6). Chiều dài ống đo theo tuyến 3D +10%; dây = ống × 3 lõi + 0,6m mỗi thiết bị. C1, C2 ở nhà chính giữ dây cũ đi nổi nên <b>dây 1,5/2,5mm² mới chỉ cần ≈ {newwire} m</b> (C1 phần nhà phụ, C3, C4, R2, R3), dùng dây có sẵn; <b>R4 mua dây 4mm² ≈ {r4wire} m</b>; R5 dùng cáp CVV 3×2,5 (có PE) cho đoạn ngoài trời ≈ 18–20m.</p>
 <h2>5. Quy cách thi công</h2>
 <ul>
 <li>Công tắc 1,25m cạnh mép cửa phía tay nắm; ổ cắm 1,0m (chừa nâng nền); bàn làm việc, mặt bếp 1,1m; giặt sấy 1,2m; máy lạnh 2,4m; ổ bếp từ dưới mặt bếp 0,6m.</li>
 <li>Hộp công tắc 86 sâu, có dây N (để sau thay công tắc Zigbee). Màu dây: L đỏ/nâu, N xanh dương, PE vàng-xanh.</li>
 <li>Nhà chính: dây cũ đang đi nổi – đo cách điện từng mạch ≥1 MΩ thì giữ cho C1, C2; dây mới đi ống nổi/nẹp sát trần, không đục tường.</li>
-<li>Bình nóng lạnh: công tắc 2 cực có đèn ngoài cửa WC, đấu cố định qua hộp kín, PE nối vỏ bình, không đặt ổ cắm trong WC.</li>
+<li>Máy nước nóng trực tiếp 4500W: dây 4mm² + MCB 32A, công tắc 2 cực ≥32A có đèn ngoài cửa WC, đấu cố định qua hộp kín, PE nối vỏ máy, không đặt ổ cắm trong WC.</li><li>Chống giật: C1–C3 qua RCCB #1, C4 RCBO riêng, R2 RCBO riêng, R3–R5 qua RCCB #2. Nhà nối đất cọc riêng nên MCB không tự cắt khi rò ra vỏ; mạch nào cũng phải có 30mA.</li>
 <li>R5 ngoài trời: cáp CVV <b>3×2,5</b> (có sợi PE cho ổ IP55 và bơm) đi nổi trên tường, chỉ chôn ~5m ra bơm trong ống HDPE sâu 0,5m. Đèn cổng dùng năng lượng mặt trời.</li>
 <li>Kiểm tra trước khi đóng điện: bấm nút TEST trên RCCB và RCBO, đo điện trở đất, đo cách điện, thử đúng pha bằng ổ test 3 đèn.</li>
 </ul>
 <h2>6. Điểm cần chốt trước khi chôn cáp nguồn</h2>
 <ul>
-<li>Đợt 1 (chưa có bếp từ): tải đồng thời ≈ 32A → CB tổng 40A + cáp CVV 2×6 đủ.</li>
-<li>Đợt 2 có bếp từ 3,5kW: nếu bếp từ + máy sấy + nóng lạnh chạy cùng lúc ≈ 41–43A → nhảy CB 40A. Cáp nguồn chôn ngầm, thay sau phải đào lại.</li>
-<li><b>Đã chọn phương án A (vừa đủ dọn vào ở):</b> giữ 6mm² + CB 40A, quy ước không chạy máy sấy cùng lúc bếp từ (0đ).</li>
+<li>Đợt 1 (chưa có bếp từ): tải đồng thời ≈ {round(tot_r*0.6*1000/220)}A. Máy nước nóng 4,5kW (19,6A) + máy sấy (11A) + ấm siêu tốc (~9A) cùng lúc ≈ 40A là sát CB tổng 40A.</li>
+<li>Đợt 2 có bếp từ 3,5kW: ≈ {round((tot_r+3.5)*0.6*1000/220)}A → nhảy CB 40A. Cáp nguồn chôn ngầm, thay sau phải đào lại.</li>
+<li><b>Đang giữ phương án A</b> (6mm² + CB 40A, quy ước không chạy máy sấy cùng lúc nóng lạnh hoặc bếp từ). <b style="color:#c62828">Khuyên chuyển phương án B</b> nếu công tơ cho phép, vì máy nước nóng thực tế 4,5kW chứ không phải 2,5kW.</li>
 <li>Phương án B (không chọn lúc này): chôn luôn CVV 2×10mm² (~15m) + CB tổng 50A, thêm ước ≈ 0,7tr; trước đó xem dòng định mức trên công tơ EVN (ví dụ 10(40)A thì CB tổng không vượt 40A, phải xin nâng công tơ).</li>
 </ul>
 </body></html>'''
-open('/home/claude/nha-duyen-hai/dien.html','w').write(page)
+open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'dien.html'),'w').write(page)
 print(json.dumps(info,ensure_ascii=False))

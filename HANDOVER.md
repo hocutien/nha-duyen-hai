@@ -4,7 +4,7 @@ Tài liệu này giúp người khác hoặc một tài khoản Claude khác ti�
 
 ## 1. Mục tiêu
 - Chủ nhà là Tiến. Hai vợ chồng dọn vào ở sớm; **vợ đang mang thai**.
-- Ngân sách đợt 1 khoảng **100–115tr**. Dự toán chi tiết (bóc tách 152 dòng, đơn giá Thông báo 561/TB-SXD Vĩnh Long PL II KV10 + PL IV, kỳ 01–15/9/2026) = **~136tr** gồm VAT + 10% dự phòng (gói vào ở, chốt tối 15/11), vượt mốc 100tr ~36tr: chủ nhà cần chọn hạng mục để dời sang đợt 2. Nguồn số liệu: `tools/dutoan.py` → `tools/out/dutoan.json`; bảng tính Sheets https://claude.ai/artifact/B8LPuDUHWvyX6ktExjic4L. Đã bỏ ổ sạc xe điện và mua bình nóng lạnh (chủ nhà không có xe điện, đã có bình). Bơm tăng áp đưa lên đợt 1. Đợt 2: 30–46tr thiết bị + nhà xe + san lấp ao 50–80tr + tường mặt tiền 70–110tr.
+- Ngân sách đợt 1 khoảng **100–115tr**. Dự toán chi tiết (bóc tách 152 dòng, đơn giá Thông báo 561/TB-SXD Vĩnh Long PL II KV10 + PL IV, kỳ 01–15/9/2026) = **~145,4tr** gồm VAT + 10% dự phòng (bản 17/11), vượt mốc 100tr ~45tr: chủ nhà cần chọn hạng mục để dời sang đợt 2. Nguồn số liệu: `tools/dutoan.py` → `tools/out/dutoan.json`; bảng tính Sheets https://claude.ai/artifact/B8LPuDUHWvyX6ktExjic4L. Đã bỏ ổ sạc xe điện và mua bình nóng lạnh (chủ nhà không có xe điện, đã có bình). Máy nước nóng là Panasonic DH-4VP1VW trực tiếp 4500W có bơm (đồ cũ, có sen) nên vòi sen không cần bơm tăng áp; bơm tăng áp chỉ lắp nếu máy giặt thiếu áp (đợt 2). Đợt 2: 30–46tr thiết bị + nhà xe + san lấp ao 50–80tr + tường mặt tiền 70–110tr.
 - Mọi việc làm ở đợt 1 phải dùng tiếp được khi nâng cấp về sau, không phải đập bỏ.
 - Thửa 320, tờ 51 (số cũ 595), 2.064,2m² theo GCN, cạnh 53,45 / 44,91 / 44,07 / 41,65m. Phía sau giáp sông lớn; phần đất sát sông (~1.200m²) chưa được cấp GCN.
 
@@ -16,7 +16,7 @@ Tài liệu này giúp người khác hoặc một tài khoản Claude khác ti�
    - sàn WC +0,5m;
    - hộp công tắc có dây N để lắp Zigbee;
    - ống chờ cho mạng, camera và đường lên mái;
-   - mạch C8 dự phòng cho máy lạnh thứ hai.
+   - tủ điện 24 module, chừa module dự phòng cho máy lạnh thứ hai, bơm tăng áp, nhà xe.
 4. An toàn trước, thẩm mỹ sau:
    - điện: RCBO, nối đất, chống sét lan truyền;
    - bể tự hoại cách giếng ≥15m (hiện ~15,9m);
@@ -34,19 +34,19 @@ Tài liệu này giúp người khác hoặc một tài khoản Claude khác ti�
 11. Số liệu là ước tính, phải hỏi giá thợ địa phương. PA A và PA B cần kỹ sư kiểm tra kết cấu.
 
 ## 3. Quyết định đã chốt (đừng đổi lại nếu chủ nhà chưa đồng ý)
-- **Bếp:** bếp từ đôi (mạch C4, RCBO 32A, dây 4mm²) cộng bếp gas đơn dự phòng; bình gas đặt trong lồng ngoài vách. Thứ tự trên bàn: tủ lạnh → chậu → sơ chế 90cm → bếp. Ổ cắm mặt bếp cách chậu ≥0,6m.
+- **Bếp:** bếp từ đôi (mạch R1, RCBO 32A, dây 4mm², đợt 2) cộng bếp gas đơn dự phòng; bình gas đặt trong lồng ngoài vách. Thứ tự trên bàn: tủ lạnh → chậu → sơ chế 90cm → bếp. Ổ cắm mặt bếp cách chậu ≥0,6m.
 - **WC:**
   - xây tại chỗ WC cũ, sàn +0,5m;
   - **cửa lùa** quay vào khu giặt;
   - lên WC: chiếu nghỉ 0,5m, rồi 2 bậc ~17cm, có tay vịn;
   - quạt hút thổi ra vách ngoài;
   - máy giặt + sấy đặt chồng cạnh WC; lavabo ngoài; cửa sau ra dây phơi.
-- **Thoát nước:** bể tự hoại 3 ngăn ~2m³ mới, đặt dưới sân trước bếp (cách giếng ~15,9m; không đậu ô tô lên nắp). Hầm cũ hút sạch, rắc vôi, lấp cát, đậy bê tông.
-- **Điện:** CB tổng 63A, dây Cu 2×16mm², 11 mạch C1–C11 (bảng chi tiết trong Thuyết minh mục 3). Máy nước nóng có ELCB và nối đất; máy bơm có rơ-le chống chạy khô.
+- **Thoát nước (chốt 17/11):** bể tự hoại nhựa 2.000L nằm ngang có ngăn lọc, ở sân trước bếp, trục dọc vào trong (a 8,4–9,6; b 2,3–4,6), cách giếng ≥15,3m, nắp nhô ~0,35m đắp đất, không cho xe lên. Ống chính Ø90 dốc 1,5% từ khu giặt → dưới sàn WC → đi nổi chân tường hông trái → bể; đầu ra bể ≈ 0,0 (cao hơn triều cao nhất −0,3). Co lơi 45° mọi chỗ rẽ, chếch Y nhập nhánh, thông hơi Ø60 ở đầu tuyến sau WC. Khu giặt không phễu sàn; bệ rửa chân cao 0,3m; rửa xe không vào bể. Bãi thấm dự kiến ~10m² dọc rào trái, **chốt kích thước sau khi thử thấm**. Hầm cũ hút sạch, rắc vôi, lấp cát, đậy bê tông.
+- **Điện:** CB tổng 40A, cáp CVV 2×6 (cần chốt 2×10 + 50A theo công tơ vì máy nước nóng 4,5kW), 9 mạch C1–C4, R1–R5. Chống giật mọi mạch: RCCB #1 cho C1–C3, RCBO riêng C4 tủ mạng và R2 bếp, RCCB #2 cho R3–R5. R4 máy nước nóng 4500W: dây 4mm² + MCB 32A. R5 ngoài trời CVV 3×2,5 có PE. Tủ 24 module. Chi tiết trang dien.html.
 - **Mạng:**
-  - cáp quang từ cột vào tủ mạng trong phòng kho, gồm ONT, MikroTik hEX, Lenovo M720q, NAS, UPS; switch PoE lắp ở đợt 2;
-  - AP1 trên trần hành lang, AP2 trên trần bếp;
-  - ~75m CAT6, có ống chờ cho 3 camera.
+  - cáp quang từ cột vào tủ mạng ở phòng khách cạnh bàn làm việc, gồm ONT, MikroTik hEX, Lenovo M720q, NAS, UPS; switch PoE lắp ở đợt 2;
+  - **không dùng Aruba**: wifi bằng 2 Xiaomi BE6500 chế độ AP nối dây (phòng khách cạnh TV, kệ cao ở bếp);
+  - ~80m CAT6 có sẵn, có ống chờ cho camera.
 - **Nhà xe:** góc trước bên trái, 5,7×7,1m, xe vào bằng cổng phụ 4,5m.
   - Kết cấu: 4 cột gỗ 12×12 trên đế bê tông rời (chân sắt U bắt bulông), đà và xà gồ gỗ nối bulông và ke, tôn cũ, nền đá mi. Tháo và dời được, không đổ bê tông.
   - Sedan ≤4,7×1,8m lùi vào, đầu xe ra cổng. 4 xe máy xếp so le sát rào trái, cách nhau 0,55m.
@@ -74,6 +74,8 @@ Tài liệu này giúp người khác hoặc một tài khoản Claude khác ti�
 | `tools/genkml.js` | `map.html` → `phuong-an.kml` |
 | `tools/export_kmz.py` | `index.html` + `map.html` → `nha-duyen-hai-3d.kmz` |
 | `tools/budget.py` | Danh sách hạng mục đợt 1 và đợt 2 → bảng HTML trong `tools/out/b1.html`, `b2.html`, dán vào Thuyết minh mục 11. |
+| `tools/dutoan.py` | Dự toán chi tiết (nguồn số liệu tiền) → `tools/out/dutoan.json`. |
+| `tools/sodo_dien.py`, `sodo_nuoc.py`, `sodo_mang.py` (+ `plan_common.py`) | Đọc `index.html` + `out/dutoan.json`, sinh lại `dien.html`, `nuoc.html`, `mang.html`. |
 | `tools/check_render.py` | Mở trang ở chế độ ẩn, báo lỗi JS, chụp ảnh các góc nhìn vào `tools/out/`. |
 
 Cách vẽ chân thật trong `index.html`:
@@ -94,7 +96,8 @@ cd tools && npm i three@0.128.0 && pip install playwright   # chỉ làm lần �
 python3 check_render.py           # phải in "Không lỗi JS"
 node genkml.js                    # khi sửa map.html
 python3 export_kmz.py             # khi sửa khối nhà trong index.html
-python3 budget.py                 # khi sửa giá; dán out/b1.html, out/b2.html vào index.html mục 11
+python3 dutoan.py && python3 budget.py   # khi sửa giá; dán out/b1.html vào index.html mục 11
+python3 sodo_dien.py && python3 sodo_nuoc.py && python3 sodo_mang.py   # sinh lại 3 trang chi tiết
 ```
 - Nếu Chrome không nằm ở `/usr/bin/google-chrome`, đặt biến môi trường `CHROME=<đường dẫn>`.
 - Đăng web: push lên nhánh `main`, GitHub Pages tự cập nhật trang https://hocutien.github.io/nha-duyen-hai/.
@@ -134,3 +137,4 @@ python3 budget.py                 # khi sửa giá; dán out/b1.html, out/b2.htm
 
 - 15/11 tối: nhà xe chuyển vào lớp `fut` (đợt 2, bật nút Tương lai). Ống thông hơi bể tự hoại dời từ giữa cửa nhà phụ (10,9; 7,68) lên góc trái nhà chính (13,88; 6,0), cao 5,3m. Ống âm (đáy dưới +0,45m) trong nhóm `mep` dùng depthTest=false để hiện xuyên nền; thêm 2 hố thu + ống Ø114 ra ao, hố ga góc rẽ ống xí, bơm tăng áp.
 - 15/11 khuya: gói vào ở. Nhà phụ: vách gạch ống 10cm trát (vách trái b7,85–15,3; vách sau a11,35–14; mặt trước) trên đà kiềng, dải bông gió xi măng tháo từ nhà 914 (màu xám, `bong(...,col)`), 1 quạt trần, 2 quả cầu hút nhiệt. Mí lộ + rào tạm chuyển vào lớp `fut`. Máy giặt–sấy trên giá chồng, ống thoát hơi Ø100. Bàn làm việc ở phòng khách, kệ sắt + tủ mạng ở phòng kho. Dự toán: loại `Tự làm` (0đ, ghi tiết kiệm), `Đồ cũ` (0đ); nhóm `Đợt 2 – ...` không cộng vào đợt 1.
+- 17/11: rà soát độc lập 2 lượt (Docs "Rà soát thiết kế điện – nước – mạng"). Đã sửa: bỏ Aruba; dời bể về sân trước bếp, ống chính 19m dốc 1,5% đi nổi, bỏ nắp lật/hố ga/phễu sàn khu giặt, ống cấp lên trên ống thoát, máy nước nóng trực tiếp 4500W; điện thêm RCCB #2 cho C1–C3, RCBO C4, R4 4mm² + 32A, R5 3×2,5, tủ 24 module. Script sodo_* đổi sang đường dẫn tương đối. Còn chờ: thử thấm (chốt bãi thấm), công tơ (chốt cáp nguồn), model máy giặt, cao độ ống bồn cầu; bảng nhánh công tắc C1 (dây đảo chiều, công tắc đầu giường) chưa sửa.

@@ -1,12 +1,13 @@
+import os
 import sys
-sys.path.insert(0,'/home/claude/nha-duyen-hai/tools')
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from plan_common import *
 s=src(); P=Plan(5.0,22.4,-1.4,22.2,44)
 NET,FIB,D2,UG='#3949ab','#ff7043','#b0bec5','#1a237e'
 P.walls(walls(s))
 P.rooms([('PHÒNG KHÁCH',16.2,6.4),('PHÒNG NGỦ 1',16.6,12.6),('PHÒNG NGỦ 2',16.6,15.6),('HÀNH LANG',14.8,16.0),('BẾP – ĂN',10.6,9.6),('KHU GIẶT',13.0,15.6),('WC',9.9,17.4),('SÂN TRƯỚC',11.0,4.5),('CỔNG',12.0,-1.1)])
 # dot 2
-P.line([[15.25,12.5],[15.25,18.1]],D2,3,True)
+P.line([[15.25,11.0],[15.25,18.1]],D2,3,True)
 P.line([[15.25,8.6],[14.25,8.6],[8.1,8.6],[8.1,7.56],[7.95,7.56]],D2,2,True);P.rect(7.7,7.5,0.3,0.12,'#eceff1',D2,True);P.text('Đợt 2 · 13 hộp B sân xe (camera)',7.7,7.3,'start','#78909c',12,0)
 P.line([[15.25,18.1],[16.4,18.1],[16.4,18.55]],D2,2,True);P.rect(16.25,18.5,0.3,0.12,'#eceff1',D2,True);P.text('Đợt 2 · 14–15 hộp C hiên sau (camera, AP vườn)',16.2,18.9,'middle','#78909c',-4)
 P.line([[16.4,18.56],[16.4,21.8]],D2,2,True);P.text('Đợt 2 · ống HDPE ra hộp D bờ sông',16.5,21.0,'start','#78909c')
@@ -18,14 +19,13 @@ P.circle(15.1,16.5,4,'#eceff1',D2,True);P.text('Ống lên mái (đợt 2)',15.0
 P.line([[13.45,-1.4],[14.05,5.45],[14.3,5.75],[15.2,5.75],[15.2,9.9],[15.55,9.9]],FIB,1.6)
 P.text('Cáp quang nhà mạng kéo treo từ cột vào góc nhà → ONT trong tủ mạng',13.6,1.0,'start',FIB,0)
 # truc + nhanh dot 1
-P.line([[15.25,5.85],[15.25,12.5]],NET,4);P.line([[15.6,9.95],[15.25,9.95]],NET,4)
-P.text('Trục Ø32 nổi sát trần hành lang',15.1,10.6,'end',NET,4,-6,10,True)
-for pts,pt,k in [([[15.25,12.5],[14.85,12.5]],(14.85,12.5),'ap'),([[15.25,7.35],[17.76,7.35]],(17.76,7.35),'rj'),([[15.25,11.0],[14.25,11.0],[13.96,11.0]],(13.96,11.0),'rj')]:
+P.line([[15.25,5.85],[15.25,11.0]],NET,4);P.line([[15.6,9.95],[15.25,9.95]],NET,4)
+P.text('Trục Ø32 nổi sát trần đầu hành lang',15.1,8.6,'end',NET,4,-6,10,True)
+for pts,pt,k in [([[15.25,7.35],[17.76,7.35]],(17.76,7.35),'rj'),([[15.25,11.0],[14.25,11.0],[13.96,11.0]],(13.96,11.0),'rj')]:
     P.line(pts,NET,2)
     if k=='ap': P.circle(pt[0],pt[1],8,'#fafafa',NET)
     else: P.rect(pt[0]-0.07,pt[1]-0.07,0.14,0.14,'#e8eaf6',NET)
-P.text('01 AP-325 trần (phủ 2 phòng ngủ)',14.6,12.5,'end',NET,4)
-P.text('03–04 TV + BE6500 #1',17.6,7.35,'end',NET,-6)
+P.text('03–04 TV + BE6500 #1 (wifi nhà chính)',17.6,7.35,'end',NET,-6)
 P.text('09–10 BE6500 #2 + dự phòng',13.8,11.0,'end',NET,4)
 P.line([[15.25,5.85],[14.25,5.85],[13.85,5.85],[11.8,-0.2]],UG,2.5,True);P.rect(11.72,-0.28,0.16,0.16,'#424242')
 P.text('11–12 ống HDPE Ø32 ngầm ra cổng (chung rãnh cáp nguồn, bịt nắp)',12.2,2.4,'start',UG,4)
@@ -45,23 +45,23 @@ g=['<svg viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg" font-family="A
 g+= [bx(20,20,130,'Cáp quang nhà mạng','kéo treo, miễn phí','#fbe9e7','#ff7043'),ln(150,39,190,39,'#ff7043'),bx(190,20,110,'ONT','đặt trong tủ mạng'),
      ln(300,39,350,39,lab='ether1 WAN'),bx(350,20,150,'MikroTik hEX','router · DHCP · AdGuard DNS'),
      bx(560,20,140,'4G dự phòng','ether4 · khi cần','#eceff1','#90a4ae',True),ln(500,39,560,39,'#90a4ae',True),
-     ln(380,58,180,120,lab='ether2'),ln(425,58,425,120,lab='ether3'),ln(470,58,690,120,lab='ether5'),
-     bx(100,120,170,'Cục cấp nguồn PoE+ (802.3at)','dùng đồ có sẵn; chưa có thì đợt 2','#fff8e1','#f9a825'),ln(185,158,185,190),bx(110,190,150,'01 Aruba AP-325','trần hành lang · SSID theo VLAN'),
+     ln(380,58,180,120,'#90a4ae',True,'ether2'),ln(425,58,425,120,lab='ether3'),ln(470,58,690,120,lab='ether5'),
+     bx(100,120,170,'Đợt 2: switch PoE','ether2 trunk VLAN','#eceff1','#90a4ae',True),
      bx(340,120,170,'Switch thường có sẵn','≥8 cổng · VLAN 20'),bx(610,120,170,'09 BE6500 #2 (AP)','nhà phụ, dây về tủ'),ln(690,158,690,190),bx(620,190,150,'10 dự phòng','cáp chờ ở bếp','#eceff1','#90a4ae',True)]
 x=20
-for t1,t2 in [('DS220j + WD','trong tủ'),('M720q','Proxmox · HA'),('03 BE6500 #1','TV cắm LAN của BE6500'),('Bàn làm việc (2 máy)','cắm thẳng, không qua ổ'),('04 dự phòng','cáp chờ ở TV')]:
+for t1,t2 in [('DS220j + WD','trong tủ'),('M720q','Proxmox · HA'),('03 BE6500 #1 (AP)','wifi nhà chính · TV cắm LAN'),('Bàn làm việc (2 máy)','cắm thẳng, không qua ổ'),('04 dự phòng','cáp chờ ở TV')]:
     g.append(ln(425,158,x+75,260)); g.append(bx(x,260,150,t1,t2)); x+=170
-g+= [bx(20,330,260,'Đợt 2: switch PoE TL-SG2210MP / CSS610','gom AP-325, Zigbee, camera, AP vườn','#eceff1','#90a4ae',True),
+g+= [bx(20,330,260,'Đợt 2: switch PoE TL-SG2210MP / CSS610','gom Zigbee, camera, AP vườn','#eceff1','#90a4ae',True),
      bx(300,330,260,'Đợt 2: tủ gỗ 12U + patch panel 24 cổng','đợt 1 cáp cuộn chờ, đánh số 2 đầu','#eceff1','#90a4ae',True),
      bx(580,330,300,'Đợt 2: camera cổng (11–12), sân xe (13), hiên sau (14)','+ AP vườn (15), hộp D bờ sông (16)','#eceff1','#90a4ae',True)]
 g.append('</svg>')
 topo='\n'.join(g)
 pt=['<table><tr><th>Số</th><th>Đầu kia</th><th>Cắm vào (đợt 1)</th><th>Ghi chú</th></tr>']
-for r in [('01','Trần hành lang – Aruba AP-325','hEX ether2 qua cục PoE+','Không có cục PoE+ thì để đợt 2, 2 BE6500 vẫn phủ nhà'),('02','Trần hành lang – Zigbee PoE','–','Đợt 2; đợt 1 dùng USB Zigbee cắm M720q'),
+for r in [('02','Trần hành lang – Zigbee PoE','–','Đợt 2; đợt 1 dùng USB Zigbee cắm M720q'),
           ('03','Phòng khách – BE6500 #1','Switch thường','TV cắm cổng LAN của BE6500'),('04','Phòng khách – dự phòng','–','Cáp có sẵn, chờ'),
           ('–','Bàn làm việc','Switch thường (dây nhảy trực tiếp)','Tủ ngay cạnh bàn, không cần ổ tường'),
           ('09','Bếp – BE6500 #2','hEX ether5','Nguồn từ ổ R2 cạnh kệ'),('10','Bếp – dự phòng','–',''),('11–12','Ống ngầm ra cổng','–','Chỉ ống + dây mồi, bịt nắp; camera đợt 2'),
-          ('Đợt 2','Ổ mạng phòng ngủ 1, 2','–','Đi nổi từ trục hành lang khi cần; wifi AP-325 đã phủ')]:
+          ('Đợt 2','Ổ mạng phòng ngủ 1, 2','–','Đi nổi từ trục hành lang khi cần')]:
     pt.append('<tr>'+''.join(f'<td>{c}</td>' for c in r)+'</tr>')
 pt.append('</table>')
 b8,t8=bom_table(['8. Mạng + ống chờ']); bD,tD=bom_table(['Đợt 2 – Tủ mạng gỗ tự đóng + thiết bị mạng'])
@@ -74,10 +74,11 @@ page=f'''<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><meta name="
 <ul>
 <li><b>Phòng cuối là phòng ngủ 2</b> nên tủ mạng không đặt ở đó (quạt + NAS chạy suốt đêm, nóng). Tủ dời ra <b>phòng khách, khe 0,5m giữa cửa hành lang và bàn làm việc</b> (bàn dời phải 10cm): ngay dưới trục ống, gần chỗ cáp quang vào, ổ C4 chỉ cách tủ điện ~8m.</li>
 <li>Bàn làm việc ngay cạnh tủ → máy tính cắm thẳng switch, <b>bỏ được 1 mặt ổ + 1 nhánh ống</b>.</li>
-<li>AP-325 trên trần hành lang cách 2 phòng ngủ chỉ 1–2m → <b>chưa cần ổ mạng trong phòng ngủ</b>; ống đi nổi nên thêm sau không phải đục.</li>
-<li>Trục Ø32 chỉ cần từ tủ tới AP-325 (~9m); đoạn ra hiên sau làm khi lắp camera.</li>
+<li><b>Không dùng Aruba.</b> Wifi chỉ bằng 2 Xiaomi BE6500 chế độ AP nối dây về tủ: #1 ở phòng khách cạnh TV (phủ nhà chính), #2 trên kệ cao 2m ở bếp nhà phụ (sát vách phòng ngủ 2). Nếu phòng ngủ 2 sóng yếu: dời #1 lên kệ cao đầu hành lang hoặc kéo thêm 1 đường nổi (đợt 2).</li>
+<li>Trục Ø32 chỉ cần từ tủ tới nhánh bếp (~7m); đoạn sau làm khi có camera, Zigbee. Chưa cần ổ mạng phòng ngủ; ống đi nổi nên thêm sau không phải đục.</li>
+<li>BE6500 ở chế độ AP không tách VLAN: đợt 1 chỉ có mạng chính; wifi khách và VLAN IoT/camera làm ở đợt 2 cùng switch PoE.</li>
 <li>Việc phải làm ngay: <b>ống HDPE ra cổng</b> (chôn chung rãnh cáp nguồn đang đào).</li>
-<li>Mục Mạng đợt 1 còn <b>{t8/1000:.2f}tr</b> (trước 0,88tr).</li>
+<li>Mục Mạng đợt 1 còn <b>{t8/1000:.2f}tr</b>.</li>
 </ul>
 <h2>2. Mặt bằng đi cáp</h2>
 {plan}
@@ -95,4 +96,4 @@ page=f'''<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><meta name="
 <li>Đợt 1 chưa có tủ: ONT, hEX, switch, NAS, M720q đặt trên kệ nhỏ đúng vị trí tủ (phòng khách cạnh bàn), UPS dưới sàn cắm ổ C4.</li>
 <li>2 BE6500 chế độ AP, nối dây về switch; cùng tên wifi + mật khẩu; kênh 5GHz khác nhau.</li>
 </ul></body></html>'''
-open('/home/claude/nha-duyen-hai/mang.html','w').write(page); print('mang ok',round(t8),round(tD))
+open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'mang.html'),'w').write(page); print('mang ok',round(t8),round(tD))
