@@ -10,7 +10,7 @@ svg{width:100%;height:auto;border:1px solid #eceff1;border-radius:6px}table{bord
 <ul>
 <li><b>Phòng cuối là phòng ngủ 2</b> nên tủ mạng không đặt ở đó (quạt + NAS chạy suốt đêm, nóng). Tủ dời ra <b>phòng khách, khe 0,5m giữa cửa hành lang và bàn làm việc</b> (bàn dời phải 10cm): ngay dưới trục ống, gần chỗ cáp quang vào, ổ C4 chỉ cách tủ điện ~8m.</li>
 <li>Bàn làm việc ngay cạnh tủ → máy tính cắm thẳng switch, <b>bỏ được 1 mặt ổ + 1 nhánh ống</b>.</li>
-<li><b>Không dùng Aruba.</b> Wifi chỉ bằng 2 Xiaomi BE6500 chế độ AP nối dây về tủ: #1 ở phòng khách cạnh TV (phủ nhà chính), #2 trên kệ cao 2m ở bếp nhà phụ (sát vách phòng ngủ 2). Nếu phòng ngủ 2 sóng yếu: dời #1 lên kệ cao đầu hành lang hoặc kéo thêm 1 đường nổi (đợt 2).</li>
+<li><b>Không dùng Aruba.</b> Wifi chỉ bằng 2 Xiaomi BE6500 chế độ AP nối dây về tủ: #1 ở phòng khách vách phải (phủ nhà chính), #2 trên kệ cao 2m ở bếp nhà phụ (sát vách phòng ngủ 2). Nếu phòng ngủ 2 sóng yếu: dời #1 lên kệ cao đầu hành lang hoặc kéo thêm 1 đường nổi (đợt 2).</li>
 <li>Trục Ø32 chỉ cần từ tủ tới nhánh bếp (~7m); đoạn sau làm khi có camera, Zigbee. Chưa cần ổ mạng phòng ngủ; ống đi nổi nên thêm sau không phải đục.</li>
 <li>BE6500 ở chế độ AP không tách VLAN: đợt 1 chỉ có mạng chính; wifi khách và VLAN IoT/camera làm ở đợt 2 cùng switch PoE.</li>
 <li>Việc phải làm ngay: <b>ống HDPE ra cổng</b> (chôn chung rãnh cáp nguồn đang đào).</li>
@@ -78,7 +78,7 @@ svg{width:100%;height:auto;border:1px solid #eceff1;border-radius:6px}table{bord
 <rect x="558.4" y="650.3" width="6.2" height="6.2" fill="#e8eaf6" stroke="#3949ab"/>
 <polyline points="451.0,492.8 407.0,492.8 394.2,492.8" fill="none" stroke="#3949ab" stroke-width="2" stroke-linejoin="round"/>
 <rect x="391.2" y="489.7" width="6.2" height="6.2" fill="#e8eaf6" stroke="#3949ab"/>
-<text x="544" y="647" text-anchor="end" fill="#3949ab" font-size="10">03–04 TV + BE6500 #1 (wifi nhà chính)</text>
+<text x="544" y="647" text-anchor="end" fill="#3949ab" font-size="10">03–04 BE6500 #1 + dự phòng (wifi nhà chính)</text>
 <text x="377" y="497" text-anchor="end" fill="#3949ab" font-size="10">09–10 BE6500 #2 + dự phòng</text>
 <polyline points="451.0,719.4 407.0,719.4 389.4,719.4 299.2,985.6" fill="none" stroke="#1a237e" stroke-width="2.5" stroke-dasharray="5 3" stroke-linejoin="round"/>
 <rect x="295.7" y="982.1" width="7.0" height="7.0" fill="#424242" stroke="#333"/>
@@ -122,15 +122,15 @@ svg{width:100%;height:auto;border:1px solid #eceff1;border-radius:6px}table{bord
 <rect x="580" y="330" width="300" height="38" rx="6" fill="#eceff1" stroke="#90a4ae" stroke-dasharray="4 3"/><text x="730.0" y="346" text-anchor="middle" font-weight="bold">Đợt 2: camera cổng (11–12), sân xe (13), hiên sau (14)</text><text x="730.0" y="360" text-anchor="middle" font-size="9.5">+ AP vườn (15), hộp D bờ sông (16)</text>
 </svg>
 <h2>4. Bảng cổng (dán nhãn số ở 2 đầu cáp)</h2>
-<table><tr><th>Số</th><th>Đầu kia</th><th>Cắm vào (đợt 1)</th><th>Ghi chú</th></tr><tr><td>02</td><td>Trần hành lang – Zigbee PoE</td><td>–</td><td>Đợt 2; đợt 1 dùng USB Zigbee cắm PC i7-6700</td></tr><tr><td>03</td><td>Phòng khách – BE6500 #1</td><td>Switch thường</td><td>TV cắm cổng LAN của BE6500</td></tr><tr><td>04</td><td>Phòng khách – dự phòng</td><td>–</td><td>Cáp có sẵn, chờ</td></tr><tr><td>–</td><td>Bàn làm việc</td><td>Switch thường (dây nhảy trực tiếp)</td><td>Tủ ngay cạnh bàn, không cần ổ tường</td></tr><tr><td>09</td><td>Bếp – BE6500 #2</td><td>hEX ether5</td><td>Nguồn từ ổ R2 cạnh kệ</td></tr><tr><td>10</td><td>Bếp – dự phòng</td><td>–</td><td></td></tr><tr><td>11–12</td><td>Ống ngầm ra cổng</td><td>–</td><td>Chỉ ống + dây mồi, bịt nắp; camera đợt 2</td></tr><tr><td>Đợt 2</td><td>Ổ mạng phòng ngủ 1, 2</td><td>–</td><td>Đi nổi từ trục hành lang khi cần</td></tr></table>
+<table><tr><th>Số</th><th>Đầu kia</th><th>Cắm vào (đợt 1)</th><th>Ghi chú</th></tr><tr><td>02</td><td>Trần hành lang – Zigbee PoE</td><td>–</td><td>Đợt 2; đợt 1 dùng USB Zigbee cắm PC i7-6700</td></tr><tr><td>03</td><td>Phòng khách – BE6500 #1</td><td>Switch thường</td><td>Cổng LAN BE6500 còn trống (dự phòng)</td></tr><tr><td>04</td><td>Phòng khách – dự phòng</td><td>–</td><td>Cáp có sẵn, chờ</td></tr><tr><td>–</td><td>Bàn làm việc</td><td>Switch thường (dây nhảy trực tiếp)</td><td>Tủ ngay cạnh bàn, không cần ổ tường</td></tr><tr><td>09</td><td>Bếp – BE6500 #2</td><td>hEX ether5</td><td>Nguồn từ ổ R2 cạnh kệ</td></tr><tr><td>10</td><td>Bếp – dự phòng</td><td>–</td><td></td></tr><tr><td>11–12</td><td>Ống ngầm ra cổng</td><td>–</td><td>Chỉ ống + dây mồi, bịt nắp; camera đợt 2</td></tr><tr><td>Đợt 2</td><td>Ổ mạng phòng ngủ 1, 2</td><td>–</td><td>Đi nổi từ trục hành lang khi cần</td></tr></table>
 <h2>5. Vật tư</h2>
 <p><b>Đợt 1 – Mục 8</b></p><table><tr><th>Cấu thành</th><th>KL</th><th>ĐVT</th><th>Đơn giá (nghìn)</th><th>Thành tiền (nghìn)</th><th>Loại</th><th>Ghi chú</th></tr>
 <tr><td>Cáp mạng CAT6 có sẵn</td><td>80</td><td>m</td><td>0</td><td>0</td><td>Đồ cũ</td><td></td></tr>
 <tr><td>Hạt RJ45, thiết bị mạng có sẵn (tự lắp)</td><td>1</td><td>bộ</td><td>0</td><td>0</td><td>Đồ cũ</td><td></td></tr>
-<tr><td>Ống PVC Ø32 750N: trục mạng đi nổi sát trần đầu hành lang (tủ mạng → nhánh TV, bếp, cổng; ~7m)</td><td>3</td><td>cây</td><td>71</td><td>214</td><td>Vật tư</td><td></td></tr>
-<tr><td>Ống luồn PVC Ø20 nhánh: TV, bếp</td><td>3</td><td>cây</td><td>21</td><td>64</td><td>Vật tư</td><td>Không đi chung ống với dây điện</td></tr>
+<tr><td>Ống PVC Ø32 750N: trục mạng đi nổi sát trần đầu hành lang (tủ mạng → nhánh phòng khách, bếp, cổng; ~7m)</td><td>3</td><td>cây</td><td>71</td><td>214</td><td>Vật tư</td><td></td></tr>
+<tr><td>Ống luồn PVC Ø20 nhánh: phòng khách, bếp</td><td>3</td><td>cây</td><td>21</td><td>64</td><td>Vật tư</td><td>Không đi chung ống với dây điện</td></tr>
 <tr><td>Ống HDPE gân xoắn Ø32 chôn 0,5m ra hộp A (cổng), chung rãnh cáp nguồn</td><td>12</td><td>m</td><td>12</td><td>144</td><td>Vật tư</td><td>Hộp B, C đi nổi trên tường, không chôn</td></tr>
-<tr><td>Hộp + mặt ổ mạng 2 cổng + nhân CAT6 (TV, bếp; bàn làm việc cắm thẳng tủ)</td><td>2</td><td>bộ</td><td>50</td><td>100</td><td>Thiết bị</td><td></td></tr>
+<tr><td>Hộp + mặt ổ mạng 2 cổng + nhân CAT6 (phòng khách, bếp; bàn làm việc cắm thẳng tủ)</td><td>2</td><td>bộ</td><td>50</td><td>100</td><td>Thiết bị</td><td></td></tr>
 <tr><td>Nắp bịt đầu ống chờ ở trụ cổng</td><td>1</td><td>cái</td><td>20</td><td>20</td><td>Vật tư</td><td>Hộp IP66 lắp khi có camera</td></tr>
 <tr><td>Dây mồi nylon trong mọi ống chờ</td><td>1</td><td>cuộn 200m</td><td>100</td><td>100</td><td>Vật tư</td><td></td></tr>
 <tr><td>Kéo cáp, đánh số, cuộn chờ ở kho (tự làm)</td><td>2</td><td>công</td><td>0</td><td>0</td><td>Tự làm</td><td>Tiết kiệm 0,6tr</td></tr>
