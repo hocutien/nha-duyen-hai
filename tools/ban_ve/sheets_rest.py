@@ -134,10 +134,10 @@ def sheet_elev_fb(sh):
         carport_front(S); v = S.v
         callout(v, 9.0, 2.65, ['Dải bông gió xi măng tận dụng', '+2.400→+2.900, lưới inox mặt trong'], 6.5, 4.6)
         callout(v, 10.2, 1.8, ['Cửa sắt cũ 2 cánh D7 sơn lại, ô lưới', 'phía trên tới lanh tô +2.650 [10]'], 6.5, 3.85)
-        callout(v, 8.6, 2.3, 'Mái hiên tôn 1,2m [5]', 6.5, 3.15)
+        callout(v, 8.6, 2.7, 'Mái hiên tôn 1,2m [5]', 6.5, 3.15)
         callout(v, 16.0, 1.5, 'Cửa xếp/cuốn D1 hiện trạng', 18.8, 3.2)
         callout(v, 12.9, 1.5, 'Cửa sổ S2 sắt kính + lưới', 13.0, 5.1)
-        v.poly([(7.9, 2.4), (12.0, 2.4), (12.0, 2.2), (7.9, 2.2)], fill=None, edge=BLU, lw=.35, layer='DEXUAT')
+        v.poly([(7.9, 2.8), (12.0, 2.8), (12.0, 2.6), (7.9, 2.6)], fill=None, edge=BLU, lw=.35, layer='DEXUAT')
         v.text(5.6, -0.6, 'Tường trắng ngà · gỗ nâu · mái xám đậm · cổng song sắt nâu (bỏ qua cổng rào khi vẽ)', 1.6, col=GRY)
     elev(sh, 'b', -1.0, +1, 85, 1.5, 'MẶT ĐỨNG TRƯỚC (nhìn từ lộ – hướng Đông Bắc)', extra=fr, dimx=19.3)
     def bk(S):

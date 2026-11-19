@@ -5,7 +5,7 @@ PROPOSALS = [
     ('2', 12.85, 14.55, 'Cửa D8 (bếp → khu giặt) đổi chiều mở về phía bếp, bản lề phía phải: không quét vào chiếu nghỉ/bậc.'),
     ('3', 9.7, 14.25, 'Tủ kho cao 2,2m dọc vách WC phía bếp (3,2m × sâu 0,6m): gạo, đồ khô, đồ gia dụng; thay kệ sắt V ở P.ngủ 2.'),
     ('4', 12.6, 8.55, 'Cửa nhà phụ là lối vào hằng ngày (sân xe): tủ giày thấp + ghế ngồi + móc chìa khoá/áo mưa, dưới cửa sổ S2.'),
-    ('5', 8.75, 7.15, 'Mái hiên tôn 1,2m trước cửa nhà phụ (dài 4,1m, cao +2,4→+2,2): đi từ nhà xe vào không ướt, che bệ rửa chân.'),
+    ('5', 8.75, 7.15, 'Mái hiên tôn 1,2m trước cửa nhà phụ (dài 4,1m, cao +2,8 sát tường, trên lanh tô +2,65 → +2,6 mép ngoài): đi từ nhà xe vào không ướt, che bệ rửa chân.'),
     ('6', 6.45, 12.75, 'Lồng bình gas dời ra 0,55m (bệ riêng a 6,75–7,25): bản cũ đè lên ống thoát Ø90 đi nổi chân tường.'),
     ('7', 16.25, 11.45, 'P.ngủ 1: bỏ tủ áo (dời sang P.ngủ 2), giường đầu quay vách phải, 2 bên đều lên xuống được; dàn lạnh lên vách trước, không thổi thẳng đầu giường.'),
     ('8', 19.15, 10.9, 'Dàn nóng dời ra cạnh vách trước P.ngủ 1 (b 9,6–10,4): ống đồng ~1m, ít uốn, dễ vệ sinh.'),

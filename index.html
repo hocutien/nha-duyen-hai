@@ -57,6 +57,7 @@
 <div class="tmhead"><b>Thuyết minh kỹ thuật – Nhà Duyên Hải</b><button id="tmx">✕</button></div>
 <div class="tmbody">
 <p class="warn"><b>Lưu ý:</b> đây là mô hình ý tưởng/phương án, không phải hồ sơ thiết kế thi công. Thông số lấy theo giá trị thông dụng; trước khi thi công cần thợ/kỹ sư có chứng chỉ kiểm tra lại.</p>
+<p><b>Cập nhật 19/11/2026:</b> mô hình 3D đã vẽ theo 14 điểm tối ưu công năng trong <a href="ban-ve/">bộ bản vẽ thiết kế</a> (bật <b>Hiện chữ</b> để xem nhãn [1]–[14]): chiếu nghỉ WC 1,0m + 2 bậc 170 + tay vịn 2 bên; cửa D8 mở về bếp; tủ kho dọc vách WC; tủ giày + ghế ở cửa nhà phụ; mái hiên 1,2m; lồng gas dời khỏi tuyến ống Ø90; P.ngủ 1 bỏ tủ áo, dàn lạnh lên vách trước, dàn nóng dời theo; cửa chớp lật WC 0,6×0,4; lanh tô cửa nhà phụ +2,65; công tắc 2 chiều hành lang; ụ chắn bánh quanh nắp bể; P.ngủ 2 làm phòng em bé.</p>
 <h3>0. Nguyên tắc đợt 1 (dọn vào ở – vợ đang mang thai)</h3>
 <ol>
 <li><b>Vào ở sớm và an toàn</b>, ngân sách khoảng 100–115tr. Hạng mục nào không phục vụ việc vào ở thì chuyển sang đợt 2.</li>
@@ -582,8 +583,10 @@ wall('y',15.4,10.1,8.2,0.1,4.5,[[0.6,1.4,0.02,2.2],[4.7,5.5,0.02,2.2]],C.trong);
 wall('x',15.5,14.1,2.3,0.1,4.5,[],C.trong);
 box(14.2,5.7,3.3,3.6,12.6,0.03,0xeef2ea,'roof');
 box(14.2,5.7,0,0.02,4.3,1.2,0xf4f4f0);box(17.78,5.7,0,0.02,4.3,1.2,0xf4f4f0);box(14.2,9.98,0,3.6,0.02,1.2,0xf4f4f0);
-box(15.7,11.6,0,2.0,1.6,0.45,0xdcd6c8);box(15.6,13.45,0,1.2,0.55,1.9,C.go);
-box(15.55,17.65,0,2.2,0.6,2.4,0x8a8f94);box(15.8,16.2,0,2.0,1.2,0.45,0xdcd6c8);box(17.6,16.2,0.45,0.2,1.2,0.5,C.go);box(15.6,14.3,0,1.0,0.55,1.9,C.go);
+box(15.75,12.0,0,2.0,1.6,0.45,0xdcd6c8);box(15.75,13.45,0.45,2.0,0.15,0.5,C.go);// [7] giuong lui vao, tu ao doi sang P.ngu 2
+box(16.6,14.2,0,1.2,0.55,1.9,C.go);// [13] noi em be
+box(15.6,17.5,0,0.7,1.2,0.9,0xf3e5d0);[[15.6,17.5],[16.25,17.5],[15.6,18.65],[16.25,18.65]].forEach(p=>box(p[0],p[1],0,0.05,0.05,0.9,C.go));box(15.65,17.55,0.35,0.6,1.1,0.1,0xffffff);
+box(15.8,16.2,0,2.0,1.2,0.45,0xdcd6c8);box(17.6,16.2,0.45,0.2,1.2,0.5,C.go);box(15.6,14.3,0,1.0,0.55,1.9,C.go);
 box(14.3,6.3,0,0.8,2.2,0.45,0x6b7a8a);box(14.3,6.3,0.45,0.2,2.2,0.4,0x6b7a8a);box(17.3,6.6,0,0.4,1.6,0.5,C.go);box(17.62,6.7,0.6,0.06,1.4,0.8,C.den);box(15.6,6.9,0,0.9,0.6,0.4,C.go);
 box(14.6,5.58,0.02,2.8,0.04,2.98,0x4a5157);for(let x=14.62;x<17.4;x+=0.09)box(x,5.55,0.02,0.025,0.03,2.98,0x37474f);box(14.08,8.4,0.02,0.04,0.9,2.18,C.go);
 box(14.08,16.7,0.02,0.04,0.8,2.18,C.go);
@@ -606,21 +609,22 @@ box(13.8,7.6,3.63,0.2,11.1,0.07,C.den,'roof');
 // vach nha phu: GACH ONG 100 trat 2 mat tren da kieng (thay ton cu), dai bong gio thao tu nha 914 o tren
 const VT=0xd6d1c4;
 box(7.9,7.7,0.25,6.15,0.2,0.2,C.bt);box(7.9,7.7,0.25,0.2,7.65,0.2,C.bt);box(11.35,18.35,0.25,2.7,0.2,0.2,C.bt);
-wall('x',8.0,7.75,6,0.1,2.4,[[1.5,3.5,0.02,2.2],[4.3,5.5,1.0,2.0]],VT);
-box(9.45,7.7,2.22,2.1,0.2,0.12,C.bt);box(12.25,7.7,2.02,1.3,0.2,0.1,C.bt);
+wall('x',8.0,7.75,6,0.1,2.4,[[1.5,3.5,0.02,2.4],[4.3,5.5,1.0,2.0]],VT);
+box(9.45,7.7,2.65,2.1,0.2,0.12,C.bt);box(9.45,7.75,2.77,2.1,0.1,0.13,VT);[9.4,11.5].forEach(a=>box(a,7.75,2.4,0.1,0.1,0.25,VT));// [10] lanh to +2,65box(12.25,7.7,2.02,1.3,0.2,0.1,C.bt);
 wall('y',7.95,7.85,7.45,0.1,2.4,[[2.6,3.6,1.05,2.0]],VT);
-wall('x',11.35,18.4,2.65,0.1,2.4,[[1.75,2.55,0.02,2.1]],VT);box(13.1,18.5,0.02,0.8,0.04,2.06,C.den);
+wall('x',11.35,18.4,2.65,0.1,2.4,[[1.75,2.55,0.02,2.4]],VT);box(13.1,18.5,0.02,0.8,0.04,2.06,C.den);box(13.1,18.47,2.1,0.8,0.02,0.55,0x9aa3a8,null,0.45);box(13.05,18.4,2.65,0.9,0.1,0.1,C.bt);
 
-box(9.5,7.72,0.02,1.0,0.04,2.18,C.den);box(11.5,7.0,0.02,0.04,0.8,2.18,C.den);
+box(9.5,7.72,0.02,1.0,0.04,2.18,C.den);box(9.5,7.77,2.2,2.0,0.02,0.45,0x9aa3a8,null,0.45);// o luoi tren canh cua D7 toi lanh to
+slopeY(7.9,12.0,6.55,7.75,2.6,2.8,0.03,C.toncu,'roof');[7.95,11.9].forEach(a=>box(a,6.58,0,0.06,0.06,2.6,0x455a64));label('Mái hiên tôn 1,2m: đi từ nhà xe vào không ướt [5]',10.0,7.0,3.1);box(11.5,7.0,0.02,0.04,0.8,2.18,C.den);
 // vach ngan trong
-wall('x',11.45,15.3,2.55,0.05,2.3,[[1.0,1.8,0.02,2.1]],C.toncu);
+wall('x',11.45,15.3,2.55,0.05,2.3,[[1.0,1.8,0.02,2.1]],C.toncu);box(13.21,14.5,0.02,0.04,0.8,2.06,C.go);// [2] D8 mo ve phia bep, khong va bac WC
 // WC xay gach tai vi tri WC cu, be nen +0,5m, sat ham
 box(8.05,15.3,0,3.4,3.15,0.5,C.wc);
 wall('x',8.05,15.3,3.4,0.1,2.9,[],C.gach);
 wall('y',11.35,15.4,2.95,0.1,2.9,[[0.35,1.15,0.52,2.6]],C.gach);
 wall('y',8.05,15.4,2.95,0.1,2.9,[],C.gach);
-wall('x',8.15,18.25,3.2,0.1,2.9,[[1.2,1.5,2.2,2.5]],C.gach);
-box(12.25,15.75,0,0.3,0.8,0.17,C.bt);box(11.95,15.75,0,0.3,0.8,0.33,C.bt);box(11.45,15.75,0,0.5,0.8,0.5,C.bt);cyl(11.5,15.68,0.5,0.025,1.0,0x9aa3a8);
+wall('x',8.15,18.25,3.2,0.1,2.9,[[1.1,1.7,1.8,2.2]],C.gach);[1.85,1.95,2.05,2.15].forEach(z=>{const m=box(9.25,18.3,z,0.6,0.07,0.012,0x9aa3a8);m.rotation.x=-0.5;});// [9] cua chop lat 0,6x0,4
+box(12.75,15.7,0,0.3,0.9,0.17,C.bt);box(12.45,15.7,0,0.3,0.9,0.34,C.bt);box(11.45,15.7,0,1.0,0.9,0.5,C.bt);[15.66,16.64].forEach(b=>{cyl(11.55,b,0.5,0.025,0.9,0x9aa3a8);cyl(12.95,b,0.17,0.025,0.9,0x9aa3a8);const P=new THREE.Vector3(11.55,1.4,-b),Q=new THREE.Vector3(12.95,1.07,-b),d=Q.clone().sub(P),t=new THREE.Mesh(new THREE.CylinderGeometry(0.02,0.02,d.length(),6),mat(0x9aa3a8));t.position.copy(P.clone().add(Q).multiplyScalar(0.5));t.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.normalize());site.add(t);});// [1] chieu nghi 1,0m, 2 bac 170, tay vin 2 ben
 box(11.47,16.5,0.52,0.03,0.85,2.06,C.go);box(11.47,15.7,2.62,0.03,1.7,0.04,0x555555);box(10.9,15.8,1.4,0.04,0.6,0.04,0x9aa3a8);
 box(8.4,17.55,0.5,0.4,0.65,0.42,0xffffff);box(8.25,15.55,0.5,1.0,1.0,0.05,0x9fb6bd);box(9.3,15.45,0.6,0.02,1.1,1.9,0xcfe3ea,null,0.6);
 // bep + ban an
@@ -639,8 +643,12 @@ box(8.1,12.55,1.55,0.5,0.75,0.3,C.den);box(8.0,12.82,1.75,0.12,0.2,0.2,0x9aa3a8)
 box(8.1,10.4,1.55,0.3,2.0,0.03,C.gocu);box(8.1,10.4,1.95,0.3,2.0,0.03,C.gocu);
 box(10.9,10.6,0.72,0.8,1.2,0.03,C.go);[[10.95,10.65],[11.62,10.65],[10.95,11.72],[11.62,11.72]].forEach(p=>box(p[0],p[1],0,0.05,0.05,0.72,C.go));
 [[10.42,10.75],[10.42,11.25],[11.78,10.75],[11.78,11.25]].forEach((p,i)=>{box(p[0],p[1],0.42,0.4,0.4,0.03,C.go);box(i<2?p[0]:p[0]+0.37,p[1],0.45,0.03,0.4,0.45,C.go);[[0,0],[0.36,0],[0,0.36],[0.36,0.36]].forEach(q=>box(p[0]+q[0],p[1]+q[1],0,0.04,0.04,0.42,C.go));});
-// binh gas 12kg: ngoai vach trai, long sat thoang, day dan <=1,5m
-box(7.3,13.25,0,0.5,0.5,0.03,C.bt);cyl(7.55,13.5,0.03,0.17,0.6,0x1565c0);[[7.3,13.25],[7.75,13.25],[7.3,13.7],[7.75,13.7]].forEach(p=>box(p[0],p[1],0,0.03,0.03,0.85,0x555555));box(7.3,13.25,0.85,0.48,0.48,0.02,0x555555);
+// binh gas 12kg: ngoai vach trai, long sat thoang, day dan <=1,5m; [6] doi ra a6,75-7,25 khoi tuyen ong thoat O90 (a7,3)
+box(6.75,13.25,0,0.5,0.5,0.03,C.bt);cyl(7.0,13.5,0.03,0.17,0.6,0x1565c0);[[6.75,13.25],[7.2,13.25],[6.75,13.7],[7.2,13.7]].forEach(p=>box(p[0],p[1],0,0.03,0.03,0.85,0x555555));box(6.75,13.25,0.85,0.48,0.48,0.02,0x555555);
+// [3] tu kho cao 2,2m doc vach WC phia bep
+box(8.1,14.7,0,3.2,0.6,2.2,0xb08d6a);[9.15,10.2].forEach(a=>box(a,14.69,0.05,0.01,0.02,2.1,0x5d4037));label('Tủ kho cao 2,2m dọc vách WC (3,2m) [3]',9.7,14.5,2.4);
+// [4] tu giay + ghe ngoi mang giay o cua nha phu
+box(11.6,7.85,0,2.0,0.35,0.9,0xb08d6a);box(11.6,7.85,0.9,2.0,0.37,0.04,C.go);label('Tủ giày + ghế ngồi [4]',12.6,8.1,1.2);
 // an toan chay: binh chua chay, chan chua chay
 cyl(9.35,8.05,0,0.08,0.5,0xc62828);box(9.6,7.95,1.3,0.25,0.06,0.3,0xc62828);
 // day phoi do sau nha (nang chieu)
@@ -651,12 +659,12 @@ box(11.55,17.75,0,0.62,0.62,0.85,C.may);box(11.53,17.73,0.85,0.66,0.66,0.03,0x9e
 box(9.2,18.9,-0.1,1.2,1.0,0.12,C.bt);
 cyl(12.0,19.75,-0.05,1.0,0.2,C.bt);cyl(12.0,19.75,0.15,0.1,0.45,0x455a64);
 // be tu hoai nhua 2000L: san truoc bep, truc doc vao trong, cach gieng >=15,3m; nap nho ~0,35m, dat dap phu
-box(8.25,2.05,-0.1,1.5,2.8,0.4,0x8d7b5f);cyl(9.0,2.75,0.3,0.3,0.07,0x546e7a);cyl(9.0,4.15,0.3,0.3,0.07,0x546e7a);cyl(7.45,17.7,0.3,0.03,3.3,0x9e9e9e);cyl(7.45,17.7,3.6,0.06,0.12,0x9e9e9e);[1,2,3].forEach(z=>box(7.41,17.64,z,0.08,0.12,0.03,0x616161));
+box(8.25,2.05,-0.1,1.5,2.8,0.4,0x8d7b5f);[[8.0,1.8,2.0,0.2],[8.0,4.9,2.0,0.2],[8.0,2.0,0.2,2.9],[9.8,2.0,0.2,2.9]].forEach(q=>box(q[0],q[1],0.3,q[2],q[3],0.2,0xbdbdbd));label('Ụ chắn bánh BT quanh nắp bể [12]',9.0,1.6,0.9);cyl(9.0,2.75,0.3,0.3,0.07,0x546e7a);cyl(9.0,4.15,0.3,0.3,0.07,0x546e7a);cyl(7.45,17.7,0.3,0.03,3.3,0x9e9e9e);cyl(7.45,17.7,3.6,0.06,0.12,0x9e9e9e);[1,2,3].forEach(z=>box(7.41,17.64,z,0.08,0.12,0.03,0x616161));
 
 // ---- MAY LANH (hien thuong truc) + TU MANG ----
-box(17.55,12.5,2.45,0.22,0.8,0.28,0xf5f5f5);box(18.05,12.45,0.4,0.3,0.8,0.55,0xb0bec5);box(18.0,12.4,0,0.4,0.9,0.4,C.bt);box(18.0,12.35,1.05,0.5,0.95,0.04,C.toncu);
+box(16.6,10.1,2.4,0.8,0.25,0.3,0xf5f5f5);box(18.05,9.6,0.4,0.3,0.8,0.55,0xb0bec5);box(18.0,9.55,0,0.4,0.9,0.4,C.bt);box(18.0,9.5,1.05,0.5,0.95,0.04,C.toncu);
 box(15.42,9.51,0.9,0.486,0.49,0.66,0x8d6e63);box(15.44,9.49,0.93,0.446,0.02,0.6,0x5d4037);box(15.48,9.55,0,0.3,0.4,0.25,0x263238);label('Tủ mạng gỗ 12U tự đóng (đợt 2) cạnh bàn làm việc + UPS dưới sàn',15.65,9.7,1.9);
-label('Máy lạnh 1,5HP có sẵn (phòng ngủ)',17.6,12.9,3.1);label('Dàn nóng: chân đế 40cm + mái che',18.6,10.7,1.6);
+label('Máy lạnh 1,5HP có sẵn: dàn lạnh trên vách trước, gió thổi dọc giường, không thổi thẳng vào người [7]',17.0,10.4,3.1);label('Dàn nóng dời theo: chân đế 40cm + mái che [8]',18.6,9.4,1.6);
 
 // ---- DIEN NUOC (an/hien bang nut) ----
 const mep=new THREE.Group();site.add(mep);mep.visible=false;const mD=new THREE.Group(),mN=new THREE.Group(),mM=new THREE.Group();[mD,mN,mM].forEach(g=>{g.visible=false;site.add(g);});let MG=mD;
@@ -692,7 +700,7 @@ MG=mN;// rua xe tren nen da mi san xe, khong dan vao be
 MG=mN;// nuoc mua: mang xoi nen tam -> ong xuong -> bon 2000L
 MG=mN;pipe([[13.9,19.85,2.75],[8.0,19.85,2.75],[7.6,20.2,1.8]],RAIN,0.04);
 MG=mN;(function(){const m=new THREE.Mesh(new THREE.CylinderGeometry(0.65,0.65,1.6,16),mat(0x00897b));m.position.set(6.9,0.8,-20.5);MG.add(m);})();
-MG=mD;pipe([[18.0,12.9,2.6],[18.5,12.85,0.95]],0xb87333,0.02);
+MG=mD;pipe([[17.4,10.2,2.6],[18.0,10.2,2.6],[18.2,10.0,0.95]],0xb87333,0.02);
 MG=mN;label('Vòi rửa tay chân',8.3,6.9,1.2,MG);
 MG=mN;label('Đợt 2: bồn nước mưa 2.000L sau nhà phụ, góc trái (máng xối mái sau nhà phụ) · tưới cây, rửa xe',6.9,20.5,2.2,MG);
 MG=mD;label('Mọi hộp công tắc: hộp 86 sâu, có dây N (để sau lắp công tắc Zigbee)',14.3,6.1,0.95,MG);
@@ -701,7 +709,7 @@ MG=mD;cyl(14.55,6.0,0,0.08,0.5,0xc62828);label('Bình chữa cháy 4kg phòng kh
 MG=mD;label('Song cửa sổ phòng ngủ có 1 ô mở bằng khoá (thoát hiểm)',17.8,11.6,1.9,MG);
 MG=mN;mbox(11.6,17.7,0.0,0.1,0.06,0.03,0x29b6f6);label('Cảm biến rò nước dưới máy giặt (đợt 2)',11.7,17.6,0.25,MG);
 MG=mD;[[15.45,13.2],[14.25,15.5],[14.25,17.6],[12.9,16.4]].forEach(p=>{const m=new THREE.Mesh(new THREE.SphereGeometry(0.06,8,6),mat(0xfff59d));m.position.set(p[0],0.35,-p[1]);MG.add(m);});
-MG=mD;label('Đèn cảm biến đêm: phòng ngủ → hành lang → WC',14.3,16.5,0.7,MG);label('Lưới chống muỗi tất cả cửa sổ + cửa đi',17.8,9.6,2.6,MG);
+MG=mD;label('Đèn cảm biến đêm: phòng ngủ → hành lang → WC',14.3,16.5,0.7,MG);label('Công tắc 2 chiều đèn hành lang: đầu D5 ↔ đầu D4 + công tắc đầu giường [11]',15.0,12.3,1.5,MG);label('Lưới chống muỗi tất cả cửa sổ + cửa đi',17.8,9.6,2.6,MG);
 MG=mD;// bao chay / bao ro gas
 MG=mD;[[10.6,12.5,2.95],[16.6,12.0,3.27],[14.8,15.0,3.27],[16.0,7.0,3.27]].forEach(p=>{const m=new THREE.Mesh(new THREE.CylinderGeometry(0.07,0.07,0.04,12),mat(0xffffff));m.position.set(p[0],p[2],-p[1]);MG.add(m);});
 MG=mD;mbox(8.1,13.55,0.25,0.06,0.1,0.1,0xffeb3b);
@@ -772,7 +780,7 @@ run('C2',[[14.45,14.05,3.2],[17.4,14.05,3.2],[17.4,14.05,1.05]]);run('C2',[[16.0
 LBL('C2 ổ cắm nhà chính · RCCB 30mA + MCB 20A · 3 sợi L+N+PE 2,5mm² · ống Ø20 · giữ dây cũ đi nổi nếu đo cách điện ≥1MΩ · ổ mới cao 1,0m',14.45,8.6,3.45);
 LBL('TV',17.7,7.05,1.3);LBL('Sofa',14.3,8.3,1.3);LBL('Bàn làm việc ×2 (cao 1,1m)',16.7,9.9,1.45);LBL('Đầu giường P1 ×2',16.7,14.0,1.3);LBL('Đầu giường P2 ×2',17.7,16.8,1.3);
 // C3 may lanh
-run('C3',[[14.25,7.1,1.95],[14.25,7.1,3.2],[14.55,7.1,3.2],[14.55,12.3,3.2],[17.76,12.3,3.2],[17.76,12.3,2.45]]);sk(17.76,12.3,2.4);
+run('C3',[[14.25,7.1,1.95],[14.25,7.1,3.2],[14.55,7.1,3.2],[14.55,10.25,3.2],[17.55,10.25,3.2],[17.55,10.25,2.75]]);sk(17.55,10.25,2.7);
 mbox(14.5,7.0,3.12,0.2,11.0,0.06,0xeceff1);LBL('Máng nhựa chung chỉ cho C3, C4 · R3, R4, R5 đi ống riêng cách nhau ≥2cm (dây tải lớn không nóng)',14.75,12.5,3.35);LBL('C3 máy lạnh · RCCB 30mA + MCB 20A · 3 sợi L+N+PE 2,5mm² · ống Ø20 · ổ đơn cạnh dàn lạnh cao 2,4m',17.4,12.3,2.8);
 // C4 tu mang
 run('C4',[[14.25,7.15,1.95],[14.25,7.15,3.2],[14.65,7.15,3.2],[14.65,9.88,3.2],[15.5,9.88,3.2],[15.5,9.96,3.2],[15.5,9.96,0.65]]);sk(15.5,9.96,0.6);
@@ -836,7 +844,7 @@ ftd(8.75,16.0,0.5);pipe([[8.75,16.0,0.48],[8.75,16.0,0.34],[7.3,16.0,0.30]],DRN,
 label('Khu giặt không làm phễu sàn: máy giặt xả vào ống đứng Ø60 cao 0,8m, khay hứng dưới máy',12.2,17.8,0.95,MG);label('Phễu thu sàn tắm',8.75,16.0,0.75,MG);
 label('Nhánh Ø60 dốc ≥2,5% vào ống chính Ø90 bằng chếch Y 45°',7.55,13.5,0.5,MG);
 mbox(8.1,6.1,-0.1,0.8,0.6,0.4,0x9e9e9e);ftd(8.5,6.4,0.3);pipe([[8.5,6.4,0.28],[8.5,6.4,0.14],[7.65,6.4,0.11]],DRN,0.025);label('Bệ rửa chân cao 0,3m (2 bậc): phễu → Ø60 vào ống chính · rửa xe làm trên nền đá mi, không vào bể',8.5,6.4,0.75,MG);
-pipe([[17.8,12.9,2.45],[18.15,12.9,2.4],[18.15,12.9,0.1]],DRN,0.01);label('Ống nước ngưng máy lạnh ra ngoài',18.2,12.9,1.0,MG);
+pipe([[17.4,10.3,2.45],[17.8,10.6,2.42],[18.15,10.6,2.4],[18.15,10.6,0.1]],DRN,0.01);label('Ống nước ngưng máy lạnh ra ngoài',18.2,10.8,1.0,MG);
 // ---- MANG CHI TIET (vua du don vao o; tu mang o phong khach canh ban lam viec) ----
 MG=mM;const NET=0x3949ab,FIB=0xff7043,OC=0x9e9e9e,D2N=0xcfd8dc;const rj=(a,b,z)=>mbox(a-0.04,b-0.07,z-0.07,0.08,0.14,0.14,0xe8eaf6);
 pipe([[15.6,9.95,1.56],[15.6,9.95,3.27],[15.25,9.95,3.27]],NET,0.03);pipe([[15.25,5.85,3.27],[15.25,11.0,3.27]],NET,0.03);pipe([[15.25,11.0,3.27],[15.25,18.1,3.27]],D2N,0.025);
@@ -997,9 +1005,9 @@ label('Tường mặt tiền kín cao 2,6m, điểm 5 ô gạch bông gió, cổ
 label('Dải nền nâng đoạn qua ao: làm cùng san lấp ao',38,1.6,1.2,fut);
 // ---- NHA PHU CHONG NONG: vach kin len mai, dai bong gio, cach nhiet duoi ton, 2 quat tran; mai hat chong tat mua phia sau ----
 function gableX(b,pts,c){const s=new THREE.Shape();pts.forEach((p,i)=>i?s.lineTo(p[0],p[1]):s.moveTo(p[0],p[1]));const m=new THREE.Mesh(new THREE.ShapeGeometry(s),mat(c));m.position.z=-b;site.add(m);return m;}
-bong(8.05,7.8,13.95,7.8,2.4,2.9,null,0.14,0x8f8b83);gableX(7.8,[[8.0,2.9],[14,2.9],[14,3.58],[8.0,3.02]],C.toncu);
+bong(8.05,7.8,9.4,7.8,2.4,2.9,null,0.14,0x8f8b83);bong(11.6,7.8,13.95,7.8,2.4,2.9,null,0.14,0x8f8b83);gableX(7.8,[[8.0,2.9],[14,2.9],[14,3.58],[8.0,3.02]],C.toncu);
 bong(7.95,7.85,7.95,15.3,2.4,2.95,null,0.14,0x8f8b83);
-gableX(18.45,[[8.0,2.4],[14,2.4],[14,3.58],[8.0,3.02]],C.toncu);
+gableX(18.45,[[8.0,2.4],[13.1,2.4],[13.1,3.496],[8.0,3.02]],C.toncu);gableX(18.45,[[13.9,2.4],[14,2.4],[14,3.58],[13.9,3.571]],C.toncu);gableX(18.45,[[13.1,2.75],[13.9,2.75],[13.9,3.571],[13.1,3.496]],C.toncu);
 slopeX(7.95,14.0,7.85,18.45,2.93,3.53,0.02,0xd9dde1,'roof');
 function fan(a,b,zt){cyl(a,b,zt-0.5,0.015,0.5,0x333333);cyl(a,b,zt-0.64,0.13,0.14,0xf2f1ec);for(let k=0;k<3;k++){const t=k*2.094+0.3,m=new THREE.Mesh(new THREE.BoxGeometry(0.62,0.015,0.13),mat(0xd8cfc0));m.position.set(a+Math.cos(t)*0.42,zt-0.6,-(b+Math.sin(t)*0.42));m.rotation.y=t;site.add(m);}}
 const rz=a=>3.0+(a-7.75)/6.25*0.6-0.08;fan(11.3,11.2,rz(11.3));label('1 quạt trần trên bàn ăn',11.3,11.2,2.7);
@@ -1036,7 +1044,7 @@ label('WC + tắm – cửa mở vào khu giặt, không nhìn ra bàn ăn',9.7,
 label('Nhà kiên cố 4 × 16m (cả hiên)',16,10,6.2);
 label('Phòng khách',16,7.8,5.4);
 box(15.95,9.25,0,1.75,0.7,0.76,0x7b3f1f);box(15.95,9.25,0,0.45,0.66,0.72,0x6a3519);box(17.3,9.25,0,0.4,0.66,0.72,0x6a3519);box(16.5,9.62,0.76,0.5,0.06,0.38,0x222222);label('Bàn làm việc gỗ mang theo (sát vách phòng ngủ)',16.7,9.6,1.4);
-label('Kệ sắt 2 khoang mang theo: để đồ phòng ngủ 2',16.6,17.9,2.8);label('Giường 1,2×2m, đầu giường sát tường phải',16.8,16.8,0.9);
+label('P.ngủ 2 → phòng em bé: nôi + giường phụ, rèm cản sáng; kệ sắt dời ra tủ kho bếp [13]',16.6,17.9,2.8);label('Giường 1,2×2m, đầu giường sát tường phải',16.8,16.8,0.9);
 label('Phòng ngủ 1 (máy lạnh)',16.7,12,4.2);label('Hành lang',14.8,13,3.6);label('Trần thả ~3,3m',16,8.5,3.9);
 label('Phòng ngủ 2 (em bé / người thân)',16.7,16.2,4.2);label('Chân tường ẩm: trát chống thấm 1,2m',15.8,15,1.6);
 label('Khu tắm–giặt: máy giặt + sấy chồng, lavabo ngoài',12.7,16.9,2.9);label('Lối từ hành lang nhà chính → WC (không qua bàn ăn)',13.6,17.1,2.3);label('Cửa ra dây phơi',13.5,18.6,2.4);label('Dây phơi đồ (nắng sáng–trưa)',11.0,21.4,2.3);label('Chiếu nghỉ + 2 bậc thấp, tay vịn, cửa lùa',12.0,15.6,0.8);label('Cửa sau hành lang (đợt 1): cao 2,7m, mái hắt 1,2m, gió vườn sau vào nhà',14.8,19.6,3.3);label('Rãnh thu nước + ngạch 12cm',14.8,19.5,0.8);label('Cây che nắng chiều (Tây Nam)',16,24,6.9);
