@@ -493,7 +493,7 @@ $SKPOLY
   9
 $TDCREATE
  40
-2461364.3024421297
+2461364.327789352
   9
 $TDUCREATE
  40
@@ -501,7 +501,7 @@ $TDUCREATE
   9
 $TDUPDATE
  40
-2461364.3024421297
+2461364.327789352
   9
 $TDUUPDATE
  40
@@ -553,7 +553,7 @@ $SPLINESEGS
   9
 $HANDSEED
   5
-162
+163
   9
 $SURFTAB1
  70
@@ -933,11 +933,11 @@ $PSTYLEMODE
   9
 $FINGERPRINTGUID
   2
-{4D8F0C79-38EC-4EEA-9E41-9ED4BF4FD2FC}
+{AC354ABE-7719-4AA2-8DEF-D3AC3445D045}
   9
 $VERSIONGUID
   2
-{47FEDE2E-AD28-4397-8FA6-F16A6E03D6B0}
+{03F68B9E-F4F5-48F9-B7FB-7EBD377867AE}
   9
 $EXTNAMES
 290
@@ -3449,7 +3449,7 @@ ACAD
   0
 APPID
   5
-15F
+160
 330
 3
 100
@@ -3463,7 +3463,7 @@ HATCHBACKGROUNDCOLOR
   0
 APPID
   5
-160
+161
 330
 3
 100
@@ -11311,7 +11311,7 @@ AcDbText
  40
 142.5
   1
-Nền nhà thấp hơn mặt lộ ~0,5m (ngập khi mưa lớn/triều cường)
+Nền nhà thấp hơn mặt lộ 0,70m, cao hơn sân 5cm – đợt 1 gờ
  11
 19125.0
  21
@@ -11343,7 +11343,7 @@ AcDbText
  40
 142.5
   1
-– đợt sau nâng nền +0,45 và sân +0,5.
+chắn + rãnh tự chảy ra ao (KT-15); đợt 2 nâng nền +0,45, sân
  11
 19350.0
  21
@@ -11358,6 +11358,38 @@ AcDbText
 TEXT
   5
 139
+330
+17
+100
+AcDbEntity
+  8
+CHU
+100
+AcDbText
+ 10
+19350.0
+ 20
+18453.75
+ 30
+0.0
+ 40
+142.5
+  1
++0,40.
+ 11
+19350.0
+ 21
+18453.75
+ 31
+0.0
+100
+AcDbText
+ 73
+1
+  0
+TEXT
+  5
+13A
 330
 17
 100
@@ -11391,7 +11423,7 @@ AcDbText
   0
 TEXT
   5
-13A
+13B
 330
 17
 100
@@ -11425,7 +11457,7 @@ AcDbText
   0
 TEXT
   5
-13B
+13C
 330
 17
 100
@@ -11459,7 +11491,7 @@ AcDbText
   0
 TEXT
   5
-13C
+13D
 330
 17
 100
@@ -11493,7 +11525,7 @@ AcDbText
   0
 TEXT
   5
-13D
+13E
 330
 17
 100
@@ -11527,7 +11559,7 @@ AcDbText
   0
 TEXT
   5
-13E
+13F
 330
 17
 100
@@ -11561,7 +11593,7 @@ AcDbText
   0
 TEXT
   5
-13F
+140
 330
 17
 100
@@ -11595,7 +11627,7 @@ AcDbText
   0
 TEXT
   5
-140
+141
 330
 17
 100
@@ -11629,7 +11661,7 @@ AcDbText
   0
 TEXT
   5
-141
+142
 330
 17
 100
@@ -11663,7 +11695,7 @@ AcDbText
   0
 LWPOLYLINE
   5
-142
+143
 330
 17
 100
@@ -11697,7 +11729,7 @@ AcDbPolyline
   0
 LWPOLYLINE
   5
-143
+144
 330
 17
 100
@@ -11731,7 +11763,7 @@ AcDbPolyline
   0
 LWPOLYLINE
   5
-144
+145
 330
 17
 100
@@ -11765,32 +11797,6 @@ AcDbPolyline
   0
 LWPOLYLINE
   5
-145
-330
-17
-100
-AcDbEntity
-  8
-KHUNG
-370
-25
-100
-AcDbPolyline
- 90
-2
- 70
-0
- 10
-18750.0
- 20
-3750.0
- 10
-30750.0
- 20
-3750.0
-  0
-LWPOLYLINE
-  5
 146
 330
 17
@@ -11809,11 +11815,11 @@ AcDbPolyline
  10
 18750.0
  20
-2850.0
+3750.0
  10
 30750.0
  20
-2850.0
+3750.0
   0
 LWPOLYLINE
   5
@@ -11835,6 +11841,32 @@ AcDbPolyline
  10
 18750.0
  20
+2850.0
+ 10
+30750.0
+ 20
+2850.0
+  0
+LWPOLYLINE
+  5
+148
+330
+17
+100
+AcDbEntity
+  8
+KHUNG
+370
+25
+100
+AcDbPolyline
+ 90
+2
+ 70
+0
+ 10
+18750.0
+ 20
 1650.0
  10
 30750.0
@@ -11843,7 +11875,7 @@ AcDbPolyline
   0
 LWPOLYLINE
   5
-148
+149
 330
 17
 100
@@ -11869,7 +11901,7 @@ AcDbPolyline
   0
 LWPOLYLINE
   5
-149
+14A
 330
 17
 100
@@ -11895,7 +11927,7 @@ AcDbPolyline
   0
 LWPOLYLINE
   5
-14A
+14B
 330
 17
 100
@@ -11921,7 +11953,7 @@ AcDbPolyline
   0
 TEXT
   5
-14B
+14C
 330
 17
 100
@@ -11955,7 +11987,7 @@ AcDbText
   0
 TEXT
   5
-14C
+14D
 330
 17
 100
@@ -11987,7 +12019,7 @@ AcDbText
   0
 TEXT
   5
-14D
+14E
 330
 17
 100
@@ -12023,7 +12055,7 @@ AcDbText
   0
 TEXT
   5
-14E
+14F
 330
 17
 100
@@ -12055,7 +12087,7 @@ AcDbText
   0
 TEXT
   5
-14F
+150
 330
 17
 100
@@ -12087,7 +12119,7 @@ AcDbText
   0
 TEXT
   5
-150
+151
 330
 17
 100
@@ -12123,7 +12155,7 @@ AcDbText
   0
 TEXT
   5
-151
+152
 330
 17
 100
@@ -12157,7 +12189,7 @@ AcDbText
   0
 TEXT
   5
-152
+153
 330
 17
 100
@@ -12189,7 +12221,7 @@ AcDbText
   0
 TEXT
   5
-153
+154
 330
 17
 100
@@ -12223,7 +12255,7 @@ AcDbText
   0
 TEXT
   5
-154
+155
 330
 17
 100
@@ -12257,7 +12289,7 @@ AcDbText
   0
 TEXT
   5
-155
+156
 330
 17
 100
@@ -12275,7 +12307,7 @@ AcDbText
  40
 135.0
   1
-Tờ 3/15
+Tờ 3/16
  11
 24900.0
  21
@@ -12289,7 +12321,7 @@ AcDbText
   0
 TEXT
   5
-156
+157
 330
 17
 100
@@ -12323,7 +12355,7 @@ AcDbText
   0
 TEXT
   5
-157
+158
 330
 17
 100
@@ -12355,7 +12387,7 @@ AcDbText
   0
 TEXT
   5
-158
+159
 330
 17
 100
@@ -12389,7 +12421,7 @@ AcDbText
   0
 TEXT
   5
-159
+15A
 330
 17
 100
@@ -12407,7 +12439,7 @@ AcDbText
  40
 165.0
   1
-19/11/2026 · v1.0
+19/11/2026 · v1.1
  11
 21900.0
  21
@@ -12421,7 +12453,7 @@ AcDbText
   0
 TEXT
   5
-15A
+15B
 330
 17
 100
@@ -12455,7 +12487,7 @@ AcDbText
   0
 TEXT
   5
-15B
+15C
 330
 17
 100
@@ -12487,7 +12519,7 @@ AcDbText
   0
 TEXT
   5
-15C
+15D
 330
 17
 100
@@ -12521,7 +12553,7 @@ AcDbText
   0
 TEXT
   5
-15D
+15E
 330
 17
 100
@@ -12555,7 +12587,7 @@ AcDbText
   0
 TEXT
   5
-15E
+15F
 330
 17
 100
@@ -13677,7 +13709,7 @@ CREATED_BY_EZDXF
   3
 WRITTEN_BY_EZDXF
 350
-161
+162
   0
 DICTIONARYVAR
   5
@@ -13689,7 +13721,7 @@ DictionaryVariables
 280
 0
   1
-1.4.5 @ 2026-11-19T07:15:31.701075+00:00
+1.4.5 @ 2026-11-19T07:52:01.899615+00:00
   0
 VISUALSTYLE
   5
@@ -20243,7 +20275,7 @@ strokes_ogs.tif
   0
 DICTIONARYVAR
   5
-161
+162
 330
 2D
 100
@@ -20251,7 +20283,7 @@ DictionaryVariables
 280
 0
   1
-1.4.5 @ 2026-11-19T07:15:31.711003+00:00
+1.4.5 @ 2026-11-19T07:52:01.909320+00:00
   0
 ENDSEC
   0

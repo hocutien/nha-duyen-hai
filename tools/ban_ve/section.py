@@ -70,7 +70,10 @@ class Sec:
         v = s.v; s0, s1, zb, zt, typ, code, ex = o
         L = lambda pts, lw=.2, dash=None: v.line(pts, lw, BLK, dash, 'CUA')
         v.rect(s0, zb, s1, zt, fill=(.96, .97, 1), edge=BLK, lw=.3, layer='CUA')
-        if typ == 'win':
+        if typ == 'win' and ex == 'clear':  # cua so rong kinh tron, khong chia o, khong song
+            v.rect(s0 + .05, zb + .05, s1 - .05, zt - .05, edge=BLK, lw=.15, layer='CUA'); m = (s0 + s1) / 2
+            L([(m, zb + .05), (m, zt - .05)], .12); L([(s0 - .1, zb - .03), (s1 + .1, zb - .03)], .5)
+        elif typ == 'win':
             m = (s0 + s1) / 2
             L([(m, zb), (m, zt)], .2); v.rect(s0 + .05, zb + .05, s1 - .05, zt - .05, edge=BLK, lw=.15, layer='CUA')
             for k in range(1, 6): L([(s0 + .05, zb + k * (zt - zb) / 6), (s1 - .05, zb + k * (zt - zb) / 6)], .1)
@@ -235,7 +238,7 @@ def ground(S, x0, x1, road=True):
         v.line([(x, -0.1), (x + .2, -0.3)], .1, GRY)
     if road and S.plane == 'a':
         lo = min(x0, x1)
-        v.rect(lo, 0.3, -0.25, 0.5, fill=(.35, .35, .35), edge=BLK, lw=.3, layer='NEN')
+        v.rect(lo, ROAD_Z - 0.2, -0.25, ROAD_Z, fill=(.35, .35, .35), edge=BLK, lw=.3, layer='NEN')
 
 
 def levels(S, x, items, side='r'):

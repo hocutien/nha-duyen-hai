@@ -57,6 +57,7 @@
 <div class="tmhead"><b>Thuyết minh kỹ thuật – Nhà Duyên Hải</b><button id="tmx">✕</button></div>
 <div class="tmbody">
 <p class="warn"><b>Lưu ý:</b> đây là mô hình ý tưởng/phương án, không phải hồ sơ thiết kế thi công. Thông số lấy theo giá trị thông dụng; trước khi thi công cần thợ/kỹ sư có chứng chỉ kiểm tra lại.</p>
+<p><b>Cập nhật 19/11/2026 (2):</b> cửa sổ rộng W1 (mặt trước nhà phụ, 2,05×1,35) và W2 (trên mặt bếp, 2,0×1,2) khung gỗ kính trơn không ô chia, không song; cửa D7 sơn xanh cổ vịt nửa trên kính; mái hiên kéo hết mặt trước; bỏ kệ treo bếp; mặt lộ +0,70, sân −0,05 theo số chủ nhà đo, thoát nước mặt tự chảy ra ao (tờ KT-15).</p>
 <p><b>Cập nhật 19/11/2026:</b> mô hình 3D đã vẽ theo 14 điểm tối ưu công năng trong <a href="ban-ve/">bộ bản vẽ thiết kế</a> (bật <b>Hiện chữ</b> để xem nhãn [1]–[14]): chiếu nghỉ WC 1,0m + 2 bậc 170 + tay vịn 2 bên; cửa D8 mở về bếp; tủ kho dọc vách WC; tủ giày + ghế ở cửa nhà phụ; mái hiên 1,2m; lồng gas dời khỏi tuyến ống Ø90; P.ngủ 1 bỏ tủ áo, dàn lạnh lên vách trước, dàn nóng dời theo; cửa chớp lật WC 0,6×0,4; lanh tô cửa nhà phụ +2,65; công tắc 2 chiều hành lang; ụ chắn bánh quanh nắp bể; P.ngủ 2 làm phòng em bé.</p>
 <h3>0. Nguyên tắc đợt 1 (dọn vào ở – vợ đang mang thai)</h3>
 <ol>
@@ -352,7 +353,7 @@
 <li>NKBA Kitchen Planning Guidelines – tam giác bếp, mặt để đồ, lối đi</li></ul>
 <h3>14. Cần đo/xác nhận tại chỗ</h3>
 <ul>
-<li>Đã đo: sân thấp hơn nền 0,10m, mặt đường cao hơn sân 0,50m, triều cao nhất thấp hơn nền 0,30m, ao lúc ròng thấp hơn nền ~2m.</li>
+<li>Đã đo (chủ nhà, 19/11/2026): mặt lộ cao hơn nền nhà 0,70m, sân xi măng thấp hơn nền 0,05m, cửa sắt nhà chính → mép lộ ~5m, triều cao nhất thấp hơn nền 0,30m, ao lúc ròng thấp hơn nền ~2m.</li><li><b>Thoát nước mặt (đợt 1, không cần bơm):</b> gờ chắn BT +0,80 dọc ranh lộ, cổng có gờ lượn; sân láng dốc ra xa nhà; rãnh nông B200 nắp song đáy −0,17 dọc mép hiên + trước nhà phụ → ống Ø114 dốc 0,5–1% ra ao, cửa xả −0,22 (cao hơn triều cao nhất 8cm) + van lật. Nước mưa mái dẫn riêng ra ao. Chi tiết: tờ KT-15.</li>
 <li><b>Hố thử thấm ở dải rào trái</b> (làm đầu tiên ngày thuê máy đào): sâu 0,6m, đổ đầy nước, đo tốc độ rút; ghi mực nước ngầm trong hố, nếu được thì xem lại lúc triều cường. Kết quả quyết định diện tích bãi thấm.</li>
 <li>Cao độ đáy ống thoát bồn cầu WC (thiết kế giả định +0,30 so với nền).</li>
 <li>Dòng định mức công tơ EVN (ghi trên mặt, ví dụ 10(40)A): CB tổng 63A cần công tơ ≥63A (ví dụ 10(80)A); nếu là 10(40)A thì xin Điện lực nâng trước khi đóng điện.</li>
@@ -471,7 +472,7 @@ function polyM(pts,y,m){const s=new THREE.Shape();pts.forEach((p,i)=>i?s.lineTo(
 // dat lien phia nay (tu le duong toi bo song) va phia ben kia duong
 polyM([[-420,0]].concat(BANK).concat([[460,0]]),-0.12,mat(C.dat));
 polyM([[-420,-7],[460,-7],[460,-420],[-420,-420]],-0.12,mat(0x7b9a5c));
-box(-420,-7,-0.2,880,7,0.7,C.lo);
+box(-420,-7,-0.2,880,7,0.9,C.lo);// mat lo +0,70 (chu nha do 19/11/2026)
 // mat nuoc song: mau xanh luc-xam phu sa, gon song chuyen dong
 const wcv=document.createElement('canvas');wcv.width=wcv.height=256;(function(){const x=wcv.getContext('2d');x.fillStyle='#808080';x.fillRect(0,0,256,256);
  for(let i=0;i<900;i++){const px=Math.random()*256,py=Math.random()*256,l=8+Math.random()*26,c=110+Math.random()*120|0;x.strokeStyle='rgb('+c+','+c+','+c+')';x.lineWidth=1+Math.random()*1.5;
@@ -567,7 +568,7 @@ function hedge(p,q,h,w,c){const L=Math.hypot(q[0]-p[0],q[1]-p[1]),ang=Math.atan2
 function gate(a0,a1,b,z,h,c){const Wd=a1-a0;box(a0,b,z,Wd,0.05,0.06,c);box(a0,b,z+h-0.06,Wd,0.05,0.06,c);box(a0,b,z+h*0.45,Wd,0.05,0.05,c);for(let x=a0;x<=a1-0.02;x+=0.13)box(x,b,z,0.025,0.025,h,c);box(a0+Wd/2-0.025,b,z,0.05,0.06,h,c);}
 
 hedge([53.45,0.3],[54.05,68.5],1.8,0.9,0x3d6b34);hedge([17.0,69.5],[0.15,0.4],1.8,0.9,0x3d6b34);
-box(2.9,-0.3,0.4,0.3,0.3,2,C.trang);box(7.7,-0.3,0.4,0.3,0.3,2,C.trang);gate(3.2,7.7,-0.2,0.45,1.8,0x5a3d2b);
+box(2.9,-0.3,0.6,0.3,0.3,2,C.trang);box(7.7,-0.3,0.6,0.3,0.3,2,C.trang);gate(3.2,7.7,-0.2,0.8,1.8,0x5a3d2b);
 
 // ---- nha kien co 4m ----
 box(14,2.5,-0.1,4,16,0.1,C.san);
@@ -598,7 +599,7 @@ box(14,0,-0.1,4,2,0.4,C.xaban);box(14,2.0,-0.1,4,0.3,0.08,C.ranh);
 // ---- nen nha tam 6m (sat hong trai, mep sau bang mep sau nha kien co): bep + kho + giat ----
 box(8,7.8,-0.1,6,10.7,0.1,C.nen);
 box(8.2,0.5,-0.1,5.8,7.3,0.5,C.xaban);
-box(8.3,-0.3,0.4,0.3,0.3,2,C.trang);box(11.9,-0.3,0.4,0.3,0.3,2,C.trang);gate(8.6,11.9,-0.2,0.45,1.8,0x5a3d2b);
+box(8.3,-0.3,0.6,0.3,0.3,2,C.trang);box(11.9,-0.3,0.6,0.3,0.3,2,C.trang);gate(8.6,11.9,-0.2,0.8,1.8,0x5a3d2b);
 [7.85,13.1,18.3].forEach(y=>{box(7.93,y-0.08,0,0.3,0.3,0.4,C.bt);box(8.0,y,0.4,0.15,0.15,2.33,C.gocu);});
 box(7.95,7.7,2.73,0.15,10.9,0.15,C.gocu);
 [7.7,9.8,11.9,14,16.1,18.4].forEach(y=>slopeX(7.9,14.0,y,y+0.06,2.88,3.48,0.12,C.gocu,'roof'));
@@ -609,14 +610,20 @@ box(13.8,7.6,3.63,0.2,11.1,0.07,C.den,'roof');
 // vach nha phu: GACH ONG 100 trat 2 mat tren da kieng (thay ton cu), dai bong gio thao tu nha 914 o tren
 const VT=0xd6d1c4;
 box(7.9,7.7,0.25,6.15,0.2,0.2,C.bt);box(7.9,7.7,0.25,0.2,7.65,0.2,C.bt);box(11.35,18.35,0.25,2.7,0.2,0.2,C.bt);
-wall('x',8.0,7.75,6,0.1,2.4,[[1.5,3.5,0.02,2.4],[4.3,5.5,1.0,2.0]],VT);
+wall('x',8.0,7.75,6,0.1,2.4,[[1.5,3.5,0.02,2.4],[3.8,5.85,0.9,2.25]],VT);
 box(9.45,7.7,2.65,2.1,0.2,0.12,C.bt);box(9.45,7.75,2.77,2.1,0.1,0.13,VT);[9.4,11.5].forEach(a=>box(a,7.75,2.4,0.1,0.1,0.25,VT));// [10] lanh to +2,65
-box(12.25,7.7,2.02,1.3,0.2,0.1,C.bt);
-wall('y',7.95,7.85,7.45,0.1,2.4,[[2.6,3.6,1.05,2.0]],VT);
+box(11.6,7.75,2.25,2.45,0.1,0.15,VT);// lanh to cua so rong W1
+wall('y',7.95,7.85,7.45,0.1,2.4,[[2.6,4.6,1.05,2.25]],VT);box(7.95,10.35,2.25,0.1,2.2,0.15,VT);
 wall('x',11.35,18.4,2.65,0.1,2.4,[[1.75,2.55,0.02,2.4]],VT);box(13.1,18.5,0.02,0.8,0.04,2.06,C.den);box(13.1,18.47,2.1,0.8,0.02,0.55,0x9aa3a8,null,0.45);box(13.05,18.4,2.65,0.9,0.1,0.1,C.bt);
 
-box(9.5,7.72,0.02,1.0,0.04,2.18,C.den);box(9.5,7.77,2.2,2.0,0.02,0.45,0x9aa3a8,null,0.45);// o luoi tren canh cua D7 toi lanh to
-slopeY(7.9,12.0,6.55,7.75,2.6,2.8,0.03,C.toncu,'roof');[7.95,11.9].forEach(a=>box(a,6.58,0,0.06,0.06,2.6,0x455a64));label('Mái hiên tôn 1,2m: đi từ nhà xe vào không ướt [5]',10.0,7.0,3.1);box(11.5,7.0,0.02,0.04,0.8,2.18,C.den);
+// cua so rong W1, W2 (theo anh mau chu nha 19/11): hop go op vien, kinh tron khong o chia, khong song
+const WOOD=0x8b5a2b,TEAL=0x1f5f73;
+function winX(a0,a1,b,z0,z1,dep){box(a0-0.08,b-dep,z0-0.08,a1-a0+0.16,dep+0.1,0.08,WOOD);box(a0-0.08,b-dep,z1,a1-a0+0.16,dep+0.1,0.08,WOOD);box(a0-0.08,b-dep,z0,0.08,dep+0.1,z1-z0,WOOD);box(a1,b-dep,z0,0.08,dep+0.1,z1-z0,WOOD);box(a0,b+0.04,z0,a1-a0,0.02,z1-z0,0xcfe3ea,null,0.3);box((a0+a1)/2-0.015,b+0.03,z0,0.03,0.04,z1-z0,WOOD);}
+function winY(b0,b1,a,z0,z1,dep){box(a-dep,b0-0.08,z0-0.08,dep+0.1,b1-b0+0.16,0.08,WOOD);box(a-dep,b0-0.08,z1,dep+0.1,b1-b0+0.16,0.08,WOOD);box(a-dep,b0-0.08,z0,dep+0.1,0.08,z1-z0,WOOD);box(a-dep,b1,z0,dep+0.1,0.08,z1-z0,WOOD);box(a+0.04,b0,z0,0.02,b1-b0,z1-z0,0xcfe3ea,null,0.3);box(a+0.03,(b0+b1)/2-0.015,z0,0.04,0.03,z1-z0,WOOD);}
+winX(11.8,13.85,7.75,0.9,2.25,0.3);winY(10.45,12.45,7.95,1.05,2.25,0.3);
+label('Cửa sổ rộng W1 2,05×1,35 kính trơn, khung gỗ',12.8,7.3,2.5);label('Cửa sổ rộng W2 2,0×1,2 trên mặt bếp',7.6,11.4,2.5);
+box(9.5,7.72,0.02,1.0,0.04,2.18,TEAL);box(9.6,7.7,1.15,0.8,0.02,0.9,0xcfe3ea,null,0.5);box(9.5,7.77,2.2,2.0,0.02,0.45,0x9aa3a8,null,0.45);// o luoi tren canh cua D7 toi lanh to
+slopeY(7.9,14.05,6.55,7.75,2.6,2.8,0.03,C.toncu,'roof');[7.95,11.9,13.95].forEach(a=>box(a,6.58,0,0.06,0.06,2.6,0x455a64));label('Mái hiên tôn 1,2m: đi từ nhà xe vào không ướt [5]',10.0,7.0,3.1);box(11.5,7.0,0.02,0.04,0.8,2.18,TEAL);box(11.48,7.1,1.15,0.02,0.6,0.9,0xcfe3ea,null,0.5);
 // vach ngan trong
 wall('x',11.45,15.3,2.55,0.05,2.3,[[1.0,1.8,0.02,2.1]],C.toncu);box(13.21,14.5,0.02,0.04,0.8,2.06,C.go);// [2] D8 mo ve phia bep, khong va bac WC
 // WC xay gach tai vi tri WC cu, be nen +0,5m, sat ham
@@ -641,7 +648,7 @@ box(8.15,12.55,0.85,0.45,0.73,0.02,0x111111);cyl(8.37,12.73,0.87,0.09,0.004,0x66
 box(8.2,13.38,0.85,0.36,0.36,0.08,0x3a3a3a);cyl(8.38,13.56,0.93,0.07,0.02,0x777777);
 box(8.06,12.45,0.86,0.03,1.35,0.6,0xc0c4c8);
 box(8.1,12.55,1.55,0.5,0.75,0.3,C.den);box(8.0,12.82,1.75,0.12,0.2,0.2,0x9aa3a8);
-box(8.1,10.4,1.55,0.3,2.0,0.03,C.gocu);box(8.1,10.4,1.95,0.3,2.0,0.03,C.gocu);
+
 box(10.9,10.6,0.72,0.8,1.2,0.03,C.go);[[10.95,10.65],[11.62,10.65],[10.95,11.72],[11.62,11.72]].forEach(p=>box(p[0],p[1],0,0.05,0.05,0.72,C.go));
 [[10.42,10.75],[10.42,11.25],[11.78,10.75],[11.78,11.25]].forEach((p,i)=>{box(p[0],p[1],0.42,0.4,0.4,0.03,C.go);box(i<2?p[0]:p[0]+0.37,p[1],0.45,0.03,0.4,0.45,C.go);[[0,0],[0.36,0],[0,0.36],[0.36,0.36]].forEach(q=>box(p[0]+q[0],p[1]+q[1],0,0.04,0.04,0.42,C.go));});
 // binh gas 12kg: ngoai vach trai, long sat thoang, day dan <=1,5m; [6] doi ra a6,75-7,25 khoi tuyen ong thoat O90 (a7,3)
@@ -976,9 +983,9 @@ const cpObjs=site.children.slice(cp0);
 const fut=new THREE.Group();site.add(fut);fut.visible=false;cpObjs.forEach(o=>{site.remove(o);fut.add(o);});label('Nhà xe gỗ 5,7×7,1m – đợt 2',5.1,4.0,3.5,fut);
 (function(){function pl(pts,y,c,op){const s=new THREE.Shape();pts.forEach((p,i)=>i?s.lineTo(p[0],p[1]):s.moveTo(p[0],p[1]));
  const g=new THREE.ShapeGeometry(s);g.rotateX(-Math.PI/2);const m=new THREE.Mesh(g,mat(c,op));m.position.y=y;fut.add(m);}
- pl([[0.4,0.4],[41,0.4],[41.3,26],[5.6,26],[4.2,20.5]],0.5,0x2f80ed,0.35);
+ pl([[0.4,0.4],[41,0.4],[41.3,26],[5.6,26],[4.2,20.5]],0.4,0x2f80ed,0.35);
  pl([[8.05,7.85],[17.8,5.75],[17.8,18.3],[8.05,18.45]],0.45,0xf2994a,0.55);})();
-label('Sân tương lai = mặt lộ +0,5m',28,8,1.3,fut);label('Nền nhà nâng +0,45m',12,12,1.0,fut);
+label('Sân tương lai +0,40 (thấp hơn nền 5cm, rãnh tự chảy ra ao) · mặt lộ +0,70',28,8,1.3,fut);label('Nền nhà nâng +0,45m',12,12,1.0,fut);
 // ---- MAT TIEN KIN DAO (theo chu nha): nen nang mi lo + rao kem gai tam; tuong kin 2,6m + vai o bong gio o lop "tuong lai" ----
 function wireFence(p,q){const L=Math.hypot(q[0]-p[0],q[1]-p[1]),ang=Math.atan2(q[1]-p[1],q[0]-p[0]),k=Math.max(1,Math.floor(L/3));
  for(let i=0;i<=k;i++){const t=i/k;box(p[0]+(q[0]-p[0])*t-0.05,p[1]+(q[1]-p[1])*t-0.05,0.4,0.1,0.1,1.7,C.bt);}
@@ -990,11 +997,11 @@ function bong(a0,b0,a1,b1,z0,z1,par,step,col){step=step||0.2;const C2=col||0xc06
 function fbox(a,b,z,w,d,h,c){const m=box(a,b,z,w,d,h,c);site.remove(m);fut.add(m);return m;}
 // dot 1: nang nen dai mi lo doan truoc nha (con lai lam cung san lap ao) + rao kem gai tam
 const mf0=site.children.length;
-box(12.0,0.2,-0.1,11.0,2.8,0.6,0xb9b2a3);
+box(12.0,0.2,-0.1,11.0,2.8,0.8,0xb9b2a3);
 wireFence([0.3,0.3],[2.9,0.3]);wireFence([12.3,0.3],[53.2,0.3]);
 site.children.slice(mf0).forEach(o=>{site.remove(o);fut.add(o);});label('Đợt 2: nâng dải mí lộ + rào kẽm gai tạm',18,1.5,1.6,fut);
 // tuong lai: mong + da kieng + tuong kin cao 2,6m tren mat lo, diem 5 o bong gio, cong kin bang go
-(function(){const Z0=0.5,H=2.6,T=0.2,P=[[12.6,13.8],[15.4,16.6],[25,26.2],[37,38.2],[49,50.2]];
+(function(){const Z0=0.7,H=2.6,T=0.2,P=[[12.6,13.8],[15.4,16.6],[25,26.2],[37,38.2],[49,50.2]];
  const seg=(a0,a1)=>{fbox(a0,-0.05,-0.3,a1-a0,0.45,0.8,C.bt);let cur=a0;P.filter(p=>p[0]>=a0&&p[1]<=a1).forEach(p=>{if(p[0]>cur)fbox(cur,0.05,Z0,p[0]-cur,T,H,C.trang);
    fbox(p[0],0.05,Z0,p[1]-p[0],T,0.8,C.trang);fbox(p[0],0.05,Z0+2.0,p[1]-p[0],T,H-2.0,C.trang);bong(p[0],0.15,p[1],0.15,Z0+0.8,Z0+2.0,fut);cur=p[1];});
   if(a1>cur)fbox(cur,0.05,Z0,a1-cur,T,H,C.trang);};

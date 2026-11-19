@@ -34,7 +34,7 @@ def sec_long(sh, name, c, oy, title, calls):
     S = Sec(sh, 'a', c, -1, True, 40, oy, 75, -3.0)
     building(S); septic(S); S.draw(); ground(S, -3.0, 21.0)
     v = S.v
-    levels(S, -2.9, [(0, '±0.000 nền nhà'), (0.5, '+0.500 sàn WC / mặt lộ'), (3.3, '+3.300 trần'), (4.5, '+4.500')], 'r')
+    levels(S, -2.9, [(0, '±0.000 nền nhà'), (0.5, '+0.500 sàn WC'), (ROAD_Z, '+0.700 mặt lộ'), (3.3, '+3.300 trần'), (4.5, '+4.500')], 'r')
     v.dim_chain([0, 2.2, 3.3, 4.5], 20.6, False, -1)
     for args in calls: callout(v, *args)
     view_title(sh, 40, oy + 5.9 * 13.33, title, '1:75')
@@ -71,8 +71,8 @@ def sec_cross(sh, c, title, calls, extra=None):
 
 def sheet_sec_C(sh):
     sec_cross(sh, 11.2, 'MẶT CẮT C-C (ngang qua bếp – bàn ăn – hành lang – phòng ngủ 1)', [
-        (8.4, 0.85, ['Mặt bếp đá/gạch cao 850, sâu 600', 'chậu đôi dưới cửa sổ S3'], 9.3, 1.9),
-        (8.0, 1.5, ['Cửa sổ S3', '1.000×950, đáy +1.050'], 7.4, 2.1),
+        (8.4, 0.85, ['Mặt bếp đá/gạch cao 850, sâu 600', 'chậu đôi dưới cửa sổ W2'], 9.3, 1.9),
+        (8.0, 1.5, ['Cửa sổ W2 kính trơn', '2.000×1.200, đáy +1.050'], 7.4, 2.1),
         (8.0, 2.65, ['Dải bông gió xi măng tận dụng +2.400→+2.950,', 'mặt trong căng lưới inox chống muỗi'], 9.0, 4.4),
         (11.0, zroof_annex(11.0) + .02, ['Mái tôn cũ dốc ~10%, xà gồ gỗ cũ,', 'cách nhiệt túi khí dưới tôn'], 10.0, 5.0),
         (17.9, 1.7, ['Cửa sổ S1 hiện trạng 1.200×1.400', 'thêm lưới chống muỗi; 1 ô mở khoá thoát hiểm'], 18.3, 4.25),

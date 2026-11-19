@@ -1,5 +1,6 @@
 import os, sys
 from sheets_rest import *
+from sheets_level import sheet_level
 OUT = sys.argv[1]
 os.makedirs(OUT + '/DXF', exist_ok=True)
 SPEC = [
@@ -18,6 +19,7 @@ SPEC = [
     ('KT-12', 'Chi tiết bếp – mặt đứng triển khai', '1:40 · 1:50', 40, sheet_kitchen),
     ('KT-13', 'Thống kê cửa – vật liệu hoàn thiện', '–', 100, sheet_schedule),
     ('KT-14', 'Rà soát phương án & tối ưu công năng', '–', 100, sheet_review),
+    ('KT-15', 'Cao độ lộ – sân – nền, thoát nước mặt', '1:50', 50, sheet_level),
 ]
 S = []
 for i, (no, title, sc, D, fn) in enumerate(SPEC):

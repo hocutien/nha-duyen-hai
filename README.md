@@ -6,14 +6,14 @@ Google Earth 3D: trong bản đồ thực địa bấm **🌍 Google Earth 3D** 
 
 Bản đồ thực địa (chồng lên ảnh vệ tinh, GPS, tải KML cho Google Earth): https://hocutien.github.io/nha-duyen-hai/map.html
 
-Bộ bản vẽ thiết kế cải tạo (15 tờ A3 PDF + DXF, mặt cắt toàn phần, chi tiết WC – bếp, 14 điểm tối ưu công năng, lập 19/11/2026): https://hocutien.github.io/nha-duyen-hai/ban-ve/ · mã nguồn ở `tools/ban_ve/`.
+Bộ bản vẽ thiết kế cải tạo (16 tờ A3 PDF + DXF, cửa sổ rộng kính trơn, cao độ + thoát nước mặt, mặt cắt toàn phần, chi tiết WC – bếp, 14 điểm tối ưu công năng, lập 19/11/2026): https://hocutien.github.io/nha-duyen-hai/ban-ve/ · mã nguồn ở `tools/ban_ve/`.
 
 Mở bằng trình duyệt điện thoại hoặc máy tính, không cần cài app.
 - Kéo 1 ngón: xoay · 2 ngón: phóng to / di chuyển
 - Nút **Bên trong**: cắt ngang 2m để xem nội thất
 - Nút **Điện nước**, **Ẩn cây**, **📋 Thuyết minh** (phụ tải điện, mạch, cấp thoát nước, máy lạnh, tiêu chuẩn tham khảo)
 - Nút **Phối cảnh sông**: sông lớn phía sau (rộng ước ~480m, màu nước theo ảnh vệ tinh), rừng ngập mặn bờ đối diện, ao tôm và nhà lân cận
-- Nút **Cao độ tương lai**: xem sân bằng mặt lộ (+0,5m) và nền nhà nâng +0,45m
+- Nút **Cao độ tương lai**: xem sân +0,40 (thấp hơn nền 5cm) và nền nhà nâng +0,45m; mặt lộ +0,70 (chủ nhà đo 19/11/2026)
 
 ## Hiện trạng
 - Đất sử dụng thực tế ~2.428m² (vẽ theo vệ tinh), trong đó phần đã cấp GCN: thửa 320 tờ 51 (595 cũ), 2.064,2m²; phần còn lại sát sông sử dụng ổn định, chưa cấp.

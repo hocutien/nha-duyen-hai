@@ -4,7 +4,7 @@ PROPOSALS = [
     ('1', 12.25, 17.05, 'Bậc lên WC: chiếu nghỉ 1,0×0,9m (thay 0,5m) + 2 bậc cao 170, rộng 300 + tay vịn inox 2 bên. Thai phụ đứng mở cửa lùa an toàn.'),
     ('2', 12.85, 14.55, 'Cửa D8 (bếp → khu giặt) đổi chiều mở về phía bếp, bản lề phía phải: không quét vào chiếu nghỉ/bậc.'),
     ('3', 9.7, 14.25, 'Tủ kho cao 2,2m dọc vách WC phía bếp (3,2m × sâu 0,6m): gạo, đồ khô, đồ gia dụng; thay kệ sắt V ở P.ngủ 2.'),
-    ('4', 12.6, 8.55, 'Cửa nhà phụ là lối vào hằng ngày (sân xe): tủ giày thấp + ghế ngồi + móc chìa khoá/áo mưa, dưới cửa sổ S2.'),
+    ('4', 12.6, 8.55, 'Cửa nhà phụ là lối vào hằng ngày (sân xe): tủ giày thấp + ghế ngồi + móc chìa khoá/áo mưa, dưới cửa sổ rộng W1.'),
     ('5', 8.75, 7.15, 'Mái hiên tôn 1,2m trước cửa nhà phụ (dài 4,1m, cao +2,8 sát tường, trên lanh tô +2,65 → +2,6 mép ngoài): đi từ nhà xe vào không ướt, che bệ rửa chân.'),
     ('6', 6.45, 12.75, 'Lồng bình gas dời ra 0,55m (bệ riêng a 6,75–7,25): bản cũ đè lên ống thoát Ø90 đi nổi chân tường.'),
     ('7', 16.25, 11.45, 'P.ngủ 1: bỏ tủ áo (dời sang P.ngủ 2), giường đầu quay vách phải, 2 bên đều lên xuống được; dàn lạnh lên vách trước, không thổi thẳng đầu giường.'),
@@ -19,7 +19,7 @@ PROPOSALS = [
 def plan_base(sh, v, tags=True):
     plan_walls(v, tags=tags)
     # mai hien de xuat (net dut, tren cao)
-    for (a0, b0, a1, b1, lab) in [(7.9, 6.55, 12.0, 7.75, 'Mái hiên tôn 1,2m (đề xuất)'), (14.0, 18.5, 18.0, 19.7, 'Mái hắt 1,2m'), (7.75, 18.7, 14.0, 19.9, 'Mái hắt 1,2m')]:
+    for (a0, b0, a1, b1, lab) in [(7.9, 6.55, 14.05, 7.75, 'Mái hiên tôn 1,2m (đề xuất)'), (14.0, 18.5, 18.0, 19.7, 'Mái hắt 1,2m'), (7.75, 18.7, 14.0, 19.9, 'Mái hắt 1,2m')]:
         v.rect(a0, b0, a1, b1, edge=BLU if 'đề xuất' in lab else GRY, lw=.2, dash=[2, 1], layer='MAI')
         v.text((a0 + a1) / 2, b0 + .15, lab, 1.5, anc='c', col=BLU if 'đề xuất' in lab else GRY)
     # hien, bac tam cap
@@ -67,7 +67,7 @@ def sheet_dim_plan(sh):
         '6. Sàn WC +0.500 (cát đầm + BT lót + chống thấm 2 lớp, lật chân tường 300; khu tắm lật 1.800).',
         '7. Ký hiệu cửa: xem bảng thống kê cửa (tờ KT-13).',
         '8. Số trong ô lục giác xanh: điểm điều chỉnh sau rà soát – xem tờ KT-04 và KT-14.',
-        '9. GIẢ ĐỊNH CẦN ĐO LẠI: chiều dày tường, cao độ nền so với mặt lộ (~0,5m), vị trí giếng, hầm cũ, cột điện; cao trần thả 3,3m.',
+        '9. GIẢ ĐỊNH CẦN ĐO LẠI: chiều dày tường, cao độ nền so với mặt lộ (chủ nhà đo 0,70m), vị trí giếng, hầm cũ, cột điện; cao trần thả 3,3m.',
     ], 58, 1.9)
     legend_walls(sh, 255, y - 4)
 
@@ -140,7 +140,7 @@ def sheet_existing(sh):
         'Nhà kiên cố 4,0 × 16,0m (cả hiên 3,0m): tường gạch 200 sơn, nền gạch men, trần thả nhựa ~3,3m, chân tường ẩm, bong sơn (ảnh 52–56).',
         'Phòng khách 3,6×4,3m, vòm ra hành lang 1,2m bên trái, 2 phòng 2,3×4,0 và 2,3×4,1 bên phải; cửa đi gỗ đỏ có ô kính mờ.',
         'Nền nhà tạm 6,0×10,7m sát hông trái: cột gỗ, mái + vách tôn cũ. WC cũ phía sau, hầm cầu cũ sau WC.',
-        'Nền nhà thấp hơn mặt lộ ~0,5m (ngập khi mưa lớn/triều cường) – đợt sau nâng nền +0,45 và sân +0,5.',
+        'Nền nhà thấp hơn mặt lộ 0,70m, cao hơn sân 5cm – đợt 1 gờ chắn + rãnh tự chảy ra ao (KT-15); đợt 2 nâng nền +0,45, sân +0,40.',
     ], 60, 1.9)
     notes(sh, 255, 200, 'PHÁ DỠ / THÁO (đợt 1)', [
         'Tháo vách tôn cũ nhà tạm (giữ mái, cột gỗ, thay vít có long đền cao su).',
