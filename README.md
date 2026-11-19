@@ -6,6 +6,8 @@ Google Earth 3D: trong bản đồ thực địa bấm **🌍 Google Earth 3D** 
 
 Bản đồ thực địa (chồng lên ảnh vệ tinh, GPS, tải KML cho Google Earth): https://hocutien.github.io/nha-duyen-hai/map.html
 
+Bộ bản vẽ thiết kế cải tạo (15 tờ A3 PDF + DXF, mặt cắt toàn phần, chi tiết WC – bếp, 14 điểm tối ưu công năng, lập 19/11/2026): https://hocutien.github.io/nha-duyen-hai/ban-ve/ · mã nguồn ở `tools/ban_ve/`.
+
 Mở bằng trình duyệt điện thoại hoặc máy tính, không cần cài app.
 - Kéo 1 ngón: xoay · 2 ngón: phóng to / di chuyển
 - Nút **Bên trong**: cắt ngang 2m để xem nội thất
