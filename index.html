@@ -651,8 +651,8 @@ box(8.2,13.38,0.85,0.36,0.36,0.08,0x3a3a3a);cyl(8.38,13.56,0.93,0.07,0.02,0x7777
 box(8.06,12.45,0.86,0.03,1.35,0.6,0xc0c4c8);
 box(8.1,12.55,1.55,0.5,0.75,0.3,C.den);box(8.0,12.82,1.75,0.12,0.2,0.2,0x9aa3a8);
 
-// ban an tron co san cua chu nha (mat ~1,2m, con chan) + 4 ghe
-cyl(11.3,11.2,0.72,0.6,0.03,C.go);cyl(11.3,11.2,0,0.06,0.72,C.go);cyl(11.3,11.2,0,0.3,0.04,C.go);label('Bàn ăn tròn có sẵn (mặt ~1,2m)',11.3,11.2,1.15);
+// ban an tron INOX co san cua chu nha (mat ~1,2m uoc tinh, con chan) + 4 ghe
+cyl(11.3,11.2,0.72,0.6,0.03,0xc3c9ce);cyl(11.3,11.2,0,0.04,0.72,0xa7aeb4);cyl(11.3,11.2,0,0.3,0.03,0xa7aeb4);label('Bàn ăn tròn inox có sẵn (mặt ~Ø1,2m, cần đo lại)',11.3,11.2,1.15);
 [[10.3,11.0,'w'],[11.9,11.0,'e'],[11.1,10.0,'n'],[11.1,12.0,'s']].forEach(([a,b,s])=>{box(a,b,0.42,0.4,0.4,0.03,C.go);if(s==='w')box(a,b,0.45,0.03,0.4,0.45,C.go);if(s==='e')box(a+0.37,b,0.45,0.03,0.4,0.45,C.go);if(s==='n')box(a,b,0.45,0.4,0.03,0.45,C.go);if(s==='s')box(a,b+0.37,0.45,0.4,0.03,0.45,C.go);[[0,0],[0.36,0],[0,0.36],[0.36,0.36]].forEach(q=>box(a+q[0],b+q[1],0,0.04,0.04,0.42,C.go));});
 // binh gas 12kg: ngoai vach trai, long sat thoang, day dan <=1,5m; [6] doi ra a6,75-7,25 khoi tuyen ong thoat O90 (a7,3)
 box(6.75,13.25,0,0.5,0.5,0.03,C.bt);cyl(7.0,13.5,0.03,0.17,0.6,0x1565c0);[[6.75,13.25],[7.2,13.25],[6.75,13.7],[7.2,13.7]].forEach(p=>box(p[0],p[1],0,0.03,0.03,0.85,0x555555));box(6.75,13.25,0.85,0.48,0.48,0.02,0x555555);
@@ -674,7 +674,7 @@ box(8.25,2.05,-0.1,1.5,2.8,0.4,0x8d7b5f);[[8.0,1.8,2.0,0.2],[8.0,4.9,2.0,0.2],[8
 
 // ---- MAY LANH (hien thuong truc) + TU MANG ----
 box(16.6,10.1,2.4,0.8,0.25,0.3,0xf5f5f5);box(18.05,9.6,0.4,0.3,0.8,0.55,0xb0bec5);box(18.0,9.55,0,0.4,0.9,0.4,C.bt);box(18.0,9.5,1.05,0.5,0.95,0.04,C.toncu);
-box(15.42,9.51,0.9,0.486,0.49,0.66,0x8d6e63);box(15.44,9.49,0.93,0.446,0.02,0.6,0x5d4037);box(15.48,9.55,0,0.3,0.4,0.25,0x263238);label('Tủ mạng gỗ 12U tự đóng (đợt 2) cạnh bàn làm việc + UPS dưới sàn',15.65,9.7,1.9);
+box(15.32,9.51,0.9,0.486,0.49,0.66,0x8d6e63);box(15.34,9.49,0.93,0.446,0.02,0.6,0x5d4037);box(15.38,9.55,0,0.3,0.4,0.25,0x263238);label('Tủ mạng gỗ 12U tự đóng (đợt 2) cạnh bàn làm việc + UPS dưới sàn',15.65,9.7,1.9);
 label('Máy lạnh 1,5HP có sẵn: dàn lạnh trên vách trước, gió thổi dọc giường, không thổi thẳng vào người [7]',17.0,10.4,3.1);label('Dàn nóng dời theo: chân đế 40cm + mái che [8]',18.6,9.4,1.6);
 
 // ---- DIEN NUOC (an/hien bang nut) ----
@@ -1054,7 +1054,8 @@ label('Bàn bếp 3,4m × sâu 60 × cao 85cm',8.6,12.1,2.9);label('Chậu đôi
 label('WC + tắm – cửa mở vào khu giặt, không nhìn ra bàn ăn',9.7,16.8,3.5);label('Hầm cũ – lấp bỏ',9.8,19.4,1.0);label('Nắp bể tự hoại (không cho ô tô chạy lên)',15.95,1.15,0.9);
 label('Nhà kiên cố 4 × 16m (cả hiên)',16,10,6.2);
 label('Phòng khách',16,7.8,5.4);
-box(15.95,9.25,0,1.75,0.7,0.76,0x7b3f1f);box(15.95,9.25,0,0.45,0.66,0.72,0x6a3519);box(17.3,9.25,0,0.4,0.66,0.72,0x6a3519);box(16.5,9.62,0.76,0.5,0.06,0.38,0x222222);label('Bàn làm việc gỗ mang theo (sát vách phòng ngủ)',16.7,9.6,1.4);
+// ban lam viec cua chu nha: that 2,0m x 1,2m (chu nha do 21/11), sat vach phong ngu, cham vach phai
+box(15.8,8.75,0.72,2.0,1.2,0.04,0x7b3f1f);[[15.83,8.78],[17.71,8.78],[15.83,9.86],[17.71,9.86]].forEach(q=>box(q[0],q[1],0,0.06,0.06,0.72,0x6a3519));box(16.55,9.7,0.76,0.6,0.06,0.38,0x222222);label('Bàn làm việc gỗ 2,0×1,2m (kích thước thật) sát vách phòng ngủ',16.8,9.35,1.4);
 label('P.ngủ 2 → phòng em bé: nôi + giường phụ, rèm cản sáng; kệ sắt dời ra tủ kho bếp [13]',16.6,17.9,2.8);label('Giường 1,2×2m, đầu giường sát tường phải',16.8,16.8,0.9);
 label('Phòng ngủ 1 (máy lạnh)',16.7,12,4.2);label('Hành lang',14.8,13,3.6);label('Trần thả ~3,3m',16,8.5,3.9);
 label('Phòng ngủ 2 (em bé / người thân)',16.7,16.2,4.2);label('Chân tường ẩm: trát chống thấm 1,2m',15.8,15,1.6);
