@@ -25,13 +25,18 @@ for pts,pt,k in [([[15.25,7.35],[17.76,7.35]],(17.76,7.35),'rj'),([[15.25,11.0],
     P.line(pts,NET,2)
     if k=='ap': P.circle(pt[0],pt[1],8,'#fafafa',NET)
     else: P.rect(pt[0]-0.07,pt[1]-0.07,0.14,0.14,'#e8eaf6',NET)
-P.text('03–04 TV + BE6500 #1 (wifi nhà chính)',17.6,7.35,'end',NET,-6)
-P.text('09–10 BE6500 #2 + dự phòng',13.8,11.0,'end',NET,4)
+P.text('03–04 TV cắm LAN + dự phòng',17.6,7.35,'end',NET,-6)
+P.text('09–10 BE6500 #2 (nút Mesh, dây về router) + dự phòng',13.8,11.0,'end',NET,4)
+MESH='#7e57c2'
+P.text('BE6500 #1 – router chính, trên nóc tủ mạng',15.3,10.55,'end',MESH,4,0,10,True)
+P.text('+ CR8808 dự phòng (bắt wifi hàng xóm khi mất cáp quang)',15.3,10.55,'end','#78909c',18)
+P.line([[15.66,9.95],[15.66,17.8]],MESH,1.5,True);P.text('sóng #1 nhìn thẳng dọc hành lang tới P.ngủ 2, WC',15.75,15.2,'start',MESH,4)
 P.line([[15.25,5.85],[14.25,5.85],[13.85,5.85],[11.8,-0.2]],UG,2.5,True);P.rect(11.72,-0.28,0.16,0.16,'#424242')
 P.text('11–12 ống HDPE Ø32 ngầm ra cổng (chung rãnh cáp nguồn, bịt nắp)',12.2,2.4,'start',UG,4)
 P.rect(15.42,9.51,0.486,0.49,'#8d6e63','#4e342e');P.text('TỦ MẠNG',15.66,9.4,'middle','#4e342e',12,0,10,True)
 P.text('cạnh bàn làm việc · UPS dưới sàn',15.66,9.4,'middle','#4e342e',25,0)
 P.rect(15.95,9.25,1.75,0.7,'none','#8d6e63');P.text('Bàn LV: cắm thẳng switch',16.8,9.6,'middle','#5d4037',4)
+P.circle(15.66,9.75,6,'#ede7f6',MESH)
 plan=P.svg()
 # --- so do logic
 def bx(x,y,w,t1,t2='',fill='#e8eaf6',stroke='#3949ab',dash=False,h=38):
@@ -43,13 +48,13 @@ def ln(x1,y1,x2,y2,c='#3949ab',dash=False,lab=''):
     return t
 g=['<svg viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11"><rect width="900" height="430" fill="#fff"/>']
 g+= [bx(20,20,130,'Cáp quang nhà mạng','kéo treo, miễn phí','#fbe9e7','#ff7043'),ln(150,39,190,39,'#ff7043'),bx(190,20,110,'ONT','đặt trong tủ mạng'),
-     ln(300,39,350,39,lab='ether1 WAN'),bx(350,20,150,'MikroTik hEX (RB750)','router · DHCP · AdGuard DNS'),
-     bx(560,20,140,'4G dự phòng','ether4 · khi cần','#eceff1','#90a4ae',True),ln(500,39,560,39,'#90a4ae',True),
-     ln(380,58,180,120,'#90a4ae',True,'ether2'),ln(425,58,425,120,lab='ether3'),ln(470,58,690,120,lab='ether5'),
-     bx(100,120,170,'ether2 trống','dự phòng / đợt 2','#eceff1','#90a4ae',True),
-     bx(340,120,170,'Switch thường có sẵn','≥8 cổng · VLAN 20'),bx(610,120,170,'09 BE6500 #2 (AP)','nhà phụ, dây về tủ'),ln(690,158,690,190),bx(620,190,150,'10 dự phòng','cáp chờ ở bếp','#eceff1','#90a4ae',True)]
+     ln(300,39,350,39,lab='WAN'),bx(350,20,170,'BE6500 #1 – router chính','Router + Mesh chính · trên nóc tủ','#ede7f6','#7e57c2'),
+     bx(580,20,140,'MikroTik hEX','cất dự phòng (đợt 2 nếu cần VLAN)','#eceff1','#90a4ae',True),
+     ln(435,58,425,120,lab='LAN'),ln(480,58,690,120,lab='LAN · cáp 09'),ln(245,58,245,120,'#90a4ae',True,'thay ONT khi mất mạng'),
+     bx(40,120,250,'Xiaomi CR8808 – dự phòng','bắt wifi hàng xóm → cổng WAN BE6500 #1','#eceff1','#90a4ae',True),
+     bx(340,120,170,'Switch thường có sẵn','cắm bao nhiêu dùng bấy nhiêu'),bx(610,120,170,'BE6500 #2 – nút Mesh','bếp nhà phụ, backhaul bằng dây','#ede7f6','#7e57c2'),ln(690,158,690,190),bx(620,190,150,'10 dự phòng','cáp chờ ở bếp','#eceff1','#90a4ae',True)]
 x=20
-for t1,t2 in [('DS220j + WD','trong tủ'),('PC i7-6700','bàn làm việc, cắm thẳng'),('03 BE6500 #1 (AP)','wifi nhà chính · TV cắm LAN'),('04 dự phòng','cáp chờ ở TV'),('Switch thường thêm','có sẵn, cắm khi cần')]:
+for t1,t2 in [('DS220j + WD','trong tủ'),('PC i7-6700','bàn làm việc, cắm thẳng'),('03 TV','cáp về phòng khách'),('04 dự phòng','cáp chờ ở TV'),('Switch thường thêm','có sẵn, cắm khi cần')]:
     g.append(ln(425,158,x+75,260)); g.append(bx(x,260,150,t1,t2)); x+=170
 g+= [bx(20,330,260,'Đợt 2: camera PoE','nguồn PoE rời + switch thường có sẵn','#eceff1','#90a4ae',True),
      bx(300,330,260,'Đợt 2: tủ gỗ 12U + patch panel 24 cổng','đợt 1 cáp cuộn chờ, đánh số 2 đầu','#eceff1','#90a4ae',True),
@@ -58,9 +63,9 @@ g.append('</svg>')
 topo='\n'.join(g)
 pt=['<table><tr><th>Số</th><th>Đầu kia</th><th>Cắm vào (đợt 1)</th><th>Ghi chú</th></tr>']
 for r in [('02','Trần hành lang – Zigbee PoE','–','Đợt 2; đợt 1 dùng USB Zigbee cắm PC i7-6700'),
-          ('03','Phòng khách – BE6500 #1','Switch thường','TV cắm cổng LAN của BE6500'),('04','Phòng khách – dự phòng','–','Cáp có sẵn, chờ'),
+          ('03','Phòng khách – TV','Switch thường','BE6500 #1 giờ đặt trên nóc tủ mạng'),('04','Phòng khách – dự phòng','–','Cáp có sẵn, chờ'),
           ('–','Bàn làm việc','Switch thường (dây nhảy trực tiếp)','Tủ ngay cạnh bàn, không cần ổ tường'),
-          ('09','Bếp – BE6500 #2','hEX ether5','Nguồn từ ổ R2 cạnh kệ'),('10','Bếp – dự phòng','–',''),('11–12','Ống ngầm ra cổng','–','Chỉ ống + dây mồi, bịt nắp; camera đợt 2'),
+          ('09','Bếp – BE6500 #2 (nút Mesh)','Cổng LAN BE6500 #1','Backhaul bằng dây; nguồn ổ R2 cạnh kệ'),('–','CR8808 dự phòng (trên nóc tủ)','Cổng WAN BE6500 #1, chỉ khi mất cáp quang','Dây nhảy 1m; bình thường rút nguồn'),('10','Bếp – dự phòng','–',''),('11–12','Ống ngầm ra cổng','–','Chỉ ống + dây mồi, bịt nắp; camera đợt 2'),
           ('Đợt 2','Ổ mạng phòng ngủ 1, 2','–','Đi nổi từ trục hành lang khi cần')]:
     pt.append('<tr>'+''.join(f'<td>{c}</td>' for c in r)+'</tr>')
 pt.append('</table>')
@@ -74,9 +79,11 @@ page=f'''<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><meta name="
 <ul>
 <li><b>Phòng cuối là phòng ngủ 2</b> nên tủ mạng không đặt ở đó (quạt + NAS chạy suốt đêm, nóng). Tủ dời ra <b>phòng khách, khe 0,5m giữa cửa hành lang và bàn làm việc</b> (bàn dời phải 10cm): ngay dưới trục ống, gần chỗ cáp quang vào, ổ C4 chỉ cách tủ điện ~8m.</li>
 <li>Bàn làm việc ngay cạnh tủ → máy tính cắm thẳng switch, <b>bỏ được 1 mặt ổ + 1 nhánh ống</b>.</li>
-<li><b>Không dùng Aruba.</b> Wifi chỉ bằng 2 Xiaomi BE6500 chế độ AP nối dây về tủ: #1 ở phòng khách cạnh TV (phủ nhà chính), #2 trên kệ cao 2m ở bếp nhà phụ (sát vách phòng ngủ 2). Nếu phòng ngủ 2 sóng yếu: dời #1 lên kệ cao đầu hành lang hoặc kéo thêm 1 đường nổi (đợt 2).</li>
+<li><b>Wifi chính là 2 Xiaomi BE6500 (cập nhật 21/11).</b> <b>BE6500 #1 làm router chính</b> (chế độ Router, Mesh chính) đặt trên nóc tủ mạng: cắm thẳng ONT, nằm giữa nhà chính, nhìn thẳng dọc hành lang. <b>BE6500 #2 làm nút Mesh</b> trên kệ cao 2m ở bếp nhà phụ, nối dây (cáp 09) về #1. Không dùng Aruba.</li>
+<li><b>Xiaomi CR8808 chỉ để dự phòng internet</b>, không dùng phủ sóng: khi cáp quang mất, bật CR8808 chế độ repeater/bắt wifi (WISP) vào wifi hàng xóm, rút dây WAN của BE6500 #1 khỏi ONT cắm sang cổng LAN của CR8808. Cả nhà vẫn dùng wifi BE6500 như cũ. Đặt cùng chỗ tủ mạng; nếu sóng hàng xóm ở đó yếu thì đưa CR8808 ra cửa sổ phía nhà hàng xóm, nối dây nhảy dài. Không cần mua thêm gì.</li>
+<li>Phòng ngủ 2, WC, khu giặt nhận sóng #1 đi thẳng dọc hành lang ~8m. Nếu đo thực tế còn yếu thì đợt 2 kéo trục Ø32 tới cuối hành lang và thêm 1 nút Mesh có dây.</li>
 <li>Trục Ø32 chỉ cần từ tủ tới nhánh bếp (~7m); đoạn sau làm khi có camera, Zigbee. Chưa cần ổ mạng phòng ngủ; ống đi nổi nên thêm sau không phải đục.</li>
-<li>BE6500 ở chế độ AP không tách VLAN: đợt 1 chỉ có mạng chính; wifi khách và VLAN IoT/camera làm ở đợt 2 cùng switch PoE.</li>
+<li>BE6500 #1 ở chế độ Router nên có sẵn wifi khách và mạng riêng cho thiết bị IoT/camera trong app, không cần router riêng. <b>MikroTik hEX cất dự phòng</b>; đợt 2 mới đặt trước BE6500 nếu cần tách VLAN camera kỹ hơn.</li>
 <li>Việc phải làm ngay: <b>ống HDPE ra cổng</b> (chôn chung rãnh cáp nguồn đang đào).</li>
 <li>Mục Mạng đợt 1 còn <b>{t8/1000:.2f}tr</b>.</li>
 </ul>
@@ -93,8 +100,8 @@ page=f'''<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><meta name="
 <ul>
 <li>Ống mạng cách dây điện ≥30cm, không đi chung ống; chỗ cắt ngang dây điện thì cắt vuông góc.</li>
 <li>Bấm đầu T568B cả hai đầu; test từng đường bằng máy test cáp, đạt 1Gbps mới đóng mặt ổ.</li>
-<li>Thiết bị: 2 Xiaomi BE6500, MikroTik hEX (RB750), switch thường có sẵn (cần bao nhiêu cắm bấy nhiêu), NAS DS220j + WD, PC i7-6700. Không dùng Aruba, không dùng Lenovo M720q.</li>
-<li>Đợt 1 chưa có tủ: ONT, hEX, switch, NAS đặt trên kệ nhỏ đúng vị trí tủ (phòng khách cạnh bàn), UPS dưới sàn cắm ổ C4.</li>
-<li>2 BE6500 chế độ AP, nối dây về switch; cùng tên wifi + mật khẩu; kênh 5GHz khác nhau.</li>
+<li>Thiết bị: 2 Xiaomi BE6500, Xiaomi CR8808 (dự phòng), switch thường có sẵn (cần bao nhiêu cắm bấy nhiêu), NAS DS220j + WD, PC i7-6700. MikroTik hEX cất dự phòng. Không dùng Aruba, không dùng Lenovo M720q.</li>
+<li>Đợt 1 chưa có tủ: ONT, switch, NAS đặt trên kệ nhỏ đúng vị trí tủ (phòng khách cạnh bàn), UPS dưới sàn cắm ổ C4.</li>
+<li>Cài BE6500 #1 làm router (ONT để chế độ bridge cho #1 quay PPPoE, hoặc giữ ONT làm router và #1 nhận IP động), bật Mesh, rồi ghép #2 (dây, cáp 09). Một tên wifi, một mật khẩu cho cả nhà.</li>
 </ul></body></html>'''
 open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'mang.html'),'w').write(page); print('mang ok',round(t8),round(tD))

@@ -10,9 +10,11 @@ svg{width:100%;height:auto;border:1px solid #eceff1;border-radius:6px}table{bord
 <ul>
 <li><b>Phòng cuối là phòng ngủ 2</b> nên tủ mạng không đặt ở đó (quạt + NAS chạy suốt đêm, nóng). Tủ dời ra <b>phòng khách, khe 0,5m giữa cửa hành lang và bàn làm việc</b> (bàn dời phải 10cm): ngay dưới trục ống, gần chỗ cáp quang vào, ổ C4 chỉ cách tủ điện ~8m.</li>
 <li>Bàn làm việc ngay cạnh tủ → máy tính cắm thẳng switch, <b>bỏ được 1 mặt ổ + 1 nhánh ống</b>.</li>
-<li><b>Không dùng Aruba.</b> Wifi chỉ bằng 2 Xiaomi BE6500 chế độ AP nối dây về tủ: #1 ở phòng khách vách phải (phủ nhà chính), #2 trên kệ cao 2m ở bếp nhà phụ (sát vách phòng ngủ 2). Nếu phòng ngủ 2 sóng yếu: dời #1 lên kệ cao đầu hành lang hoặc kéo thêm 1 đường nổi (đợt 2).</li>
+<li><b>Wifi chính là 2 Xiaomi BE6500 (cập nhật 21/11).</b> <b>BE6500 #1 làm router chính</b> (chế độ Router, Mesh chính) đặt trên nóc tủ mạng: cắm thẳng ONT, nằm giữa nhà chính, nhìn thẳng dọc hành lang. <b>BE6500 #2 làm nút Mesh</b> trên kệ cao 2m ở bếp nhà phụ, nối dây (cáp 09) về #1. Không dùng Aruba.</li>
+<li><b>Xiaomi CR8808 chỉ để dự phòng internet</b>, không dùng phủ sóng: khi cáp quang mất, bật CR8808 chế độ repeater/bắt wifi (WISP) vào wifi hàng xóm, rút dây WAN của BE6500 #1 khỏi ONT cắm sang cổng LAN của CR8808. Cả nhà vẫn dùng wifi BE6500 như cũ. Đặt cùng chỗ tủ mạng; nếu sóng hàng xóm ở đó yếu thì đưa CR8808 ra cửa sổ phía nhà hàng xóm, nối dây nhảy dài. Không cần mua thêm gì.</li>
+<li>Phòng ngủ 2, WC, khu giặt nhận sóng #1 đi thẳng dọc hành lang ~8m. Nếu đo thực tế còn yếu thì đợt 2 kéo trục Ø32 tới cuối hành lang và thêm 1 nút Mesh có dây.</li>
 <li>Trục Ø32 chỉ cần từ tủ tới nhánh bếp (~7m); đoạn sau làm khi có camera, Zigbee. Chưa cần ổ mạng phòng ngủ; ống đi nổi nên thêm sau không phải đục.</li>
-<li>BE6500 ở chế độ AP không tách VLAN: đợt 1 chỉ có mạng chính; wifi khách và VLAN IoT/camera làm ở đợt 2 cùng switch PoE.</li>
+<li>BE6500 #1 ở chế độ Router nên có sẵn wifi khách và mạng riêng cho thiết bị IoT/camera trong app, không cần router riêng. <b>MikroTik hEX cất dự phòng</b>; đợt 2 mới đặt trước BE6500 nếu cần tách VLAN camera kỹ hơn.</li>
 <li>Việc phải làm ngay: <b>ống HDPE ra cổng</b> (chôn chung rãnh cáp nguồn đang đào).</li>
 <li>Mục Mạng đợt 1 còn <b>0.64tr</b>.</li>
 </ul>
@@ -34,14 +36,14 @@ svg{width:100%;height:auto;border:1px solid #eceff1;border-radius:6px}table{bord
 <rect x="132.0" y="631.4" width="66.0" height="4.4" fill="#9e9e9e"/>
 <rect x="286.0" y="631.4" width="110.0" height="4.4" fill="#9e9e9e"/>
 <rect x="129.8" y="303.6" width="4.4" height="327.8" fill="#9e9e9e"/>
-<rect x="279.4" y="162.8" width="77.0" height="4.4" fill="#9e9e9e"/>
+<rect x="222.2" y="162.8" width="134.2" height="4.4" fill="#9e9e9e"/>
 <rect x="391.6" y="162.8" width="4.4" height="4.4" fill="#9e9e9e"/>
-<rect x="283.8" y="301.4" width="44.0" height="3.0" fill="#9e9e9e"/>
-<rect x="363.0" y="301.4" width="33.0" height="3.0" fill="#9e9e9e"/>
-<rect x="134.2" y="299.2" width="149.6" height="4.4" fill="#9e9e9e"/>
-<rect x="279.4" y="169.4" width="4.4" height="129.8" fill="#9e9e9e"/>
+<rect x="222.2" y="301.4" width="61.6" height="3.0" fill="#9e9e9e"/>
+<rect x="319.0" y="301.4" width="77.0" height="3.0" fill="#9e9e9e"/>
+<rect x="134.2" y="299.2" width="88.0" height="4.4" fill="#9e9e9e"/>
+<rect x="217.8" y="167.2" width="4.4" height="132.0" fill="#9e9e9e"/>
 <rect x="134.2" y="169.4" width="4.4" height="129.8" fill="#9e9e9e"/>
-<rect x="138.6" y="169.4" width="140.8" height="4.4" fill="#9e9e9e"/>
+<rect x="138.6" y="169.4" width="79.2" height="4.4" fill="#9e9e9e"/>
 <text x="493" y="695" fill="#bdbdbd" font-size="11" font-weight="bold" text-anchor="middle">PHÒNG KHÁCH</text>
 <text x="510" y="422" fill="#bdbdbd" font-size="11" font-weight="bold" text-anchor="middle">PHÒNG NGỦ 1</text>
 <text x="510" y="290" fill="#bdbdbd" font-size="11" font-weight="bold" text-anchor="middle">PHÒNG NGỦ 2</text>
@@ -78,8 +80,12 @@ svg{width:100%;height:auto;border:1px solid #eceff1;border-radius:6px}table{bord
 <rect x="558.4" y="650.3" width="6.2" height="6.2" fill="#e8eaf6" stroke="#3949ab"/>
 <polyline points="451.0,492.8 407.0,492.8 394.2,492.8" fill="none" stroke="#3949ab" stroke-width="2" stroke-linejoin="round"/>
 <rect x="391.2" y="489.7" width="6.2" height="6.2" fill="#e8eaf6" stroke="#3949ab"/>
-<text x="544" y="647" text-anchor="end" fill="#3949ab" font-size="10">03–04 BE6500 #1 + dự phòng (wifi nhà chính)</text>
-<text x="377" y="497" text-anchor="end" fill="#3949ab" font-size="10">09–10 BE6500 #2 + dự phòng</text>
+<text x="544" y="647" text-anchor="end" fill="#3949ab" font-size="10">03–04 TV cắm LAN + dự phòng</text>
+<text x="377" y="497" text-anchor="end" fill="#3949ab" font-size="10">09–10 BE6500 #2 (nút Mesh, dây về router) + dự phòng</text>
+<text x="453" y="517" text-anchor="end" fill="#7e57c2" font-size="10" font-weight="bold">BE6500 #1 – router chính, trên nóc tủ mạng</text>
+<text x="443" y="531" text-anchor="end" fill="#78909c" font-size="10">+ CR8808 dự phòng (bắt wifi hàng xóm khi mất cáp quang)</text>
+<polyline points="469.0,539.0 469.0,193.6" fill="none" stroke="#7e57c2" stroke-width="1.5" stroke-dasharray="5 3" stroke-linejoin="round"/>
+<text x="483" y="312" text-anchor="start" fill="#7e57c2" font-size="10">sóng #1 nhìn thẳng dọc hành lang tới P.ngủ 2, WC</text>
 <polyline points="451.0,719.4 407.0,719.4 389.4,719.4 299.2,985.6" fill="none" stroke="#1a237e" stroke-width="2.5" stroke-dasharray="5 3" stroke-linejoin="round"/>
 <rect x="295.7" y="982.1" width="7.0" height="7.0" fill="#424242" stroke="#333"/>
 <text x="327" y="875" text-anchor="start" fill="#1a237e" font-size="10">11–12 ống HDPE Ø32 ngầm ra cổng (chung rãnh cáp nguồn, bịt nắp)</text>
@@ -88,6 +94,7 @@ svg{width:100%;height:auto;border:1px solid #eceff1;border-radius:6px}table{bord
 <text x="469" y="588" text-anchor="middle" fill="#4e342e" font-size="10">cạnh bàn làm việc · UPS dưới sàn</text>
 <rect x="481.8" y="539.0" width="77.0" height="30.8" fill="none" stroke="#8d6e63"/>
 <text x="519" y="558" text-anchor="middle" fill="#5d4037" font-size="10">Bàn LV: cắm thẳng switch</text>
+<circle cx="469.0" cy="547.8" r="6" fill="#ede7f6" stroke="#7e57c2"/>
 <g transform="translate(20,1018)"><path d="M0,0H88" stroke="#333" stroke-width="2"/><path d="M0,-4V4M44,-3V3M88,-4V4" stroke="#333"/><text x="44" y="-7" text-anchor="middle">2 m</text></g>
 <g transform="translate(726,40)"><path d="M0,14L0,-14M0,-14L-5,-4M0,-14L5,-4" stroke="#333" stroke-width="2"/><text y="28" text-anchor="middle">Sau nhà</text></g></svg>
 <h2>3. Sơ đồ kết nối đợt 1</h2>
@@ -95,16 +102,15 @@ svg{width:100%;height:auto;border:1px solid #eceff1;border-radius:6px}table{bord
 <rect x="20" y="20" width="130" height="38" rx="6" fill="#fbe9e7" stroke="#ff7043"/><text x="85.0" y="36" text-anchor="middle" font-weight="bold">Cáp quang nhà mạng</text><text x="85.0" y="50" text-anchor="middle" font-size="9.5">kéo treo, miễn phí</text>
 <path d="M150,39L190,39" stroke="#ff7043" stroke-width="2"/>
 <rect x="190" y="20" width="110" height="38" rx="6" fill="#e8eaf6" stroke="#3949ab"/><text x="245.0" y="36" text-anchor="middle" font-weight="bold">ONT</text><text x="245.0" y="50" text-anchor="middle" font-size="9.5">đặt trong tủ mạng</text>
-<path d="M300,39L350,39" stroke="#3949ab" stroke-width="2"/><text x="329.0" y="35.0" font-size="9.5" fill="#455a64">ether1 WAN</text>
-<rect x="350" y="20" width="150" height="38" rx="6" fill="#e8eaf6" stroke="#3949ab"/><text x="425.0" y="36" text-anchor="middle" font-weight="bold">MikroTik hEX (RB750)</text><text x="425.0" y="50" text-anchor="middle" font-size="9.5">router · DHCP · AdGuard DNS</text>
-<rect x="560" y="20" width="140" height="38" rx="6" fill="#eceff1" stroke="#90a4ae" stroke-dasharray="4 3"/><text x="630.0" y="36" text-anchor="middle" font-weight="bold">4G dự phòng</text><text x="630.0" y="50" text-anchor="middle" font-size="9.5">ether4 · khi cần</text>
-<path d="M500,39L560,39" stroke="#90a4ae" stroke-width="2" stroke-dasharray="4 3"/>
-<path d="M380,58L180,120" stroke="#90a4ae" stroke-width="2" stroke-dasharray="4 3"/><text x="284.0" y="85.0" font-size="9.5" fill="#455a64">ether2</text>
-<path d="M425,58L425,120" stroke="#3949ab" stroke-width="2"/><text x="429.0" y="85.0" font-size="9.5" fill="#455a64">ether3</text>
-<path d="M470,58L690,120" stroke="#3949ab" stroke-width="2"/><text x="584.0" y="85.0" font-size="9.5" fill="#455a64">ether5</text>
-<rect x="100" y="120" width="170" height="38" rx="6" fill="#eceff1" stroke="#90a4ae" stroke-dasharray="4 3"/><text x="185.0" y="136" text-anchor="middle" font-weight="bold">ether2 trống</text><text x="185.0" y="150" text-anchor="middle" font-size="9.5">dự phòng / đợt 2</text>
-<rect x="340" y="120" width="170" height="38" rx="6" fill="#e8eaf6" stroke="#3949ab"/><text x="425.0" y="136" text-anchor="middle" font-weight="bold">Switch thường có sẵn</text><text x="425.0" y="150" text-anchor="middle" font-size="9.5">≥8 cổng · VLAN 20</text>
-<rect x="610" y="120" width="170" height="38" rx="6" fill="#e8eaf6" stroke="#3949ab"/><text x="695.0" y="136" text-anchor="middle" font-weight="bold">09 BE6500 #2 (AP)</text><text x="695.0" y="150" text-anchor="middle" font-size="9.5">nhà phụ, dây về tủ</text>
+<path d="M300,39L350,39" stroke="#3949ab" stroke-width="2"/><text x="329.0" y="35.0" font-size="9.5" fill="#455a64">WAN</text>
+<rect x="350" y="20" width="170" height="38" rx="6" fill="#ede7f6" stroke="#7e57c2"/><text x="435.0" y="36" text-anchor="middle" font-weight="bold">BE6500 #1 – router chính</text><text x="435.0" y="50" text-anchor="middle" font-size="9.5">Router + Mesh chính · trên nóc tủ</text>
+<rect x="580" y="20" width="140" height="38" rx="6" fill="#eceff1" stroke="#90a4ae" stroke-dasharray="4 3"/><text x="650.0" y="36" text-anchor="middle" font-weight="bold">MikroTik hEX</text><text x="650.0" y="50" text-anchor="middle" font-size="9.5">cất dự phòng (đợt 2 nếu cần VLAN)</text>
+<path d="M435,58L425,120" stroke="#3949ab" stroke-width="2"/><text x="434.0" y="85.0" font-size="9.5" fill="#455a64">LAN</text>
+<path d="M480,58L690,120" stroke="#3949ab" stroke-width="2"/><text x="589.0" y="85.0" font-size="9.5" fill="#455a64">LAN · cáp 09</text>
+<path d="M245,58L245,120" stroke="#90a4ae" stroke-width="2" stroke-dasharray="4 3"/><text x="249.0" y="85.0" font-size="9.5" fill="#455a64">thay ONT khi mất mạng</text>
+<rect x="40" y="120" width="250" height="38" rx="6" fill="#eceff1" stroke="#90a4ae" stroke-dasharray="4 3"/><text x="165.0" y="136" text-anchor="middle" font-weight="bold">Xiaomi CR8808 – dự phòng</text><text x="165.0" y="150" text-anchor="middle" font-size="9.5">bắt wifi hàng xóm → cổng WAN BE6500 #1</text>
+<rect x="340" y="120" width="170" height="38" rx="6" fill="#e8eaf6" stroke="#3949ab"/><text x="425.0" y="136" text-anchor="middle" font-weight="bold">Switch thường có sẵn</text><text x="425.0" y="150" text-anchor="middle" font-size="9.5">cắm bao nhiêu dùng bấy nhiêu</text>
+<rect x="610" y="120" width="170" height="38" rx="6" fill="#ede7f6" stroke="#7e57c2"/><text x="695.0" y="136" text-anchor="middle" font-weight="bold">BE6500 #2 – nút Mesh</text><text x="695.0" y="150" text-anchor="middle" font-size="9.5">bếp nhà phụ, backhaul bằng dây</text>
 <path d="M690,158L690,190" stroke="#3949ab" stroke-width="2"/>
 <rect x="620" y="190" width="150" height="38" rx="6" fill="#eceff1" stroke="#90a4ae" stroke-dasharray="4 3"/><text x="695.0" y="206" text-anchor="middle" font-weight="bold">10 dự phòng</text><text x="695.0" y="220" text-anchor="middle" font-size="9.5">cáp chờ ở bếp</text>
 <path d="M425,158L95,260" stroke="#3949ab" stroke-width="2"/>
@@ -112,7 +118,7 @@ svg{width:100%;height:auto;border:1px solid #eceff1;border-radius:6px}table{bord
 <path d="M425,158L265,260" stroke="#3949ab" stroke-width="2"/>
 <rect x="190" y="260" width="150" height="38" rx="6" fill="#e8eaf6" stroke="#3949ab"/><text x="265.0" y="276" text-anchor="middle" font-weight="bold">PC i7-6700</text><text x="265.0" y="290" text-anchor="middle" font-size="9.5">bàn làm việc, cắm thẳng</text>
 <path d="M425,158L435,260" stroke="#3949ab" stroke-width="2"/>
-<rect x="360" y="260" width="150" height="38" rx="6" fill="#e8eaf6" stroke="#3949ab"/><text x="435.0" y="276" text-anchor="middle" font-weight="bold">03 BE6500 #1 (AP)</text><text x="435.0" y="290" text-anchor="middle" font-size="9.5">wifi nhà chính · TV cắm LAN</text>
+<rect x="360" y="260" width="150" height="38" rx="6" fill="#e8eaf6" stroke="#3949ab"/><text x="435.0" y="276" text-anchor="middle" font-weight="bold">03 TV</text><text x="435.0" y="290" text-anchor="middle" font-size="9.5">cáp về phòng khách</text>
 <path d="M425,158L605,260" stroke="#3949ab" stroke-width="2"/>
 <rect x="530" y="260" width="150" height="38" rx="6" fill="#e8eaf6" stroke="#3949ab"/><text x="605.0" y="276" text-anchor="middle" font-weight="bold">04 dự phòng</text><text x="605.0" y="290" text-anchor="middle" font-size="9.5">cáp chờ ở TV</text>
 <path d="M425,158L775,260" stroke="#3949ab" stroke-width="2"/>
@@ -122,15 +128,15 @@ svg{width:100%;height:auto;border:1px solid #eceff1;border-radius:6px}table{bord
 <rect x="580" y="330" width="300" height="38" rx="6" fill="#eceff1" stroke="#90a4ae" stroke-dasharray="4 3"/><text x="730.0" y="346" text-anchor="middle" font-weight="bold">Đợt 2: camera cổng (11–12), sân xe (13), hiên sau (14)</text><text x="730.0" y="360" text-anchor="middle" font-size="9.5">+ AP vườn (15), hộp D bờ sông (16)</text>
 </svg>
 <h2>4. Bảng cổng (dán nhãn số ở 2 đầu cáp)</h2>
-<table><tr><th>Số</th><th>Đầu kia</th><th>Cắm vào (đợt 1)</th><th>Ghi chú</th></tr><tr><td>02</td><td>Trần hành lang – Zigbee PoE</td><td>–</td><td>Đợt 2; đợt 1 dùng USB Zigbee cắm PC i7-6700</td></tr><tr><td>03</td><td>Phòng khách – BE6500 #1</td><td>Switch thường</td><td>Cổng LAN BE6500 còn trống (dự phòng)</td></tr><tr><td>04</td><td>Phòng khách – dự phòng</td><td>–</td><td>Cáp có sẵn, chờ</td></tr><tr><td>–</td><td>Bàn làm việc</td><td>Switch thường (dây nhảy trực tiếp)</td><td>Tủ ngay cạnh bàn, không cần ổ tường</td></tr><tr><td>09</td><td>Bếp – BE6500 #2</td><td>hEX ether5</td><td>Nguồn từ ổ R2 cạnh kệ</td></tr><tr><td>10</td><td>Bếp – dự phòng</td><td>–</td><td></td></tr><tr><td>11–12</td><td>Ống ngầm ra cổng</td><td>–</td><td>Chỉ ống + dây mồi, bịt nắp; camera đợt 2</td></tr><tr><td>Đợt 2</td><td>Ổ mạng phòng ngủ 1, 2</td><td>–</td><td>Đi nổi từ trục hành lang khi cần</td></tr></table>
+<table><tr><th>Số</th><th>Đầu kia</th><th>Cắm vào (đợt 1)</th><th>Ghi chú</th></tr><tr><td>02</td><td>Trần hành lang – Zigbee PoE</td><td>–</td><td>Đợt 2; đợt 1 dùng USB Zigbee cắm PC i7-6700</td></tr><tr><td>03</td><td>Phòng khách – TV</td><td>Switch thường</td><td>BE6500 #1 giờ đặt trên nóc tủ mạng</td></tr><tr><td>04</td><td>Phòng khách – dự phòng</td><td>–</td><td>Cáp có sẵn, chờ</td></tr><tr><td>–</td><td>Bàn làm việc</td><td>Switch thường (dây nhảy trực tiếp)</td><td>Tủ ngay cạnh bàn, không cần ổ tường</td></tr><tr><td>09</td><td>Bếp – BE6500 #2 (nút Mesh)</td><td>Cổng LAN BE6500 #1</td><td>Backhaul bằng dây; nguồn ổ R2 cạnh kệ</td></tr><tr><td>–</td><td>CR8808 dự phòng (trên nóc tủ)</td><td>Cổng WAN BE6500 #1, chỉ khi mất cáp quang</td><td>Dây nhảy 1m; bình thường rút nguồn</td></tr><tr><td>10</td><td>Bếp – dự phòng</td><td>–</td><td></td></tr><tr><td>11–12</td><td>Ống ngầm ra cổng</td><td>–</td><td>Chỉ ống + dây mồi, bịt nắp; camera đợt 2</td></tr><tr><td>Đợt 2</td><td>Ổ mạng phòng ngủ 1, 2</td><td>–</td><td>Đi nổi từ trục hành lang khi cần</td></tr></table>
 <h2>5. Vật tư</h2>
 <p><b>Đợt 1 – Mục 8</b></p><table><tr><th>Cấu thành</th><th>KL</th><th>ĐVT</th><th>Đơn giá (nghìn)</th><th>Thành tiền (nghìn)</th><th>Loại</th><th>Ghi chú</th></tr>
 <tr><td>Cáp mạng CAT6 có sẵn</td><td>80</td><td>m</td><td>0</td><td>0</td><td>Đồ cũ</td><td></td></tr>
 <tr><td>Hạt RJ45, thiết bị mạng có sẵn (tự lắp)</td><td>1</td><td>bộ</td><td>0</td><td>0</td><td>Đồ cũ</td><td></td></tr>
-<tr><td>Ống PVC Ø32 750N: trục mạng đi nổi sát trần đầu hành lang (tủ mạng → nhánh phòng khách, bếp, cổng; ~7m)</td><td>3</td><td>cây</td><td>71</td><td>214</td><td>Vật tư</td><td></td></tr>
-<tr><td>Ống luồn PVC Ø20 nhánh: phòng khách, bếp</td><td>3</td><td>cây</td><td>21</td><td>64</td><td>Vật tư</td><td>Không đi chung ống với dây điện</td></tr>
+<tr><td>Ống PVC Ø32 750N: trục mạng đi nổi sát trần đầu hành lang (tủ mạng → nhánh TV, bếp, cổng; ~7m)</td><td>3</td><td>cây</td><td>71</td><td>214</td><td>Vật tư</td><td></td></tr>
+<tr><td>Ống luồn PVC Ø20 nhánh: TV, bếp</td><td>3</td><td>cây</td><td>21</td><td>64</td><td>Vật tư</td><td>Không đi chung ống với dây điện</td></tr>
 <tr><td>Ống HDPE gân xoắn Ø32 chôn 0,5m ra hộp A (cổng), chung rãnh cáp nguồn</td><td>12</td><td>m</td><td>12</td><td>144</td><td>Vật tư</td><td>Hộp B, C đi nổi trên tường, không chôn</td></tr>
-<tr><td>Hộp + mặt ổ mạng 2 cổng + nhân CAT6 (phòng khách, bếp; bàn làm việc cắm thẳng tủ)</td><td>2</td><td>bộ</td><td>50</td><td>100</td><td>Thiết bị</td><td></td></tr>
+<tr><td>Hộp + mặt ổ mạng 2 cổng + nhân CAT6 (TV, bếp; bàn làm việc cắm thẳng tủ)</td><td>2</td><td>bộ</td><td>50</td><td>100</td><td>Thiết bị</td><td></td></tr>
 <tr><td>Nắp bịt đầu ống chờ ở trụ cổng</td><td>1</td><td>cái</td><td>20</td><td>20</td><td>Vật tư</td><td>Hộp IP66 lắp khi có camera</td></tr>
 <tr><td>Dây mồi nylon trong mọi ống chờ</td><td>1</td><td>cuộn 200m</td><td>100</td><td>100</td><td>Vật tư</td><td></td></tr>
 <tr><td>Kéo cáp, đánh số, cuộn chờ ở kho (tự làm)</td><td>2</td><td>công</td><td>0</td><td>0</td><td>Tự làm</td><td>Tiết kiệm 0,6tr</td></tr>
@@ -155,7 +161,7 @@ svg{width:100%;height:auto;border:1px solid #eceff1;border-radius:6px}table{bord
 <ul>
 <li>Ống mạng cách dây điện ≥30cm, không đi chung ống; chỗ cắt ngang dây điện thì cắt vuông góc.</li>
 <li>Bấm đầu T568B cả hai đầu; test từng đường bằng máy test cáp, đạt 1Gbps mới đóng mặt ổ.</li>
-<li>Thiết bị: 2 Xiaomi BE6500, MikroTik hEX (RB750), switch thường có sẵn (cần bao nhiêu cắm bấy nhiêu), NAS DS220j + WD, PC i7-6700. Không dùng Aruba, không dùng Lenovo M720q.</li>
-<li>Đợt 1 chưa có tủ: ONT, hEX, switch, NAS đặt trên kệ nhỏ đúng vị trí tủ (phòng khách cạnh bàn), UPS dưới sàn cắm ổ C4.</li>
-<li>2 BE6500 chế độ AP, nối dây về switch; cùng tên wifi + mật khẩu; kênh 5GHz khác nhau.</li>
+<li>Thiết bị: 2 Xiaomi BE6500, Xiaomi CR8808 (dự phòng), switch thường có sẵn (cần bao nhiêu cắm bấy nhiêu), NAS DS220j + WD, PC i7-6700. MikroTik hEX cất dự phòng. Không dùng Aruba, không dùng Lenovo M720q.</li>
+<li>Đợt 1 chưa có tủ: ONT, switch, NAS đặt trên kệ nhỏ đúng vị trí tủ (phòng khách cạnh bàn), UPS dưới sàn cắm ổ C4.</li>
+<li>Cài BE6500 #1 làm router (ONT để chế độ bridge cho #1 quay PPPoE, hoặc giữ ONT làm router và #1 nhận IP động), bật Mesh, rồi ghép #2 (dây, cáp 09). Một tên wifi, một mật khẩu cho cả nhà.</li>
 </ul></body></html>

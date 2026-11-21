@@ -184,7 +184,7 @@
 <p><b>Phòng cuối là phòng ngủ 2</b> (em bé / người thân), không phải kho. <b>Tủ mạng đặt ở phòng khách</b>, khe 0,5m giữa cửa hành lang và bàn làm việc (bàn dời sang phải 10cm), ngay dưới trục ống mạng. Mọi ống mạng trong nhà đi nổi nên đợt 1 chỉ kéo đường dùng ngay; đường ngầm ra cổng làm luôn vì đang đào rãnh cáp nguồn.</p>
 <table><tr><th>Tuyến</th><th>Đợt 1 (vừa đủ dọn vào ở)</th><th>Dài ~</th></tr>
 <tr><td>Cột điện → góc nhà → tủ mạng</td><td>Cáp quang nhà mạng kéo treo vào góc trước nhà (thường không tính tiền), ONT trong tủ mạng</td><td>nhà mạng kéo</td></tr>
-<tr><td>Tủ mạng → trục Ø32 nổi sát trần đầu hành lang</td><td>03–04 Xiaomi BE6500 #1 + dự phòng (wifi nhà chính), 09–10 BE6500 #2 bếp nhà phụ: 2 mặt ổ 2 cổng. Không dùng Aruba; 2 BE6500 chế độ AP, cùng tên wifi</td><td>trục ~7m + nhánh ~7m</td></tr>
+<tr><td>Tủ mạng → trục Ø32 nổi sát trần đầu hành lang</td><td>03–04 TV + dự phòng, 09–10 BE6500 #2 bếp nhà phụ: 2 mặt ổ 2 cổng. Không dùng Aruba. BE6500 #1 làm router chính đặt trên nóc tủ mạng, #2 là nút Mesh nối dây; CR8808 chỉ dự phòng bắt wifi hàng xóm khi mất cáp quang; MikroTik hEX cất dự phòng. Cả nhà một tên wifi.</td><td>trục ~7m + nhánh ~7m</td></tr>
 <tr><td>Bàn làm việc</td><td>Cắm thẳng switch trong tủ bên cạnh, không cần ổ</td><td>–</td></tr>
 <tr><td>Tủ mạng → cổng</td><td>Ống HDPE Ø32 chôn 0,5m chung rãnh cáp nguồn (ống riêng, cách 30cm) + dây mồi, bịt nắp</td><td>~12m</td></tr>
 <tr><td class="d2">Đợt 2</td><td class="d2">Ổ mạng 2 phòng ngủ, hộp B sân xe, hộp C hiên sau + ống ra hộp D bờ sông, ống lên mái, Zigbee PoE, hộp IP66, camera, switch PoE, tủ gỗ + patch panel</td><td class="d2">đi nổi, thêm không đục</td></tr></table>
@@ -867,13 +867,13 @@ pipe([[17.4,10.3,2.45],[17.8,10.6,2.42],[18.15,10.6,2.4],[18.15,10.6,0.1]],DRN,0
 MG=mM;const NET=0x3949ab,FIB=0xff7043,OC=0x9e9e9e,D2N=0xcfd8dc;const rj=(a,b,z)=>mbox(a-0.04,b-0.07,z-0.07,0.08,0.14,0.14,0xe8eaf6);
 pipe([[15.6,9.95,1.56],[15.6,9.95,3.27],[15.25,9.95,3.27]],NET,0.03);pipe([[15.25,5.85,3.27],[15.25,11.0,3.27]],NET,0.03);pipe([[15.25,11.0,3.27],[15.25,18.1,3.27]],D2N,0.025);
 label('Trục ống Ø32 đi nổi sát trần đầu hành lang (cách dây điện ≥30cm) · đoạn sau là đợt 2',15.25,9.0,3.55,MG);
-label('Tủ mạng gỗ cạnh bàn làm việc: ONT · MikroTik hEX (RB750) · switch có sẵn · NAS DS220j + WD; UPS dưới sàn',15.6,9.7,1.9,MG);
+label('Tủ mạng gỗ cạnh bàn làm việc: ONT · switch có sẵn · NAS DS220j + WD; UPS dưới sàn (MikroTik hEX cất dự phòng)',15.6,9.7,1.25,MG);mbox(15.4,9.6,1.56,0.16,0.16,0.26,0x1b1b1b);mbox(15.62,9.62,1.56,0.2,0.12,0.04,0xf5f5f5);label('BE6500 #1: router chính + Mesh, trên nóc tủ, nhìn thẳng dọc hành lang',15.5,9.7,2.1,MG);label('CR8808 dự phòng: bắt wifi hàng xóm khi mất cáp quang',15.75,9.7,1.75,MG);
 pipe([[15.25,12.2,3.27],[14.95,12.2,3.27]],D2N,0.012);label('02 Zigbee PoE (đợt 2)',14.85,12.1,3.4,MG);
-pipe([[15.25,7.35,3.27],[17.76,7.35,3.27],[17.76,7.35,1.05]],NET,0.015);rj(17.76,7.35,1.0);label('03–04 Xiaomi BE6500 #1 + dự phòng (mặt 2 cổng) · wifi nhà chính',17.7,7.35,1.3,MG);
+pipe([[15.25,7.35,3.27],[17.76,7.35,3.27],[17.76,7.35,1.05]],NET,0.015);rj(17.76,7.35,1.0);label('03–04 TV cắm LAN + dự phòng (mặt 2 cổng)',17.7,7.35,1.3,MG);
 label('Bàn làm việc: PC i7-6700 cắm thẳng switch trong tủ bên cạnh, không cần ổ',16.6,9.6,1.45,MG);
 pipe([[15.25,13.9,3.27],[16.7,13.9,3.27],[16.7,14.06,3.27],[16.7,14.06,1.05]],D2N,0.012);label('Đợt 2 · ổ mạng phòng ngủ 1 (đi nổi, thêm khi cần)',16.7,14.0,1.4,MG);
 pipe([[15.25,11.0,3.27],[14.25,11.0,3.27],[14.25,11.0,2.45],[13.96,11.0,2.45],[13.96,11.0,1.85]],NET,0.015);rj(13.96,11.0,1.8);mbox(13.7,10.8,1.95,0.22,0.35,0.22,0x212121);
-label('09–10 bếp: BE6500 #2 trên kệ nhỏ cao 2m + 1 dự phòng',13.8,11.0,2.4,MG);
+label('09–10 bếp: BE6500 #2 nút Mesh (dây về #1) trên kệ nhỏ cao 2m + 1 dự phòng',13.8,11.0,2.4,MG);
 pipe([[15.25,5.85,3.27],[14.25,5.85,3.27],[14.25,5.85,0.3],[13.85,5.85,0.3],[13.85,5.85,-0.6],[11.8,-0.2,-0.6],[11.8,-0.2,2.2]],NET,0.025);mbox(13.75,5.75,-0.05,0.2,0.2,0.08,0x616161);
 mbox(11.75,-0.25,2.2,0.1,0.1,0.04,0x424242);label('11–12 ống chờ ra cổng: HDPE Ø32 chung rãnh cáp nguồn, bịt nắp · hộp IP66 + camera đợt 2',12.0,-0.3,2.9,MG);
 pipe([[15.25,8.6,3.27],[14.25,8.6,3.27],[14.25,8.6,2.6],[8.1,8.6,2.6],[8.1,7.56,2.6],[7.95,7.56,2.6]],D2N,0.012);label('Đợt 2 – 13 hộp B sân xe: ống nổi dưới mái nhà phụ',7.85,7.55,3.2,MG);

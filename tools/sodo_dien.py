@@ -91,7 +91,7 @@ o.append(f'<text x="{X(12.45):.0f}" y="{Y(-0.3)-10:.0f}" fill="#00838f">Đèn NL
 # ghi chu thiet bi
 notes=[('TV',17.7,7.05,'end',4),('Sofa',14.3,8.3,'start',4),('Bàn LV ×2',16.7,9.7,'middle',14),('Ổ máy lạnh 2,4m',17.0,12.1,'middle',16),('Đầu giường P1 ×2',16.7,13.75,'middle',14),('Ổ C4 tủ mạng',15.5,9.6,'middle',16),('Đầu giường P2 ×2',17.6,16.8,'end',4),
        ('Tủ lạnh',7.9,9.45,'end',4),('Mặt bếp',7.9,12.2,'end',8),('Ổ bếp từ đợt 2',7.9,12.62,'end',4),('Hút mùi',7.9,13.0,'end',0),('Đầu bàn',7.9,13.95,'end',4),('Ổ BE6500 #2',13.9,10.7,'end',4),
-       ('Giặt + sấy 1,2m',11.6,17.6,'start',-8),('CT nóng lạnh',11.6,16.85,'start',18),('IP55 sân xe',8.6,7.64,'start',14),('IP55 hiên sau',15.8,18.58,'start',4)]
+       ('Giặt + sấy 1,2m',10.95,18.15,'start',-6),('CT nóng lạnh',10.2,17.65,'start',4),('IP55 sân xe',8.6,7.64,'start',14),('IP55 hiên sau',15.8,18.58,'start',4)]
 for t,a,b,anc,dy in notes:
     dx=12 if anc=='start' else 0
     o.append(f'<text x="{X(a)+dx:.0f}" y="{Y(b)+dy:.0f}" text-anchor="{anc}" fill="#37474f">{t}</text>')
@@ -256,7 +256,7 @@ svg{{width:100%;height:auto;border:1px solid #eceff1;border-radius:6px}}table{{b
 <p style="font-size:13px">Tổng tải lắp đặt đợt 1 ≈ <b>{str(tot_r).replace(".",",")} kW</b> (chưa gồm bếp từ). Hệ số đồng thời ~0,6 → ≈ {str(round(tot_r*0.6,1)).replace(".",",")} kW ≈ <b>{round(tot_r*0.6*1000/220)}A</b>; khi có bếp từ ≈ {round((tot_r+3.5)*0.6*1000/220)}A; đủ thiết bị tương lai ≈ 56A, <b>dưới CB tổng 63A</b> (xem mục 6). Chiều dài ống đo theo tuyến 3D +10%; dây = ống × 3 lõi + 0,6m mỗi thiết bị. C1, C2 ở nhà chính giữ dây cũ đi nổi nên <b>dây 1,5/2,5mm² mới chỉ cần ≈ {newwire} m</b> (C1 phần nhà phụ, C3, C4, R2, R3), dùng dây có sẵn; <b>R4 mua dây 4mm² ≈ {r4wire} m</b>; R5 dùng cáp CVV 3×2,5 (có PE) cho đoạn ngoài trời ≈ 18–20m.</p>
 <h2>5. Quy cách thi công</h2>
 <ul>
-<li>Công tắc 1,25m cạnh mép cửa phía tay nắm; ổ cắm 1,0m (chừa nâng nền); bàn làm việc, mặt bếp 1,1m; giặt sấy 1,2m; máy lạnh 2,4m; ổ bếp từ dưới mặt bếp 0,6m.</li>
+<li>Công tắc 1,25m cạnh mép cửa phía tay nắm; ổ cắm 1,0m (chừa nâng nền); bàn làm việc, mặt bếp 1,1m; giặt sấy 1,2m (cạnh máy giặt); máy lạnh 2,4m; ổ bếp từ dưới mặt bếp 0,6m.</li>
 <li>Hộp công tắc 86 sâu, có dây N (để sau thay công tắc Zigbee). Màu dây: L đỏ/nâu, N xanh dương, PE vàng-xanh.</li>
 <li>Nhà chính: dây cũ đang đi nổi – đo cách điện từng mạch ≥1 MΩ thì giữ cho C1, C2; dây mới đi ống nổi/nẹp sát trần, không đục tường.</li>
 <li>Máy nước nóng trực tiếp 4500W: dây 4mm² đi ống riêng + RCBO 25A 30mA riêng, công tắc 2 cực ≥25A có đèn ngoài cửa WC, đấu cố định qua hộp kín, PE nối vỏ máy, không đặt ổ cắm trong WC.</li><li>Chống giật: C1–C3 qua RCCB 63A #1; C4, R2, R4 mỗi mạch RCBO riêng; R3, R5 qua RCCB 63A #2. Cỡ dây theo sức chịu khi đi ống, trời nóng: 1,5mm² ≤10A, 2,5mm² ≤20A, 4mm² ≤25A; R3, R4, R5 đi ống riêng cách ≥2cm, máng chung chỉ cho C3, C4. Dây cũ C2 phải đúng 2,5mm², nếu 1,5mm² thì hạ MCB xuống 16A. Nhà nối đất cọc riêng nên MCB không tự cắt khi rò ra vỏ; mạch nào cũng phải có 30mA.</li>
