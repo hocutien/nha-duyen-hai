@@ -88,17 +88,16 @@ def sheet_sec_C(sh):
 
 
 def sheet_sec_D(sh):
-    sec_cross(sh, 16.2, 'MẶT CẮT D-D (ngang qua WC – chiếu nghỉ – khu giặt – hành lang – phòng ngủ 2)', [
-        (11.9, 0.5, ['Chiếu nghỉ 1.000×900 cao +0.500 ([1])', 'mặt gạch chống trơn, mũi bậc nẹp chống trượt'], 12.6, 1.6),
-        (12.9, 0.17, '2 bậc: cao 170, rộng 300', 14.6, 0.75),
-        (11.4, 1.6, ['Cửa lùa WC D9 800×2.080', 'ray treo, không ray sàn'], 12.0, 3.2),
+    sec_cross(sh, 16.2, 'MẶT CẮT D-D (ngang qua WC 1 – hành lang giặt – WC 2 – hành lang – phòng ngủ 2)', [
+        (11.1, 0.5, ['Sàn hành lang giặt +0.500 ([1])', 'cùng cao độ sàn 2 WC, gạch chống trơn'], 11.6, 1.6),
+        (13.1, 1.2, ['WC 2 (bồn cầu) sát tường nhà chính', 'quạt hút + ống Ø100 lên mái'], 14.6, 3.4),
         (8.75, 0.55, ['Khay tắm, phễu thu', 'có bẫy mùi'], 7.4, 1.3),
         (10.0, zroof_annex(10.0) + .02, ['Mái tôn cũ dốc ~10%, xà gồ gỗ cũ,', 'cách nhiệt túi khí dưới tôn'], 9.0, 4.6),
         (16.8, 0.45, 'Giường phụ / nôi em bé ([13])', 18.2, 1.0),
     ], extra=lambda S: (S.v.line([(11.5, 1.4), (12.45, 1.4), (13.05, 1.07), (13.05, 0.17)], .5, BLU), S.v.text(13.1, 1.15, 'Tay vịn inox Ø32 cao 900', 1.5, col=BLU)))
     notes(sh, 330, 280, 'GHI CHÚ D-D', [
-        'Đường đêm P.ngủ → WC: hành lang 1,2m → cửa D4 → khu giặt → 2 bậc → chiếu nghỉ → cửa lùa. Đèn cảm biến chân tường mỗi chặng.',
-        'Bậc xây gạch đặc trên nền cũ, không liên kết sàn WC: đợt 2 nâng nền +0.450 thì đập bỏ dễ, WC chỉ còn cao hơn 5cm.',
+        'Đường đêm P.ngủ → WC: hành lang 1,2m → cửa D4 → 3 bậc + tay vịn → WC 2 ngay bên trái, WC 1 bên kia hành lang 2,2m. Đèn cảm biến chân tường mỗi chặng.',
+        'Bậc xây gạch đặc trên nền cũ, không liên kết sàn +0.500: đợt 2 nâng nền +0.450 thì đập bỏ dễ, khối WC chỉ còn cao hơn 5cm.',
         'Ống thoát chính Ø90 chạy dưới sàn WC (+0.300) ra hông trái; nắp kiểm tra ở góc.',
         'Máy nước nóng trực tiếp 4,5kW treo đáy cao 1,4m so sàn WC, ngoài tia nước.',
     ], 36, 1.75)

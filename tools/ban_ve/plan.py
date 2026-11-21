@@ -123,6 +123,10 @@ def furn_plan(v, items=FURN, skip=(), col=GRY):
             pts = [((a0 + a1) / 2 + .19 * math.cos(t), b1 - .18 - .25 + .28 * math.sin(t)) for t in [i * math.pi / 10 for i in range(-10, 11)]]
             pts = [((a0 + a1) / 2 + .18 * math.cos(math.radians(d)), (b1 - .42) + .26 * math.sin(math.radians(d))) for d in range(0, 361, 15)]
             v.line(pts, .2, col, None, 'NOITHAT')
+        elif k == 'bcw':  # bon cau quay mat ve phia a nho, ket nuoc sat tuong a1
+            v.rect(a1 - .18, b0 + .05, a1, b1 - .05, edge=col, lw=.2, layer='NOITHAT')
+            pts = [((a1 - .42) + .26 * math.cos(math.radians(d)), (b0 + b1) / 2 + .18 * math.sin(math.radians(d))) for d in range(0, 361, 15)]
+            v.line(pts, .2, col, None, 'NOITHAT')
         elif k == 'kt':
             v.rect(a0, b0, a1, b1, edge=col, lw=.2, layer='NOITHAT'); v.line([(a0, b0), (a1, b1)], .1, col); v.line([(a0, b1), (a1, b0)], .1, col)
         elif k == 'gs':
@@ -139,7 +143,7 @@ def furn_plan(v, items=FURN, skip=(), col=GRY):
             v.rect(a0, b0, a1, b1, fill=None if dash else (1, 1, 1), edge=col, lw=.22, dash=dash, layer='NOITHAT')
             if k in ('tu', 'ta', 'ta2', 'tk', 'tl', 'tm'):
                 v.line([(a0, b0), (a1, b1)], .1, col, None, 'NOITHAT')
-        if k not in ('mb', 'bc', 'kt', 'lv', 'gs', 'ac', 'ban', 'btr', 'don', 'cn', 'b1', 'b2') and z0 < 1.3:
+        if k not in ('mb', 'bc', 'bcw', 'kt', 'lv', 'gs', 'ac', 'ban', 'btr', 'don', 'cn', 'b1', 'b2') and z0 < 1.3:
             X, Y = v.P((a0 + a1) / 2, (b0 + b1) / 2)
             hgt = min(1.6, 1.6)
             if (b1 - b0) > (a1 - a0) * 1.6 and (b1 - b0) * v.k > 18:
@@ -149,15 +153,16 @@ def furn_plan(v, items=FURN, skip=(), col=GRY):
 
 
 def steps_plan(v):
-    # chieu nghi + 2 bac (de xuat toi uu)
-    v.rect(11.45, 15.7, 12.45, 17.7, fill=(1, 1, 1), edge=BLK, lw=.3, layer='NOITHAT')
-    v.rect(12.45, 15.7, 12.75, 16.6, fill=(1, 1, 1), edge=BLK, lw=.3, layer='NOITHAT')
-    v.rect(12.75, 15.7, 13.05, 16.6, fill=(1, 1, 1), edge=BLK, lw=.3, layer='NOITHAT')
-    v.line([(13.0, 16.15), (11.7, 16.15)], .2, BLK); v.line([(11.85, 16.05), (11.7, 16.15), (11.85, 16.25)], .2, BLK)
-    v.text(12.0, 15.88, 'LÊN', 1.5, anc='c', va='m')
-    # tay vin 2 ben
-    v.line([(11.62, 15.66), (13.05, 15.66)], .35, BLU, None, 'DEXUAT')
-    v.line([(12.41, 16.6), (12.41, 17.66), (11.5, 17.66)], .35, BLU, None, 'DEXUAT')  # lan can mep chieu nghi (rot 0,5m)
+    # bac len san +0,5 cua khoi 2 WC + hanh lang giat: 3 bac cao 167, rong 280 tai D4, D8 (trong) va D10 (ngoai)
+    for (a0, a1, b0, b1, ax, d) in [(13.44, 14.0, 16.65, 17.55, 'a', -1), (11.45, 12.25, 15.35, 15.91, 'b', 1), (13.1, 13.9, 18.5, 19.06, 'b', -1)]:
+        v.rect(a0, b0, a1, b1, fill=(1, 1, 1), edge=BLK, lw=.3, layer='NOITHAT')
+        if ax == 'a': v.line([(a0 + .28, b0), (a0 + .28, b1)], .2, BLK)
+        else: v.line([(a0, b0 + .28), (a1, b0 + .28)], .2, BLK)
+    v.line([(13.95, 17.1), (13.3, 17.1)], .2, BLK); v.line([(13.42, 17.0), (13.3, 17.1), (13.42, 17.2)], .2, BLK)
+    v.line([(11.85, 15.4), (11.85, 16.05)], .2, BLK); v.line([(11.75, 15.93), (11.85, 16.05), (11.95, 15.93)], .2, BLK)
+    v.line([(13.5, 19.0), (13.5, 18.55)], .2, BLK); v.line([(13.4, 18.67), (13.5, 18.55), (13.6, 18.67)], .2, BLK)
+    # tay vin 1 ben moi bo bac
+    v.line([(13.4, 17.6), (14.0, 17.6)], .35, BLU, None, 'DEXUAT'); v.line([(12.3, 15.4), (12.3, 15.95)], .35, BLU, None, 'DEXUAT')
 
 
 def grid(v, a_lines, b_lines, a_rng, b_rng, r=3.2):

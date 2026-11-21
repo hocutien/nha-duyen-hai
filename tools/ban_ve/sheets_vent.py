@@ -130,8 +130,8 @@ def sheet_vent(sh):
         'Hông phải (S1) song song cả hai mùa gió: đổi S1 thành 2 cánh mở quay ra ngoài 90° – cánh bản lề phía lộ đón gió Tây Nam, cánh bản lề phía sông đón gió Đông Bắc.',
         'W3 (1.200×1.200) mới ở vách sau P.ngủ 2 lệch khỏi bóng bồn nước 1.000L (a 15,35–16,45) + O6 vách giữa 2 phòng ngủ + O3 trên cửa D5, D6: phòng ngủ đóng cửa ban đêm vẫn có gió qua (dòng 3–4 bảng 2).',
         'O5 áp mái trước/sau nhà chính: gió thổi xuyên khoang mái theo đúng trục Đông Bắc – Tây Nam, xả nhiệt dưới tôn trước khi xuống trần.',
-        'O7 ở đầu cao mái nhà phụ (trước + sau): khí nóng bếp dồn lên đầu cao rồi thoát ra, cả khi lặng gió. Mỗi WC 1 ô chớp + quạt hút ra ngoài trời.',
-        'Máy sấy thông hơi xả ra vách sau khu giặt, chụp lật hướng xuống, cách ô chớp WC 2 ~2,9m.',
+        'O7 ở đầu cao mái nhà phụ (trước + sau): khí nóng bếp dồn lên đầu cao rồi thoát ra, cả khi lặng gió. WC 1 có 2 ô chớp O2, O4 + quạt; WC 2 không có tường ngoài nên quạt hút âm trần + ống Ø100 lên mái.',
+        'Máy sấy thông hơi xả ra vách sau hành lang giặt (a 11,5), chụp lật hướng xuống, cách ô chớp O2 của WC 1 ~2,6m.',
         'Cây bên trái nhà phụ: tán cao, tỉa nhánh dưới ≥2,5m để gió Đông Nam lùa dưới tán vào W2 và dải bông gió, tán che nắng sáng.',
     ], 95, 1.45, 1.35, 2.2)
     sh.text(X, y - 2, '* Gió mùa Đông Bắc T12–đầu T4 và Tây Nam T5–T11: Tạp chí KTTV số 717 (09/2020), "Nghiên cứu đặc điểm khí hậu tỉnh Trà Vinh".', 1.4, col=GRY)

@@ -1,11 +1,11 @@
 from plan import *
 
 PROPOSALS = [
-    ('1', 12.85, 17.05, 'Bậc lên WC: chiếu nghỉ chung 1,0×2,0m trước 2 cửa WC + 2 bậc cao 170, rộng 300 + tay vịn inox + lan can mép chiếu nghỉ. Thai phụ đứng mở cửa an toàn.'),
-    ('16', 9.75, 16.45, '2 WC thay 1 WC 9m²: WC 1 (tắm + bồn cầu, cửa lùa D9) và WC 2 (bồn cầu, cửa D11 mở vào trong). Một người tắm, người khác vẫn đi vệ sinh được.'),
+    ('1', 13.7, 17.85, 'Khối 2 WC + hành lang giặt cùng sàn +0,5: đi giữa 2 WC không có bậc. 3 bậc cao 167 + tay vịn ở cửa D4 (từ nhà chính) và D8 (từ bếp).'),
+    ('16', 11.1, 16.6, '2 WC tách riêng: WC 1 (tắm + bồn cầu) bên trái, WC 2 (bồn cầu) sát nhà chính, giữa là hành lang giặt có máy giặt, máy sấy, lavabo. Không chung vách, không cơi nới.'),
     ('17', 16.6, 18.95, 'Thông gió theo hướng thửa (mặt tiền 49,7° Đông Bắc – sau 229,7° Tây Nam): thêm W3 sau P.ngủ 2, ô thoáng trên cửa D5, D6 (O3), vách 2 phòng ngủ (O6), áp mái (O5), hồi mái nhà phụ (O7). Xem KT-16.'),
     ('18', 6.9, 10.0, '3 cây tán cao bên trái nhà phụ, cách rào 1,2m: che nắng sáng hướng Đông Nam, gió vẫn lùa dưới tán vào W2 và dải bông gió.'),
-    ('2', 12.85, 14.55, 'Cửa D8 (bếp → khu giặt) đổi chiều mở về phía bếp, bản lề phía phải: không quét vào chiếu nghỉ/bậc.'),
+    ('2', 11.85, 14.55, 'Cửa D8 (bếp → hành lang giặt) dời ra a 11,45–12,25, ngoài tủ kho, mở về phía bếp.'),
     ('3', 9.7, 14.25, 'Tủ kho cao 2,2m dọc vách WC phía bếp (3,2m × sâu 0,6m): gạo, đồ khô, đồ gia dụng; thay kệ sắt V ở P.ngủ 2.'),
     ('4', 12.6, 8.55, 'Cửa nhà phụ là lối vào hằng ngày (sân xe): tủ giày thấp + ghế ngồi + móc chìa khoá/áo mưa, dưới cửa sổ rộng W1.'),
     ('5', 8.75, 7.15, 'Mái hiên tôn 1,2m trước cửa nhà phụ (dài 4,1m, cao +2,8 sát tường, trên lanh tô +2,65 → +2,6 mép ngoài): đi từ nhà xe vào không ướt, che bệ rửa chân.'),
@@ -35,7 +35,7 @@ def sheet_dim_plan(sh):
     grid(v, A_GRID, B_GRID, (5.4, 19.2), (1.5, 20.6))
     v.dim_chain([7.95, 9.5, 11.5, 12.3, 13.5, 14.0, 14.6, 17.4, 18.0], 1.95, True, -1)
     v.dim_chain([7.95, 14.0, 18.0], 1.15, True, -1)
-    v.dim_chain([8.05, 8.35, 8.95, 11.35, 13.1, 13.9, 14.0, 14.3, 15.3, 16.55, 17.75, 18.0], 20.0, True, 1)
+    v.dim_chain([8.05, 8.35, 8.95, 10.05, 13.1, 13.9, 14.0, 14.3, 15.3, 16.55, 17.75, 18.0], 20.0, True, 1)
     v.dim_chain([7.75, 10.45, 11.45, 15.3, 18.35], 6.55, False, 1)
     v.dim_chain([7.75, 18.5], 5.85, False, 1)
     v.dim_chain([2.5, 5.5, 6.7, 7.9, 10.7, 11.9, 14.7, 15.9, 18.5], 18.75, False, -1)
