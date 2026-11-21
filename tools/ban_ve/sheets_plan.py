@@ -1,7 +1,10 @@
 from plan import *
 
 PROPOSALS = [
-    ('1', 12.25, 17.05, 'Bậc lên WC: chiếu nghỉ 1,0×0,9m (thay 0,5m) + 2 bậc cao 170, rộng 300 + tay vịn inox 2 bên. Thai phụ đứng mở cửa lùa an toàn.'),
+    ('1', 12.85, 17.05, 'Bậc lên WC: chiếu nghỉ chung 1,0×2,0m trước 2 cửa WC + 2 bậc cao 170, rộng 300 + tay vịn inox + lan can mép chiếu nghỉ. Thai phụ đứng mở cửa an toàn.'),
+    ('16', 9.75, 16.45, '2 WC thay 1 WC 9m²: WC 1 (tắm + bồn cầu, cửa lùa D9) và WC 2 (bồn cầu, cửa D11 mở vào trong). Một người tắm, người khác vẫn đi vệ sinh được.'),
+    ('17', 16.6, 18.95, 'Thông gió theo hướng thửa (mặt tiền 49,7° Đông Bắc – sau 229,7° Tây Nam): thêm W3 sau P.ngủ 2, ô thoáng trên cửa D5, D6 (O3), vách 2 phòng ngủ (O6), áp mái (O5), hồi mái nhà phụ (O7). Xem KT-16.'),
+    ('18', 6.9, 10.0, '3 cây tán cao bên trái nhà phụ, cách rào 1,2m: che nắng sáng hướng Đông Nam, gió vẫn lùa dưới tán vào W2 và dải bông gió.'),
     ('2', 12.85, 14.55, 'Cửa D8 (bếp → khu giặt) đổi chiều mở về phía bếp, bản lề phía phải: không quét vào chiếu nghỉ/bậc.'),
     ('3', 9.7, 14.25, 'Tủ kho cao 2,2m dọc vách WC phía bếp (3,2m × sâu 0,6m): gạo, đồ khô, đồ gia dụng; thay kệ sắt V ở P.ngủ 2.'),
     ('4', 12.6, 8.55, 'Cửa nhà phụ là lối vào hằng ngày (sân xe): tủ giày thấp + ghế ngồi + móc chìa khoá/áo mưa, dưới cửa sổ rộng W1.'),
@@ -9,7 +12,7 @@ PROPOSALS = [
     ('6', 6.45, 12.75, 'Lồng bình gas dời ra 0,55m (bệ riêng a 6,75–7,25): bản cũ đè lên ống thoát Ø90 đi nổi chân tường.'),
     ('7', 16.25, 11.45, 'P.ngủ 1: bỏ tủ áo (dời sang P.ngủ 2), giường đầu quay vách phải, 2 bên đều lên xuống được; dàn lạnh lên vách trước, không thổi thẳng đầu giường.'),
     ('8', 19.15, 10.9, 'Dàn nóng dời ra cạnh vách trước P.ngủ 1 (b 9,6–10,4): ống đồng ~1m, ít uốn, dễ vệ sinh.'),
-    ('9', 9.55, 18.85, 'WC 9m² chỉ có ô thoáng 0,3×0,3: nâng lên cửa chớp lật 0,6×0,4 (đáy +1,8) + quạt hút, chống ẩm mốc.'),
+    ('9', 8.65, 18.85, 'WC chỉ có ô thoáng 0,3×0,3: mỗi WC 1 cửa chớp lật 0,6×0,4 (O2, O4) + quạt hút, chống ẩm mốc.'),
     ('10', 13.5, 19.05, 'Lanh tô cửa đi nhà phụ (D7, D10) đặt +2,65, cánh cao 2,1–2,2 + ô lưới phía trên: sau này nâng nền +0,45 vẫn đủ cao 2,2m.'),
     ('11', 14.8, 12.3, 'Đường đêm P.ngủ → WC (~8m): đèn hành lang công tắc 2 chiều (cửa D5 ↔ cửa D4) + đèn chân tường cảm biến + công tắc đầu giường.'),
     ('13', 17.25, 16.95, 'P.ngủ 2 chuẩn bị làm phòng em bé (cạnh P.ngủ 1): dời kệ sắt ra tủ kho bếp, thêm ổ cắm 1,0m, rèm cản sáng.'),
@@ -32,7 +35,7 @@ def sheet_dim_plan(sh):
     grid(v, A_GRID, B_GRID, (5.4, 19.2), (1.5, 20.6))
     v.dim_chain([7.95, 9.5, 11.5, 12.3, 13.5, 14.0, 14.6, 17.4, 18.0], 1.95, True, -1)
     v.dim_chain([7.95, 14.0, 18.0], 1.15, True, -1)
-    v.dim_chain([8.05, 9.25, 9.85, 11.35, 13.1, 13.9, 14.0, 14.3, 15.3, 18.0], 20.0, True, 1)
+    v.dim_chain([8.05, 8.35, 8.95, 11.35, 13.1, 13.9, 14.0, 14.3, 15.3, 16.55, 17.75, 18.0], 20.0, True, 1)
     v.dim_chain([7.75, 10.45, 11.45, 15.3, 18.35], 6.55, False, 1)
     v.dim_chain([7.75, 18.5], 5.85, False, 1)
     v.dim_chain([2.5, 5.5, 6.7, 7.9, 10.7, 11.9, 14.7, 15.9, 18.5], 18.75, False, -1)

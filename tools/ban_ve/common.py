@@ -105,4 +105,4 @@ def north(sh, X, Y, ang_deg, r=7):
 
 # huong: mat tien (canh mot lo, truc +b) huong Dong Bac (thuyet minh: "mat tien huong Dong Bac, phia song Tay Nam").
 # Tren mat bang truc +b huong len -> phia lo (b nho) la Dong Bac => huong Bac tren giay ~ goc 270+45 = 315 do... (Bac = lech 45 do sang trai so voi huong ra lo)
-NORTH_PLAN = 315  # lo (duoi giay) = Dong Bac -> Bac chi xuong-phai; hong phai = Tay Bac, phia song = Tay Nam (khop thuyet minh)
+NORTH_PLAN = 319.67  # lo (duoi giay) = Dong Bac -> Bac chi xuong-phai; hong phai = Tay Bac, phia song = Tay Nam (khop thuyet minh)

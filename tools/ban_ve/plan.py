@@ -104,6 +104,14 @@ def furn_plan(v, items=FURN, skip=(), col=GRY):
             v.rect(a0, b0, a1, b1, fill=(1, 1, 1), edge=col, lw=.25, layer='NOITHAT')
             for (ca, cb) in [(a0 - .48, b0 + .15), (a0 - .48, b0 + .65), (a1 + .08, b0 + .15), (a1 + .08, b0 + .65)]:
                 v.rect(ca, cb, ca + .4, cb + .4, edge=col, lw=.18, layer='NOITHAT')
+        elif k == 'btr':  # ban tron inox + 4 ghe (toa do theo 3D)
+            ca, cb, r = (a0 + a1) / 2, (b0 + b1) / 2, (a1 - a0) / 2
+            v.circle(ca, cb, r, fill=(1, 1, 1), edge=col, lw=.25, layer='NOITHAT'); v.circle(ca, cb, .3, edge=col, lw=.12, dash=[.8, .6], layer='NOITHAT')
+            for (da, db) in [(-r - .2, 0), (r + .2, 0), (0, -r - .2), (0, r + .2)]:
+                v.rect(ca + da - .2, cb + db - .2, ca + da + .2, cb + db + .2, edge=col, lw=.18, layer='NOITHAT')
+            X, Y = v.P(ca, cb); sh.text(X, Y, name, 1.4, 'c', 'm', col=(.3, .3, .3), layer='NOITHAT')
+        elif k == 'don':
+            v.circle((a0 + a1) / 2, (b0 + b1) / 2, (a1 - a0) / 2, fill=(1, 1, 1), edge=col, lw=.18, layer='NOITHAT')
         elif k == 'mb':
             v.rect(a0, b0, a1, b1, fill=(1, 1, 1), edge=col, lw=.25, layer='NOITHAT')
             v.rect(a0 + .08, 10.85, a1 - .1, 11.25, edge=col, lw=.18, layer='NOITHAT'); v.rect(a0 + .08, 11.27, a1 - .1, 11.65, edge=col, lw=.18, layer='NOITHAT')
@@ -131,7 +139,7 @@ def furn_plan(v, items=FURN, skip=(), col=GRY):
             v.rect(a0, b0, a1, b1, fill=None if dash else (1, 1, 1), edge=col, lw=.22, dash=dash, layer='NOITHAT')
             if k in ('tu', 'ta', 'ta2', 'tk', 'tl', 'tm'):
                 v.line([(a0, b0), (a1, b1)], .1, col, None, 'NOITHAT')
-        if k not in ('mb', 'bc', 'kt', 'lv', 'gs', 'ac', 'ban', 'cn', 'b1', 'b2') and z0 < 1.3:
+        if k not in ('mb', 'bc', 'kt', 'lv', 'gs', 'ac', 'ban', 'btr', 'don', 'cn', 'b1', 'b2') and z0 < 1.3:
             X, Y = v.P((a0 + a1) / 2, (b0 + b1) / 2)
             hgt = min(1.6, 1.6)
             if (b1 - b0) > (a1 - a0) * 1.6 and (b1 - b0) * v.k > 18:
@@ -142,13 +150,14 @@ def furn_plan(v, items=FURN, skip=(), col=GRY):
 
 def steps_plan(v):
     # chieu nghi + 2 bac (de xuat toi uu)
-    v.rect(11.45, 15.7, 12.45, 16.6, fill=(1, 1, 1), edge=BLK, lw=.3, layer='NOITHAT')
+    v.rect(11.45, 15.7, 12.45, 17.7, fill=(1, 1, 1), edge=BLK, lw=.3, layer='NOITHAT')
     v.rect(12.45, 15.7, 12.75, 16.6, fill=(1, 1, 1), edge=BLK, lw=.3, layer='NOITHAT')
     v.rect(12.75, 15.7, 13.05, 16.6, fill=(1, 1, 1), edge=BLK, lw=.3, layer='NOITHAT')
     v.line([(13.0, 16.15), (11.7, 16.15)], .2, BLK); v.line([(11.85, 16.05), (11.7, 16.15), (11.85, 16.25)], .2, BLK)
     v.text(12.0, 15.88, 'LÊN', 1.5, anc='c', va='m')
     # tay vin 2 ben
-    v.line([(11.5, 15.66), (13.05, 15.66)], .35, BLU, None, 'DEXUAT'); v.line([(11.5, 16.64), (13.05, 16.64)], .35, BLU, None, 'DEXUAT')
+    v.line([(11.62, 15.66), (13.05, 15.66)], .35, BLU, None, 'DEXUAT')
+    v.line([(12.41, 16.6), (12.41, 17.66), (11.5, 17.66)], .35, BLU, None, 'DEXUAT')  # lan can mep chieu nghi (rot 0,5m)
 
 
 def grid(v, a_lines, b_lines, a_rng, b_rng, r=3.2):

@@ -3,6 +3,7 @@ from sheets_plan import *
 
 TREES = [(24.5, 4, .9, 'Mù u'), (25, 12.5, .95, 'Mù u'), (33, 8, 1, 'Còng'), (17.5, 26.5, .9, 'Mù u'), (25, 25.5, .85, 'Còng'),
          (30, 69.5, 1.1, 'Còng'), (45, 67.5, 1, 'Mù u')]
+TREES_L = [(3.4, 8.9, 'C1'), (4.3, 12.4, 'C2'), (5.2, 16.0, 'C3')]  # cay tan cao ben trai nha phu, cach ranh trai 1,2m
 PALMS = [(20.4, 6.8, 'Cau'), (20.2, 12.4, 'Cau'), (20.5, 16.8, 'Cau'), (5.8, 21.6, 'Chà là'), (14.8, 24.6, 'Chà là'), (21.3, 20.8, 'Chà là'), (7.4, 25.8, 'Chà là')]
 
 
@@ -44,6 +45,9 @@ def sheet_site(sh):
     v.line([(9.0, 4.85), (WELL[0], WELL[1])], .2, GRN, [1.5, 1]); v.text(11.6, 12.5, '≥15,3m', 1.6, col=GRN, rot=79)
     for a, b, s, n in TREES:
         v.circle(a, b, 3.0 * s, edge=GRN, lw=.25); v.circle(a, b, .25, fill=GRN, edge=GRN); v.text(a, b - .8, n, 1.4, anc='c', col=GRN)
+    for a, b, n in TREES_L:
+        v.circle(a, b, 3.0, edge=GRN, lw=.25, dash=[1.5, 1]); v.circle(a, b, .25, fill=GRN, edge=GRN)
+    v.text(2.0, 18.6, 'C1–C3 tán cao', 1.3, col=GRN)
     for a, b, n in PALMS:
         v.circle(a, b, 1.0, edge=GRN, lw=.2, dash=[1, .6]); v.text(a + 1.2, b, n, 1.2, col=GRN)
     # duong vao
@@ -57,6 +61,7 @@ def sheet_site(sh):
         'Bể tự hoại 2.000L dưới sân trước bếp, cách giếng ≥15,3m. [12] Ụ chắn bánh BT 200×200 quanh nắp bể, xe khách đậu lệch phải.',
         'Bãi thấm dọc rào trái ~10m²: CHỐT KÍCH THƯỚC SAU KHI THỬ THẤM.',
         'Cây: mù u, còng trên ụ đất cao +0,5 cách nhà ≥6,5–12m; cau dọc hông phải; chà là phía sau (chống nắng chiều Tây Nam, Tây Bắc).',
+        'C1–C3: 3 cây tán cao bên trái nhà phụ (bàng Đài Loan hoặc mù u), trên ụ đất +0,3, cách rào 1,2m, cách bãi thấm ≥1,2m; tỉa nhánh dưới ≥2,5m. Che nắng sáng Đông Nam cho lối đi, vách bếp và khoảng sân trước hiên nhà phụ (xem KT-16).',
         'Nhà xe gỗ 5,7×7,1m làm đợt 2, vào bằng cổng phụ 4,5m.',
         'Cổng, rào: đợt 1 cổng sắt cũ lắp lại + rào kẽm gai tạm; đợt sau tường kín 2,6m.',
     ], 60, 1.85)
@@ -114,6 +119,11 @@ def carport_front(S):
     v.rect(2.2, 2.6, 8.05, 2.86, edge=GRY, lw=.25, dash=[1.5, 1]); v.text(5.1, 1.4, 'Nhà xe gỗ – đợt 2', 1.6, anc='c', col=GRY)
 
 
+def louver(v, a0, a1, z0, z1):
+    v.rect(a0, z0, a1, z1, fill=(1, 1, 1), edge=BLK, lw=.3, layer='CUA')
+    for k in range(1, int((z1 - z0) / .06)): v.line([(a0, z0 + k * .06), (a1, z0 + k * .06)], .1, BLK, None, 'CUA')
+
+
 def elev(sh, plane, c, look, oy, x0, title, ox=40, extra=None, lv_x=None, dimx=None):
     S = Sec(sh, plane, c, look, False, ox, oy, 75, x0)
     building(S, furn=False)
@@ -137,6 +147,7 @@ def sheet_elev_fb(sh):
         callout(v, 8.6, 2.7, 'Mái hiên tôn 1,2m [5]', 6.5, 3.15)
         callout(v, 16.0, 1.5, 'Cửa xếp/cuốn D1 hiện trạng', 18.8, 3.2)
         callout(v, 12.9, 1.5, 'Cửa sổ rộng W1 2.050×1.350 kính trơn, khung gỗ', 13.0, 5.1)
+        louver(v, 12.6, 13.8, 2.95, 3.35); callout(v, 13.2, 3.3, 'O7 chớp hồi đầu cao mái 1.200×400 [17]', 15.0, 5.6)
         v.poly([(7.9, 2.8), (14.05, 2.8), (14.05, 2.6), (7.9, 2.6)], fill=None, edge=BLU, lw=.35, layer='DEXUAT')
         v.text(5.6, -0.6, 'Tường trắng ngà · gỗ nâu · mái xám đậm · cổng song sắt nâu (bỏ qua cổng rào khi vẽ)', 1.6, col=GRY)
     elev(sh, 'b', -1.0, +1, 85, 1.5, 'MẶT ĐỨNG TRƯỚC (nhìn từ lộ – hướng Đông Bắc)', extra=fr, dimx=19.3)
@@ -144,7 +155,9 @@ def sheet_elev_fb(sh):
         v = S.v
         callout(v, 13.5, 1.2, ['Cửa sau nhà phụ D10 ra dây phơi,', 'lanh tô +2.650 [10]'], 11.0, 4.3)
         callout(v, 14.8, 1.4, ['Cửa sau nhà chính D2 1.000×2.700', '(đục từ cửa sổ cũ)'], 12.0, 5.0)
-        callout(v, 9.55, 2.0, 'Cửa chớp lật WC 600×400 [9]', 6.0, 3.7)
+        callout(v, 8.65, 2.0, 'Cửa chớp lật WC 2 – O2 600×400 [9]', 6.0, 3.7)
+        louver(v, 11.8, 13.0, 2.95, 3.35); callout(v, 12.4, 3.3, 'O7 chớp hồi 1.200×400 [17]', 10.0, 5.7)
+        callout(v, 17.15, 1.6, ['W3 1.200×1.200 đón gió Tây Nam [17]', 'O5 ô thoáng áp mái 2.000×300'], 16.4, 5.45)
         callout(v, 15.9, 3.1, 'Bồn inox 1.000L trên chân thép 2,5m', 8.0, 5.5)
     elev(sh, 'b', 21.5, -1, 188, 19.5, 'MẶT ĐỨNG SAU (nhìn từ vườn sau – hướng Tây Nam)', extra=bk, dimx=5.6)
 
@@ -174,7 +187,7 @@ def sheet_elev_side(sh):
 def sheet_wc(sh):
     import copy
     v = View(sh, 32, 134, 25, 7.2, 15.05)
-    sub = [w for w in WALLS if w['name'] in ('Tường WC phía bếp', 'Tường WC phía khu giặt', 'Tường WC hông trái', 'Tường sau WC', 'Tường sau khu giặt', 'Vách ngăn tôn bếp–khu giặt')]
+    sub = [w for w in WALLS if w['name'] in ('Tường WC phía bếp', 'Tường WC phía khu giặt', 'Tường WC hông trái', 'Tường sau WC', 'Vách ngăn 2 WC', 'Tường sau khu giặt', 'Vách ngăn tôn bếp–khu giặt')]
     import copy
     hw = copy.deepcopy([w for w in WALLS if w['name'] == 'Tường hông trái nhà chính'][0]); hw['s0'] = 15.0; hw['s1'] = 18.3; hw['ops'] = [o for o in hw['ops'] if o[5] == 'D4']
     lw = copy.deepcopy([w for w in WALLS if w['name'] == 'Tường hông trái nhà phụ'][0]); lw['s0'] = 15.0; lw['ops'] = []
@@ -185,22 +198,24 @@ def sheet_wc(sh):
     v.text(13.5, 18.62, 'D10 mở ra ngoài', 1.5, anc='c', col=(.1, .3, .55))
     furn_plan(v, [f for f in FURN if f[7] in ('bc', 'kt', 'gs', 'lv', 'kk')])
     steps_plan(v)
-    v.rect(8.12, 16.3, 8.22, 16.6, fill=(.95, .8, .85), edge=RED, lw=.25); v.text(8.3, 16.45, 'Máy nước nóng 4,5kW (đáy +1.900)', 1.6, va='m', col=RED)
+    v.rect(8.12, 16.3, 8.22, 16.6, fill=(.95, .8, .85), edge=RED, lw=.25); v.text(8.3, 16.65, 'Máy nước nóng 4,5kW (đáy +1.900)', 1.5, va='m', col=RED)
     v.line([(9.3, 15.45), (9.3, 16.55)], .5, (.3, .6, .8)); v.text(9.4, 15.6, 'Vách kính tắm 8mm cao 1.900', 1.5, col=(.2, .4, .6))
     v.rect(8.67, 15.92, 8.83, 16.08, fill=BLK, edge=BLK); v.text(8.9, 15.85, 'Phễu thu', 1.5)
     for (a, b) in [(8.75, 16.3), (9.0, 16.05)]: pass
     v.line([(9.2, 16.3), (8.85, 16.05)], .25, BLK); v.text(9.05, 16.4, 'i=2%', 1.4)
     v.line([(10.8, 17.0), (9.4, 16.2)], .25, BLK); v.text(10.4, 17.05, 'i=1% về phễu', 1.4)
-    v.rect(10.9, 15.8, 10.94, 16.4, fill=BLU, edge=BLU); v.text(10.85, 16.1, 'Tay vịn', 1.4, anc='r', col=BLU)
+    v.rect(10.45, 16.69, 10.95, 16.73, fill=BLU, edge=BLU); v.text(10.7, 16.55, 'Tay vịn gập', 1.3, anc='c', col=BLU)
+    v.rect(8.17, 17.35, 8.21, 17.95, fill=BLU, edge=BLU); v.text(8.3, 17.98, 'Tay vịn', 1.3, col=BLU)
+    v.line([(11.86, 18.05), (11.86, 18.62)], .9, (.55, .55, .55)); v.text(11.95, 18.5, 'Ø100 sấy', 1.3, col=(.35, .35, .35))
     v.circle(7.45, 17.7, .03, fill=BLK); v.text(7.4, 17.85, 'Thông hơi Ø60', 1.4, anc='r')
     v.rect(7.22, 17.32, 7.38, 17.48, fill=BLK, edge=BLK); v.text(7.4, 17.25, 'Nắp KT', 1.4)
     v.dim_chain([8.15, 8.6, 9.25, 9.3, 11.35], 15.25, True, -1)
     v.dim_chain([8.05, 11.45, 12.45, 13.05, 14.0], 18.72, True, 1)
-    v.dim_chain([15.4, 15.55, 16.55, 17.55, 18.25], 7.75, False, 1)
-    v.dim_chain([15.35, 15.7, 16.6, 17.75, 18.4], 14.4, False, -1)
-    v.plan_level(10.2, 16.1, '+0.500', 1.8); v.plan_level(12.0, 16.4, '+0.500', 1.6); v.plan_level(13.4, 17.2, '±0.000', 1.8)
-    v.text(10.0, 17.5, 'WC + TẮM', 2.4, anc='c', bold=True); v.text(12.9, 18.0, 'KHU GIẶT – TẮM', 2.0, anc='c', bold=True)
-    X, Y = v.P(12.2, 16.95); tag(sh, X, Y, '1'); X, Y = v.P(9.55, 18.65); tag(sh, X, Y, '9')
+    v.dim_chain([15.4, 15.55, 16.1, 16.55, 16.75, 16.85, 17.55, 18.25], 7.75, False, 1)
+    v.dim_chain([15.35, 15.7, 15.95, 16.6, 16.65, 16.95, 17.7, 18.4], 14.4, False, -1)
+    v.plan_level(10.8, 15.75, '+0.500', 1.6); v.plan_level(9.8, 17.15, '+0.500', 1.6); v.plan_level(12.0, 17.2, '+0.500', 1.6); v.plan_level(13.4, 17.2, '±0.000', 1.8)
+    v.text(10.3, 15.55, 'WC 1 + TẮM', 2.0, anc='c', bold=True); v.text(10.0, 17.85, 'WC 2', 2.2, anc='c', bold=True); v.text(12.9, 18.0, 'KHU GIẶT – TẮM', 2.0, anc='c', bold=True)
+    X, Y = v.P(12.2, 16.95); tag(sh, X, Y, '1'); X, Y = v.P(8.65, 18.65); tag(sh, X, Y, '9'); X, Y = v.P(9.75, 16.35); tag(sh, X, Y, '16')
     view_title(sh, 140, 122, 'MẶT BẰNG CHI TIẾT WC – KHU GIẶT', '1:25')
     # mat cat bac
     S = Sec(sh, 'b', 16.15, +1, True, 32, 36, 25, 11.0, z0=0)
@@ -227,8 +242,8 @@ def sheet_wc(sh):
         'Đèn chân tường cảm biến cạnh bậc, cao 300.',
     ], 38, 1.7)
     rows = [['Bồn cầu 1 khối', 'tâm cách tường 450, xả sàn', 'Van + vòi xịt 400'], ['Máy nước nóng 4,5kW', 'đáy +1.900 (1,4m so sàn WC)', 'RCBO 25A 30mA riêng'],
-            ['Sen tắm (của máy)', 'cài sen cao 1.000–1.900', ''], ['Gương + kệ', 'đáy gương +1.700', 'trong WC'], ['Quạt hút Ø150', 'cao +2.700 vách sau', 'thổi ra ngoài'],
-            ['Lavabo khu giặt', 'mặt +850', 'van góc 550'], ['Máy giặt + sấy chồng', 'giá chồng, ổ cắm +1.200', 'van +1.000'],
+            ['Sen tắm (của máy)', 'cài sen cao 1.000–1.900', ''], ['Bồn cầu WC 1', 'lưng sát vách ngăn, tâm a 10,2', 'chếch Y vào ống Ø90 dưới sàn'], ['Quạt hút WC 1 ≥100m³/h', 'trên ô chớp O4 vách trái', 'thổi ra ngoài'], ['Quạt hút WC 2 ≥100m³/h', 'cao +2.700 vách sau', 'thổi ra ngoài'],
+            ['Lavabo khu giặt', 'mặt +850', 'van góc 550'], ['Máy giặt + sấy chồng', 'giá chồng, ổ cắm +1.900 trên nóc máy sấy', 'van +1.000'],
             ['Tay vịn bồn cầu', 'cao 750 so sàn WC', 'inox Ø32'], ['Móc khăn, kệ khăn', 'cao +1.600', 'trên vách ngăn']]
     table(sh, 252, 122, [('Thiết bị', 46), ('Cao độ lắp / vị trí', 62), ('Ghi chú', 48)], rows, 1.6, 3.9)
     notes(sh, 330, 280, 'HOÀN THIỆN WC', [
@@ -236,7 +251,9 @@ def sheet_wc(sh):
         'Chống thấm: 2 lớp gốc xi măng – polymer, lật tường 300 (khu tắm 1.800), thử ngâm nước 48h trước khi lát.',
         'Tường: ốp gạch men 300×600 cao 1.800 khu tắm, còn lại sơn chống ẩm.',
         'Trần: tấm nhựa PVC trên khung nhôm +2.900 (cách sàn WC 2,4m).',
-        'Cửa lùa D9: nhôm/nhựa lõi thép, ray treo, khoá mở được từ ngoài.',
+        'Cửa lùa D9 (WC 1) 700: ray treo mặt ngoài, cánh lùa về phía bếp. Cửa D11 (WC 2) 750 mở vào trong WC. Cả 2 khoá mở được từ ngoài.',
+        'Vách ngăn 2 WC: gạch ống 100 cao tới trần +2.900, chống thấm 2 mặt lật 300, mặt WC 1 ốp cao 1.800.',
+        'Máy sấy thông hơi: ống Ø100 nhôm xuyên vách sau khu giặt, không dẫn vào WC, trần hay khoang mái.',
     ], 42, 1.75)
 
 
@@ -297,14 +314,21 @@ def sheet_schedule(sh):
         ['D6', 'Phòng ngủ 2/kho', '800×2.200', '1', 'Gỗ đỏ ô kính mờ', 'Giữ', 'Hiện trạng'],
         ['D7', 'Cửa nhà phụ (lối vào hằng ngày)', '2.000×2.650', '1', '2 cánh cao 2.200 sơn xanh cổ vịt, nửa trên kính trơn + ô kính trên (sửa từ cửa sắt cũ hoặc làm mới)', 'Lanh tô +2.650 [10]', 'Đợt 1'],
         ['D8', 'Bếp → khu giặt', '800×2.100', '1', 'Cửa gỗ/nhựa, mở về phía bếp', 'Đổi chiều mở [2]', 'Đợt 1'],
-        ['D9', 'Cửa WC', '800×2.080', '1', 'Cửa lùa nhựa lõi thép, ray treo', 'Khoá mở được từ ngoài', 'Đợt 1'],
+        ['D9', 'Cửa WC 1 (tắm + bồn cầu)', '700×2.080', '1', 'Cửa lùa nhựa lõi thép, ray treo mặt ngoài, lùa về phía bếp', 'Khoá mở được từ ngoài', 'Đợt 1'],
+        ['D11', 'Cửa WC 2 (bồn cầu)', '750×2.080', '1', 'Cửa nhựa lõi thép mở vào trong WC', 'Khoá mở được từ ngoài', 'Đợt 1 – mới'],
         ['D10', 'Cửa sau nhà phụ (ra dây phơi)', '800×2.650', '1', 'Sắt/nhôm cao 2.100 + ô lưới trên, mở ra', 'Lanh tô +2.650 [10]', 'Đợt 1'],
         ['V1', 'Vòm khách → hành lang', '1.100×2.500', '1', 'Ô trống', '', 'Hiện trạng'],
-        ['S1', 'Cửa sổ hông phải', '1.200×1.400, đáy +1.000', '3', 'Sắt kính hiện trạng', 'Thêm lưới; 1 ô mở khoá thoát hiểm (P.ngủ)', 'Hiện trạng'],
+        ['S1', 'Cửa sổ hông phải', '1.200×1.400, đáy +1.000', '3', 'Sắt kính hiện trạng', 'Thêm lưới; nếu là cánh lùa thì đổi 2 cánh mở quay ra ngoài 90° làm cánh đón gió (KT-16)', 'Hiện trạng'],
+        ['W3', 'Cửa sổ sau P.ngủ 2 (đón gió Tây Nam)', '1.200×1.200, đáy +1.000', '1', 'Khung nhôm/gỗ, kính trơn, 2 cánh mở quay + lưới', 'Đục mới, lanh tô BTCT; dưới mái hắt 1,2m', 'Đợt 1 – mới'],
         ['W1', 'Cửa sổ rộng trước nhà phụ', '2.050×1.350, đáy +0.900', '1', 'Khung gỗ/nhôm vân gỗ, kính cường lực trơn 8mm, 2 cánh mở quay, không ô chia, không song; lưới chống muỗi cuốn ẩn', 'Thay S2 (theo ảnh mẫu)', 'Đợt 1'],
         ['W2', 'Cửa sổ rộng hông bếp', '2.000×1.200, đáy +1.050', '1', 'Khung gỗ/nhôm vân gỗ, kính cường lực trơn, 2 cánh lùa, không ô chia, không song; lưới cuốn', 'Thay S3; đợt 2 xây thêm 450 dưới bậu', 'Đợt 1'],
         ['O1', 'Ô thoáng vách khách–ngủ', '1.700×400, đáy +2.600', '1', 'Hiện trạng', '', 'Hiện trạng'],
-        ['O2', 'Cửa chớp lật WC', '600×400, đáy +1.800 (so ±0)', '1', 'Nhôm chớp lật + lưới', 'Thay ô 300×300 [9]', 'Đợt 1'],
+        ['O2', 'Cửa chớp lật WC 2 (vách sau)', '600×400, đáy +1.800 (so ±0)', '1', 'Nhôm chớp lật + lưới', 'Trên bồn cầu, cách ống máy sấy ~2,9m [9]', 'Đợt 1'],
+        ['O3', 'Ô thoáng trên cửa D5, D6', '800×500, đáy +2.350', '2', 'Nan gỗ/nhôm chớp cố định + lưới', 'Gió phòng ngủ ra hành lang khi đóng cửa', 'Đợt 1 – mới'],
+        ['O4', 'Cửa chớp lật WC 1 (vách trái)', '600×400, đáy +2.200', '1', 'Nhôm chớp lật + lưới + quạt hút', 'Trên khay tắm', 'Đợt 1 – mới'],
+        ['O5', 'Ô thoáng áp mái nhà chính (trước, sau)', '2.000×300, đáy +3.400', '2', 'Chớp nhôm + lưới', 'Khảo sát mái trước: ô phải nằm giữa trần và mặt dưới tôn', 'Đợt 1 – mới'],
+        ['O6', 'Ô thoáng vách P.ngủ 1 – P.ngủ 2', '1.900×400, đáy +2.600', '1', 'Nan gỗ cố định', 'Nối luồng gió W3 → P.ngủ 1 → O1', 'Đợt 1 – mới'],
+        ['O7', 'Chớp hồi mái nhà phụ (trước a12,6–13,8; sau a11,8–13,0)', '1.200×400, đáy +2.950', '2', 'Chớp tôn/nhôm + lưới', 'Ở đầu cao của mái: thoát khí nóng', 'Đợt 1 – mới'],
     ]
     cols = [('Ký hiệu', 16), ('Vị trí', 62), ('Kích thước R×C (mm)', 46), ('SL', 9), ('Vật liệu / loại', 82), ('Ghi chú', 82), ('Giai đoạn', 34)]
     y = table(sh, 30, 272, cols, rows, 1.8, 4.6)
@@ -336,6 +360,9 @@ REVIEW = [
     ['13', 'Phòng em bé', 'Vợ đang mang thai – chưa có phương án chỗ ngủ của bé.', 'P.ngủ 2 cạnh P.ngủ 1 chuẩn bị làm phòng em bé: dời kệ sắt, ổ cắm, rèm cản sáng.', 'Vừa', '+1tr'],
     ['14', 'Thống nhất tài liệu', 'Máy nước nóng 4.500W ghi lẫn RCBO 25A / MCB 32A; bồn nước mưa 2 vị trí (map: 6,6;8,9 – 3D: 6,9;20,5); README "cau ×4, chuối ×4" vs thuyết minh "cau ×3, chà là ×4"; sân "−0,10" vs khối xà bần +0,40 trong mô hình.', 'Chốt: RCBO 25A 30mA + dây 4mm²; bồn nước mưa sau nhà phụ (6,9;20,5); cau ×3 + chà là ×4; sân −0,10 (đo lại).', 'Thấp', '0'],
     ['15', 'Cửa sổ & thoát nước mặt', 'Cửa sổ nhỏ S2, S3 bí; lộ cao hơn nền 0,70m, nền chỉ cao hơn sân 5cm.', 'W1, W2 kính trơn rộng ~2m theo ảnh mẫu; gờ chắn +0,80 ở ranh lộ, rãnh nông tự chảy ra ao (KT-15), không cần bơm.', 'Cao', '+15–20tr / +6–10tr'],
+    ['16', '2 WC', 'Chỉ 1 WC chung cho tắm và đi vệ sinh: có người tắm là người khác phải chờ.', 'Vách gạch chia WC 3,2×2,85m thành WC 1 (tắm + bồn cầu, cửa lùa D9) và WC 2 (bồn cầu, cửa D11 mở vào); chiếu nghỉ chung 1,0×2,0m.', 'Cao', '+5–7tr'],
+    ['17', 'Thông gió theo hướng', 'Phòng ngủ chỉ có cửa sổ hông phải, song song cả 2 mùa gió → đóng cửa phòng là bí; khoang mái tôn tích nhiệt.', 'W3 vách sau P.ngủ 2, O3 trên cửa D5/D6, O6 giữa 2 phòng, O5 áp mái, O7 hồi mái nhà phụ; S1 mở quay làm cánh đón gió (KT-16).', 'Cao', '+4–6tr'],
+    ['18', 'Cây hông trái', 'Lối đi và vách bếp hướng Đông Nam nắng sáng gắt, khoảng sân trước hiên nhà phụ trống.', '3 cây tán cao C1–C3 cách rào 1,2m, tỉa nhánh dưới ≥2,5m: che nắng, gió vẫn lùa dưới tán.', 'Vừa', '+1–2tr'],
 ]
 
 
@@ -372,5 +399,5 @@ def sheet_cover(sh, index_rows):
         'Trần thả +3,3m; đỉnh tường +4,5m; mái nhà chính là tôn sau tường chắn mái (chưa khảo sát).',
         'Mặt lộ +0,70; sân −0,05; triều cao nhất −0,30 (chủ nhà đo). Thoát nước mặt: KT-15.',
         'Móng nhà chính chưa khảo sát (vẽ nét đứt tượng trưng).',
-        'Hướng: mặt tiền Đông Bắc (theo thuyết minh) – kiểm tra bằng la bàn.',
+        'Hướng: tính từ sơ đồ GCN, cạnh giáp lộ phương vị 319,67° → mặt tiền nhìn 49,7° (Đông Bắc), mặt sau 229,7° (Tây Nam). Kiểm lại bằng la bàn khi đo.',
     ], 72, 1.85)
