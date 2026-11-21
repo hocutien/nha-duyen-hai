@@ -244,7 +244,8 @@ def sheet_wc(sh):
         'Tường: ốp gạch men 300×600 cao 1.800 khu tắm, còn lại sơn chống ẩm.',
         'Trần: tấm nhựa PVC trên khung nhôm +2.900 (cách sàn WC 2,4m).',
         'Đợt 1 chỉ xây WC (tắm + bồn cầu). Cửa lùa D9 700, ray treo mặt ngoài, lùa về phía bếp, khoá mở được từ ngoài.',
-        'Đợt 2: xây WC 2 (bồn cầu) ở chỗ chừa sẵn sát tường nhà chính, cùng lúc nâng nền +0.450 (không chung vách với WC 1, giữa là lối giặt sấy).',
+        'Đợt 2: xây WC 2 (bồn cầu) ở chỗ chừa sẵn sát tường nhà chính, cùng lúc nâng nền +0.450 (không chung vách với WC 1, giữa là lối giặt sấy). Sàn WC 2 +0.500 như WC 1.',
+        'Chờ WC 2 ngay đợt 1: chếch Y Ø90 + nút bít ở đầu ống chính (a 12,55, đáy +0.360); tê + van khoá + nút bít Ø21 trên ống cấp khu giặt cao +1.000. Đợt 2 ống Ø90 từ bồn cầu (~2m, dốc 1,5%) nằm trong lớp nâng nền +0.450, không phải đục nền; dùng chung ống thông hơi Ø60.',
         'Máy sấy thông hơi: ống Ø100 nhôm xuyên vách sau khu giặt, không dẫn vào WC, trần hay khoang mái.',
     ], 42, 1.75)
 

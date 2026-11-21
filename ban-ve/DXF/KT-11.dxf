@@ -493,7 +493,7 @@ $SKPOLY
   9
 $TDCREATE
  40
-2461366.4192708335
+2461366.4389467593
   9
 $TDUCREATE
  40
@@ -501,7 +501,7 @@ $TDUCREATE
   9
 $TDUPDATE
  40
-2461366.4192708335
+2461366.4389467593
   9
 $TDUUPDATE
  40
@@ -553,7 +553,7 @@ $SPLINESEGS
   9
 $HANDSEED
   5
-4BD
+4C4
   9
 $SURFTAB1
  70
@@ -933,11 +933,11 @@ $PSTYLEMODE
   9
 $FINGERPRINTGUID
   2
-{5D3038E4-FF01-41D7-B36B-28986353127E}
+{D7B771E4-B161-4D73-BA4C-FB8B1263385C}
   9
 $VERSIONGUID
   2
-{E77491A6-9E2E-4A5A-9554-ECCB3B0823D5}
+{0EE292FB-6ABB-43C0-890F-4090AB5624EA}
   9
 $EXTNAMES
 290
@@ -3449,7 +3449,7 @@ ACAD
   0
 APPID
   5
-4BA
+4C1
 330
 3
 100
@@ -3463,7 +3463,7 @@ HATCHBACKGROUNDCOLOR
   0
 APPID
   5
-4BB
+4C2
 330
 3
 100
@@ -35973,7 +35973,7 @@ AcDbText
  40
 43.75
   1
-lối giặt sấy).
+lối giặt sấy). Sàn WC 2 +0.500 như WC 1.
  11
 8325.0
  21
@@ -36005,7 +36005,7 @@ AcDbText
  40
 43.75
   1
-Máy sấy thông hơi: ống Ø100 nhôm xuyên
+Chờ WC 2 ngay đợt 1: chếch Y Ø90 + nút bít
  11
 8250.0
  21
@@ -36037,7 +36037,7 @@ AcDbText
  40
 43.75
   1
-vách sau khu giặt, không dẫn vào WC, trần
+ở đầu ống chính (a 12,55, đáy +0.360); tê
  11
 8325.0
  21
@@ -36069,7 +36069,7 @@ AcDbText
  40
 43.75
   1
-hay khoang mái.
++ van khoá + nút bít Ø21 trên ống cấp khu
  11
 8325.0
  21
@@ -36081,9 +36081,233 @@ AcDbText
  73
 1
   0
-LWPOLYLINE
+TEXT
   5
 49D
+330
+17
+100
+AcDbEntity
+  8
+CHU
+100
+AcDbText
+ 10
+8325.0
+ 20
+5589.687499999996
+ 30
+0.0
+ 40
+43.75
+  1
+giặt cao +1.000. Đợt 2 ống Ø90 từ bồn cầu
+ 11
+8325.0
+ 21
+5589.687499999996
+ 31
+0.0
+100
+AcDbText
+ 73
+1
+  0
+TEXT
+  5
+49E
+330
+17
+100
+AcDbEntity
+  8
+CHU
+100
+AcDbText
+ 10
+8325.0
+ 20
+5526.249999999996
+ 30
+0.0
+ 40
+43.75
+  1
+(~2m, dốc 1,5%) nằm trong lớp nâng nền
+ 11
+8325.0
+ 21
+5526.249999999996
+ 31
+0.0
+100
+AcDbText
+ 73
+1
+  0
+TEXT
+  5
+49F
+330
+17
+100
+AcDbEntity
+  8
+CHU
+100
+AcDbText
+ 10
+8325.0
+ 20
+5462.812499999997
+ 30
+0.0
+ 40
+43.75
+  1
++0.450, không phải đục nền; dùng chung ống
+ 11
+8325.0
+ 21
+5462.812499999997
+ 31
+0.0
+100
+AcDbText
+ 73
+1
+  0
+TEXT
+  5
+4A0
+330
+17
+100
+AcDbEntity
+  8
+CHU
+100
+AcDbText
+ 10
+8325.0
+ 20
+5399.374999999997
+ 30
+0.0
+ 40
+43.75
+  1
+thông hơi Ø60.
+ 11
+8325.0
+ 21
+5399.374999999997
+ 31
+0.0
+100
+AcDbText
+ 73
+1
+  0
+TEXT
+  5
+4A1
+330
+17
+100
+AcDbEntity
+  8
+CHU
+100
+AcDbText
+ 10
+8250.0
+ 20
+5320.937499999997
+ 30
+0.0
+ 40
+43.75
+  1
+Máy sấy thông hơi: ống Ø100 nhôm xuyên
+ 11
+8250.0
+ 21
+5320.937499999997
+ 31
+0.0
+100
+AcDbText
+ 73
+1
+  0
+TEXT
+  5
+4A2
+330
+17
+100
+AcDbEntity
+  8
+CHU
+100
+AcDbText
+ 10
+8325.0
+ 20
+5257.499999999997
+ 30
+0.0
+ 40
+43.75
+  1
+vách sau khu giặt, không dẫn vào WC, trần
+ 11
+8325.0
+ 21
+5257.499999999997
+ 31
+0.0
+100
+AcDbText
+ 73
+1
+  0
+TEXT
+  5
+4A3
+330
+17
+100
+AcDbEntity
+  8
+CHU
+100
+AcDbText
+ 10
+8325.0
+ 20
+5194.062499999997
+ 30
+0.0
+ 40
+43.75
+  1
+hay khoang mái.
+ 11
+8325.0
+ 21
+5194.062499999997
+ 31
+0.0
+100
+AcDbText
+ 73
+1
+  0
+LWPOLYLINE
+  5
+4A4
 330
 17
 100
@@ -36117,7 +36341,7 @@ AcDbPolyline
   0
 LWPOLYLINE
   5
-49E
+4A5
 330
 17
 100
@@ -36151,7 +36375,7 @@ AcDbPolyline
   0
 LWPOLYLINE
   5
-49F
+4A6
 330
 17
 100
@@ -36185,7 +36409,7 @@ AcDbPolyline
   0
 LWPOLYLINE
   5
-4A0
+4A7
 330
 17
 100
@@ -36211,7 +36435,7 @@ AcDbPolyline
   0
 LWPOLYLINE
   5
-4A1
+4A8
 330
 17
 100
@@ -36237,7 +36461,7 @@ AcDbPolyline
   0
 LWPOLYLINE
   5
-4A2
+4A9
 330
 17
 100
@@ -36263,7 +36487,7 @@ AcDbPolyline
   0
 LWPOLYLINE
   5
-4A3
+4AA
 330
 17
 100
@@ -36289,7 +36513,7 @@ AcDbPolyline
   0
 LWPOLYLINE
   5
-4A4
+4AB
 330
 17
 100
@@ -36315,7 +36539,7 @@ AcDbPolyline
   0
 LWPOLYLINE
   5
-4A5
+4AC
 330
 17
 100
@@ -36341,7 +36565,7 @@ AcDbPolyline
   0
 TEXT
   5
-4A6
+4AD
 330
 17
 100
@@ -36375,7 +36599,7 @@ AcDbText
   0
 TEXT
   5
-4A7
+4AE
 330
 17
 100
@@ -36407,7 +36631,7 @@ AcDbText
   0
 TEXT
   5
-4A8
+4AF
 330
 17
 100
@@ -36443,7 +36667,7 @@ AcDbText
   0
 TEXT
   5
-4A9
+4B0
 330
 17
 100
@@ -36475,7 +36699,7 @@ AcDbText
   0
 TEXT
   5
-4AA
+4B1
 330
 17
 100
@@ -36507,7 +36731,7 @@ AcDbText
   0
 TEXT
   5
-4AB
+4B2
 330
 17
 100
@@ -36543,7 +36767,7 @@ AcDbText
   0
 TEXT
   5
-4AC
+4B3
 330
 17
 100
@@ -36577,7 +36801,7 @@ AcDbText
   0
 TEXT
   5
-4AD
+4B4
 330
 17
 100
@@ -36609,7 +36833,7 @@ AcDbText
   0
 TEXT
   5
-4AE
+4B5
 330
 17
 100
@@ -36643,7 +36867,7 @@ AcDbText
   0
 TEXT
   5
-4AF
+4B6
 330
 17
 100
@@ -36677,7 +36901,7 @@ AcDbText
   0
 TEXT
   5
-4B0
+4B7
 330
 17
 100
@@ -36709,7 +36933,7 @@ AcDbText
   0
 TEXT
   5
-4B1
+4B8
 330
 17
 100
@@ -36743,7 +36967,7 @@ AcDbText
   0
 TEXT
   5
-4B2
+4B9
 330
 17
 100
@@ -36775,7 +36999,7 @@ AcDbText
   0
 TEXT
   5
-4B3
+4BA
 330
 17
 100
@@ -36809,7 +37033,7 @@ AcDbText
   0
 TEXT
   5
-4B4
+4BB
 330
 17
 100
@@ -36841,7 +37065,7 @@ AcDbText
   0
 TEXT
   5
-4B5
+4BC
 330
 17
 100
@@ -36875,7 +37099,7 @@ AcDbText
   0
 TEXT
   5
-4B6
+4BD
 330
 17
 100
@@ -36907,7 +37131,7 @@ AcDbText
   0
 TEXT
   5
-4B7
+4BE
 330
 17
 100
@@ -36941,7 +37165,7 @@ AcDbText
   0
 TEXT
   5
-4B8
+4BF
 330
 17
 100
@@ -36975,7 +37199,7 @@ AcDbText
   0
 TEXT
   5
-4B9
+4C0
 330
 17
 100
@@ -38097,7 +38321,7 @@ CREATED_BY_EZDXF
   3
 WRITTEN_BY_EZDXF
 350
-4BC
+4C3
   0
 DICTIONARYVAR
   5
@@ -38109,7 +38333,7 @@ DictionaryVariables
 280
 0
   1
-1.4.5 @ 2026-11-21T10:03:45.897979+00:00
+1.4.5 @ 2026-11-21T10:32:05.749929+00:00
   0
 VISUALSTYLE
   5
@@ -44663,7 +44887,7 @@ strokes_ogs.tif
   0
 DICTIONARYVAR
   5
-4BC
+4C3
 330
 2D
 100
@@ -44671,7 +44895,7 @@ DictionaryVariables
 280
 0
   1
-1.4.5 @ 2026-11-21T10:03:45.925247+00:00
+1.4.5 @ 2026-11-21T10:32:05.789587+00:00
   0
 ENDSEC
   0
