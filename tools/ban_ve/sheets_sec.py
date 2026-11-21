@@ -26,7 +26,7 @@ def septic(S):
             v.poly(pts[::-1][::-1] + pts2, fill=(.75, .8, .82), edge=BLK, lw=.4, layer='THIETBI')
             for b in (2.75, 4.15): v.rect(b - .3, .27, b + .3, .4, fill=(.55, .6, .65), edge=BLK, lw=.3, layer='THIETBI')
             v.text(3.45, -0.35, 'BỂ TỰ HOẠI NHỰA 2.000L', 1.5, anc='c', va='m', bold=True)
-            v.text(3.45, -0.6, 'có ngăn lọc · neo chống nổi', 1.3, anc='c', va='m')
+            v.text(3.45, -0.6, 'có ngăn lọc · lót BT 200 + 2 đai neo chống nổi', 1.3, anc='c', va='m')
         S.cuts.append(f)
 
 
@@ -52,7 +52,7 @@ def sheet_long_sections(sh):
         (16.5, 0.45, ['Sàn WC +0.500: gạch chống trơn 300×300 / vữa / chống thấm', '2 lớp lật tường 300 (khu tắm 1.800) / BT lót 80 / cát đầm'], 17.5, -0.65),
         (12.0, zroof_annex(9.0) + .02, ['Mái tôn cũ dốc ~10% về hông trái, xà gồ gỗ cũ,', 'cách nhiệt túi khí dưới tôn'], 12.5, 3.85),
         (7.8, 2.6, ['Tường gạch ống 100 trát 2 mặt (mới)', 'trên đà kiềng BTCT 200×200'], 5.0, 3.6),
-        (3.4, 0.35, ['Nắp bể nhô ~0,35, đắp đất phủ', 'CẤM XE ĐÈ – ụ chắn bánh ([12])'], 0.0, 2.3),
+        (3.4, 0.35, ['Nắp bể nhô ~0,35, đắp đất phủ', 'cổng chính chỉ đi bộ, không xe vào [12]'], 0.0, 2.3),
         (17.0, 2.9, 'Trần nhựa WC +2.900', 19.5, 3.4),
     ])
 
@@ -76,10 +76,10 @@ def sheet_sec_C(sh):
         (8.0, 2.65, ['Dải bông gió xi măng tận dụng +2.400→+2.950,', 'mặt trong căng lưới inox chống muỗi'], 9.0, 4.4),
         (11.0, zroof_annex(11.0) + .02, ['Mái tôn cũ dốc ~10%, xà gồ gỗ cũ,', 'cách nhiệt túi khí dưới tôn'], 10.0, 5.0),
         (17.9, 1.7, ['Cửa sổ S1 hiện trạng 1.200×1.400', 'thêm lưới chống muỗi; 1 ô mở khoá thoát hiểm'], 18.3, 4.25),
-        (11.3, 0.75, 'Bàn ăn 4 người 800×1.200', 12.0, 1.4),
+        (11.3, 0.75, 'Bàn tròn inox Ø1.200 có sẵn', 12.0, 1.4),
     ])
     notes(sh, 330, 280, 'GHI CHÚ C-C', [
-        'Nhà phụ: nền ±0.000 giữ nền nhà tạm cũ, láng vữa + gạch chống trơn.',
+        'Nhà phụ: nền ±0.000 giữ nền nhà tạm cũ, láng vữa xoa nhám (không lát gạch).',
         'Mái nhà phụ gác cột gỗ cũ, tường xây mới không đỡ mái; khe giữa đỉnh tường và mái để thoáng hoặc bịt lưới.',
         'Lối đi bếp – bàn ăn ≥1,75m (chuẩn NKBA ≥1,07).',
         'Máy hút mùi đáy +1.550 (cách mặt bếp 700), ống thải xuyên tường trái.',
@@ -95,7 +95,7 @@ def sheet_sec_D(sh):
         (16.8, 0.45, 'Giường phụ / nôi em bé ([13])', 18.2, 1.0),
     ], extra=lambda S: (S.v.line([(11.5, 1.4), (12.45, 1.4), (13.05, 1.07), (13.05, 0.17)], .5, BLU), S.v.text(13.1, 1.15, 'Tay vịn inox Ø32 cao 900', 1.5, col=BLU)))
     notes(sh, 330, 280, 'GHI CHÚ D-D', [
-        'Đường đêm P.ngủ → WC: hành lang 1,2m → cửa D4 → khu giặt → 2 bậc → chiếu nghỉ → cửa lùa. Đèn cảm biến chân tường mỗi chặng.',
+        'Đường đêm P.ngủ → WC: hành lang 1,2m → cửa D4 → khu giặt → 2 bậc (lên từ phía bếp) → chiếu nghỉ → cửa lùa. Đèn cảm biến chân tường mỗi chặng.',
         'Bậc xây gạch đặc trên nền cũ, không liên kết sàn WC: đợt 2 nâng nền +0.450 thì đập bỏ dễ, WC chỉ còn cao hơn 5cm.',
         'Ống thoát chính Ø90 chạy dưới sàn WC (+0.300) ra hông trái; nắp kiểm tra ở góc.',
         'Máy nước nóng trực tiếp 4,5kW treo đáy cao 1,4m so sàn WC, ngoài tia nước.',

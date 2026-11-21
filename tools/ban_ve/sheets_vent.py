@@ -5,7 +5,7 @@ from sheets_level import arrow
 
 BRG_A = 319.67          # phuong +a (doc lo, moc 2 -> moc 1) theo so do GCN (map.html BRG0)
 BRG_B = BRG_A - 90      # phuong +b (vao trong dat, ve phia song) = 229,67
-FACES = [('Mặt tiền (lộ, nhà phụ D7/W1, nhà chính D1)', (BRG_B + 180) % 360), ('Mặt sau (sông: W3, D2, D10, O2)', BRG_B),
+FACES = [('Mặt tiền (lộ, nhà phụ D7/W1, nhà chính D1)', (BRG_B + 180) % 360), ('Mặt sau (sông: W3, D2, D10)', BRG_B),
          ('Hông trái (W2, dải bông gió, O4)', (BRG_A + 180) % 360), ('Hông phải (S1 ×3)', BRG_A)]
 WINDS = [('Đông Bắc (T12–T4)', 45.0), ('Tây Nam (T5–T11)', 225.0), ('Đông Nam – gió chướng*', 135.0)]
 
@@ -129,9 +129,9 @@ def sheet_vent(sh):
         'Trục nhà gần như trùng hai mùa gió (lệch 4,7°): gió xuyên phòng TRƯỚC ↔ SAU là chủ đạo cả năm. Không chắn mặt tiền và mặt sau bằng tường kín, bồn nước hay cây tán thấp.',
         'Hông phải (S1) song song cả hai mùa gió: đổi S1 thành 2 cánh mở quay ra ngoài 90° – cánh bản lề phía lộ đón gió Tây Nam, cánh bản lề phía sông đón gió Đông Bắc.',
         'W3 (1.200×1.200) mới ở vách sau P.ngủ 2 lệch khỏi bóng bồn nước 1.000L (a 15,35–16,45) + O6 vách giữa 2 phòng ngủ + O3 trên cửa D5, D6: phòng ngủ đóng cửa ban đêm vẫn có gió qua (dòng 3–4 bảng 2).',
-        'O5 áp mái trước/sau nhà chính: gió thổi xuyên khoang mái theo đúng trục Đông Bắc – Tây Nam, xả nhiệt dưới tôn trước khi xuống trần.',
-        'O7 ở đầu cao mái nhà phụ (trước + sau): khí nóng bếp dồn lên đầu cao rồi thoát ra, cả khi lặng gió. WC có 2 ô chớp O2, O4 + quạt hút; WC 2 (đợt 2) không có tường ngoài nên sẽ cần quạt + ống Ø100 lên mái.',
-        'Máy sấy thông hơi xả ra vách sau khu giặt (a 11,5), chụp lật hướng xuống, cách ô chớp O2 của WC ~2,6m.',
+        'O5 áp mái nhà chính: để đợt 2 (đục tường 200 cũ phải đổ lanh tô). Khảo sát mái trước; có thể thay bằng vài lỗ bông gió 200×200 xả nhiệt khoang mái.',
+        'O7 ở đầu cao mái nhà phụ (trước + sau): khí nóng bếp dồn lên đầu cao rồi thoát ra, cả khi lặng gió. WC có 1 ô chớp O4 + quạt hút (đủ cho 5,2m²); WC 2 (đợt 2) không có tường ngoài nên sẽ cần quạt + ống Ø100 lên mái.',
+        'Máy sấy thông hơi xả ra vách sau khu giặt (a 11,5), chụp lật hướng xuống, cách ô chớp O4 của WC ~4,3m.',
         'Cây bên trái nhà phụ: tán cao, tỉa nhánh dưới ≥2,5m để gió Đông Nam lùa dưới tán vào W2 và dải bông gió, tán che nắng sáng.',
     ], 95, 1.45, 1.35, 2.2)
     sh.text(X, y - 2, '* Gió mùa Đông Bắc T12–đầu T4 và Tây Nam T5–T11: Tạp chí KTTV số 717 (09/2020), "Nghiên cứu đặc điểm khí hậu tỉnh Trà Vinh".', 1.4, col=GRY)

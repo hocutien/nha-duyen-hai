@@ -19,7 +19,7 @@ P.circle(12.0,19.75,6,'#bbdefb',BLU);P.text('Giếng khoan',12.0,19.75,'end',BLU
 P.rect(12.5,19.35,0.45,0.3,'#bbdefb');P.text('Bơm 0,75kW',12.7,19.35,'middle','#37474f',14)
 P.line([[12.0,19.75],[12.5,19.5]],BLU,2.5)
 P.line([[12.95,19.5],[13.6,19.6],[15.45,19.75],[15.75,19.95]],BLU,2.5)
-P.circle(15.9,20.05,0.55*34,'#e3f2fd',BLU);P.text('Bồn inox 1.000L',15.9,20.05,'middle','#0d47a1',2,0,10,True);P.text('chân 2,5m · phao điện',15.9,20.05,'middle','#37474f',14)
+P.circle(15.9,20.05,0.55*34,'#e3f2fd',BLU);P.text('Bồn inox 1.000L',15.9,20.05,'middle','#0d47a1',2,0,10,True);P.text('bệ 0,5m · phao · bơm tăng áp',15.9,20.05,'middle','#37474f',14)
 P.line([[15.9,20.05],[15.35,19.55]],BLU,3);P.line([[15.0,19.5],[14.6,19.5],[14.6,18.75],[7.95,18.75],[7.62,18.6],[7.62,11.25]],BLU,3)
 P.text('Ống cấp Ø27 chôn 0,3m sau nhà',11.0,18.85,'middle',BLU,-6);P.text('Ø27 đi nổi trên tường, cao 0,7m (trên ống thoát)',7.5,14.6,'end',BLU,4)
 br=[([[11.85,18.75],[11.85,18.38]],(11.85,18.38),'Máy giặt 1,0m','start'),([[12.55,18.75],[12.55,18.38]],(12.55,18.38),'Lavabo','start'),
@@ -56,7 +56,7 @@ def ar(x1,y1,x2,y2,c='#1e88e5',dash=False): return f'<path d="M{x1},{y1}L{x2},{y
 g=['<svg viewBox="0 0 900 490" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11"><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#555"/></marker></defs><rect width="900" height="500" fill="#fff"/>',
    '<text x="10" y="18" font-weight="bold" fill="#1565c0">CẤP NƯỚC</text>']
 g+= [bx(10,30,100,'Giếng khoan','có sẵn'),ar(110,49,135,49),bx(135,30,105,'Bơm 0,75kW','bảo dưỡng phốt, tụ'),ar(240,49,262,49),
-     bx(262,30,110,'Cột lọc','chỉ khi nước phèn','#eceff1','#90a4ae',True),ar(372,49,395,49),bx(395,30,120,'Bồn inox 1.000L','mua cũ · chân 2,5m'),
+     bx(262,30,110,'Hệ lọc có sẵn','2 cột + cốc 20"','#eceff1','#90a4ae',True),ar(372,49,395,49),bx(395,30,120,'Bồn inox 1.000L','mua cũ · bệ 0,5m + bơm'),
      ar(515,49,537,49),bx(537,30,105,'Van tổng Ø34','đoạn 5m'),ar(642,49,662,49),bx(662,30,110,'Bơm tăng áp','chỉ nếu máy giặt cần','#eceff1','#90a4ae',True),
      ar(772,49,790,49),bx(790,30,100,'Ống chính Ø27','ngầm + nổi ~23m')]
 x=60
@@ -88,9 +88,9 @@ page=f'''<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><meta name="
 <li>Chỉ thiết bị xả từ cao ≥ +0,3 mới chảy về bể được: bồn cầu, sàn tắm WC (+0,5), lavabo, máy giặt (ống đứng), chậu bếp, bệ rửa chân nâng cao 0,3m. <b>Khu giặt bỏ phễu sàn</b>, dùng khay hứng dưới máy. <b>Rửa xe</b> làm trên nền đá mi sân xe, không vào bể.</li>
 <li><b>Bãi thấm: chốt sau khi đo.</b> Chỗ duy nhất phía trước vừa cách giếng ≥15m vừa cách ao ≥15m là dải dọc rào trái (~10m²). Ngày thuê máy đào làm hố thử trước: đất cát cần ~12–20m², đất sét ~30–50m². Nếu cần quá 10m² thì chọn phương án bổ sung theo kết quả.</li>
 <li><b>Ống cấp</b> Ø27 không còn chôn song song dưới ống thoát: chôn đoạn sau nhà, lên đi nổi trên tường hông trái cao 0,7m. Ống thoát gần giếng nhất 1,75m là đoạn đi nổi trong khu giặt (dán keo kín, rò là thấy ngay); không có ống thoát chôn gần giếng. Mọi chỗ rẽ dùng co lơi 45°, nhập nhánh bằng chếch Y.</li>
-<li><b>Máy nước nóng</b>: Panasonic DH-4VP1VW trực tiếp 4500W có bơm, đồ cũ có sẵn sen. Máy chạy từ áp ~0,05 bar nên bồn 2,5m là dư; chỉ cần 1 van khoá. Bỏ van an toàn, van 1 chiều, van trộn, sen mua mới.</li>
-<li><b>Bồn nước</b> giữ góc phải phía sau trên chân 2,5m: gần khu giặt (~4m ống), xa bếp. Máy giặt được ~0,15–0,25 bar; nếu model cần cao hơn thì lắp bơm tăng áp 125W (đợt 2).</li>
-<li>Vẫn để đợt 2: vòi sân sau, thoát sân Ø114, bồn nước mưa, cột lọc (chỉ khi nước phèn).</li>
+<li><b>Máy nước nóng</b>: Panasonic DH-4VP1VW trực tiếp 4500W có bơm, đồ cũ có sẵn sen. Máy chạy từ áp ~0,05 bar; chỉ cần 1 van khoá. Bỏ van an toàn, van 1 chiều, van trộn, sen mua mới.</li>
+<li><b>Bồn nước</b> giữ góc phải phía sau trên bệ gạch 0,5m + <b>bơm tăng áp tự động 125W ngay đợt 1</b>: máy giặt cửa trước cần ≥0,5 bar, chân 2,5m cũng chỉ cho ~0,2 bar nên chân thép cao là thừa (rà soát 21/11).</li>
+<li>Vẫn để đợt 2: vòi sân sau, thoát sân Ø114, bồn nước mưa, hệ lọc giếng có sẵn (2 cột composite + cốc 20") lắp lại, thay vật liệu theo kết quả xét nghiệm.</li>
 </ul>
 <h2>2. Mặt bằng cấp – thoát</h2>
 {plan}

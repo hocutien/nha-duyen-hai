@@ -113,7 +113,7 @@ CIRC=[('C1','MCB 1P 10A','3×1,5mm² (L+N+PE)','Đèn 10 bóng + quạt trần +
 sw_=34*len(CIRC)+40
 g=[f'<svg viewBox="0 0 900 {sw_+170}" xmlns="http://www.w3.org/2000/svg" font-family="Arial" font-size="11">','<rect width="900" height="100%" fill="#fff"/>']
 g.append('<rect x="10" y="20" width="90" height="34" fill="#fff" stroke="#333"/><text x="55" y="41" text-anchor="middle">Công tơ EVN</text>')
-g.append('<path d="M100,37H150" stroke="#212121" stroke-width="3"/><text x="104" y="30" font-size="9">CVV 2×25 ~15m</text>')
+g.append('<path d="M100,37H150" stroke="#212121" stroke-width="3"/><text x="104" y="30" font-size="9">CVV 2×16 ~15m</text>')
 g.append('<rect x="150" y="22" width="70" height="30" fill="#eceff1" stroke="#333"/><text x="185" y="35" text-anchor="middle" font-weight="bold">CB tổng</text><text x="185" y="47" text-anchor="middle">2P 63A</text>')
 g.append('<path d="M220,37H250" stroke="#333" stroke-width="2"/><path d="M250,37V' + str(sw_) + '" stroke="#333" stroke-width="4"/>')
 g.append('<path d="M236,37V70" stroke="#333"/><rect x="200" y="70" width="38" height="22" fill="#fff3e0" stroke="#333"/><text x="219" y="85" text-anchor="middle">SPD</text><path d="M219,92V108" stroke="#7cb342" stroke-width="2"/><text x="160" y="106" font-size="9" fill="#558b2f">→ thanh PE</text>')
@@ -185,7 +185,7 @@ def csvg(c,prot,ws,sw,loads,cond,note,d2=False):
     q.append('</svg>')
     return f'<h3 style="font-size:14px;margin:16px 0 4px">{c} – {note}</h3>'+''.join(q)
 DIAG=[
- ('FD','CB tổng 2P 63A',['L','N','PE'],None,[('Công tơ EVN (≥63A) → tủ','CVV 2×25mm²: L đỏ + N xanh'),('Thanh PE trong tủ','từ 1 cọc đồng Ø16×2,4m, cáp đồng 16mm²')],'Cáp CVV 2×25 chôn 0,5m trong ống HDPE Ø50 · PE riêng từ cọc','Nguồn vào + tiếp địa'),
+ ('FD','CB tổng 2P 63A',['L','N','PE'],None,[('Công tơ EVN (≥63A) → tủ','CVV 2×16mm²: L đỏ + N xanh'),('Thanh PE trong tủ','từ 1 cọc đồng Ø16×2,4m, cáp đồng 16mm²')],'Cáp CVV 2×25 chôn 0,5m trong ống HDPE Ø50 · PE riêng từ cọc','Nguồn vào + tiếp địa'),
  ('C1','RCCB #1 + MCB 10A',['L','N','PE'],'CT 1 cực',[('Đèn ×10','PK, HL, 2 PN, bếp, giặt, WC'),('Quạt trần bàn ăn','qua hộp số'),('Quạt hút WC','CT chung với đèn WC')],'Ống PVC Ø16 · 3 sợi 1,5mm² (L+N+PE)','Đèn + quạt (PE cho quạt, đèn vỏ kim loại)'),
  ('C2','RCCB #1 + MCB 20A',['L','N','PE'],None,[('Ổ đôi phòng khách ×4','TV, sofa, bàn LV ×2 (1,1m)'),('Ổ đôi phòng ngủ 1 ×3','đầu giường, cao 1,0m'),('Ổ đôi phòng ngủ 2 ×2','đầu giường, cao 1,0m')],'Ống PVC Ø20 · 3 sợi 2,5mm² (L+N+PE)','Ổ cắm nhà chính'),
  ('C3','RCCB #1 + MCB 20A',['L','N','PE'],None,[('Ổ đơn máy lạnh','cao 2,4m cạnh dàn lạnh PN1')],'Ống PVC Ø20 · 3 sợi 2,5mm²','Máy lạnh 1,5HP'),
@@ -266,7 +266,7 @@ svg{{width:100%;height:auto;border:1px solid #eceff1;border-radius:6px}}table{{b
 <h2>6. Cáp nguồn và CB tổng (chốt 17/11: làm sẵn công suất lớn)</h2>
 <ul>
 <li>Đợt 1 tải đồng thời ≈ {round(tot_r*0.6*1000/220)}A; có bếp từ ≈ {round((tot_r+3.5)*0.6*1000/220)}A; đủ thiết bị tương lai (máy lạnh 2, xưởng mộc, máy rửa xe, bơm tăng áp) ≈ 56A.</li>
-<li><b>Chọn: CB tổng 2P 63A + cáp CVV 2×25mm² ~15m chôn 0,5m trong ống HDPE Ø50.</b> Cáp 6mm² chôn ngầm chỉ chịu ~34–40A, 10mm² ~45–50A; 25mm² dư cho 63A, khỏi đào lại.</li>
+<li><b>Chọn: CB tổng 2P 63A + cáp CVV 2×16mm² ~15m chôn 0,5m trong ống HDPE Ø40.</b> Theo IEC 60364 (2 lõi PVC, chôn trong ống, đất 30°C): 6mm² ~41A, 10mm² ~54A, 16mm² ~69A ≥ 63A. 25mm² là dư (rà soát 21/11). Nếu công tơ là 10(40)A và chưa mua bếp từ thì CB tổng 40–50A là đủ cho tải đợt 1 ~37A.</li>
 <li>Hai RCCB loại 63A để khớp CB tổng (RCCB không tự cắt quá tải, phải ≥ CB phía trên).</li>
 <li><b>Cần làm với Điện lực:</b> xem dòng định mức ghi trên công tơ. Loại 10(80)A hoặc 5(80)A thì dùng được; loại 10(40)A thì xin nâng công tơ trước khi đóng điện.</li>
 </ul>
