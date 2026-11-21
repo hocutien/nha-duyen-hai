@@ -72,7 +72,7 @@ def sec_cross(sh, c, title, calls, extra=None):
 def sheet_sec_C(sh):
     sec_cross(sh, 11.2, 'MẶT CẮT C-C (ngang qua bếp – bàn ăn – hành lang – phòng ngủ 1)', [
         (8.4, 0.85, ['Mặt bếp đá/gạch cao 850, sâu 600', 'chậu đôi dưới cửa sổ W2'], 9.3, 1.9),
-        (8.0, 1.5, ['Cửa sổ W2 nhôm thường lùa', '2.000×1.200, đáy +1.050'], 7.4, 2.1),
+        (8.0, 1.5, ['Cửa sổ W2 nhôm thường lùa', '2.000×900, đáy +1.350'], 7.4, 2.1),
         (8.0, 2.65, ['Dải bông gió xi măng tận dụng +2.400→+2.950,', 'mặt trong căng lưới inox chống muỗi'], 9.0, 4.4),
         (11.0, zroof_annex(11.0) + .02, ['Mái tôn cũ dốc ~10%, xà gồ gỗ cũ,', 'cách nhiệt túi khí dưới tôn'], 10.0, 5.0),
         (17.9, 1.7, ['Cửa sổ S1 hiện trạng 1.200×1.400', 'thêm lưới chống muỗi; 1 ô mở khoá thoát hiểm'], 18.3, 4.25),
@@ -82,7 +82,7 @@ def sheet_sec_C(sh):
         'Nhà phụ: nền ±0.000 giữ nền nhà tạm cũ, láng vữa xoa nhám (không lát gạch).',
         'Mái nhà phụ gác cột gỗ cũ, tường xây mới không đỡ mái; khe giữa đỉnh tường và mái để thoáng hoặc bịt lưới.',
         'Lối đi bếp – bàn ăn ≥1,75m (chuẩn NKBA ≥1,07).',
-        'Máy hút mùi đáy +1.550 (cách mặt bếp 700), ống thải xuyên tường trái.',
+        'Máy hút mùi (đợt 2, sau nâng nền) đáy +2.000 (cách mặt bếp mới +1.300 là 700), ống thải xuyên tường trái tâm +2.300.',
         'Đợt 2: nâng nền nhà chính + nhà phụ +0.450 → trần nhà chính còn 2,85m; cửa nhà phụ lanh tô +2.650 còn 2,2m.',
     ], 36, 1.75)
 

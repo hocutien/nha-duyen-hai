@@ -169,7 +169,7 @@ def sheet_elev_side(sh):
         v.line([(6.7, 0.27), (17.4, 0.27)], .5, (.45, .3, .2)); v.text(14.0, 0.45, 'Ống thoát Ø90 đi nổi, dốc 1,5% về bể', 1.5, col=(.45, .3, .2))
         v.line([(6.7, 0.7), (18.6, 0.7)], .35, BLU); v.text(14.0, 0.85, 'Ống cấp Ø27 cao 0,7m', 1.5, col=BLU)
         v.line([(17.7, 0), (17.7, 3.6)], .4, GRY); v.text(17.85, 3.65, 'Thông hơi Ø60', 1.5)
-        callout(v, 11.0, 1.5, ['Cửa sổ W2 trên mặt bếp 2.000×1.200', 'nhôm thường, 2 cánh lùa, không bệ'], 6.0, 5.0)
+        callout(v, 11.0, 1.7, ['Cửa sổ W2 trên mặt bếp 2.000×900, đáy +1.350', 'nhôm thường, 2 cánh lùa, không bệ'], 6.0, 5.0)
         callout(v, 12.0, 2.7, 'Dải bông gió + lưới inox', 9.0, 4.2)
     elev(sh, 'a', 0.5, +1, 85, 23.0, 'MẶT ĐỨNG HÔNG TRÁI (phía lối đi ra sau – hướng Đông Nam)', extra=lf, dimx=-0.8)
     def rt(S):
@@ -261,10 +261,10 @@ def sheet_kitchen(sh):
     v.rect(10.85, .8, 11.65, .85, fill=(.7, .7, .7), edge=BLK, lw=.2); v.text(11.25, .7, 'Chậu đôi', 1.5, anc='c', va='t')
     v.rect(12.55, .85, 13.28, .87, fill=BLK, edge=BLK); v.text(12.9, .95, 'Bếp từ đôi', 1.5, anc='c')
     v.rect(13.38, .85, 13.74, .93, fill=(.3, .3, .3), edge=BLK); v.text(13.56, 1.0, 'Gas', 1.4, anc='c')
-    for b in (12.0, 12.3, 10.2): v.rect(b - .04, 1.08, b + .04, 1.14, fill=(1, 1, 1), edge=RED, lw=.3)
-    v.text(12.15, 1.2, 'Ổ cắm đôi +1.100', 1.4, anc='c', col=RED)
+    for b in (12.0, 12.3, 10.2): v.rect(b - .04, 1.43, b + .04, 1.49, fill=(1, 1, 1), edge=RED, lw=.3)
+    v.text(12.15, 1.55, 'Ổ cắm đôi +1.450', 1.4, anc='c', col=RED)
     v.rect(13.5, .25, 13.6, .35, fill=(1, 1, .4), edge=BLK); v.text(13.7, .3, 'Báo rò gas sát sàn', 1.4)
-    v.dim_chain([0, .85, 1.55, 2.2], 15.2, False, -1); v.dim_chain([0, 1.05, 2.0, 2.95], 7.55, False, 1)
+    v.dim_chain([0, .85, 1.45, 2.0, 2.3], 15.2, False, -1); v.dim_chain([0, 1.35, 2.25, 2.95], 7.55, False, 1)
     v.dim_chain([7.85, 8.3, 9.6, 10.3, 10.4, 10.85, 11.65, 12.55, 13.28, 13.8], -0.3, True, -1)
     view_title(sh, 40, 281, 'MẶT ĐỨNG TRIỂN KHAI BẾP (vách trái nhà phụ, nhìn từ bàn ăn)', '1:40')
     # mat bang bep 1:50
@@ -282,14 +282,15 @@ def sheet_kitchen(sh):
     notes(sh, 190, 172, 'QUY CÁCH BẾP', [
         'Mặt bếp: đá granite/ đá nhân tạo dày 18–20 trên khung tủ (gỗ cũ tận dụng hoặc tủ nhựa Picomat chống ẩm), cao 850, sâu 600, len tường ốp gạch cao 600.',
         'Thứ tự: tủ lạnh → mặt để đồ 450 → chậu đôi 800 → sơ chế 900 → bếp từ đôi 730 → bếp gas đơn 520 (tổng 3.400).',
-        'Bếp từ đôi: mạch R1 riêng RCBO 25A, dây 4mm² (đợt 2), ổ/hộp đấu dưới mặt bếp cao 600.',
-        'Máy hút mùi mua ở đợt 2 cùng bếp từ. Đợt 1 khoan sẵn lỗ Ø150 xuyên tường trái (đáy máy sau này +1.550), bịt nắp.',
+        'Bếp từ đôi: mạch R1 riêng RCBO 25A, dây 4mm² (đợt 2), ổ/hộp đấu dưới mặt bếp cao +900 (lắp sau khi nâng nền).',
+        'Máy hút mùi mua ở đợt 2 cùng bếp từ, lắp sau khi nâng nền: đáy máy +2.000 (cách mặt bếp mới 700). Đợt 1 khoan sẵn lỗ Ø150 xuyên tường trái tâm +2.300 (dưới dải bông gió), bịt nắp.',
+        'Đợt 2 nâng nền +0,45: kê khung tủ mặt bếp lên 450 (mặt bếp mới +1.300), dùng lại đá mặt, chậu, bẫy mỡ; nối dài ống thoát. Vì vậy đợt 1 không lát gạch nền bếp, chỉ láng.',
         'Bỏ kệ treo trên chậu: thay bằng cửa sổ rộng W2 (đồ khô cất tủ, kệ có sẵn [3]). Không đặt kệ trên bếp.',
         'Bình gas 12kg trong lồng thép thoáng NGOÀI tường [6], dây dẫn ≤1,5m, van điều áp ngắt tự động; báo rò gas đặt cao 300.',
         '[3] Dọc vách WC phía bếp: tủ gỗ thấp 3 cánh + 4 tủ nhựa có sẵn (cách mặt bếp ≥900); kệ sắt lớn có sẵn ở vách phải. Không đóng tủ mới.',
     ], 52, 1.75)
     notes(sh, 300, 172, 'CAO ĐỘ LẮP ĐẶT', [
-        'Ổ cắm mặt bếp: +1.100, cách mép chậu ≥600.', 'Ổ tủ lạnh: +1.200 (cạnh tủ).', 'Công tắc đèn bếp: +1.250 cạnh cửa D7.',
+        'Ổ cắm mặt bếp: +1.450 (cao hơn mặt bếp mới +1.300 sau khi nâng nền), cách mép chậu ≥600.', 'Ổ tủ lạnh: +1.200 (cạnh tủ).', 'Công tắc đèn bếp: +1.250 cạnh cửa D7.',
         'Đèn LED gắn trên khung cửa sổ W2 chiếu mặt sơ chế (ban đêm).', 'Báo nhiệt trần bếp (không dùng báo khói gần bếp).', 'Bình chữa cháy 4kg cạnh cửa D7, cao 1.300.',
     ], 52, 1.75)
 
@@ -313,7 +314,7 @@ def sheet_schedule(sh):
         ['S1', 'Cửa sổ hông phải', '1.200×1.400, đáy +1.000', '3', 'Sắt kính hiện trạng', 'Thêm lưới; nếu là cánh lùa thì đổi 2 cánh mở quay ra ngoài 90° làm cánh đón gió (KT-16)', 'Hiện trạng'],
         ['W3', 'Cửa sổ sau P.ngủ 2 (đón gió Tây Nam)', '1.200×1.200, đáy +1.000', '1', 'Khung nhôm/gỗ, kính trơn, 2 cánh mở quay + lưới', 'Đục mới, lanh tô BTCT; dưới mái hắt 1,2m', 'Đợt 1 – mới'],
         ['W1', 'Cửa sổ rộng trước nhà phụ', '2.050×1.350, đáy +0.900', '1', 'Nhôm hệ thường vân gỗ, kính dán an toàn 6,38 trơn (không cần cường lực 8mm), 2 cánh mở quay, không ô chia, không song; hộp ốp viền + bệ nhô 150 bằng gỗ thông sơn PU màu gỗ theo ảnh mẫu; lưới chống muỗi khung nẹp nam châm', 'Thay S2 (theo ảnh mẫu)', 'Đợt 1'],
-        ['W2', 'Cửa sổ rộng hông bếp', '2.000×1.200, đáy +1.050', '1', 'Làm đơn giản cho đỡ vật liệu: nhôm hệ thường màu xám, kính trơn 5mm, 2 cánh lùa + lưới chống muỗi lùa; không hộp gỗ, không ốp viền, không bệ (bậu vữa láng dốc ra ngoài)', 'Thay S3; chỉ W1 mặt trước làm theo mẫu có bệ', 'Đợt 1'],
+        ['W2', 'Cửa sổ rộng hông bếp', '2.000×900, đáy +1.350', '1', 'Đáy +1.350 để cao hơn mặt bếp +1.300 sau khi nâng nền đợt 2; đỉnh +2.250 dưới dải bông gió. Làm đơn giản cho đỡ vật liệu: nhôm hệ thường màu xám, kính trơn 5mm, 2 cánh lùa + lưới chống muỗi lùa; không hộp gỗ, không ốp viền, không bệ (bậu vữa láng dốc ra ngoài)', 'Thay S3; chỉ W1 mặt trước làm theo mẫu có bệ', 'Đợt 1'],
         ['O1', 'Ô thoáng vách khách–ngủ', '1.700×400, đáy +2.600', '1', 'Hiện trạng', '', 'Hiện trạng'],
         ['O3', 'Ô thoáng trên cửa D5, D6', '800×500, đáy +2.350', '2', 'Nan gỗ/nhôm chớp cố định + lưới', 'Gió phòng ngủ ra hành lang khi đóng cửa', 'Đợt 1 – mới'],
         ['O4', 'Cửa chớp lật WC 1 (vách trái)', '600×400, đáy +2.200', '1', 'Nhôm chớp lật + lưới + quạt hút', 'Trên khu tắm; ô chớp duy nhất của WC [9]', 'Đợt 1 – mới'],
