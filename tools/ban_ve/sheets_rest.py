@@ -82,7 +82,7 @@ def sheet_roof(sh):
     for b in [7.7, 9.8, 11.9, 14.0, 16.1, 18.4]: v.line([(7.75, b + .03), (14.0, b + .03)], .15, (.55, .4, .25), [2, 1])
     for k in range(1, 26): v.line([(7.75 + k * .25, 7.6), (7.75 + k * .25, 18.7)], .07, LGR)
     v.rect(12.9, 18.5, 17.9, 19.7, fill=(1, 1, 1), edge=BLK, lw=.3, layer='MAI'); v.text(15.4, 19.1, 'Mái hắt tôn 1,2m (D10, D2, W3)', 1.5, anc='c')
-    v.rect(9.4, 6.55, 13.95, 7.75, edge=BLU, lw=.3, dash=[2, 1], layer='DEXUAT'); v.text(11.7, 7.1, '[5] Mái hiên tôn 1,2m × 4,6m', 1.5, anc='c', col=BLU)
+    v.rect(9.4, 6.55, 13.95, 7.75, edge=BLU, lw=.3, dash=[2, 1], layer='DEXUAT'); v.text(11.7, 7.1, '[5] Mái hiên tôn 1,2m × 4,6m (đợt 2)', 1.5, anc='c', col=BLU)
     for b in (10.0, 14.0):
         v.line([(13.0, b), (8.6, b)], .35, BLK); v.line([(8.9, b - .2), (8.6, b), (8.9, b + .2)], .35, BLK)
         v.text(11.0, b + .25, 'dốc ~10%', 1.6, anc='c')
@@ -142,10 +142,10 @@ def sheet_elev_fb(sh):
     def fr(S):
         carport_front(S); v = S.v
         callout(v, 9.0, 2.65, ['Dải bông gió xi măng tận dụng', '+2.400→+2.900, lưới inox mặt trong'], 6.5, 4.6)
-        callout(v, 10.2, 1.8, ['D7 cửa 2 cánh sơn xanh cổ vịt, nửa trên kính', 'trơn, ô kính phía trên tới lanh tô +2.650 [10]'], 6.5, 3.85)
-        callout(v, 9.8, 2.7, 'Mái hiên tôn 1,2m × 4,6m [5]', 6.5, 3.15)
+        callout(v, 10.2, 1.8, ['D7 cửa nhôm 2 cánh sơn xanh cổ vịt, nửa trên kính', 'trơn, ô kính phía trên tới lanh tô +2.650 [10]'], 6.5, 3.85)
+        callout(v, 9.8, 2.7, 'Mái hiên tôn 1,2m × 4,6m [5] (đợt 2)', 6.5, 3.15)
         callout(v, 16.0, 1.5, 'Cửa xếp/cuốn D1 hiện trạng', 18.8, 3.2)
-        callout(v, 12.9, 1.5, 'Cửa sổ rộng W1 2.050×1.350 kính trơn, khung gỗ', 13.0, 5.1)
+        callout(v, 12.9, 1.5, 'Cửa sổ rộng W1 2.050×1.350 kính trơn, nhôm lùa (hộp gỗ đợt 2)', 13.0, 5.1)
         louver(v, 12.6, 13.8, 2.95, 3.35); callout(v, 13.2, 3.3, 'O7 chớp hồi đầu cao mái 1.200×400 [17]', 15.0, 5.6)
         v.poly([(9.4, 2.8), (13.95, 2.8), (13.95, 2.6), (9.4, 2.6)], fill=None, edge=BLU, lw=.35, layer='DEXUAT')
         v.text(5.6, -0.6, 'Tường trắng ngà · gỗ nâu · mái xám đậm · cổng song sắt nâu (bỏ qua cổng rào khi vẽ)', 1.6, col=GRY)
@@ -283,7 +283,7 @@ def sheet_kitchen(sh):
     p.dim_chain([8.05, 8.7, 10.42, 12.18, 14.0], 15.6, True, 1)
     view_title(sh, 38, 181, 'MẶT BẰNG BẾP – ĂN', '1:50')
     notes(sh, 190, 172, 'QUY CÁCH BẾP', [
-        'Mặt bếp: đá granite/ đá nhân tạo dày 18–20 trên khung tủ (gỗ cũ tận dụng hoặc tủ nhựa Picomat chống ẩm), cao 850, sâu 600, len tường ốp gạch cao 600.',
+        'Đợt 1 dùng mặt tủ/kệ cũ; đá lắp ở đợt 2 khi nâng nền (khỏi tháo đá 2 lần). Mặt bếp: đá granite/ đá nhân tạo dày 18–20 trên khung tủ (gỗ cũ tận dụng hoặc tủ nhựa Picomat chống ẩm), cao 850, sâu 600, len tường ốp gạch cao 600.',
         'Thứ tự: tủ lạnh → mặt để đồ 450 → chậu đôi 800 → sơ chế 900 → bếp từ đôi 730 → bếp gas đơn 520 (tổng 3.400).',
         'CHỪA CHỖ MÁY RỬA CHÉN 600 (mua đợt 2) ngay dưới phần sơ chế, sát chậu: để trống không đặt tủ, khung thép V đỡ đá mặt bếp trên khoảng trống. Đợt 1 làm sẵn: van chia T + van khoá Ø21 trên ống cấp chậu, xi phông chậu có nhánh chờ cho ống xả máy, ổ đơn 16A riêng (mạch R2) cao +700 trong hộc tủ bên cạnh. Máy cao 820–870 chỉnh chân, vừa mặt bếp 850; khi nâng nền đợt 2 máy đặt theo nền mới.',
         'Bếp từ đôi: mạch R1 riêng RCBO 25A, dây 4mm² (đợt 2), ổ/hộp đấu dưới mặt bếp cao +900 (lắp sau khi nâng nền).',
@@ -309,21 +309,21 @@ def sheet_schedule(sh):
         ['D4', 'Hành lang → khu giặt', '800×2.200', '1', 'Gỗ hiện trạng, mở về khu giặt', 'Đèn cảm biến 2 bên', 'Hiện trạng'],
         ['D5', 'Phòng ngủ 1', '800×2.200', '1', 'Gỗ đỏ ô kính mờ', 'Giữ, thay bản lề, khoá', 'Hiện trạng'],
         ['D6', 'Phòng ngủ 2/kho', '800×2.200', '1', 'Gỗ đỏ ô kính mờ', 'Giữ', 'Hiện trạng'],
-        ['D7', 'Cửa nhà phụ (lối vào hằng ngày)', '2.000×2.650', '1', '2 cánh cao 2.200 khung sắt hộp mạ kẽm làm mới, sơn xanh cổ vịt, nửa trên kính trơn 5mm + ô kính trên (cửa sắt cũ duy nhất đã dùng cho D2)', 'Lanh tô +2.650 [10]', 'Đợt 1'],
-        ['D8', 'Bếp → khu giặt', '800×2.100', '1', 'Cửa gỗ/nhựa, mở về phía bếp', 'Dời ra a 11,45–12,25 (ngoài dãy tủ) [2]', 'Đợt 1'],
+        ['D7', 'Cửa nhà phụ (lối vào hằng ngày)', '2.000×2.650', '1', '2 cánh cao 2.200 nhôm hệ thường sơn tĩnh điện xanh cổ vịt, nửa trên kính trơn 5mm + ô kính trên (rẻ hơn khung sắt hộp; cửa sắt cũ duy nhất đã dùng cho D2)', 'Lanh tô +2.650 [10]', 'Đợt 1'],
+        ['D8', 'Bếp → khu giặt', '800×2.100', '1', 'Cửa gỗ/nhựa, mở về phía bếp. Đợt 1 để ô trống treo rèm', 'Dời ra a 11,45–12,25 (ngoài dãy tủ) [2]; làm cùng vách mới khi nâng nền', 'Đợt 2'],
         ['D9', 'Cửa WC 1 (tắm + bồn cầu)', '700×2.080', '1', 'Cửa lùa nhựa lõi thép, ray treo mặt ngoài, lùa về phía bếp', 'Khoá mở được từ ngoài; chiếu nghỉ 0,9×0,9 trước cửa', 'Đợt 1'],
         ['D11', 'Cửa WC 2 (bồn cầu)', '700×2.080', '1', 'Cửa lùa nhựa lõi thép', 'WC 2 chừa chỗ', 'Đợt 2'],
         ['D10', 'Cửa sau nhà phụ (ra dây phơi)', '800×2.650', '1', 'Sắt/nhôm cao 2.100 + ô lưới trên, mở ra', 'Lanh tô +2.650 [10]', 'Đợt 1'],
         ['V1', 'Vòm khách → hành lang', '1.100×2.500', '1', 'Ô trống', '', 'Hiện trạng'],
         ['S1', 'Cửa sổ hông phải', '1.200×1.400, đáy +1.000', '3', 'Sắt kính hiện trạng', 'Thêm lưới; nếu là cánh lùa thì đổi 2 cánh mở quay ra ngoài 90° làm cánh đón gió (KT-16)', 'Hiện trạng'],
-        ['W3', 'Cửa sổ sau P.ngủ 2 (đón gió Tây Nam)', '1.200×1.200, đáy +1.000', '1', 'Khung nhôm/gỗ, kính trơn, 2 cánh mở quay + lưới', 'Đục mới, lanh tô BTCT; dưới mái hắt 1,2m', 'Đợt 1 – mới'],
-        ['W1', 'Cửa sổ rộng trước nhà phụ', '2.050×1.350, đáy +0.900', '1', 'Nhôm hệ thường vân gỗ, kính dán an toàn 6,38 trơn (không cần cường lực 8mm), 2 cánh mở quay, không ô chia, không song; hộp ốp viền + bệ nhô 150 bằng gỗ thông sơn PU màu gỗ theo ảnh mẫu; lưới chống muỗi khung nẹp nam châm', 'Thay S2 (theo ảnh mẫu)', 'Đợt 1'],
+        ['W3', 'Cửa sổ sau P.ngủ 2 (đón gió Tây Nam)', '1.200×1.200, đáy +1.000', '1', 'Khung nhôm/gỗ, kính trơn, 2 cánh mở quay + lưới', 'Đục mới, lanh tô BTCT; dưới mái hắt 1,2m', 'Đợt 2 – mới'],
+        ['W1', 'Cửa sổ rộng trước nhà phụ', '2.050×1.350, đáy +0.900', '1', 'Đợt 1: nhôm thường 2 cánh lùa như W2, kính trơn 5mm, lưới lùa, không ô chia, không song. Đợt 2: gắn thêm hộp ốp viền + bệ nhô 150 bằng gỗ thông sơn PU theo ảnh mẫu', 'Thay S2 (theo ảnh mẫu)', 'Đợt 1'],
         ['W2', 'Cửa sổ rộng hông bếp', '2.000×900, đáy +1.350', '1', 'Đáy +1.350 để cao hơn mặt bếp +1.300 sau khi nâng nền đợt 2; đỉnh +2.250 dưới dải bông gió. Làm đơn giản cho đỡ vật liệu: nhôm hệ thường màu xám, kính trơn 5mm, 2 cánh lùa + lưới chống muỗi lùa; không hộp gỗ, không ốp viền, không bệ (bậu vữa láng dốc ra ngoài)', 'Thay S3; chỉ W1 mặt trước làm theo mẫu có bệ', 'Đợt 1'],
         ['O1', 'Ô thoáng vách khách–ngủ', '1.700×400, đáy +2.600', '1', 'Hiện trạng', '', 'Hiện trạng'],
-        ['O3', 'Ô thoáng trên cửa D5, D6', '800×500, đáy +2.350', '2', 'Nan gỗ/nhôm chớp cố định + lưới', 'Gió phòng ngủ ra hành lang khi đóng cửa', 'Đợt 1 – mới'],
+        ['O3', 'Ô thoáng trên cửa D5, D6', '800×500, đáy +2.350', '2', 'Nan gỗ/nhôm chớp cố định + lưới', 'Gió phòng ngủ ra hành lang khi đóng cửa', 'Đợt 2 – mới'],
         ['O4', 'Cửa chớp lật WC 1 (vách trái)', '600×400, đáy +2.200', '1', 'Nhôm chớp lật + lưới + quạt hút', 'Trên khu tắm; ô chớp duy nhất của WC [9]', 'Đợt 1 – mới'],
         ['O5', 'Ô thoáng áp mái nhà chính (trước, sau)', '2.000×300, đáy +3.400', '2', 'Chớp nhôm + lưới', 'Chưa làm đợt 1: đục tường 200 cũ phải đổ lanh tô. Khảo sát mái rồi quyết; có thể thay bằng vài lỗ bông gió 200×200 không cần lanh tô', 'Đợt 2'],
-        ['O6', 'Ô thoáng vách P.ngủ 1 – P.ngủ 2', '1.900×400, đáy +2.600', '1', 'Nan gỗ cố định', 'Nối luồng gió W3 → P.ngủ 1 → O1', 'Đợt 1 – mới'],
+        ['O6', 'Ô thoáng vách P.ngủ 1 – P.ngủ 2', '1.900×400, đáy +2.600', '1', 'Nan gỗ cố định', 'Nối luồng gió W3 → P.ngủ 1 → O1', 'Đợt 2 – mới'],
         ['O7', 'Chớp hồi mái nhà phụ (trước a12,6–13,8; sau a11,8–13,0)', '1.200×400, đáy +2.950', '2', 'Chớp tôn/nhôm + lưới', 'Ở đầu cao của mái: thoát khí nóng', 'Đợt 1 – mới'],
     ]
     cols = [('Ký hiệu', 16), ('Vị trí', 62), ('Kích thước R×C (mm)', 46), ('SL', 9), ('Vật liệu / loại', 82), ('Ghi chú', 82), ('Giai đoạn', 34)]
@@ -331,7 +331,7 @@ def sheet_schedule(sh):
     view_title(sh, 30, y - 8, 'BẢNG VẬT LIỆU HOÀN THIỆN', '–')
     rows2 = [
         ['Nhà chính (khách, ngủ, hành lang)', 'Giữ gạch men; đợt 2 nâng nền +0,45 lát mới', 'Xử lý chân tường ẩm: cạo, chống thấm ngược 1,2m, sơn chống kiềm + trắng ngà', 'Giữ trần thả', 'Lưới chống muỗi mọi cửa sổ'],
-        ['Bếp + ăn (nhà phụ)', 'Láng vữa M75 xoa nhám (đợt 1 không lát gạch)', 'Gạch ống trát, sơn trắng ngà; len ốp gạch sau bếp cao 600', 'Túi khí cách nhiệt dưới tôn', '2 quạt trần'],
+        ['Bếp + ăn (nhà phụ)', 'Láng vữa M75 xoa nhám (đợt 1 không lát gạch)', 'Gạch ống trát, sơn trắng ngà; len ốp gạch sau bếp cao 600', 'Túi khí cách nhiệt dưới tôn', 'Quạt trần đợt 2 (đợt 1 chờ móc + dây)'],
         ['WC', 'Gạch chống trơn R11 300×300 trên chống thấm 2 lớp', 'Ốp gạch 300×600 cao 1.800 khu tắm', 'Nhựa PVC +2.900', 'Xem KT-11'],
         ['Khu giặt – tắm', 'Láng vữa xoa nhám, không phễu sàn (khay hứng máy giặt)', 'Sơn chống ẩm; ốp gạch sau lavabo cao 1.200', 'Túi khí dưới tôn', 'Cảm biến rò nước (đợt 2)'],
         ['Ngoài nhà', 'Sân đá mi / xà bần lu chặt −0,05, dốc ra xa nhà về rãnh hở chân gờ, chảy ngang ra ao (KT-15)', 'Tường trắng ngà, gỗ nâu, mái xám đậm', '–', 'Ống đi nổi sơn chống nắng'],
@@ -345,7 +345,7 @@ REVIEW = [
     ['2', 'Cửa D8 bếp → khu giặt', 'Cánh mở vào khu giặt quét sát góc bậc lên WC.', 'Đổi chiều mở về phía bếp, bản lề phía phải.', 'Cao', '0'],
     ['3', 'Kho chứa đồ', 'Kho chỉ có kệ sắt V ở P.ngủ 2 – sẽ thiếu chỗ khi phòng này thành phòng em bé.', 'Dùng tủ gỗ thấp 3 cánh, 4 tủ nhựa, kệ sắt lớn có sẵn dọc vách WC phía bếp; không đóng tủ kho mới (21/11).', 'Vừa', '0'],
     ['4', 'Lối vào hằng ngày', 'Ra vào thật sự qua cửa nhà phụ (sân xe) nhưng không có chỗ để giày, áo mưa, chìa khoá.', 'Kệ giày nhựa có sẵn + ghế đẩu dưới cửa sổ W1, móc treo; không đóng tủ (21/11).', 'Vừa', '~0,1tr'],
-    ['5', 'Che mưa lối vào', 'Đi từ nhà xe/sân vào nhà phụ bị ướt; bệ rửa chân ngoài trời.', 'Mái hiên tôn 1,2m × 4,6m (chỉ che D7 + W1) trên khung sắt hộp, tận dụng tôn cũ.', 'Vừa', '+1,5–2tr'],
+    ['5', 'Che mưa lối vào', 'Đi từ nhà xe/sân vào nhà phụ bị ướt; bệ rửa chân ngoài trời.', 'Mái hiên tôn 1,2m × 4,6m (chỉ che D7 + W1) trên khung sắt hộp, tận dụng tôn cũ. Hoãn đợt 2.', 'Vừa', '+1,5–2tr'],
     ['6', 'Lồng bình gas', 'Lồng gas (a 7,3–7,8) đè đúng tuyến ống thoát Ø90 đi nổi chân tường (a 7,3).', 'Dời lồng ra a 6,75–7,25 trên bệ riêng; dây gas ≤1,5m xuyên ống lồng.', 'Cao', '0'],
     ['7', 'Phòng ngủ 1', 'Phòng rộng 2,3m: tủ áo sau giường làm lối bên kia chỉ còn ~0,25m; dàn lạnh thổi thẳng đầu giường.', 'Bỏ tủ áo sang P.ngủ 2; giường đầu quay vách phải; dàn lạnh lên vách trước.', 'Cao', '0'],
     ['8', 'Dàn nóng máy lạnh', 'Theo vị trí dàn lạnh mới.', 'Dàn nóng ra cạnh vách trước P.ngủ 1, ống đồng ~1m, chân đế 400 + mái che.', 'Vừa', '−0,2tr (ống ngắn)'],
@@ -370,7 +370,7 @@ def sheet_review(sh):
     notes(sh, 30, y - 6, 'TỔNG HỢP', [
         'Các điểm 1, 2, 6, 7, 10, 11 nên làm ngay trong đợt 1 (chi phí thêm ~1,5–2tr, tránh sửa lại về sau). Điểm 3, 4, 5, 9, 12, 13 làm được trong đợt 1 hoặc dời đợt 2 tuỳ ngân sách (đợt 1 hiện ~145,6tr, vượt mốc 100–115tr).',
         'Giữ nguyên các quyết định đã chốt 15–17/11: vị trí WC, bếp 1 dãy, bể tự hoại sân trước bếp, điện 9 mạch, nhà xe đợt 2, mặt tiền kín đáo.',
-        'Rà soát chi phí độc lập 21/11/2026 đã sửa vào bản vẽ: bỏ đóng tủ kho, tủ giày; nhà phụ không lát gạch; WC bồn cầu 2 khối, rèm tắm thay vách kính, bỏ O2; W1 vật liệu rẻ hơn giữ dáng; mái hắt sau chỉ 5m, mái hiên 4,6m; O5 dời đợt 2; cổng chính chỉ đi bộ; gờ chắn chỉ a0–23, rãnh hở thay B200; bồn nước bệ 0,5m + bơm tăng áp; cáp nguồn 2×16; bể tự hoại tấm lót chống nổi dày hơn.',
+        'Rà soát chi phí độc lập 21/11/2026 đã sửa vào bản vẽ: bỏ đóng tủ kho, tủ giày; nhà phụ không lát gạch; WC bồn cầu 2 khối, rèm tắm thay vách kính, bỏ O2; W1 vật liệu rẻ hơn giữ dáng; mái hắt sau chỉ 5m, mái hiên 4,6m; O5 dời đợt 2; cổng chính chỉ đi bộ; gờ chắn chỉ a0–23, rãnh hở thay B200; bồn nước bệ 0,5m + bơm tăng áp; cáp nguồn 2×16; bể tự hoại tấm lót chống nổi dày hơn. Chủ nhà chốt hoãn sang đợt 2: W3, O3, O6, D8, quạt trần, hộp + bệ gỗ W1, mái hiên trước, đá mặt bếp; D7 đổi nhôm hệ thường; chừa chỗ máy rửa chén.',
         'Chi phí thêm là ước tính sơ bộ, chưa có báo giá thợ địa phương.',
     ], 190, 1.85)
 

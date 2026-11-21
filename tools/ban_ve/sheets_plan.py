@@ -22,7 +22,7 @@ PROPOSALS = [
 def plan_base(sh, v, tags=True):
     plan_walls(v, tags=tags)
     # mai hien de xuat (net dut, tren cao)
-    for (a0, b0, a1, b1, lab) in [(9.4, 6.55, 13.95, 7.75, 'Mái hiên tôn 1,2m (đề xuất)'), (12.9, 18.5, 17.9, 19.7, 'Mái hắt 1,2m (D10, D2, W3)')]:
+    for (a0, b0, a1, b1, lab) in [(9.4, 6.55, 13.95, 7.75, 'Mái hiên tôn 1,2m (đợt 2)'), (12.9, 18.5, 17.9, 19.7, 'Mái hắt 1,2m (D10, D2, W3)')]:
         v.rect(a0, b0, a1, b1, edge=BLU if 'đề xuất' in lab else GRY, lw=.2, dash=[2, 1], layer='MAI')
         v.text((a0 + a1) / 2, b0 + .15, lab, 1.5, anc='c', col=BLU if 'đề xuất' in lab else GRY)
     # hien, bac tam cap
@@ -102,7 +102,7 @@ def sheet_furn_plan(sh):
     a0, a1, b0, b1 = TANK; v.rect(a0, b0, a1, b1, edge=(.3, .3, .3), lw=.25, dash=[2, 1]); v.text((a0 + a1) / 2, (b0 + b1) / 2, 'Bể tự hoại 2.000L', 1.5, anc='c', va='m', rot=90, col=GRY)
     # quat tran
     for (a, b) in [(11.3, 11.2), (12.0, 9.0)]:
-        v.circle(a, b, .6, edge=GRY, lw=.15, dash=[1, .8]); v.text(a, b - .85, 'Quạt trần', 1.3, anc='c', col=GRY)
+        v.circle(a, b, .6, edge=GRY, lw=.15, dash=[1, .8]); v.text(a, b - .85, 'Quạt trần (đợt 2)', 1.3, anc='c', col=GRY)
     for name, a, b, S in ROOMS:
         v.text(a, b, name, 2.0, anc='c', bold=True); v.text(a, b - .38, f'{S:.1f} m²'.replace('.', ','), 1.6, anc='c', col=GRY)
     for n, a, b, _ in PROPOSALS:
