@@ -153,16 +153,17 @@ def furn_plan(v, items=FURN, skip=(), col=GRY):
 
 
 def steps_plan(v):
-    # bac len san +0,5 cua khoi 2 WC + hanh lang giat: 3 bac cao 167, rong 280 tai D4, D8 (trong) va D10 (ngoai)
-    for (a0, a1, b0, b1, ax, d) in [(13.44, 14.0, 16.65, 17.55, 'a', -1), (11.45, 12.25, 15.35, 15.91, 'b', 1), (13.1, 13.9, 18.5, 19.06, 'b', -1)]:
-        v.rect(a0, b0, a1, b1, fill=(1, 1, 1), edge=BLK, lw=.3, layer='NOITHAT')
-        if ax == 'a': v.line([(a0 + .28, b0), (a0 + .28, b1)], .2, BLK)
-        else: v.line([(a0, b0 + .28), (a1, b0 + .28)], .2, BLK)
-    v.line([(13.95, 17.1), (13.3, 17.1)], .2, BLK); v.line([(13.42, 17.0), (13.3, 17.1), (13.42, 17.2)], .2, BLK)
-    v.line([(11.85, 15.4), (11.85, 16.05)], .2, BLK); v.line([(11.75, 15.93), (11.85, 16.05), (11.95, 15.93)], .2, BLK)
-    v.line([(13.5, 19.0), (13.5, 18.55)], .2, BLK); v.line([(13.4, 18.67), (13.5, 18.55), (13.6, 18.67)], .2, BLK)
-    # tay vin 1 ben moi bo bac
-    v.line([(13.4, 17.6), (14.0, 17.6)], .35, BLU, None, 'DEXUAT'); v.line([(12.3, 15.4), (12.3, 15.95)], .35, BLU, None, 'DEXUAT')
+    # dot 1: chieu nghi 0,9x1,6 (+0,5) truoc cua lua D9 + 2 bac cao 170 rong 300; tay vin 2 ben
+    v.rect(10.05, 16.1, 10.95, 17.7, fill=(1, 1, 1), edge=BLK, lw=.3, layer='NOITHAT')
+    v.rect(10.95, 16.6, 11.25, 17.5, fill=(1, 1, 1), edge=BLK, lw=.3, layer='NOITHAT'); v.rect(11.25, 16.6, 11.55, 17.5, fill=(1, 1, 1), edge=BLK, lw=.3, layer='NOITHAT')
+    v.line([(11.5, 17.05), (10.4, 17.05)], .2, BLK); v.line([(10.55, 16.95), (10.4, 17.05), (10.55, 17.15)], .2, BLK); v.text(10.5, 16.35, 'LÊN', 1.4, anc='c', va='m')
+    v.line([(10.1, 16.06), (10.95, 16.06), (10.95, 16.56), (11.55, 16.56)], .35, BLU, None, 'DEXUAT'); v.line([(10.1, 17.74), (10.95, 17.74), (10.95, 17.54), (11.55, 17.54)], .35, BLU, None, 'DEXUAT')
+
+
+def future_wc2(v):
+    a0, a1, b0, b1 = FUTURE_WC2
+    v.rect(a0, b0, a1, b1, edge=BLU, lw=.3, dash=[2, 1], layer='DEXUAT'); v.text((a0 + a1) / 2, (b0 + b1) / 2 + .1, 'WC 2 – đợt 2', 1.5, anc='c', col=BLU)
+    v.text((a0 + a1) / 2, (b0 + b1) / 2 - .25, '(chừa chỗ)', 1.3, anc='c', col=BLU)
 
 
 def grid(v, a_lines, b_lines, a_rng, b_rng, r=3.2):

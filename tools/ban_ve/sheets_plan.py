@@ -1,11 +1,11 @@
 from plan import *
 
 PROPOSALS = [
-    ('1', 13.7, 17.85, 'Khối 2 WC + hành lang giặt cùng sàn +0,5: đi giữa 2 WC không có bậc. 3 bậc cao 167 + tay vịn ở cửa D4 (từ nhà chính) và D8 (từ bếp).'),
-    ('16', 11.1, 16.6, '2 WC tách riêng: WC 1 (tắm + bồn cầu) bên trái, WC 2 (bồn cầu) sát nhà chính, giữa là hành lang giặt có máy giặt, máy sấy, lavabo. Không chung vách, không cơi nới.'),
+    ('1', 11.5, 18.0, 'Bậc lên WC: chiếu nghỉ 0,9×1,6m (+0,5) trước cửa lùa + 2 bậc cao 170, rộng 300 + tay vịn 2 bên. Thai phụ đứng mở cửa an toàn.'),
+    ('16', 13.1, 16.95, 'Đợt 1 làm 1 WC (tắm + bồn cầu) bên trái, khu giặt giữ nền ±0. Chừa chỗ WC 2 (bồn cầu) sát tường nhà chính cho đợt 2: 2 WC không chung vách, giữa là lối giặt sấy.'),
     ('17', 16.6, 18.95, 'Thông gió theo hướng thửa (mặt tiền 49,7° Đông Bắc – sau 229,7° Tây Nam): thêm W3 sau P.ngủ 2, ô thoáng trên cửa D5, D6 (O3), vách 2 phòng ngủ (O6), áp mái (O5), hồi mái nhà phụ (O7). Xem KT-16.'),
     ('18', 6.9, 10.0, '3 cây tán cao bên trái nhà phụ, cách rào 1,2m: che nắng sáng hướng Đông Nam, gió vẫn lùa dưới tán vào W2 và dải bông gió.'),
-    ('2', 11.85, 14.55, 'Cửa D8 (bếp → hành lang giặt) dời ra a 11,45–12,25, ngoài tủ kho, mở về phía bếp.'),
+    ('2', 11.85, 14.55, 'Cửa D8 (bếp → khu giặt) dời ra a 11,45–12,25, ngoài tủ kho, mở về phía bếp; đợt 2 vẫn vừa lối vào giữa 2 WC.'),
     ('3', 9.7, 14.25, 'Tủ kho cao 2,2m dọc vách WC phía bếp (3,2m × sâu 0,6m): gạo, đồ khô, đồ gia dụng; thay kệ sắt V ở P.ngủ 2.'),
     ('4', 12.6, 8.55, 'Cửa nhà phụ là lối vào hằng ngày (sân xe): tủ giày thấp + ghế ngồi + móc chìa khoá/áo mưa, dưới cửa sổ rộng W1.'),
     ('5', 8.75, 7.15, 'Mái hiên tôn 1,2m trước cửa nhà phụ (dài 4,1m, cao +2,8 sát tường, trên lanh tô +2,65 → +2,6 mép ngoài): đi từ nhà xe vào không ướt, che bệ rửa chân.'),
@@ -90,7 +90,7 @@ def sheet_furn_plan(sh):
     v = View(sh, 34, 14, 75, 5.0, 0.9)
     plan_base(sh, v)
     furn_plan(v)
-    steps_plan(v)
+    steps_plan(v); future_wc2(v)
     # long gas, de nong, be rua chan
     v.rect(6.75, 13.25, 7.25, 13.75, edge=BLU, lw=.3, layer='DEXUAT'); v.line([(6.75, 13.25), (7.25, 13.75)], .15, BLU); v.text(7.0, 13.95, 'Lồng gas', 1.5, anc='c', col=BLU)
     v.rect(7.3, 13.25, 7.8, 13.7, edge=RED, lw=.2, dash=[1, .8]); v.text(7.55, 13.0, 'vị trí cũ', 1.3, anc='c', col=RED)
