@@ -585,7 +585,8 @@ wall('x',15.5,14.1,2.3,0.1,4.5,[],C.trong);
 box(14.2,5.7,3.3,3.6,12.6,0.03,0xeef2ea,'roof');
 box(14.2,5.7,0,0.02,4.3,1.2,0xf4f4f0);box(17.78,5.7,0,0.02,4.3,1.2,0xf4f4f0);box(14.2,9.98,0,3.6,0.02,1.2,0xf4f4f0);
 box(15.75,12.0,0,2.0,1.6,0.45,0xdcd6c8);box(15.75,13.45,0.45,2.0,0.15,0.5,C.go);// [7] giuong lui vao, tu ao doi sang P.ngu 2
-box(16.6,14.2,0,1.2,0.55,1.9,C.go);// [13] noi em be
+// tu ao 3 canh TRANG co san cua chu nha (tu do quan ao, chi dat phong ngu): 1,2 x 0,55 x 1,9
+box(16.6,14.2,0,1.2,0.55,1.9,0xf1f1ee);[17.0,17.4].forEach(a=>box(a,14.76,0.45,0.01,0.01,1.43,0x9e9e9e));[0.02,0.24].forEach(z=>box(17.4,14.76,z+0.2,0.4,0.01,0.01,0x9e9e9e));label('Tủ áo 3 cánh trắng có sẵn',17.2,14.6,2.0);
 // ban van phong co ngan keo cua chu nha -> ban thay ta + ngan do em be o P.ngu 2
 box(15.6,17.5,0.74,0.6,1.2,0.04,0x8a5a3a);box(15.62,17.52,0,0.56,0.45,0.74,0x7b4a2a);[[15.62,18.62],[16.12,18.62]].forEach(q=>box(q[0],q[1],0,0.05,0.05,0.74,0x7b4a2a));[0.1,0.3,0.5].forEach(z=>box(16.18,17.56,z,0.01,0.37,0.012,0xd7ccc8));box(15.65,17.6,0.78,0.5,0.75,0.06,0xffffff);label('Bàn văn phòng có sẵn: bàn thay tã + ngăn kéo đồ em bé',15.9,18.1,1.15);
 box(15.8,16.2,0,2.0,1.2,0.45,0xdcd6c8);box(17.6,16.2,0.45,0.2,1.2,0.5,C.go);box(15.6,14.3,0,1.0,0.55,1.9,C.go);
@@ -656,6 +657,8 @@ cyl(11.3,11.2,0.72,0.6,0.03,0xc3c9ce);cyl(11.3,11.2,0,0.04,0.72,0xa7aeb4);cyl(11
 [[10.3,11.0,'w'],[11.9,11.0,'e'],[11.1,10.0,'n'],[11.1,12.0,'s']].forEach(([a,b,s])=>{box(a,b,0.42,0.4,0.4,0.03,C.go);if(s==='w')box(a,b,0.45,0.03,0.4,0.45,C.go);if(s==='e')box(a+0.37,b,0.45,0.03,0.4,0.45,C.go);if(s==='n')box(a,b,0.45,0.4,0.03,0.45,C.go);if(s==='s')box(a,b+0.37,0.45,0.4,0.03,0.45,C.go);[[0,0],[0.36,0],[0,0.36],[0.36,0.36]].forEach(q=>box(a+q[0],b+q[1],0,0.04,0.04,0.42,C.go));});
 // binh gas 12kg: ngoai vach trai, long sat thoang, day dan <=1,5m; [6] doi ra a6,75-7,25 khoi tuyen ong thoat O90 (a7,3)
 box(6.75,13.25,0,0.5,0.5,0.03,C.bt);cyl(7.0,13.5,0.03,0.17,0.6,0x1565c0);[[6.75,13.25],[7.2,13.25],[6.75,13.7],[7.2,13.7]].forEach(p=>box(p[0],p[1],0,0.03,0.03,0.85,0x555555));box(6.75,13.25,0.85,0.48,0.48,0.02,0x555555);
+// ke sat mat go co san cua chu nha ~2,0 x 0,5 x 1,9 (4 tang + noc), sat vach phai nha phu, ngoai khu WC
+(function(){const a0=13.4,b0=11.0,W=0.5,L=2.0,H=1.9,S=0x8a9096;[[a0,b0],[a0+W-0.04,b0],[a0,b0+L/2-0.02],[a0+W-0.04,b0+L/2-0.02],[a0,b0+L-0.04],[a0+W-0.04,b0+L-0.04]].forEach(q=>box(q[0],q[1],0,0.04,0.04,H,S));[0.12,0.6,1.05,1.5,1.88].forEach(z=>box(a0,b0,z,W,L,0.02,0xc9a26b));})();label('Kệ sắt mặt gỗ có sẵn 2,0×0,5×1,9m',13.65,12.0,2.1);
 // [3] tu kho cao 2,2m doc vach WC phia bep
 box(8.1,14.7,0,3.2,0.6,2.2,0xb08d6a);[9.15,10.2].forEach(a=>box(a,14.69,0.05,0.01,0.02,2.1,0x5d4037));label('Tủ kho cao 2,2m dọc vách WC (3,2m) [3]',9.7,14.5,2.4);
 // [4] tu giay + ghe ngoi mang giay o cua nha phu
