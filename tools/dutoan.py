@@ -210,6 +210,7 @@ r("Mặt bếp đá 3,4m (trên tủ/kệ cũ)", "m dài", 3.4, 800, "Vật tư"
 r("Chậu rửa đôi + vòi", "bộ", 1, 1200, "Thiết bị", "Ước tính")
 r("Bếp gas đơn + van + dây", "bộ", 1, 800, "Thiết bị", "Ước tính")
 r("Tủ/kệ bếp, bàn tròn inox, tủ gỗ thấp + 4 tủ nhựa + kệ sắt (làm kho), kệ giày", "bộ", 1, 0, "Đồ cũ", "Có sẵn", "Không đóng tủ kho, tủ giày mới")
+r("Chờ sẵn máy rửa chén: van chia T + van khoá Ø21, xi phông chậu có nhánh xả, ổ đơn 16A, thép V đỡ đá trên khoảng trống 600", "bộ", 1, 350, "Vật tư", "Ước tính")
 r("Khoan sẵn lỗ Ø150 (tâm +2,30) xuyên tường cho máy hút mùi đợt 2 + nắp bịt", "bộ", 1, 100, "Vật tư", "Ước tính")
 
 g("11. Máy lạnh có sẵn – di dời")
@@ -267,6 +268,7 @@ r("Bếp từ đôi (đã chừa mạch 4mm²)", "cái", 1, 3500, "Thiết bị"
 r("RCBO 2P 25A 30mA + hộp đấu cho bếp từ (bếp ≤4,4kW, dây 4mm²)", "bộ", 1, 570, "Thiết bị", "PL IV")
 r("Ống Ø21 + van: vòi sân sau (vòi trước nhà đã làm ở đợt 1)", "bộ", 1, 100, "Vật tư", "Ước tính")
 r("Máy hút mùi (mua cùng bếp từ)", "cái", 1, 2000, "Thiết bị", "Ước tính")
+r("Máy rửa chén âm tủ/độc lập 60cm 12–14 bộ (đã chừa chỗ, nước, điện)", "cái", 1, 10000, "Thiết bị", "Ước tính")
 r("Ống uPVC Bình Minh Ø114×3,1 thoát sân ra ao + 2 hố thu", "m", 20, 131.7, "Vật tư", "Thị trường", "Gồm 2 hố thu 300/cái")
 
 g("Đợt 2 – Tủ mạng gỗ tự đóng + thiết bị mạng")

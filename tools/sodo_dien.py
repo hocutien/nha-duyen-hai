@@ -12,7 +12,7 @@ for m in re.finditer(r"run\('(\w+)',(\[\[.*?\]\])(?:,[\d.]+)?\)",blk):
     try: runs.append((m.group(1),json.loads(m.group(2))))
     except Exception: pass
 # R2 drops in forEach
-for p in [[9.45,1.15],[12.25,1.15],[13.95,1.15],[12.9,2.05]]:
+for p in [[9.45,1.2],[12.25,1.45],[13.95,1.45],[12.9,2.35],[12.4,0.7]]:  # tu lanh, 2 o mat bep, hut mui, may rua chen
     runs.append(('R2',[[8.2,p[0],2.4],[8.07,p[0],2.4],[8.07,p[0],p[1]]]))
 # R1 ong cho (pipe xam)
 pass
@@ -105,7 +105,7 @@ CIRC=[('C1','MCB 1P 10A','3×1,5mm² (L+N+PE)','Đèn 10 bóng + quạt trần +
       ('C2','MCB 1P 20A','3×2,5mm² (L+N+PE)','Ổ cắm nhà chính: TV, sofa, bàn LV ×2, phòng ngủ 1 ×3, phòng ngủ 2 ×2',1.5,'RCCB1'),
       ('C3','MCB 1P 20A','3×2,5mm² (L+N+PE)','Máy lạnh 1,5HP phòng ngủ',1.2,'RCCB1'),
       ('C4','RCBO 1P+N 10A 30mA','3×1,5mm² (L+N+PE)','Tủ mạng (phòng khách cạnh bàn LV): UPS → PDU',0.15,'RCBO'),
-      ('R2','RCBO 2P 20A 30mA','3×2,5mm² (L+N+PE)','Ổ bếp ×4: tủ lạnh, mặt bếp, hút mùi, đầu bàn + ổ BE6500 #2',2.2,'RCBO'),
+      ('R2','RCBO 2P 20A 30mA','3×2,5mm² (L+N+PE)','Ổ bếp ×5: tủ lạnh, mặt bếp, hút mùi, đầu bàn, máy rửa chén + ổ BE6500 #2',2.2,'RCBO'),
       ('R4','RCBO 2P 25A 30mA','3×4mm² (L+N+PE)','Máy nước nóng trực tiếp Panasonic 4500W có sẵn (đấu cố định, ống riêng)',4.5,'RCBO'),
       ('R3','MCB 1P 20A','3×2,5mm² (L+N+PE)','Máy giặt + máy sấy (2 ổ đơn, ống riêng)',2.5,'RCCB'),
       ('R5','MCB 1P 16A','CVV 3×2,5mm² (L+N+PE)','Ngoài trời: đèn hiên ×2, đèn pha, IP55 ×2, bơm giếng 0,75kW',1.1,'RCCB'),
@@ -190,7 +190,7 @@ DIAG=[
  ('C2','RCCB #1 + MCB 20A',['L','N','PE'],None,[('Ổ đôi phòng khách ×4','TV, sofa, bàn LV ×2 (1,1m)'),('Ổ đôi phòng ngủ 1 ×3','đầu giường, cao 1,0m'),('Ổ đôi phòng ngủ 2 ×2','đầu giường, cao 1,0m')],'Ống PVC Ø20 · 3 sợi 2,5mm² (L+N+PE)','Ổ cắm nhà chính'),
  ('C3','RCCB #1 + MCB 20A',['L','N','PE'],None,[('Ổ đơn máy lạnh','cao 2,4m cạnh dàn lạnh PN1')],'Ống PVC Ø20 · 3 sợi 2,5mm²','Máy lạnh 1,5HP'),
  ('C4','RCBO 10A 30mA',['L','N','PE'],None,[('Ổ đơn sau UPS','cao 0,6m → UPS → PDU')],'Ống PVC Ø16 · 3 sợi 1,5mm²','Tủ mạng'),
- ('R2','RCBO 2P 20A 30mA',['L','N','PE'],None,[('Ổ tủ lạnh','cao 1,2m'),('Ổ mặt bếp ×2','cách chậu ≥0,6m, cao 1,45m'),('Ổ hút mùi + đầu bàn','+ ổ BE6500 #2')],'Ống PVC Ø20 · 3 sợi 2,5mm²','Ổ cắm bếp'),
+ ('R2','RCBO 2P 20A 30mA',['L','N','PE'],None,[('Ổ tủ lạnh','cao 1,2m'),('Ổ mặt bếp ×2','cách chậu ≥0,6m, cao 1,45m'),('Ổ hút mùi + đầu bàn','+ ổ BE6500 #2'),('Ổ đơn máy rửa chén','trong hộc tủ cạnh máy, cao 0,7m')],'Ống PVC Ø20 · 3 sợi 2,5mm²','Ổ cắm bếp'),
  ('R3','RCCB #2 + MCB 20A',['L','N','PE'],None,[('Ổ đơn máy giặt','cao 1,2m'),('Ổ đơn máy sấy','cao 1,2m')],'Ống PVC Ø20 riêng · 3 sợi 2,5mm²','Máy giặt + máy sấy'),
  ('R4','RCBO 25A 30mA',['L','N','PE'],'CT 2 cực',[('Máy nước nóng trực tiếp 4500W','Panasonic DH-4VP1VW · hộp nối kín · PE bắt vỏ')],'Ống PVC Ø25 riêng · 3 sợi 4mm² (mua mới)','Nóng lạnh (CT 2 cực ≥25A có đèn ngoài cửa WC)'),
  ('R5','RCCB #2 + MCB 16A',['L','N','PE'],None,[('Đèn hiên trước + sau','cảm biến'),('Đèn pha sân xe','cảm biến'),('Ổ IP55 ×2','sân xe, hiên sau'),('Bơm giếng 0,75kW','ổ IP55 + CT kín')],'Cáp CVV 3×2,5mm² đi nổi · đoạn chôn trong HDPE','Ngoài trời'),

@@ -258,6 +258,9 @@ def sheet_kitchen(sh):
         if k in ('tu', 'tl', 'mb', 'hm', 'ke', 'tk'): S.box(a0, a1, b0, b1, z0, z1, label=name, lw=.3)
     S.draw(); v = S.v
     v.rect(7.4, -0.1, 15.5, 0, fill=CONC, edge=BLK, lw=.3)
+    v.rect(11.65, .02, 12.25, .82, fill=(.93, .95, 1), edge=BLU, lw=.3, dash=[1.2, .8])
+    v.text(11.95, .5, 'Chừa chỗ', 1.4, anc='c', col=BLU); v.text(11.95, .35, 'máy rửa chén', 1.4, anc='c', col=BLU); v.text(11.95, .2, '600×600', 1.4, anc='c', col=BLU)
+    v.rect(12.36, .66, 12.44, .74, fill=(1, 1, 1), edge=RED, lw=.3); v.text(12.4, .58, 'Ổ +700', 1.2, anc='c', col=RED)
     v.rect(10.85, .8, 11.65, .85, fill=(.7, .7, .7), edge=BLK, lw=.2); v.text(11.25, .7, 'Chậu đôi', 1.5, anc='c', va='t')
     v.rect(12.55, .85, 13.28, .87, fill=BLK, edge=BLK); v.text(12.9, .95, 'Bếp từ đôi', 1.5, anc='c')
     v.rect(13.38, .85, 13.74, .93, fill=(.3, .3, .3), edge=BLK); v.text(13.56, 1.0, 'Gas', 1.4, anc='c')
@@ -282,6 +285,7 @@ def sheet_kitchen(sh):
     notes(sh, 190, 172, 'QUY CÁCH BẾP', [
         'Mặt bếp: đá granite/ đá nhân tạo dày 18–20 trên khung tủ (gỗ cũ tận dụng hoặc tủ nhựa Picomat chống ẩm), cao 850, sâu 600, len tường ốp gạch cao 600.',
         'Thứ tự: tủ lạnh → mặt để đồ 450 → chậu đôi 800 → sơ chế 900 → bếp từ đôi 730 → bếp gas đơn 520 (tổng 3.400).',
+        'CHỪA CHỖ MÁY RỬA CHÉN 600 (mua đợt 2) ngay dưới phần sơ chế, sát chậu: để trống không đặt tủ, khung thép V đỡ đá mặt bếp trên khoảng trống. Đợt 1 làm sẵn: van chia T + van khoá Ø21 trên ống cấp chậu, xi phông chậu có nhánh chờ cho ống xả máy, ổ đơn 16A riêng (mạch R2) cao +700 trong hộc tủ bên cạnh. Máy cao 820–870 chỉnh chân, vừa mặt bếp 850; khi nâng nền đợt 2 máy đặt theo nền mới.',
         'Bếp từ đôi: mạch R1 riêng RCBO 25A, dây 4mm² (đợt 2), ổ/hộp đấu dưới mặt bếp cao +900 (lắp sau khi nâng nền).',
         'Máy hút mùi mua ở đợt 2 cùng bếp từ, lắp sau khi nâng nền: đáy máy +2.000 (cách mặt bếp mới 700). Đợt 1 khoan sẵn lỗ Ø150 xuyên tường trái tâm +2.300 (dưới dải bông gió), bịt nắp.',
         'Đợt 2 nâng nền +0,45: kê khung tủ mặt bếp lên 450 (mặt bếp mới +1.300), dùng lại đá mặt, chậu, bẫy mỡ; nối dài ống thoát. Vì vậy đợt 1 không lát gạch nền bếp, chỉ láng.',
