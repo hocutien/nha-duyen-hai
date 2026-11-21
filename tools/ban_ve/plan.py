@@ -154,10 +154,11 @@ def furn_plan(v, items=FURN, skip=(), col=GRY):
 
 def steps_plan(v):
     # dot 1: chieu nghi 0,9x1,6 (+0,5) truoc cua lua D9 + 2 bac cao 170 rong 300; tay vin 2 ben
-    v.rect(10.05, 16.1, 10.95, 17.7, fill=(1, 1, 1), edge=BLK, lw=.3, layer='NOITHAT')
-    v.rect(10.95, 16.6, 11.25, 17.5, fill=(1, 1, 1), edge=BLK, lw=.3, layer='NOITHAT'); v.rect(11.25, 16.6, 11.55, 17.5, fill=(1, 1, 1), edge=BLK, lw=.3, layer='NOITHAT')
-    v.line([(11.5, 17.05), (10.4, 17.05)], .2, BLK); v.line([(10.55, 16.95), (10.4, 17.05), (10.55, 17.15)], .2, BLK); v.text(10.5, 16.35, 'LÊN', 1.4, anc='c', va='m')
-    v.line([(10.1, 16.06), (10.95, 16.06), (10.95, 16.56), (11.55, 16.56)], .35, BLU, None, 'DEXUAT'); v.line([(10.1, 17.74), (10.95, 17.74), (10.95, 17.54), (11.55, 17.54)], .35, BLU, None, 'DEXUAT')
+    # 21/11 ra soat: chieu nghi 0,9x0,9 (cua lua khong can cho quet), 2 bac xuong ve phia bep -> trong mat truoc may giat
+    v.rect(10.05, 16.7, 10.95, 17.6, fill=(1, 1, 1), edge=BLK, lw=.3, layer='NOITHAT')
+    v.rect(10.05, 16.4, 10.95, 16.7, fill=(1, 1, 1), edge=BLK, lw=.3, layer='NOITHAT'); v.rect(10.05, 16.1, 10.95, 16.4, fill=(1, 1, 1), edge=BLK, lw=.3, layer='NOITHAT')
+    v.line([(10.5, 16.15), (10.5, 17.2)], .2, BLK); v.line([(10.4, 17.05), (10.5, 17.2), (10.6, 17.05)], .2, BLK); v.text(10.5, 15.85, 'LÊN', 1.4, anc='c', va='m')
+    v.line([(10.99, 16.1), (10.99, 16.7), (10.99, 17.6)], .35, BLU, None, 'DEXUAT')
 
 
 def future_wc2(v):

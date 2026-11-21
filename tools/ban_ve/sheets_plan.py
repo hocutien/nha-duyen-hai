@@ -1,28 +1,28 @@
 from plan import *
 
 PROPOSALS = [
-    ('1', 11.5, 18.0, 'Bậc lên WC: chiếu nghỉ 0,9×1,6m (+0,5) trước cửa lùa + 2 bậc cao 170, rộng 300 + tay vịn 2 bên. Thai phụ đứng mở cửa an toàn.'),
+    ('1', 11.5, 18.0, 'Bậc lên WC: chiếu nghỉ 0,9×0,9m (+0,5) trước cửa lùa + 2 bậc cao 170, rộng 300 đi xuống về phía bếp (để trống mặt trước máy giặt) + tay vịn. Thai phụ đứng mở cửa an toàn.'),
     ('16', 13.1, 16.95, 'Đợt 1 làm 1 WC (tắm + bồn cầu) bên trái, khu giặt giữ nền ±0. Chừa chỗ WC 2 (bồn cầu) sát tường nhà chính cho đợt 2: 2 WC không chung vách, giữa là lối giặt sấy.'),
-    ('17', 16.6, 18.95, 'Thông gió theo hướng thửa (mặt tiền 49,7° Đông Bắc – sau 229,7° Tây Nam): thêm W3 sau P.ngủ 2, ô thoáng trên cửa D5, D6 (O3), vách 2 phòng ngủ (O6), áp mái (O5), hồi mái nhà phụ (O7). Xem KT-16.'),
+    ('17', 16.6, 18.95, 'Thông gió theo hướng thửa (mặt tiền 49,7° Đông Bắc – sau 229,7° Tây Nam): thêm W3 sau P.ngủ 2, ô thoáng trên cửa D5, D6 (O3), vách 2 phòng ngủ (O6), hồi mái nhà phụ (O7); O5 áp mái để đợt 2. Xem KT-16.'),
     ('18', 6.9, 10.0, '3 cây tán cao bên trái nhà phụ, cách rào 1,2m: che nắng sáng hướng Đông Nam, gió vẫn lùa dưới tán vào W2 và dải bông gió.'),
-    ('2', 11.85, 14.55, 'Cửa D8 (bếp → khu giặt) dời ra a 11,45–12,25, ngoài tủ kho, mở về phía bếp; đợt 2 vẫn vừa lối vào giữa 2 WC.'),
-    ('3', 9.7, 14.25, 'Tủ kho cao 2,2m dọc vách WC phía bếp (3,2m × sâu 0,6m): gạo, đồ khô, đồ gia dụng; thay kệ sắt V ở P.ngủ 2.'),
-    ('4', 12.6, 8.55, 'Cửa nhà phụ là lối vào hằng ngày (sân xe): tủ giày thấp + ghế ngồi + móc chìa khoá/áo mưa, dưới cửa sổ rộng W1.'),
-    ('5', 8.75, 7.15, 'Mái hiên tôn 1,2m trước cửa nhà phụ (dài 4,1m, cao +2,8 sát tường, trên lanh tô +2,65 → +2,6 mép ngoài): đi từ nhà xe vào không ướt, che bệ rửa chân.'),
+    ('2', 11.85, 14.55, 'Cửa D8 (bếp → khu giặt) dời ra a 11,45–12,25, ngoài dãy tủ, mở về phía bếp; đợt 2 vẫn vừa lối vào giữa 2 WC.'),
+    ('3', 9.7, 14.25, 'Chỗ chứa đồ dọc vách WC phía bếp: dùng tủ gỗ thấp 3 cánh + 4 tủ nhựa có sẵn; kệ sắt lớn có sẵn ở vách phải. Không đóng tủ mới.'),
+    ('4', 12.6, 8.55, 'Cửa nhà phụ là lối vào hằng ngày (sân xe): kệ giày nhựa có sẵn + ghế đẩu + móc chìa khoá/áo mưa, dưới cửa sổ rộng W1. Không đóng tủ mới.'),
+    ('5', 8.75, 7.15, 'Mái hiên tôn 1,2m trước cửa nhà phụ (dài 4,6m, chỉ che D7 + W1, cao +2,8 sát tường, trên lanh tô +2,65 → +2,6 mép ngoài): đi từ nhà xe vào không ướt, che bệ rửa chân.'),
     ('6', 6.45, 12.75, 'Lồng bình gas dời ra 0,55m (bệ riêng a 6,75–7,25): bản cũ đè lên ống thoát Ø90 đi nổi chân tường.'),
     ('7', 16.25, 11.45, 'P.ngủ 1: bỏ tủ áo (dời sang P.ngủ 2), giường đầu quay vách phải, 2 bên đều lên xuống được; dàn lạnh lên vách trước, không thổi thẳng đầu giường.'),
     ('8', 19.15, 10.9, 'Dàn nóng dời ra cạnh vách trước P.ngủ 1 (b 9,6–10,4): ống đồng ~1m, ít uốn, dễ vệ sinh.'),
-    ('9', 8.65, 18.85, 'WC chỉ có ô thoáng 0,3×0,3: mỗi WC 1 cửa chớp lật 0,6×0,4 (O2, O4) + quạt hút, chống ẩm mốc.'),
+    ('9', 8.65, 18.85, 'WC chỉ có ô thoáng 0,3×0,3: thêm 1 cửa chớp lật 0,6×0,4 (O4) + quạt hút, chống ẩm mốc (WC 5,2m², 1 ô là đủ).'),
     ('10', 13.5, 19.05, 'Lanh tô cửa đi nhà phụ (D7, D10) đặt +2,65, cánh cao 2,1–2,2 + ô lưới phía trên: sau này nâng nền +0,45 vẫn đủ cao 2,2m.'),
     ('11', 14.8, 12.3, 'Đường đêm P.ngủ → WC (~8m): đèn hành lang công tắc 2 chiều (cửa D5 ↔ cửa D4) + đèn chân tường cảm biến + công tắc đầu giường.'),
-    ('13', 17.25, 16.95, 'P.ngủ 2 chuẩn bị làm phòng em bé (cạnh P.ngủ 1): dời kệ sắt ra tủ kho bếp, thêm ổ cắm 1,0m, rèm cản sáng.'),
+    ('13', 17.25, 16.95, 'P.ngủ 2 chuẩn bị làm phòng em bé (cạnh P.ngủ 1): dời kệ sắt ra bếp, thêm ổ cắm 1,0m, rèm cản sáng.'),
 ]
 
 
 def plan_base(sh, v, tags=True):
     plan_walls(v, tags=tags)
     # mai hien de xuat (net dut, tren cao)
-    for (a0, b0, a1, b1, lab) in [(7.9, 6.55, 14.05, 7.75, 'Mái hiên tôn 1,2m (đề xuất)'), (14.0, 18.5, 18.0, 19.7, 'Mái hắt 1,2m'), (7.75, 18.7, 14.0, 19.9, 'Mái hắt 1,2m')]:
+    for (a0, b0, a1, b1, lab) in [(9.4, 6.55, 13.95, 7.75, 'Mái hiên tôn 1,2m (đợt 2)'), (12.9, 18.5, 17.9, 19.7, 'Mái hắt 1,2m (D10, D2, W3)')]:
         v.rect(a0, b0, a1, b1, edge=BLU if 'đề xuất' in lab else GRY, lw=.2, dash=[2, 1], layer='MAI')
         v.text((a0 + a1) / 2, b0 + .15, lab, 1.5, anc='c', col=BLU if 'đề xuất' in lab else GRY)
     # hien, bac tam cap
@@ -102,7 +102,7 @@ def sheet_furn_plan(sh):
     a0, a1, b0, b1 = TANK; v.rect(a0, b0, a1, b1, edge=(.3, .3, .3), lw=.25, dash=[2, 1]); v.text((a0 + a1) / 2, (b0 + b1) / 2, 'Bể tự hoại 2.000L', 1.5, anc='c', va='m', rot=90, col=GRY)
     # quat tran
     for (a, b) in [(11.3, 11.2), (12.0, 9.0)]:
-        v.circle(a, b, .6, edge=GRY, lw=.15, dash=[1, .8]); v.text(a, b - .85, 'Quạt trần', 1.3, anc='c', col=GRY)
+        v.circle(a, b, .6, edge=GRY, lw=.15, dash=[1, .8]); v.text(a, b - .85, 'Quạt trần (đợt 2)', 1.3, anc='c', col=GRY)
     for name, a, b, S in ROOMS:
         v.text(a, b, name, 2.0, anc='c', bold=True); v.text(a, b - .38, f'{S:.1f} m²'.replace('.', ','), 1.6, anc='c', col=GRY)
     for n, a, b, _ in PROPOSALS:

@@ -45,11 +45,11 @@ def sheet_level(sh):
     # --- de xuat ---
     v = View(sh, 40, 70, 50, -1.5, 0)
     road(v); house(v, 0.0)
-    v.rect(0.5, ROAD - .4, 0.7, 0.80, fill=(.8, .8, .8), edge=GRN_, lw=.45); v.text(0.75, 0.85, 'gờ/bó vỉa chắn nước +0,80 (đợt 2: chân tường rào kín)', 1.6, col=GRN_)
-    v.poly([(0.7, YARD - .1), (2.3, -0.17), (2.3, -0.07), (0.7, YARD)], fill=CONC, edge=GRN_, lw=.35); v.text(1.0, YARD + .12, 'láng lại dốc 4% về rãnh', 1.5, col=GRN_)
-    v.rect(2.3, -.17, 2.5, -.07, fill=(1, 1, 1), edge=GRN_, lw=.45); v.text(2.0, -.62, 'rãnh nông B200 nắp song, đáy −0,17 → ống Ø114 dốc 0,5–1% → xả ao ở −0,22 (> triều −0,30)', 1.6, col=GRN_)
+    v.rect(0.5, ROAD - .4, 0.7, 0.80, fill=(.8, .8, .8), edge=GRN_, lw=.45); v.text(0.75, 0.85, 'gờ BT +0,80 chỉ đoạn a0–23 (trước ao không làm), có thép chờ = móng tường rào đợt 2', 1.6, col=GRN_)
+    v.poly([(0.9, -0.12), (2.5, -0.09), (2.5, -0.05), (0.9, -0.08)], fill=CONC, edge=GRN_, lw=.35); v.text(1.0, YARD + .12, 'sân dốc ~2% RA XA nhà', 1.5, col=GRN_)
+    v.poly([(0.7, -0.08), (0.8, -0.17), (0.9, -0.08)], fill=(1, 1, 1), edge=GRN_, lw=.45); v.text(0.6, -.62, 'rãnh hở chữ V láng vữa chân gờ, đáy −0,15 → −0,20, dốc 0,3% chảy ngang (trục a) ra ao; cửa xả ≥ −0,22 (> triều −0,30)', 1.6, col=GRN_)
     v.rect(5.48, 0, 5.72, .05, fill=GRN_, edge=GRN_, lw=.2); v.text(5.8, .1, 'ngạch D1 +0,05', 1.5, col=GRN_)
-    arrow(v, (1.0, YARD + .05), (2.25, 0.02), GRN_)
+    arrow(v, (2.3, -0.02), (1.0, -0.05), GRN_)
     # dot 2 net dut
     v.line([(2.5, .45), (8.5, .45)], .5, BLUE_, [2, 1]); v.line([(0.7, .43), (2.3, .40)], .5, BLUE_, [2, 1])
     v.text(5.9, .55, 'Đợt 2: nền +0,45 (cả nhà chính + nhà phụ)', 1.6, col=BLUE_); v.text(-1.4, .1, 'Đợt 2: sân +0,40 (thấp hơn nền 5cm)', 1.6, col=BLUE_)
@@ -66,12 +66,12 @@ def sheet_level(sh):
         ['3', '+0,75', '2,55', 'nền cao hơn lộ 5cm', 'phải nâng mái + làm lại cửa nhà phụ, đắp ~100m³'],
     ], 1.7, 4.0)
     notes(sh, 255, y - 4, 'GIẢI PHÁP ĐỀ XUẤT', [
-        'ĐỢT 1 (làm ngay, ~6–10tr): (1) gờ/bó vỉa BT cao hơn lộ 10cm dọc ranh mặt tiền, cổng có gờ dốc lượn; (2) láng lại sân dốc 2–4% RA XA nhà; (3) rãnh B200 nắp song dọc mép hiên + trước nhà phụ → hố ga → ống Ø114 ra mương/ao; (4) ngạch cửa D1, D7 +0,05; (5) KHÔNG CẦN BƠM nếu cửa xả ra ao đặt ≥ −0,22 (cao hơn triều cao nhất −0,30 ≥8cm): rãnh nông + ống Ø114 dốc 0,5–1%, đường ống ngắn nhất ra ao; van lật ở cửa xả phòng triều vượt mức (~0,5tr).',
+        'ĐỢT 1 (làm ngay, ~3–5tr): (1) gờ BT 200×300 cao hơn lộ 10cm CHỈ đoạn a0–23 (a23–52,6 là ao giáp lộ, nước vào ao không sao), có thép chờ để đợt 2 xây tường rào lên trên, khỏi đập; cổng có gờ dốc lượn; (2) sân dốc ~2% RA XA nhà, về phía gờ; (3) rãnh hở chữ V láng vữa ở chân gờ, dốc 0,3% chảy ngang theo trục a ra ao (a 8→23 hạ ~5cm), không cần rãnh B200 nắp song, hố ga hay ống Ø114 dài; (4) ngạch cửa D1, D7 +0,05; (5) KHÔNG CẦN BƠM: cửa xả ra ao ≥ −0,22 (cao hơn triều cao nhất −0,30), đoạn ống ngắn 1–2m qua bờ ao + van lật (~0,5tr).',
         'ĐỢT 2 (như kế hoạch): nền +0,45, sân +0,40; tường rào kín 2,6m mặt tiền xây chân đặc cao +0,80 làm luôn tường chắn nước; cổng có gờ +0,80.',
-        'Lối xe vào cổng chính: từ lộ +0,70 qua gờ +0,80 xuống sân −0,05 chênh 0,85m → dốc ~14% dài ~6m (sedan qua được, có đoạn chuyển tiếp; 5m thì 17% là quá dốc). Đợt 2 sân +0,40 → dốc ~8%.',
-        'Nắp bể tự hoại (nhô +0,35) nằm trên đường dốc: nâng cổ nắp theo mặt dốc, ụ chắn bánh [12] giữ nguyên.',
-        'Kiểm tra tự chảy: sân −0,05 → đáy rãnh −0,17 → cửa xả −0,22 vẫn cao hơn triều cao nhất −0,30. Ống Ø114 dốc 1% thoát ~6 L/s, gấp ~7 lần mưa 50mm/h trên ~60m² sân (0,8 L/s). Điều kiện: đường ống ra ao ≤15m (dài hơn thì dốc 0,5%). Nước mưa mái dẫn riêng ra ao.',
-        'Bãi thấm bể tự hoại (đáy −0,10) chỉ cao hơn triều 20cm: lúc triều cường thấm kém – giữ ống tràn ra mương có van một chiều.',
+        'Xe vào bằng CỔNG PHỤ 4,5m (1 dốc duy nhất): từ lộ +0,70 qua gờ +0,80 xuống sân −0,05 chênh 0,85m → dốc ~14% dài ~6m (sedan qua được, có đoạn chuyển tiếp). Cổng chính chỉ cho người đi bộ: lối 1,2m, 4–5 bậc cao ≤170 + tay vịn. Đợt 2 sân +0,40 → dốc ~8%.',
+        'Bể tự hoại (nắp nhô +0,35) nằm sau cổng chính, không có xe đi qua [12] nên không cần ụ chắn bánh, không đắp dốc lên bể. Tấm lót đáy bể 2,0×2,8×0,20m (≈1,1m³, ~15kN ngập nước) + 2 đai neo: đủ giữ bể rỗng khi nước ngầm ở −0,3 (lực đẩy nổi ~11kN; tấm 0,1m cũ chỉ ~5,5kN).',
+        'Kiểm tra tự chảy: sân −0,05 → đáy rãnh −0,15 (đầu a8) → −0,20 (a23) → cửa xả −0,22, vẫn cao hơn triều cao nhất −0,30. Rãnh V miệng 200 sâu 70, dốc 0,3% thoát ~2,4 L/s, gấp ~3 lần mưa 50mm/h trên ~60m² sân (0,8 L/s). Nước mưa mái dẫn riêng ra ao bằng ống Ø90 đi nổi.',
+        'Bãi thấm bể tự hoại (ống −0,10, đáy đá −0,30) trùng mức triều cao nhất: gần như chắc thấm kém. Làm hố thử thấm + đo mực nước ngầm mùa mưa TRƯỚC; chưa mua ống, vải địa khi chưa có kết quả. Nếu không đạt: ụ thấm đắp nổi trên sân, giữ ống tràn ra mương có van một chiều.',
     ], 62, 1.8)
 
 
